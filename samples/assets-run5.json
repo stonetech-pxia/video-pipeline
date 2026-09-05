@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "characters": {
+    "C01": {
+      "name": "周砚",
+      "image": null,
+      "settled": [],
+      "description": "海边小镇邮局职员，收到寄给自己的无名信，追寻十二年前林家旧案的真相"
+    }
+  },
+  "locations": {
+    "L01": {
+      "name": "海边小镇邮局",
+      "image": null,
+      "settled": [
+        {
+          "shot_id": "K1-01",
+          "text": "Interior, small seaside-town post office sorting room, early morning. One large window on the wall opposite the counter, light low and cool from the east, laying long pale strips across the wooden counter. Walls painted a tired institutional green; pigeonhole rack of dozens of slots; brass scale; canvas mail sacks slumped on the floor at frame right. Through the window a hint of rooftops sloping toward the sea. Cool morning daylight through the window, single-source, soft shadows dragging across the counter; interior unlit except for a strip of light that finds his hands."
+        },
+        {
+          "shot_id": "K1-02",
+          "text": "Same sorting room as established: green institutional walls, pigeonhole rack, window light across the wooden counter, mail sacks at frame right. Unchanged window light, now catching the top of the stack and one side of his face as he leans in to read."
+        },
+        {
+          "shot_id": "K1-03",
+          "text": "Same sorting room, unchanged: window light, rack, sacks, green walls. Unchanged cool morning window light; shadows on the counter now longer as morning edges on."
+        }
+      ],
+      "description": "清晨的邮局，有分拣台"
+    },
+    "L02": {
+      "name": "邮局后巷",
+      "image": null,
+      "settled": [
+        {
+          "shot_id": "K1-04",
+          "text": "Exterior, narrow brick back alley behind the post office, late morning. Walls two stories of soot-soft red brick, a single rusted downpipe on the left, a fire-door at the far end. Dry cobblestones; the sea's horizon is blocked out by the walls; one shred of paper and a bottle cap at his feet. A trickle of wind moves a plastic bag caught on the downpipe. Overhead daylight bouncing off the left wall, brighter on one cheek, soft shadow down the other; high-contrast narrow-sky atmosphere between the brick runs."
+        },
+        {
+          "shot_id": "K1-05",
+          "text": "Same back alley, unchanged: brick walls, downpipe, dry cobbles, plastic bag in the wind. Unchanged late morning bounce off the left wall; the photo's paper catches a hard highlight as it turns."
+        },
+        {
+          "shot_id": "K1-06",
+          "text": "Same back alley, unchanged: brick, downpipe, cobbles, plastic bag still moving in the wind. Late morning light off the left wall; his face evenly shaded, shadow crawling up his cheek as the morning progresses."
+        }
+      ],
+      "description": "邮局背后的小巷"
+    }
+  }
+}

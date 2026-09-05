@@ -12,100 +12,95 @@ planner = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(planner)
 
 
-def shot(shot_id, start, end, scene="scene_change", action="discontinuous", load=0, control="normal",
-         boundary="shot_change"):
-    return {
-        "id": shot_id,
-        "start": start,
-        "end": end,
-        "boundary_type": boundary,
-        "camera_continuity": "changed",
-        "action_continuity": action,
-        "framing_continuity": "changed",
-        "scene_continuity": scene,
-        "recomposition_needed": True,
-        "boundary_risk": {"state_transfer_load": load, "reason": "test"},
-        "composition_control": control,
-    }
+def shot(shot_id, start, end, scene="S01"):
+    return {"id": shot_id, "start": start, "end": end, "scene_id": scene}
 
 
 def shot_ir(shots):
     return {"schema_version": "1.1", "status": "complete", "duration": shots[-1]["end"], "shots": shots}
 
 
+def boundaries(segments):
+    return [(segment["start"], segment["end"]) for segment in segments]
+
+
 class PlanSegmentsTests(unittest.TestCase):
-    def test_a_continuation_shot_enters_on_the_previous_tail_frame(self):
-        # One 24s take, too long to generate at once, written as two shots.
+    def test_a_scene_that_fits_is_one_segment(self):
+        plan = planner.plan(shot_ir([shot("S01", 0, 5), shot("S02", 5, 12)]))
+        self.assertEqual(boundaries(plan), [(0, 12)])
+        self.assertEqual(plan[0]["shot_ids"], ["S01", "S02"])
+        self.assertEqual(plan[0]["entry_strategy"], "references_only")
+
+    def test_a_boundary_lands_inside_a_shot_never_at_a_cut(self):
+        # Three 12s shots in one scene: cuts at 12 and 24, both avoided.
+        plan = planner.plan(shot_ir([shot("A", 0, 12), shot("B", 12, 24), shot("C", 24, 36)]))
+        cuts = {12, 24}
+        opened = {segment["start"] for segment in plan[1:]}
+        self.assertFalse(opened & cuts, f"a segment opened at a cut: {sorted(opened & cuts)}")
+
+    def test_a_continuation_segment_spans_the_cut_into_the_next_shot(self):
+        plan = planner.plan(shot_ir([shot("A", 0, 12), shot("B", 12, 24), shot("C", 24, 36)]))
+        # Every segment after the first carries the tail of one shot and the head
+        # of the next, so the frame handed forward is already in the next shot.
+        for segment in plan[1:]:
+            self.assertGreater(len(segment["shot_ids"]), 1, segment)
+
+    def test_every_scene_opens_on_its_references_and_continues_on_the_tail(self):
         plan = planner.plan(shot_ir([
-            shot("S01", 0, 12),
-            shot("S02", 12, 24, scene="same_scene", action="continuous",
-                 boundary="same_shot_continuation"),
-            shot("S03", 24, 36),
+            shot("A", 0, 12, "S01"), shot("B", 12, 24, "S01"),
+            shot("C", 24, 36, "S02"), shot("D", 36, 48, "S02"),
         ]))
-        strategies = {segment["shot_ids"][0]: segment["entry_strategy"] for segment in plan}
-        self.assertEqual(strategies["S01"], "new_first_frame")
-        self.assertEqual(strategies["S02"], "use_previous_tail_frame")
-        self.assertEqual(strategies["S03"], "new_first_frame")
-
-    def test_short_shots_are_packed_into_one_segment(self):
-        plan = planner.plan(shot_ir([shot("S01", 0, 4), shot("S02", 4, 8), shot("S03", 8, 12)]))
-        self.assertEqual(len(plan), 1)
-        self.assertEqual(plan[0]["shot_ids"], ["S01", "S02", "S03"])
-        self.assertEqual([b["local_start"] for b in plan[0]["shot_bindings"]], [0, 4, 8])
-        self.assertEqual([b["prompt_shot_index"] for b in plan[0]["shot_bindings"]], [1, 2, 3])
-
-    def test_long_shot_is_split_within_limits(self):
-        plan = planner.plan(shot_ir([shot("S01", 0, 20)]))
-        self.assertGreater(len(plan), 1)
+        openers = [segment for segment in plan if segment["entry_strategy"] == "references_only"]
+        self.assertEqual([segment["scene_id"] for segment in openers], ["S01", "S02"])
         for segment in plan:
-            self.assertTrue(4 <= segment["duration"] <= 15)
-            self.assertEqual(segment["shot_ids"], ["S01"])
-        self.assertEqual(plan[0]["entry_strategy"], "new_first_frame")
-        self.assertEqual(plan[1]["entry_strategy"], "use_previous_tail_frame")
+            if segment not in openers:
+                self.assertEqual(segment["entry_strategy"], "use_previous_tail_frame")
 
-    def test_short_shot_between_long_shots_never_yields_a_tiny_segment(self):
-        plan = planner.plan(shot_ir([shot("S01", 0, 20), shot("S02", 20, 22), shot("S03", 22, 42)]))
+    def test_a_segment_never_crosses_a_scene_boundary(self):
+        plan = planner.plan(shot_ir([
+            shot("A", 0, 10, "S01"), shot("B", 10, 20, "S02"), shot("C", 20, 30, "S03"),
+        ]))
+        self.assertEqual(boundaries(plan), [(0, 10), (10, 20), (20, 30)])
+        self.assertEqual([segment["scene_id"] for segment in plan], ["S01", "S02", "S03"])
+
+    def test_segment_durations_stay_within_the_model_limit(self):
+        plan = planner.plan(shot_ir([shot(f"S{i:02d}", i * 11, (i + 1) * 11) for i in range(6)]))
         for segment in plan:
-            self.assertTrue(4 <= segment["duration"] <= 15, segment)
-        self.assertEqual(plan[-1]["end"], 42)
+            self.assertGreaterEqual(segment["duration"], planner.MIN_DURATION)
+            self.assertLessEqual(segment["duration"], planner.MAX_DURATION)
 
-    def test_timeline_is_covered_without_gaps(self):
-        plan = planner.plan(shot_ir([shot("S01", 0, 6), shot("S02", 6, 13), shot("S03", 13, 24)]))
+    def test_the_timeline_is_covered_without_gaps(self):
+        plan = planner.plan(shot_ir([shot("A", 0, 12), shot("B", 12, 24), shot("C", 24, 35)]))
         self.assertEqual(plan[0]["start"], 0)
-        self.assertEqual(plan[-1]["end"], 24)
-        for previous, current in zip(plan, plan[1:]):
-            self.assertEqual(current["start"], previous["end"])
-            self.assertEqual(current["previous_segment_id"], previous["segment_id"])
+        self.assertEqual(plan[-1]["end"], 35)
+        for previous, following in zip(plan, plan[1:]):
+            self.assertEqual(previous["end"], following["start"])
+            self.assertEqual(following["previous_segment_id"], previous["segment_id"])
 
-    def test_plan_is_reproducible(self):
-        ir = shot_ir([shot("S01", 0, 5), shot("S02", 5, 9, scene="same_scene", action="continuous", load=7),
-                      shot("S03", 9, 18, scene="same_scene", action="continuous", load=6)])
-        self.assertEqual(planner.plan(ir), planner.plan(ir))
+    def test_shot_bindings_report_where_each_shot_starts_in_the_segment(self):
+        plan = planner.plan(shot_ir([shot("A", 0, 12), shot("B", 12, 24), shot("C", 24, 36)]))
+        for segment in plan:
+            for binding, shot_id in zip(segment["shot_bindings"], segment["shot_ids"]):
+                self.assertEqual(binding["shot_id"], shot_id)
+                self.assertGreaterEqual(binding["local_start"], 0)
+                self.assertLess(binding["local_start"], segment["duration"])
+        # A shot already running when its segment opens starts at 0 within it.
+        self.assertEqual(plan[1]["shot_bindings"][0]["local_start"], 0)
 
-    def test_critical_shot_opens_its_segment(self):
-        plan = planner.plan(shot_ir([
-            shot("S01", 0, 4, scene="same_scene", action="discontinuous"),
-            shot("S02", 4, 8, scene="same_scene", action="discontinuous", control="critical"),
-            shot("S03", 8, 12, scene="same_scene", action="discontinuous"),
-        ]))
-        owning = [segment for segment in plan if "S02" in segment["shot_ids"]][0]
-        self.assertEqual(owning["shot_ids"][0], "S02")
-
-    def test_continuous_same_scene_cuts_are_packed_rather_than_split(self):
-        # Three shot/reverse-shot beats that fit in one call: packing hides the
-        # seams inside the model instead of across two generations.
-        plan = planner.plan(shot_ir([
-            shot("S01", 0, 4, scene="same_scene", action="continuous", load=8),
-            shot("S02", 4, 8, scene="same_scene", action="continuous", load=8),
-            shot("S03", 8, 12, scene="same_scene", action="continuous", load=8),
-        ]))
-        self.assertEqual(len(plan), 1)
-
-    def test_missing_scores_are_rejected(self):
-        bare = shot("S01", 0, 5)
-        del bare["boundary_risk"]
+    def test_a_scene_shorter_than_one_generation_is_refused(self):
         with self.assertRaises(planner.PlanError):
-            planner.plan(shot_ir([bare]))
+            planner.plan(shot_ir([shot("A", 0, 3, "S01"), shot("B", 3, 20, "S02")]))
+
+    def test_shot_ir_without_scene_ids_is_refused(self):
+        artifact = shot_ir([shot("A", 0, 10)])
+        del artifact["shots"][0]["scene_id"]
+        with self.assertRaises(planner.PlanError):
+            planner.plan(artifact)
+
+    def test_a_scene_needing_more_than_three_shots_per_segment_is_refused(self):
+        # Four 1s shots cannot share a 4s segment, and none is long enough alone.
+        with self.assertRaises(planner.PlanError):
+            planner.plan(shot_ir([shot(f"S{i}", i, i + 1) for i in range(4)]))
 
 
 if __name__ == "__main__":

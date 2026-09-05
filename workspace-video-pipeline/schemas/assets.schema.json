@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openclaw.local/schemas/assets.schema.json",
+  "title": "Production Assets",
+  "description": "The registry that binds a Story IR character or location ID to the reference image standing in for it, and accumulates what the Shot Director has settled about it. Reference images carry identity and appearance, so prompts downstream can name a subject instead of describing it.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "characters", "locations"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "characters": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/asset" },
+      "propertyNames": { "$ref": "#/$defs/id" }
+    },
+    "locations": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/asset" },
+      "propertyNames": { "$ref": "#/$defs/id" }
+    }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]*$" },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "image", "settled"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "image": {
+          "type": ["string", "null"],
+          "description": "Path to the reference image. Null until one exists; downstream must treat that as unresolved rather than describing the subject from scratch."
+        },
+        "description": {
+          "type": "string",
+          "description": "What Story IR says about the subject. Story facts, not directed detail."
+        },
+        "settled": {
+          "type": "array",
+          "description": "What the Shot Director settled that the story left open, recorded as it was written. Appended per shot so a later chunk can be shown what an earlier one already established.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["shot_id", "text"],
+            "properties": {
+              "shot_id": { "type": "string", "minLength": 1 },
+              "text": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      }
+    }
+  }
+}

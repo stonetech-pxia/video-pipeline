@@ -1,14 +1,24 @@
 #!/usr/bin/env python3
-"""Deterministic segment packing for Shot IR.
+"""Deterministic segment packing for a resolved Shot IR.
 
-Chooses generation-segment boundaries by dynamic programming. Boundaries are
-preferred at real cuts — strongest cuts first — because a seam hidden inside an
-edit costs nothing, while a seam inside a continuous take is visible. Packing
-several short shots into one segment is therefore the normal case.
+There are no first frames. A segment is generated from its prompt and the
+reference images for the characters and the location it shows, and everything
+after the opening of a scene continues from the frame the previous generation
+actually ended on.
 
-A segment opens on a new first frame only where the take really breaks. A
-shot labelled `same_shot_continuation` continues the previous one as one
-unbroken take, so its segment enters on the previous segment's tail frame.
+That inverts where a boundary belongs. A boundary at a cut hands the next
+generation a tail frame of the shot that just ended -- the wrong shot to start
+from. A boundary a few seconds *inside* a shot hands forward a frame already in
+that shot, so the next generation continues what is on screen. Segments
+therefore run past the cut into the next shot and break in open air.
+
+A segment never crosses a scene boundary: a scene change resets the location,
+and the reference images bound to a segment are the ones for the place it
+shows. The first segment of each scene opens on its references alone.
+
+Input is Shot IR after `resolve_assets.py`, which is where `scene_id` comes from.
+
+Usage: plan_segments.py <resolved-shot-ir.json>
 """
 
 from __future__ import annotations
@@ -22,17 +32,9 @@ from typing import Any
 MIN_DURATION = 4
 MAX_DURATION = 15
 MAX_SHOTS_PER_SEGMENT = 3
+AT_CUT = 30.0
+SEGMENT_COST = 1.0
 UNREACHABLE = float("inf")
-
-BASE_COST = {
-    "scene_change": 0,
-    "location_change": 0,
-    "time_change": 1,
-}
-SAME_SCENE_DISCONTINUOUS = 5
-SAME_SCENE_CONTINUOUS = 25
-MID_SHOT = 50
-LOAD_WEIGHT = 3
 
 
 class PlanError(Exception):
@@ -53,42 +55,34 @@ def read_shots(shot_ir: dict[str, Any]) -> list[dict[str, Any]]:
     for index, shot in enumerate(shots):
         if not isinstance(shot, dict):
             raise PlanError(f"shots[{index}] must be an object")
-        for field in ("id", "start", "end"):
+        for field in ("id", "start", "end", "scene_id"):
             if shot.get(field) is None:
-                raise PlanError(f"shots[{index}].{field} is required")
+                raise PlanError(
+                    f"shots[{index}].{field} is required; run resolve_assets.py first"
+                    if field == "scene_id" else f"shots[{index}].{field} is required"
+                )
         for field in ("start", "end"):
             value = shot[field]
             if isinstance(value, bool) or not isinstance(value, (int, float)) or value != int(value):
                 raise PlanError(f"shots[{index}].{field} must be a whole number of seconds")
-        if shot.get("boundary_risk") is None or shot.get("composition_control") is None:
-            raise PlanError(f"shots[{index}] requires boundary_risk and composition_control")
     return shots
 
 
-def boundary_cost(shot: dict[str, Any]) -> float:
-    """Cost of opening a segment at this shot's first frame."""
-    labels = shot
-    scene = labels.get("scene_continuity")
-    if scene in BASE_COST:
-        base = BASE_COST[scene]
-    elif labels.get("action_continuity") == "discontinuous":
-        base = SAME_SCENE_DISCONTINUOUS
-    else:
-        base = SAME_SCENE_CONTINUOUS
-    load = (shot.get("boundary_risk") or {}).get("state_transfer_load", 0)
-    if isinstance(load, bool) or not isinstance(load, int):
-        load = 0
-    return base + load * LOAD_WEIGHT
-
-
-def candidate_points(shots: list[dict[str, Any]], total: int) -> list[int]:
-    points = {0, total}
+def scene_runs(shots: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Consecutive shots sharing a scene, in story order."""
+    runs: list[dict[str, Any]] = []
     for shot in shots:
-        start, end = int(shot["start"]), int(shot["end"])
-        points.add(start)
-        if end - start > MAX_DURATION:
-            points.update(range(start + 1, end))
-    return sorted(point for point in points if 0 <= point <= total)
+        if runs and runs[-1]["scene_id"] == shot["scene_id"]:
+            runs[-1]["shots"].append(shot)
+            runs[-1]["end"] = int(shot["end"])
+        else:
+            runs.append({
+                "scene_id": shot["scene_id"],
+                "start": int(shot["start"]),
+                "end": int(shot["end"]),
+                "shots": [shot],
+            })
+    return runs
 
 
 def shots_in(shots: list[dict[str, Any]], start: int, end: int) -> list[dict[str, Any]]:
@@ -96,90 +90,85 @@ def shots_in(shots: list[dict[str, Any]], start: int, end: int) -> list[dict[str
 
 
 def segment_allowed(covered: list[dict[str, Any]]) -> bool:
-    if not covered or len(covered) > MAX_SHOTS_PER_SEGMENT:
-        return False
-    # A shot needing exact composition control must open its segment, so that the
-    # generated first frame anchors it rather than the model inventing framing.
-    return not any(shot.get("composition_control") == "critical" for shot in covered[1:])
+    return bool(covered) and len(covered) <= MAX_SHOTS_PER_SEGMENT
 
 
-def cut_cost(shots: list[dict[str, Any]], point: int) -> float:
-    if point == 0:
-        return 0.0
-    for shot in shots:
-        if int(shot["start"]) == point:
-            return boundary_cost(shot)
-    return float(MID_SHOT)
+def pack_scene(run: dict[str, Any]) -> list[tuple[int, int]]:
+    """Choose the boundaries inside one scene."""
+    start, end, shots = run["start"], run["end"], run["shots"]
+    span = end - start
+    if span < MIN_DURATION:
+        raise PlanError(
+            f"scene {run['scene_id']} runs {span}s, below the {MIN_DURATION}s minimum for one "
+            f"generation; it cannot be filmed as its own segment"
+        )
+    cuts = {int(shot["start"]) for shot in shots} - {start}
+
+    best: dict[int, float] = {start: 0.0}
+    origin: dict[int, int] = {}
+    for stop in range(start + 1, end + 1):
+        for begin in range(max(start, stop - MAX_DURATION), stop - MIN_DURATION + 1):
+            if best.get(begin, UNREACHABLE) == UNREACHABLE:
+                continue
+            if not segment_allowed(shots_in(shots, begin, stop)):
+                continue
+            candidate = best[begin] + SEGMENT_COST + (AT_CUT if begin in cuts else 0.0)
+            # Ties keep the earliest boundary, which keeps the segment that opens
+            # the scene short. That one is generated cold, from references and
+            # prompt alone; the rest continue from a real frame.
+            if candidate < best.get(stop, UNREACHABLE):
+                best[stop] = candidate
+                origin[stop] = begin
+    if best.get(end, UNREACHABLE) == UNREACHABLE:
+        raise PlanError(
+            f"scene {run['scene_id']} ({span}s) cannot be split into {MIN_DURATION}-{MAX_DURATION}s "
+            f"segments of at most {MAX_SHOTS_PER_SEGMENT} shots"
+        )
+
+    boundaries = [end]
+    while boundaries[-1] != start:
+        boundaries.append(origin[boundaries[-1]])
+    boundaries.reverse()
+    return list(zip(boundaries, boundaries[1:]))
 
 
 def plan(shot_ir: dict[str, Any]) -> list[dict[str, Any]]:
     shots = read_shots(shot_ir)
     total = shot_ir.get("duration")
     if isinstance(total, bool) or not isinstance(total, int) or total < MIN_DURATION:
-        raise PlanError("Shot IR duration must be an integer of at least 4 seconds")
+        raise PlanError(f"Shot IR duration must be an integer of at least {MIN_DURATION} seconds")
+    if int(shots[-1]["end"]) != total:
+        raise PlanError(f"shots end at {shots[-1]['end']}, but duration is {total}")
 
-    points = candidate_points(shots, total)
-    best: dict[int, float] = {0: 0.0}
-    origin: dict[int, int] = {}
-    for end in points:
-        if end == 0:
-            continue
-        for start in points:
-            if start >= end or not (MIN_DURATION <= end - start <= MAX_DURATION):
-                continue
-            if best.get(start, UNREACHABLE) == UNREACHABLE:
-                continue
-            if not segment_allowed(shots_in(shots, start, end)):
-                continue
-            candidate = best[start] + cut_cost(shots, start)
-            if candidate < best.get(end, UNREACHABLE):
-                best[end] = candidate
-                origin[end] = start
-    if best.get(total, UNREACHABLE) == UNREACHABLE:
-        raise PlanError(
-            f"no segmentation covers {total}s under the 4-15s limit and "
-            f"{MAX_SHOTS_PER_SEGMENT}-shot cap; check for shots that cannot be packed"
-        )
-
-    boundaries = [total]
-    while boundaries[-1] != 0:
-        boundaries.append(origin[boundaries[-1]])
-    boundaries.reverse()
-
-    opening_shot = {int(shot["start"]): shot for shot in shots}
     segments: list[dict[str, Any]] = []
-    for index in range(len(boundaries) - 1):
-        start, end = boundaries[index], boundaries[index + 1]
-        covered = shots_in(shots, start, end)
-        # A segment needs a new first frame only where the take really breaks.
-        # Starting at a shot is not the same thing: a shot labelled
-        # same_shot_continuation carries one unbroken take across the limit on
-        # what can be generated at once, and regenerating its first frame would
-        # break the very thing the label says did not break.
-        opening = opening_shot.get(start)
-        opens_on_cut = opening is not None and opening.get("boundary_type") != "same_shot_continuation"
-        segments.append({
-            "segment_id": f"SEG{index + 1:03d}",
-            "previous_segment_id": segments[-1]["segment_id"] if segments else None,
-            "start": start,
-            "end": end,
-            "duration": end - start,
-            "shot_ids": [shot["id"] for shot in covered],
-            "shot_bindings": [
-                {
-                    "prompt_shot_index": position + 1,
-                    "shot_id": shot["id"],
-                    "local_start": max(int(shot["start"]), start) - start,
-                }
-                for position, shot in enumerate(covered)
-            ],
-            "entry_strategy": "new_first_frame" if opens_on_cut else "use_previous_tail_frame",
-        })
+    for run in scene_runs(shots):
+        for position, (start, end) in enumerate(pack_scene(run)):
+            covered = shots_in(run["shots"], start, end)
+            segments.append({
+                "segment_id": f"SEG{len(segments) + 1:03d}",
+                "previous_segment_id": segments[-1]["segment_id"] if segments else None,
+                "scene_id": run["scene_id"],
+                "start": start,
+                "end": end,
+                "duration": end - start,
+                "shot_ids": [shot["id"] for shot in covered],
+                "shot_bindings": [
+                    {
+                        "prompt_shot_index": index + 1,
+                        "shot_id": shot["id"],
+                        "local_start": max(int(shot["start"]), start) - start,
+                    }
+                    for index, shot in enumerate(covered)
+                ],
+                # The opening of a scene has nothing to continue from: the place
+                # changed, so the previous tail frame shows somewhere else.
+                "entry_strategy": "references_only" if position == 0 else "use_previous_tail_frame",
+            })
     return segments
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Pack Shot IR into generation segments")
+    parser = argparse.ArgumentParser(description="Pack a resolved Shot IR into generation segments")
     parser.add_argument("shot_ir")
     args = parser.parse_args()
     try:
