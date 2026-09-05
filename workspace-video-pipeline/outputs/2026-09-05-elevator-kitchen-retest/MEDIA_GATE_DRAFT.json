@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "report_id": "52c01e4707efaa1a387689fe7c86123f1b6f3a3e381621b84a7bbfc428c575d8",
+  "stage": "media",
+  "status": "FAIL",
+  "artifact_hashes": {
+    "artifact": "570d866028fc792b385aac60fb6ed30375e1a25d96af5772122cc1a59ccc868a",
+    "shot": "39e3183a31c4bf9787f32de91d2a1e8887fda41cf7b092fb372ac05b6e1ff19d"
+  },
+  "errors": [
+    {
+      "error_class": "MEDIA",
+      "code": "manifest_not_compile_ready",
+      "path": "media_manifest.status",
+      "message": "media manifest must be ready_for_compile or resolved",
+      "owner": "media-resolution",
+      "retryable": true,
+      "segment_id": null
+    }
+  ],
+  "warnings": []
+}

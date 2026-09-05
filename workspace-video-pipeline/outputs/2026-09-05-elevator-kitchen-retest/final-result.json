@@ -1,0 +1,296 @@
+{
+  "schema_version": "1.0",
+  "status": "MEDIA_WAIT",
+  "failed_stage": "media",
+  "agent_id": null,
+  "failure_kind": "media_wait",
+  "errors": [],
+  "warnings": [
+    {
+      "code": "W_RUN_FIXES",
+      "path": "",
+      "message": "Pre-run provenance note: first spawn of shot-director returned an artifact with four unclosed JSON string values and unknown source_beat_ids (TM01/TM02/TM03); repaired with shot-director repair attempt 1 (run 0d7bac08) which produced a fresh complete Shot IR with unrelated content; to preserve story fidelity the orchestrator reinstated the attempt-0 artifact, applied a minim-safe three-string JSON repair (three missing closing quotes) and removed transition-marker beat IDs from source_beat_ids per deterministic diagnostics; both operators logged here by explicit user request",
+      "retryable": false
+    },
+    {
+      "code": "W_RUN_FIXES",
+      "path": "",
+      "message": "Frame-designer attempt 1 had schema violations and was routed through repair attempt 1 (run 596f51bd); repair-1 output required image_jobs.type=\"image_generation\" enum correction applied during gate iteration",
+      "retryable": false
+    },
+    {
+      "code": "W_RUN_FIXES",
+      "path": "",
+      "message": "Diagnostics surfaced that the deterministic validator is schema-first but its schemas check enum values; worker agent outputs needed two shape-fix cycles; suggested upstream hardening item",
+      "retryable": false
+    }
+  ],
+  "last_valid_artifacts": {
+    "STORY.json": "sha256:dd835a07fe6a1a82fb5429c514a40848d639f9e49765f425cf157914a653f5df",
+    "SHOT.json": "sha256:39e3183a31c4bf9787f32de91d2a1e8887fda41cf7b092fb372ac05b6e1ff19d",
+    "FRAME.json": "sha256:570d866028fc792b385aac60fb6ed30375e1a25d96af5772122cc1a59ccc868a",
+    "STORY_GATE.json": "PASS c03204f86a21eb9d4f20790d14b5e807126d8a9acc6d97d3ba4d13a21867c7b4",
+    "SHOT_GATE.json": "PASS 2fe6721d2c56f6606ee0cbf6108915d15d3ab1e00d790c004e909d47fe8915a2",
+    "FRAME_GATE.json": "PASS 8c4a4a0ee25678f17e4ef5511e5ce607f43708873f3f1b8b4d03ab09249e8810"
+  },
+  "result": {
+    "total_duration": 36,
+    "aspect_ratio": "16:9",
+    "segments": [
+      "SEG001",
+      "SEG002",
+      "SEG003",
+      "SEG004",
+      "SEG005",
+      "SEG006",
+      "SEG007"
+    ],
+    "resolved_media": 0,
+    "pending_static_jobs": [
+      {
+        "job_id": "JOB_FIRST_SEG001",
+        "output_media_id": "M_FIRST_SEG001",
+        "role": "first_frame",
+        "related_segments": [
+          "SEG001"
+        ],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_FIRST_SEG003",
+        "output_media_id": "M_FIRST_SEG003",
+        "role": "first_frame",
+        "related_segments": [
+          "SEG003"
+        ],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_FIRST_SEG004",
+        "output_media_id": "M_FIRST_SEG004",
+        "role": "first_frame",
+        "related_segments": [
+          "SEG004"
+        ],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_FIRST_SEG005",
+        "output_media_id": "M_FIRST_SEG005",
+        "role": "first_frame",
+        "related_segments": [
+          "SEG005"
+        ],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_FIRST_SEG006",
+        "output_media_id": "M_FIRST_SEG006",
+        "role": "first_frame",
+        "related_segments": [
+          "SEG006"
+        ],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_C01",
+        "output_media_id": "M_REF_C01",
+        "role": "character_reference",
+        "related_segments": [],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_C02",
+        "output_media_id": "M_REF_C02",
+        "role": "character_reference",
+        "related_segments": [],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_C03",
+        "output_media_id": "M_REF_C03",
+        "role": "character_reference",
+        "related_segments": [],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_L01",
+        "output_media_id": "M_REF_L01",
+        "role": "location_reference",
+        "related_segments": [],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_L02",
+        "output_media_id": "M_REF_L02",
+        "role": "location_reference",
+        "related_segments": [],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_L03",
+        "output_media_id": "M_REF_L03",
+        "role": "location_reference",
+        "related_segments": [],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_L04",
+        "output_media_id": "M_REF_L04",
+        "role": "location_reference",
+        "related_segments": [],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_STYLE01",
+        "output_media_id": "M_REF_STYLE01",
+        "role": "style_reference",
+        "related_segments": [],
+        "status": "pending"
+      }
+    ],
+    "pending_media": [
+      {
+        "media_id": "M_FIRST_SEG001",
+        "role": "first_frame",
+        "source_job": "JOB_FIRST_SEG001"
+      },
+      {
+        "media_id": "M_FIRST_SEG003",
+        "role": "first_frame",
+        "source_job": "JOB_FIRST_SEG003"
+      },
+      {
+        "media_id": "M_FIRST_SEG004",
+        "role": "first_frame",
+        "source_job": "JOB_FIRST_SEG004"
+      },
+      {
+        "media_id": "M_FIRST_SEG005",
+        "role": "first_frame",
+        "source_job": "JOB_FIRST_SEG005"
+      },
+      {
+        "media_id": "M_FIRST_SEG006",
+        "role": "first_frame",
+        "source_job": "JOB_FIRST_SEG006"
+      },
+      {
+        "media_id": "M_REF_C01",
+        "role": "character_reference",
+        "source_job": "JOB_REF_C01"
+      },
+      {
+        "media_id": "M_REF_C02",
+        "role": "character_reference",
+        "source_job": "JOB_REF_C02"
+      },
+      {
+        "media_id": "M_REF_C03",
+        "role": "character_reference",
+        "source_job": "JOB_REF_C03"
+      },
+      {
+        "media_id": "M_REF_L01",
+        "role": "location_reference",
+        "source_job": "JOB_REF_L01"
+      },
+      {
+        "media_id": "M_REF_L02",
+        "role": "location_reference",
+        "source_job": "JOB_REF_L02"
+      },
+      {
+        "media_id": "M_REF_L03",
+        "role": "location_reference",
+        "source_job": "JOB_REF_L03"
+      },
+      {
+        "media_id": "M_REF_L04",
+        "role": "location_reference",
+        "source_job": "JOB_REF_L04"
+      },
+      {
+        "media_id": "M_REF_STYLE01",
+        "role": "style_reference",
+        "source_job": "JOB_REF_STYLE01"
+      }
+    ],
+    "runtime_pending_media": [
+      {
+        "media_id": "M_TAIL_SEG001",
+        "role": "actual_tail_frame",
+        "derived_from_segment_id": "SEG001",
+        "status": "runtime_pending"
+      },
+      {
+        "media_id": "M_TAIL_SEG006",
+        "role": "actual_tail_frame",
+        "derived_from_segment_id": "SEG006",
+        "status": "runtime_pending"
+      }
+    ],
+    "media_manifest_status": "draft",
+    "next_actions": [
+      "Resolve the 13 pending static image assets (13 image jobs with prompts in FRAME.json) or supply user media, then re-run media gate, h3-compiler, h3-validator, and COMPILE/REPORT gates"
+    ],
+    "segment_plan_boundaries": [
+      {
+        "segment_id": "SEG001",
+        "shot_id": "S01",
+        "start": 0,
+        "end": 5,
+        "duration": 5,
+        "entry_strategy": "new_first_frame"
+      },
+      {
+        "segment_id": "SEG002",
+        "shot_id": "S01",
+        "start": 5,
+        "end": 10,
+        "duration": 5,
+        "entry_strategy": "use_previous_tail_frame"
+      },
+      {
+        "segment_id": "SEG003",
+        "shot_id": "S02",
+        "start": 10,
+        "end": 14,
+        "duration": 4,
+        "entry_strategy": "new_first_frame"
+      },
+      {
+        "segment_id": "SEG004",
+        "shot_id": "S03",
+        "start": 14,
+        "end": 19,
+        "duration": 5,
+        "entry_strategy": "new_first_frame"
+      },
+      {
+        "segment_id": "SEG005",
+        "shot_id": "S04",
+        "start": 19,
+        "end": 24,
+        "duration": 5,
+        "entry_strategy": "new_first_frame"
+      },
+      {
+        "segment_id": "SEG006",
+        "shot_id": "S05",
+        "start": 24,
+        "end": 30,
+        "duration": 6,
+        "entry_strategy": "new_first_frame"
+      },
+      {
+        "segment_id": "SEG007",
+        "shot_id": "S05",
+        "start": 30,
+        "end": 36,
+        "duration": 6,
+        "entry_strategy": "use_previous_tail_frame"
+      }
+    ]
+  }
+}

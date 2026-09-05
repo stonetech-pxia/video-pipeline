@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "source": "git",
+  "spec": "git:https://github.com/zhangzhangco/script-structural-breakdown-skill.git",
+  "slug": "script-structural-breakdown",
+  "installedAt": 1788536801647,
+  "git": {
+    "url": "https://github.com/zhangzhangco/script-structural-breakdown-skill.git",
+    "commit": "e914acc5870f2d7f009c11b16715f0dce7bebeb7",
+    "resolvedAt": "2026-09-04T15:46:41.586Z"
+  }
+}

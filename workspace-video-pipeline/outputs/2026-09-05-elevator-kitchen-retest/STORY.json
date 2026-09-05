@@ -1,0 +1,301 @@
+{
+  "schema_version": "1.1",
+  "status": "complete",
+  "duration": 36,
+  "characters": [
+    {
+      "id": "C01",
+      "name": "女主",
+      "description": "成年已婚年轻女性,下班回家",
+      "role": "protagonist"
+    },
+    {
+      "id": "C02",
+      "name": "女邻居(王姐)",
+      "description": "与女主同电梯的女邻居,已下班",
+      "role": "supporting"
+    },
+    {
+      "id": "C03",
+      "name": "丈夫",
+      "description": "女主的丈夫,已在家备汤,给女主惊喜",
+      "role": "supporting"
+    }
+  ],
+  "locations": [
+    {
+      "id": "L01",
+      "name": "住宅电梯",
+      "description": "现代中国城市住宅楼的电梯"
+    },
+    {
+      "id": "L02",
+      "name": "女主所在楼层走廊",
+      "description": "电梯至女主家门前的那层公共走廊"
+    },
+    {
+      "id": "L03",
+      "name": "女主家门/玄关",
+      "description": "自家门前,用钥匙开门进入"
+    },
+    {
+      "id": "L04",
+      "name": "厨房",
+      "description": "家中的厨房,丈夫在此备汤"
+    }
+  ],
+  "props": [
+    {
+      "id": "P01",
+      "name": "黑色手提包",
+      "description": "女主随身手提包"
+    },
+    {
+      "id": "P02",
+      "name": "钥匙",
+      "description": "开门用的家门钥匙"
+    },
+    {
+      "id": "P03",
+      "name": "汤",
+      "description": "丈夫备着的汤,马上好"
+    }
+  ],
+  "beats": [
+    {
+      "id": "B01",
+      "start": 0.0,
+      "end": 8.0,
+      "action": "电梯内,女主与女邻 lle 居简短对话:邻居问下班,女主应答有点晚;邻居说女主家那位已经回来,女主回应得快点",
+      "emotion": "日常,带轻微归家期盼",
+      "cause": "两人同乘电梯偶遇",
+      "effect": "女主得知丈夫在家,加快节奏"
+    },
+    {
+      "id": "B02",
+      "start": 8.0,
+      "end": 12.0,
+      "action": "电梯到女主所在楼层,门开,女主走出电梯",
+      "emotion": "急切,归心",
+      "cause": "得知丈夫已在家",
+      "effect": "女主进入走廊"
+    },
+    {
+      "id": "B03",
+      "start": 12.0,
+      "end": 18.0,
+      "action": "女主沿走廊走到自家门前",
+      "emotion": "期待,脚步加紧",
+      "cause": "电梯出来后直奔家门",
+      "effect": "到达家门口"
+    },
+    {
+      "id": "B04",
+      "start": 18.0,
+      "end": 22.0,
+      "action": "女主用钥匙开家门并进入屋内",
+      "emotion": "轻松如释重负",
+      "cause": "门锁开",
+      "effect": "进入家中"
+    },
+    {
+      "id": "B05",
+      "start": 22.0,
+      "end": 36.0,
+      "action": "女主走进厨房与丈夫对话:丈夫说汤马上好,女主提及电梯遇王姐说他早回,丈夫说想给惊喜,女主表示等着尝",
+      "emotion": "温馨松弛,家的暖意",
+      "cause": "丈夫提前回家备汤制造小惊喜",
+      "effect": "两人一同在厨房,汤将好,温情收束"
+    }
+  ],
+  "dialogue": [
+    {
+      "id": "D01",
+      "speaker_id": "C02",
+      "beat_id": "B01",
+      "text": "刚下班?"
+    },
+    {
+      "id": "D02",
+      "speaker_id": "C01",
+      "beat_id": "B01",
+      "text": "嗯,今天有点晚。"
+    },
+    {
+      "id": "D03",
+      "speaker_id": "C02",
+      "beat_id": "B01",
+      "text": "你家那位已经回来啦。"
+    },
+    {
+      "id": "D04",
+      "speaker_id": "C01",
+      "beat_id": "B01",
+      "text": "是吗?那我得快点。"
+    },
+    {
+      "id": "D05",
+      "speaker_id": "C03",
+      "beat_id": "B05",
+      "text": "回来啦?汤马上好。"
+    },
+    {
+      "id": "D06",
+      "speaker_id": "C01",
+      "beat_id": "B05",
+      "text": "电梯里碰见王姐,她说你早就回来了。"
+    },
+    {
+      "id": "D07",
+      "speaker_id": "C03",
+      "beat_id": "B05",
+      "text": "想给你个惊喜。"
+    },
+    {
+      "id": "D08",
+      "speaker_id": "C01",
+      "beat_id": "B05",
+      "text": "那我就等着尝了。"
+    }
+  ],
+  "continuity_constraints": [
+    {
+      "id": "CC01",
+      "category": "identity",
+      "subject_id": "C01",
+      "rule": "女主面部与发型从电梯到家中保持一致不可变",
+      "scope": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05"
+      ],
+      "locked": true
+    },
+    {
+      "id": "CC02",
+      "category": "wardrobe",
+      "subject_id": "C01",
+      "rule": "女主服装为米色风衣,从电梯到家中不变",
+      "scope": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05"
+      ],
+      "locked": true
+    },
+    {
+      "id": "CC03",
+      "category": "prop",
+      "subject_id": "P01",
+      "rule": "女主黑色手提包全程保持同一,未丢失或更换",
+      "scope": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05"
+      ],
+      "locked": true
+    },
+    {
+      "id": "CC04",
+      "category": "space",
+      "subject_id": "C01",
+      "rule": "女主离开电梯进入走廊后的移动方向保持一致,空间连续",
+      "scope": [
+        "B02",
+        "B03",
+        "B04"
+      ],
+      "locked": true
+    },
+    {
+      "id": "CC05",
+      "category": "space",
+      "subject_id": "L03",
+      "rule": "家门内外空间关系与光线衔接合理,开门后的室内光照与走廊自然衔接",
+      "scope": [
+        "B04",
+        "B05"
+      ],
+      "locked": true
+    },
+    {
+      "id": "CC06",
+      "category": "scene",
+      "subject_id": "L01",
+      "rule": "现代中国城市住宅楼电梯为当代写实风格",
+      "scope": [
+        "B01",
+        "B02"
+      ],
+      "locked": true
+    },
+    {
+      "id": "CC07",
+      "category": "time",
+      "subject_id": "C01",
+      "rule": "时间从傍晚下班途中至到家内,连续不下跳跃式时间变化",
+      "scope": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05"
+      ],
+      "locked": true
+    },
+    {
+      "id": "CC08",
+      "category": "prop",
+      "subject_id": "P02",
+      "rule": "开门既用钥匙,钥匙在此打开家门,后续不重复出现与矛盾",
+      "scope": [
+        "B04"
+      ],
+      "locked": true
+    }
+  ],
+  "transition_markers": [
+    {
+      "marker_id": "TM01",
+      "at_beat_id": "B02",
+      "type": "location_change",
+      "from": "L01",
+      "to": "L02",
+      "reason": "电梯到达女主楼层,门开,女主走出电梯,进入走廊"
+    },
+    {
+      "marker_id": "TM02",
+      "at_beat_id": "B04",
+      "type": "location_change",
+      "from": "L02",
+      "to": "L03",
+      "reason": "女主沿走廊走到自家门前开门进入,位置由公共走廊变为家门内"
+    },
+    {
+      "marker_id": "TM03",
+      "at_beat_id": "B05",
+      "type": "location_change",
+      "from": "L03",
+      "to": "L04",
+      "reason": "女主进入家中后走进厨房,与丈夫对话"
+    }
+  ],
+  "locked_constraints": [
+    "总时长 36 秒",
+    "画面比例 16:9",
+    "风格: 现代中国城市住宅,写实电影感,克制自然,不夸张",
+    "语言: 普通话",
+    "女主的脸、发型、米色风衣、黑色手提包从电梯到家中保持一致",
+    "女主出电梯后移动方向一致",
+    "家门内外空间关系和光线衔接合理",
+    "所有角色均为成年人",
+    "对话逐字保留自原始台词,说话人归属如输入标注"
+  ],
+  "ambiguities": []
+}

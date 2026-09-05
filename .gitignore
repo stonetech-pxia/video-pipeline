@@ -1,0 +1,16 @@
+# openclaw agent runtime state — not source
+*/memory/
+*/DREAMS.md
+*/.context-backups/
+*/.skill-backups/
+*/skills/.openclaw-install-backups/
+
+# local backups / scratch
+*.bak
+*.bak.*
+*.pre-probe
+__pycache__/
+.pytest_cache/
+
+# transient pipeline scratch
+*/.pipeline-runtime/

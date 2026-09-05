@@ -1,0 +1,4 @@
+interface:
+  display_name: "MiniMax H3 Unified Compiler"
+  short_description: "Compile approved IR into H3 Unified segment packages"
+  default_prompt: "Use $h3-prompt-writing to compile approved pipeline artifacts into MiniMax H3 Unified segment packages."

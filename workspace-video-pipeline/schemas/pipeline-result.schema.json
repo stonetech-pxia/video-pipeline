@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openclaw.local/schemas/pipeline-result.schema.json",
+  "title": "Video Pipeline Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "status", "failed_stage", "agent_id", "failure_kind", "errors", "warnings", "last_valid_artifacts", "result"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "status": { "enum": ["COMPLETE", "MEDIA_WAIT", "BLOCKED", "FAILED"] },
+    "failed_stage": { "type": ["string", "null"] },
+    "agent_id": {
+      "oneOf": [
+        { "enum": ["story-analyst", "shot-director", "frame-designer", "h3-compiler", "h3-validator"] },
+        { "type": "null" }
+      ]
+    },
+    "failure_kind": {
+      "oneOf": [
+        { "enum": ["subagent_start_failed", "subagent_run_failed", "deterministic_validation_failed", "semantic_validation_failed", "media_wait", "repair_exhausted"] },
+        { "type": "null" }
+      ]
+    },
+    "errors": { "type": "array", "items": { "$ref": "#/$defs/diagnostic" } },
+    "warnings": { "type": "array", "items": { "$ref": "#/$defs/diagnostic" } },
+    "last_valid_artifacts": { "type": "object" },
+    "result": { "type": ["object", "null"] }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "status": { "const": "COMPLETE" } }, "required": ["status"] },
+      "then": {
+        "properties": {
+          "failed_stage": { "type": "null" },
+          "agent_id": { "type": "null" },
+          "failure_kind": { "type": "null" },
+          "errors": { "maxItems": 0 },
+          "result": { "$ref": "#/$defs/successResult" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "status": { "enum": ["BLOCKED", "FAILED"] } }, "required": ["status"] },
+      "then": { "properties": { "failed_stage": { "type": "string", "minLength": 1 }, "failure_kind": { "type": "string" }, "errors": { "minItems": 1 } } }
+    },
+    {
+      "if": { "properties": { "failure_kind": { "enum": ["subagent_start_failed", "subagent_run_failed"] } }, "required": ["failure_kind"] },
+      "then": {
+        "properties": {
+          "agent_id": { "enum": ["story-analyst", "shot-director", "frame-designer", "h3-compiler", "h3-validator"] }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "status": { "const": "MEDIA_WAIT" } }, "required": ["status"] },
+      "then": {
+        "properties": {
+          "failure_kind": { "const": "media_wait" },
+          "result": {
+            "type": "object",
+            "required": ["draft_video_prompts", "image_jobs"],
+            "properties": {
+              "draft_video_prompts": {
+                "type": "array",
+                "minItems": 1,
+                "items": { "$ref": "#/$defs/draftPromptResult" }
+              },
+              "image_jobs": {
+                "type": "array",
+                "minItems": 1,
+                "items": { "$ref": "#/$defs/imageJobResult" }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "diagnostic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "path", "message", "retryable"],
+      "properties": {
+        "code": { "type": "string", "minLength": 1 },
+        "path": { "type": "string" },
+        "message": { "type": "string", "minLength": 1 },
+        "retryable": { "type": "boolean" }
+      }
+    },
+    "draftPromptResult": {
+      "type": "object",
+      "required": ["segment_id", "shot_bindings", "prompt", "symbolic_media_mapping"],
+      "properties": {
+        "segment_id": { "type": "string", "minLength": 1 },
+        "shot_bindings": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["prompt_shot_index", "shot_id", "local_start"],
+            "properties": {
+              "prompt_shot_index": { "type": "integer", "minimum": 1 },
+              "shot_id": { "type": "string", "minLength": 1 },
+              "local_start": { "type": "integer", "minimum": 0 }
+            }
+          }
+        },
+        "prompt": { "type": "string", "minLength": 1 },
+        "symbolic_media_mapping": { "type": "object" }
+      }
+    },
+    "successResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total_duration", "aspect_ratio", "visual_style", "packages", "resolved_media", "execution_order", "tail_capture_spec", "technical_warnings"],
+      "properties": {
+        "total_duration": { "type": "integer", "minimum": 1 },
+        "aspect_ratio": { "type": ["string", "null"] },
+        "visual_style": { "type": "object" },
+        "packages": { "type": "array", "minItems": 1, "items": { "type": "object" } },
+        "resolved_media": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["media_id", "role", "status", "location"],
+            "properties": {
+              "media_id": { "type": "string", "minLength": 1 },
+              "role": { "type": "string", "minLength": 1 },
+              "status": { "enum": ["resolved", "runtime_pending"] },
+              "location": { "type": ["string", "null"] }
+            }
+          }
+        },
+        "execution_order": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["order", "segment_id", "depends_on"],
+            "properties": {
+              "order": { "type": "integer", "minimum": 1 },
+              "segment_id": { "type": "string", "minLength": 1 },
+              "depends_on": { "type": ["string", "null"] }
+            }
+          }
+        },
+        "tail_capture_spec": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["frame_selection", "format", "naming"],
+          "properties": {
+            "frame_selection": { "const": "last_complete_frame" },
+            "format": { "const": "png" },
+            "naming": { "const": "{segment_id}_tail.png" }
+          }
+        },
+        "technical_warnings": { "type": "array", "items": { "type": "object" } }
+      }
+    },
+    "imageJobResult": {
+      "type": "object",
+      "required": ["job_id", "prompt", "negative_prompt", "output_media_id", "status"],
+      "properties": {
+        "job_id": { "type": "string", "minLength": 1 },
+        "prompt": { "type": "string", "minLength": 1 },
+        "negative_prompt": { "type": "string" },
+        "output_media_id": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

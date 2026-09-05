@@ -1,0 +1,252 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openclaw.local/schemas/pipeline-state.schema.json",
+  "title": "Video Pipeline State",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "state",
+    "artifacts",
+    "segment_media_state",
+    "repair_ledger",
+    "worker_runs",
+    "deterministic_reports"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.3" },
+    "state": {
+      "enum": [
+        "INIT",
+        "NORMALIZE",
+        "STORY_RUNNING",
+        "STORY_CHECK",
+        "SHOT_RUNNING",
+        "SHOT_CHECK",
+        "FRAME_RUNNING",
+        "FRAME_CHECK",
+        "MEDIA_RESOLUTION",
+        "MEDIA_CHECK",
+        "DRAFT_COMPILE_RUNNING",
+        "DRAFT_COMPILE_CHECK",
+        "MEDIA_WAIT",
+        "COMPILE_RUNNING",
+        "COMPILE_CHECK",
+        "VALIDATE_RUNNING",
+        "VALIDATE_CHECK",
+        "REPAIR",
+        "BLOCKED",
+        "COMPLETE",
+        "FAILED"
+      ]
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "story_ir",
+        "shot_ir",
+        "frame_design",
+        "resolved_media_manifest",
+        "draft_video_prompts",
+        "h3_packages",
+        "validation_report"
+      ],
+      "properties": {
+        "story_ir": { "$ref": "#/$defs/artifactState" },
+        "shot_ir": { "$ref": "#/$defs/artifactState" },
+        "frame_design": { "$ref": "#/$defs/artifactState" },
+        "resolved_media_manifest": { "$ref": "#/$defs/artifactState" },
+        "draft_video_prompts": { "$ref": "#/$defs/artifactState" },
+        "h3_packages": { "$ref": "#/$defs/artifactState" },
+        "validation_report": { "$ref": "#/$defs/artifactState" }
+      }
+    },
+    "segment_media_state": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "segment_id",
+          "reference_media",
+          "first_frame",
+          "last_frame_target",
+          "actual_tail_frame",
+          "runtime_entry_dependency"
+        ],
+        "properties": {
+          "segment_id": { "type": "string", "minLength": 1 },
+          "reference_media": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/mediaState" }
+          },
+          "first_frame": {
+            "oneOf": [
+              { "$ref": "#/$defs/mediaState" },
+              { "type": "null" }
+            ]
+          },
+          "last_frame_target": {
+            "oneOf": [
+              { "$ref": "#/$defs/mediaState" },
+              { "type": "null" }
+            ]
+          },
+          "actual_tail_frame": {
+            "oneOf": [
+              { "$ref": "#/$defs/mediaState" },
+              { "type": "null" }
+            ]
+          },
+          "runtime_entry_dependency": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["previous_segment_id", "actual_tail_frame_media_id"],
+                "properties": {
+                  "previous_segment_id": { "type": "string", "minLength": 1 },
+                  "actual_tail_frame_media_id": { "type": "string", "minLength": 1 }
+                }
+              },
+              { "type": "null" }
+            ]
+          }
+        }
+      }
+    },
+    "repair_ledger": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "fingerprint",
+          "owner",
+          "attempts",
+          "last_error"
+        ],
+        "properties": {
+          "fingerprint": { "type": "string", "minLength": 1 },
+          "owner": {
+            "enum": [
+              "story-analyst",
+              "shot-director",
+              "frame-designer",
+              "media-resolution",
+              "h3-compiler"
+            ]
+          },
+          "attempts": { "type": "integer", "minimum": 0, "maximum": 2 },
+          "last_error": { "type": "object" }
+        }
+      }
+    },
+    "worker_runs": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/workerRun" }
+    },
+    "deterministic_reports": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/deterministicReport" }
+    }
+  },
+  "$defs": {
+    "artifactState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {
+          "enum": ["missing", "pending", "approved", "invalid", "blocked"]
+        },
+        "path": { "type": "string" },
+        "version": { "type": "string" }
+      }
+    },
+    "workerRun": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stage", "agent_id", "status", "run_id", "child_session_key", "failure"],
+      "properties": {
+        "stage": { "enum": ["story", "shot", "frame", "draft_compile", "compile", "validate"] },
+        "agent_id": { "enum": ["story-analyst", "shot-director", "frame-designer", "h3-compiler", "h3-validator"] },
+        "status": { "enum": ["starting", "accepted", "completed", "startup_failed", "run_failed"] },
+        "run_id": { "type": ["string", "null"] },
+        "child_session_key": { "type": ["string", "null"] },
+        "failure": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["code", "message", "retryable"],
+              "properties": {
+                "code": { "type": "string", "minLength": 1 },
+                "message": { "type": "string", "minLength": 1 },
+                "retryable": { "type": "boolean" }
+              }
+            },
+            { "type": "null" }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "enum": ["accepted", "completed"] } }, "required": ["status"] },
+          "then": {
+            "properties": {
+              "run_id": { "type": "string", "minLength": 1 },
+              "child_session_key": { "type": "string", "minLength": 1 },
+              "failure": { "type": "null" }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "status": { "enum": ["startup_failed", "run_failed"] } }, "required": ["status"] },
+          "then": { "properties": { "failure": { "type": "object" } } }
+        }
+      ]
+    },
+    "deterministicReport": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stage", "status", "report_id", "artifact_hashes", "errors", "warnings"],
+      "properties": {
+        "stage": { "enum": ["story", "shot", "frame", "draft_compile", "compile", "validation"] },
+        "status": { "enum": ["PASS", "FAIL"] },
+        "report_id": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "artifact_hashes": {
+          "type": "object",
+          "propertyNames": { "type": "string" },
+          "additionalProperties": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        },
+        "errors": { "type": "array", "items": { "type": "object" } },
+        "warnings": { "type": "array", "items": { "type": "object" } }
+      }
+    },
+    "mediaState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["media_id", "role", "status"],
+      "properties": {
+        "media_id": { "type": "string", "minLength": 1 },
+        "role": {
+          "enum": [
+            "character_reference",
+            "location_reference",
+            "style_reference",
+            "first_frame",
+            "last_frame_target",
+            "actual_tail_frame",
+            "video_reference",
+            "audio_reference"
+          ]
+        },
+        "status": { "enum": ["pending", "runtime_pending", "resolved", "failed"] },
+        "path": { "type": "string" },
+        "runtime_handle": { "type": "string" }
+      }
+    }
+  }
+}

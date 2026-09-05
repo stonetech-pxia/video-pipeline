@@ -1,0 +1,4 @@
+interface:
+  display_name: "MiniMax H3 Unified Validator"
+  short_description: "Review H3 Unified packages without rewriting them"
+  default_prompt: "Use $minimax-h3-prompting to review these approved MiniMax H3 Unified packages for semantic and continuity fidelity."

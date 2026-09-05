@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openclaw.local/schemas/story-ir.schema.json",
+  "title": "Story IR",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "status",
+    "duration",
+    "characters",
+    "locations",
+    "props",
+    "beats",
+    "dialogue",
+    "continuity_constraints",
+    "transition_markers",
+    "locked_constraints",
+    "ambiguities"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.1" },
+    "status": { "enum": ["complete", "partial"] },
+    "duration": {
+      "oneOf": [
+        { "type": "integer", "minimum": 1 },
+        { "type": "null" }
+      ]
+    },
+    "characters": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/entity" }
+    },
+    "locations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/entity" }
+    },
+    "props": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/entity" }
+    },
+    "beats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "start": { "type": ["number", "null"], "minimum": 0 },
+          "end": { "type": ["number", "null"], "minimum": 0 },
+          "action": { "type": "string" },
+          "emotion": { "type": "string" },
+          "cause": { "type": "string" },
+          "effect": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "dialogue": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "text"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "speaker_id": { "type": ["string", "null"] },
+          "beat_id": { "type": ["string", "null"] },
+          "text": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "continuity_constraints": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/continuityConstraint" }
+    },
+    "transition_markers": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/transitionMarker" }
+    },
+    "locked_constraints": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "type": "string" },
+          { "type": "object" }
+        ]
+      }
+    },
+    "ambiguities": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "type": "string" },
+          { "type": "object" }
+        ]
+      }
+    }
+  },
+  "$defs": {
+    "entity": {
+      "type": "object",
+      "required": ["id"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "continuityConstraint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "category", "subject_id", "rule", "scope", "locked"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "category": {
+          "enum": ["identity", "wardrobe", "prop", "scene", "weather", "time", "space"]
+        },
+        "subject_id": { "type": ["string", "null"] },
+        "rule": { "type": "string", "minLength": 1 },
+        "scope": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "locked": { "type": "boolean" }
+      }
+    },
+    "transitionMarker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["marker_id", "at_beat_id", "type", "from", "to", "reason"],
+      "properties": {
+        "marker_id": { "type": "string", "minLength": 1 },
+        "at_beat_id": { "type": "string", "minLength": 1 },
+        "type": {
+          "enum": [
+            "scene_change",
+            "time_change",
+            "location_change",
+            "weather_change",
+            "continuity_break"
+          ]
+        },
+        "from": { "type": ["string", "object", "null"] },
+        "to": { "type": ["string", "object", "null"] },
+        "reason": { "type": "string" }
+      }
+    }
+  }
+}

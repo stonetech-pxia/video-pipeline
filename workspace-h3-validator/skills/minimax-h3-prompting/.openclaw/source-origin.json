@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "source": "git",
+  "spec": "git:https://github.com/babicat4242-svg/minimax-h3-prompting.git",
+  "slug": "minimax-h3-prompting",
+  "installedAt": 1788538055367,
+  "git": {
+    "url": "https://github.com/babicat4242-svg/minimax-h3-prompting.git",
+    "commit": "b64d63d4b931b0af14248d5c4bc8e7287ed8fc06",
+    "resolvedAt": "2026-09-04T16:07:35.300Z"
+  }
+}

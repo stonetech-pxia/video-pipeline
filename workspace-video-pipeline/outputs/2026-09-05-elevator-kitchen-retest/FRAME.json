@@ -1,0 +1,1013 @@
+{
+  "schema_version": "1.2",
+  "status": "complete",
+  "segment_plan": [
+    {
+      "segment_id": "SEG001",
+      "shot_id": "S01",
+      "start": 0,
+      "end": 5,
+      "duration": 5,
+      "previous_segment_id": null,
+      "entry_strategy": "new_first_frame",
+      "entry_frame_source": "M_FIRST_SEG001",
+      "runtime_entry_dependency": null,
+      "exit_frame_required": true,
+      "last_frame_target_media_id": null,
+      "actual_tail_frame_media_id": "M_TAIL_SEG001",
+      "reference_strategy": {
+        "character_reference_ids": [
+          "M_REF_C01",
+          "M_REF_C02"
+        ],
+        "location_reference_ids": [
+          "M_REF_L01",
+          "M_REF_L02"
+        ],
+        "style_reference_ids": [
+          "M_REF_STYLE01"
+        ],
+        "video_reference_ids": [],
+        "audio_reference_ids": []
+      },
+      "continuity_decision": {
+        "is_same_shot": false,
+        "continuous_action": false,
+        "continuous_camera": false,
+        "same_scene": false,
+        "same_framing": false,
+        "same_camera_position": false,
+        "same_time": false,
+        "same_visual_focus": false,
+        "requires_recomposition": true,
+        "change_triggers": [
+          "shot",
+          "framing",
+          "camera_position",
+          "scene",
+          "location",
+          "composition"
+        ],
+        "decision": "generate_new_first_frame"
+      },
+      "reason": "First segment of the timeline and first shot of the first scene; anchor-entry rule mandates a generated first frame locking the elevator-interior camera angle, C01 wardrobe (beige trench coat, black handbag), and door-light state at 0s."
+    },
+    {
+      "segment_id": "SEG002",
+      "shot_id": "S01",
+      "start": 5,
+      "end": 10,
+      "duration": 5,
+      "previous_segment_id": "SEG001",
+      "entry_strategy": "use_previous_tail_frame",
+      "entry_frame_source": null,
+      "runtime_entry_dependency": {
+        "kind": "previous_actual_tail_frame",
+        "previous_segment_id": "SEG001",
+        "expected_media_id": "M_TAIL_SEG001"
+      },
+      "exit_frame_required": false,
+      "last_frame_target_media_id": null,
+      "actual_tail_frame_media_id": null,
+      "reference_strategy": {
+        "character_reference_ids": [
+          "M_REF_C01",
+          "M_REF_C02"
+        ],
+        "location_reference_ids": [
+          "M_REF_L01",
+          "M_REF_L02"
+        ],
+        "style_reference_ids": [
+          "M_REF_STYLE01"
+        ],
+        "video_reference_ids": [],
+        "audio_reference_ids": []
+      },
+      "continuity_decision": {
+        "is_same_shot": true,
+        "continuous_action": true,
+        "continuous_camera": true,
+        "same_scene": true,
+        "same_framing": true,
+        "same_camera_position": true,
+        "same_time": true,
+        "same_visual_focus": true,
+        "requires_recomposition": false,
+        "change_triggers": [],
+        "decision": "reuse_previous_tail"
+      },
+      "reason": "Action and camera are continuous within S01; scene, framing, camera position, and character positions are materially unchanged, so the deterministic rule requires use_previous_tail_frame with entry bound to SEG001's actual tail frame."
+    },
+    {
+      "segment_id": "SEG003",
+      "shot_id": "S02",
+      "start": 10,
+      "end": 14,
+      "duration": 4,
+      "previous_segment_id": "SEG002",
+      "entry_strategy": "new_first_frame",
+      "entry_frame_source": "M_FIRST_SEG003",
+      "runtime_entry_dependency": null,
+      "exit_frame_required": false,
+      "last_frame_target_media_id": null,
+      "actual_tail_frame_media_id": null,
+      "reference_strategy": {
+        "character_reference_ids": [
+          "M_REF_C01",
+          "M_REF_C02"
+        ],
+        "location_reference_ids": [
+          "M_REF_L02",
+          "M_REF_L03"
+        ],
+        "style_reference_ids": [
+          "M_REF_STYLE01"
+        ],
+        "video_reference_ids": [],
+        "audio_reference_ids": []
+      },
+      "continuity_decision": {
+        "is_same_shot": false,
+        "continuous_action": false,
+        "continuous_camera": false,
+        "same_scene": false,
+        "same_framing": false,
+        "same_camera_position": false,
+        "same_time": false,
+        "same_visual_focus": false,
+        "requires_recomposition": true,
+        "change_triggers": [
+          "shot",
+          "framing",
+          "camera_position",
+          "scene",
+          "location",
+          "composition"
+        ],
+        "decision": "generate_new_first_frame"
+      },
+      "reason": "Shot boundary S01→S02 with framing and camera-position change and door-opening light-state transition; first segment of S02 must anchor with a new first frame."
+    },
+    {
+      "segment_id": "SEG004",
+      "shot_id": "S03",
+      "start": 14,
+      "end": 19,
+      "duration": 5,
+      "previous_segment_id": "SEG003",
+      "entry_strategy": "new_first_frame",
+      "entry_frame_source": "M_FIRST_SEG004",
+      "runtime_entry_dependency": null,
+      "exit_frame_required": false,
+      "last_frame_target_media_id": null,
+      "actual_tail_frame_media_id": null,
+      "reference_strategy": {
+        "character_reference_ids": [
+          "M_REF_C01",
+          "M_REF_C02",
+          "M_REF_C03"
+        ],
+        "location_reference_ids": [
+          "M_REF_L03"
+        ],
+        "style_reference_ids": [
+          "M_REF_STYLE01"
+        ],
+        "video_reference_ids": [],
+        "audio_reference_ids": []
+      },
+      "continuity_decision": {
+        "is_same_shot": false,
+        "continuous_action": false,
+        "continuous_camera": false,
+        "same_scene": false,
+        "same_framing": false,
+        "same_camera_position": false,
+        "same_time": false,
+        "same_visual_focus": false,
+        "requires_recomposition": true,
+        "change_triggers": [
+          "shot",
+          "framing",
+          "camera_position",
+          "scene",
+          "blocking",
+          "composition"
+        ],
+        "decision": "generate_new_first_frame"
+      },
+      "reason": "Shot boundary S02→S03 with reset blocking and composition; the first segment of S03 anchors with a generated first frame."
+    },
+    {
+      "segment_id": "SEG005",
+      "shot_id": "S04",
+      "start": 19,
+      "end": 24,
+      "duration": 5,
+      "previous_segment_id": "SEG004",
+      "entry_strategy": "new_first_frame",
+      "entry_frame_source": "M_FIRST_SEG005",
+      "runtime_entry_dependency": null,
+      "exit_frame_required": false,
+      "last_frame_target_media_id": null,
+      "actual_tail_frame_media_id": null,
+      "reference_strategy": {
+        "character_reference_ids": [
+          "M_REF_C01",
+          "M_REF_C02"
+        ],
+        "location_reference_ids": [
+          "M_REF_L03",
+          "M_REF_L04"
+        ],
+        "style_reference_ids": [
+          "M_REF_STYLE01"
+        ],
+        "video_reference_ids": [],
+        "audio_reference_ids": []
+      },
+      "continuity_decision": {
+        "is_same_shot": false,
+        "continuous_action": false,
+        "continuous_camera": false,
+        "same_scene": false,
+        "same_framing": false,
+        "same_camera_position": false,
+        "same_time": false,
+        "same_visual_focus": false,
+        "requires_recomposition": true,
+        "change_triggers": [
+          "shot",
+          "framing",
+          "camera_position",
+          "scene",
+          "visual_focus",
+          "composition"
+        ],
+        "decision": "generate_new_first_frame"
+      },
+      "reason": "Shot boundary S03→S04 with visual-focus change; anchor-entry required for the first segment of S04."
+    },
+    {
+      "segment_id": "SEG006",
+      "shot_id": "S05",
+      "start": 24,
+      "end": 30,
+      "duration": 6,
+      "previous_segment_id": "SEG005",
+      "entry_strategy": "new_first_frame",
+      "entry_frame_source": "M_FIRST_SEG006",
+      "runtime_entry_dependency": null,
+      "exit_frame_required": true,
+      "last_frame_target_media_id": null,
+      "actual_tail_frame_media_id": "M_TAIL_SEG006",
+      "reference_strategy": {
+        "character_reference_ids": [
+          "M_REF_C01"
+        ],
+        "location_reference_ids": [
+          "M_REF_L04"
+        ],
+        "style_reference_ids": [
+          "M_REF_STYLE01"
+        ],
+        "video_reference_ids": [],
+        "audio_reference_ids": []
+      },
+      "continuity_decision": {
+        "is_same_shot": false,
+        "continuous_action": false,
+        "continuous_camera": false,
+        "same_scene": false,
+        "same_framing": false,
+        "same_camera_position": false,
+        "same_time": false,
+        "same_visual_focus": false,
+        "requires_recomposition": true,
+        "change_triggers": [
+          "shot",
+          "framing",
+          "camera_position",
+          "scene",
+          "location",
+          "composition"
+        ],
+        "decision": "generate_new_first_frame"
+      },
+      "reason": "Shot boundary S04→S05 with location change to the kitchen; first segment of S05 anchors with a generated first frame. Split head half is 6s (within 4–15s) and reserves an actual tail frame because the shot continues into SEG007."
+    },
+    {
+      "segment_id": "SEG007",
+      "shot_id": "S05",
+      "start": 30,
+      "end": 36,
+      "duration": 6,
+      "previous_segment_id": "SEG006",
+      "entry_strategy": "use_previous_tail_frame",
+      "entry_frame_source": null,
+      "runtime_entry_dependency": {
+        "kind": "previous_actual_tail_frame",
+        "previous_segment_id": "SEG006",
+        "expected_media_id": "M_TAIL_SEG006"
+      },
+      "exit_frame_required": false,
+      "last_frame_target_media_id": null,
+      "actual_tail_frame_media_id": null,
+      "reference_strategy": {
+        "character_reference_ids": [
+          "M_REF_C01"
+        ],
+        "location_reference_ids": [
+          "M_REF_L04"
+        ],
+        "style_reference_ids": [
+          "M_REF_STYLE01"
+        ],
+        "video_reference_ids": [],
+        "audio_reference_ids": []
+      },
+      "continuity_decision": {
+        "is_same_shot": true,
+        "continuous_action": true,
+        "continuous_camera": true,
+        "same_scene": true,
+        "same_framing": true,
+        "same_camera_position": true,
+        "same_time": true,
+        "same_visual_focus": true,
+        "requires_recomposition": false,
+        "change_triggers": [],
+        "decision": "reuse_previous_tail"
+      },
+      "reason": "Continuous action and camera within S05 with unchanged framing and character positions; deterministic rule mandates reuse of SEG006's actual tail frame. Length capped at 6s to satisfy the 4–15s integer constraint and exact 0–36 coverage."
+    }
+  ],
+  "frame_plan": [
+    {
+      "segment_id": "SEG001",
+      "first_frame_media_id": "M_FIRST_SEG001",
+      "last_frame_target_media_id": null,
+      "actual_tail_frame_media_id": "M_TAIL_SEG001",
+      "reference_media_ids": [
+        "M_REF_C01",
+        "M_REF_C02",
+        "M_REF_L01",
+        "M_REF_L02",
+        "M_REF_STYLE01"
+      ],
+      "generate_first_frame": true,
+      "generate_last_frame_target": false,
+      "capture_actual_tail_frame": true
+    },
+    {
+      "segment_id": "SEG002",
+      "first_frame_media_id": null,
+      "last_frame_target_media_id": null,
+      "actual_tail_frame_media_id": null,
+      "reference_media_ids": [
+        "M_REF_C01",
+        "M_REF_C02",
+        "M_REF_L01",
+        "M_REF_L02",
+        "M_REF_STYLE01"
+      ],
+      "generate_first_frame": false,
+      "generate_last_frame_target": false,
+      "capture_actual_tail_frame": false
+    },
+    {
+      "segment_id": "SEG003",
+      "first_frame_media_id": "M_FIRST_SEG003",
+      "last_frame_target_media_id": null,
+      "actual_tail_frame_media_id": null,
+      "reference_media_ids": [
+        "M_REF_C01",
+        "M_REF_C02",
+        "M_REF_L02",
+        "M_REF_L03",
+        "M_REF_STYLE01"
+      ],
+      "generate_first_frame": true,
+      "generate_last_frame_target": false,
+      "capture_actual_tail_frame": false
+    },
+    {
+      "segment_id": "SEG004",
+      "first_frame_media_id": "M_FIRST_SEG004",
+      "last_frame_target_media_id": null,
+      "actual_tail_frame_media_id": null,
+      "reference_media_ids": [
+        "M_REF_C01",
+        "M_REF_C02",
+        "M_REF_C03",
+        "M_REF_L03",
+        "M_REF_STYLE01"
+      ],
+      "generate_first_frame": true,
+      "generate_last_frame_target": false,
+      "capture_actual_tail_frame": false
+    },
+    {
+      "segment_id": "SEG005",
+      "first_frame_media_id": "M_FIRST_SEG005",
+      "last_frame_target_media_id": null,
+      "actual_tail_frame_media_id": null,
+      "reference_media_ids": [
+        "M_REF_C01",
+        "M_REF_C02",
+        "M_REF_L03",
+        "M_REF_L04",
+        "M_REF_STYLE01"
+      ],
+      "generate_first_frame": true,
+      "generate_last_frame_target": false,
+      "capture_actual_tail_frame": false
+    },
+    {
+      "segment_id": "SEG006",
+      "first_frame_media_id": "M_FIRST_SEG006",
+      "last_frame_target_media_id": null,
+      "actual_tail_frame_media_id": "M_TAIL_SEG006",
+      "reference_media_ids": [
+        "M_REF_C01",
+        "M_REF_L04",
+        "M_REF_STYLE01"
+      ],
+      "generate_first_frame": true,
+      "generate_last_frame_target": false,
+      "capture_actual_tail_frame": true
+    },
+    {
+      "segment_id": "SEG007",
+      "first_frame_media_id": null,
+      "last_frame_target_media_id": null,
+      "actual_tail_frame_media_id": null,
+      "reference_media_ids": [
+        "M_REF_C01",
+        "M_REF_L04",
+        "M_REF_STYLE01"
+      ],
+      "generate_first_frame": false,
+      "generate_last_frame_target": false,
+      "capture_actual_tail_frame": false
+    }
+  ],
+  "image_jobs": [
+    {
+      "job_id": "JOB_FIRST_SEG001",
+      "type": "image_generation",
+      "role": "first_frame",
+      "related_segments": [
+        "SEG001"
+      ],
+      "prompt": "Cinematic 16:9 first frame for video generation. Interior of a modern mirrored elevator, medium shot locked to the approved static camera: C01 (young woman, facial features and hairstyle exactly as character reference, wearing her beige trench coat, carrying a black handbag) stands centered in the elevator facing the look-at-me mirror composition, calm baseline expression; C02 positioned behind her shoulder as secondary reflected figure. Warm overhead elevator lighting with the elevator door light gradient visible along the frame edge; clean spatial relationships between the two figures and the mirrored wall. Style consistent with the style reference. Do not copy background, composition, or pose from character references; identity and wardrobe only.",
+      "negative_prompt": "different faces, altered hairstyle, wrong coat color, missing handbag, extra people, distorted anatomy, watermark, text, low resolution, duplicate clothing drift",
+      "output_media_id": "M_FIRST_SEG001",
+      "status": "pending"
+    },
+    {
+      "job_id": "JOB_FIRST_SEG003",
+      "type": "image_generation",
+      "role": "first_frame",
+      "related_segments": [
+        "SEG003"
+      ],
+      "prompt": "Cinematic 16:9 first frame for video generation. Shot S02 opening frame: C01 (identity, hairstyle and facial features from character reference; beige trench coat, black handbag) stands at the elevator threshold as the door opens, facing the correct movement direction out of the elevator; C02 remains inside near the mirrored wall, partially in frame. Door light continuity: bright hallway light streaming through the opening door matches the elevator interior brightness relationship of the previous shot end state. Locked camera angle and composition per approved Shot IR for S02. Do not copy background or pose from character references.",
+      "negative_prompt": "wrong movement direction, reversed light direction, closed door state, changed coat color, missing handbag, different faces, watermark, text, added characters",
+      "output_media_id": "M_FIRST_SEG003",
+      "status": "pending"
+    },
+    {
+      "job_id": "JOB_FIRST_SEG004",
+      "type": "image_generation",
+      "role": "first_frame",
+      "related_segments": [
+        "SEG004"
+      ],
+      "prompt": "Cinematic 16:9 first frame for video generation. Shot S03 opening frame: C01 (identity from character reference; beige trench coat, black handbag) and C02 configured in approved blocking with C03 at the new composition; locked static camera per approved Shot IR. Consistent hairstyle and facial identity across all three figures. Do not infer wardrobe details not specified. Do not copy background or pose from character references; identity only.",
+      "negative_prompt": "extra characters, missing C03, changed blocking, distorted hands, inconsistent hairstyle, watermark, text, camera tilt",
+      "output_media_id": "M_FIRST_SEG004",
+      "status": "pending"
+    },
+    {
+      "job_id": "JOB_FIRST_SEG005",
+      "type": "image_generation",
+      "role": "first_frame",
+      "related_segments": [
+        "SEG005"
+      ],
+      "prompt": "Cinematic 16:9 first frame for video generation. Shot S04 opening frame with changed visual focus: C01 (identity from character reference; beige trench coat, black handbag) and C02 repositioned per approved Shot IR blocking, locked camera angle and composition, consistent light relationship with the preceding shot end state. Do not copy background or pose from character references.",
+      "negative_prompt": "focus on wrong subject, changed camera height, additional people, missing handbag, inconsistent wardrobe, watermark, text",
+      "output_media_id": "M_FIRST_SEG005",
+      "status": "pending"
+    },
+    {
+      "job_id": "JOB_FIRST_SEG006",
+      "type": "image_generation",
+      "role": "first_frame",
+      "related_segments": [
+        "SEG006"
+      ],
+      "prompt": "Cinematic 16:9 first frame for video generation. Shot S05 opening frame in the kitchen location: C01 (identity from character reference; beige trench coat, black handbag) positioned per approved Shot IR blocking against the kitchen environment layout from the location reference, locked camera angle and composition. Correct movement direction for her entry consistent with prior shot end state. Do not copy background or pose from character references; identity and wardrobe only.",
+      "negative_prompt": "hallway or elevator environment, wrong room layout, wrong movement direction, missing trench coat, missing handbag, changed hairstyle, watermark, text",
+      "output_media_id": "M_FIRST_SEG006",
+      "status": "pending"
+    },
+    {
+      "job_id": "JOB_REF_C01",
+      "type": "image_generation",
+      "role": "character_reference",
+      "related_segments": [],
+      "prompt": "Character reference for C01: neutral studio portrait, full-body 3/4 view plus face detail, consistent facial features and hairstyle, wearing beige trench coat and carrying a black handbag. Plain neutral background so the model does not inherit clothing-only-adjacent scenery. Identity reference only.",
+      "negative_prompt": "scene background, pose guidance, artistic lighting, multiple people, watermark, text, altered face",
+      "output_media_id": "M_REF_C01",
+      "status": "pending"
+    },
+    {
+      "job_id": "JOB_REF_C02",
+      "type": "image_generation",
+      "role": "character_reference",
+      "related_segments": [],
+      "prompt": "Character reference for C02: neutral studio portrait consistent with the approved C02 identity sheet, full-body 3/4 view plus face detail, neutral background. Identity reference only; do not impose any shot pose or scene lighting.",
+      "negative_prompt": "scene background, pose direction, different person, watermark, text, multiple people",
+      "output_media_id": "M_REF_C02",
+      "status": "pending"
+    },
+    {
+      "job_id": "JOB_REF_C03",
+      "type": "image_generation",
+      "role": "character_reference",
+      "related_segments": [],
+      "prompt": "Character reference for C03: neutral studio portrait consistent with approved C03 identity sheet, full-body 3/4 view plus face detail, neutral background. Identity reference only.",
+      "negative_prompt": "scene background, pose direction, different person, watermark, text, multiple people",
+      "output_media_id": "M_REF_C03",
+      "status": "pending"
+    },
+    {
+      "job_id": "JOB_REF_L01",
+      "type": "image_generation",
+      "role": "location_reference",
+      "related_segments": [],
+      "prompt": "Location reference for the elevator interior: empty modern mirrored elevator, warm overhead light, clean wall panel layout, no people. Environment reference only.",
+      "negative_prompt": "people, monsters, clutter, exterior view, watermark, text",
+      "output_media_id": "M_REF_L01",
+      "status": "pending"
+    },
+    {
+      "job_id": "JOB_REF_L02",
+      "type": "image_generation",
+      "role": "location_reference",
+      "related_segments": [],
+      "prompt": "Location reference for the elevator threshold / door opening view: empty doorway and hallway light spill consistent with the approved door-light continuity state, no people. Environment reference only.",
+      "negative_prompt": "people, closed door only, window, clutter, watermark, text",
+      "output_media_id": "M_REF_L02",
+      "status": "pending"
+    },
+    {
+      "job_id": "JOB_REF_L03",
+      "type": "image_generation",
+      "role": "location_reference",
+      "related_segments": [],
+      "prompt": "Location reference for the approved S03/S04 intermediate scene environment: empty background consistent with approved Story IR environment features only, no people, no inferred furniture beyond documented features.",
+      "negative_prompt": "people, invented furniture, clutter, watermark, text",
+      "output_media_id": "M_REF_L03",
+      "status": "pending"
+    },
+    {
+      "job_id": "JOB_REF_L04",
+      "type": "image_generation",
+      "role": "location_reference",
+      "related_segments": [],
+      "prompt": "Location reference for the kitchen environment: empty kitchen matching the approved Story IR layout and fixture list, no people, no guessed decor.",
+      "negative_prompt": "people, different room type, invented appliances, watermark, text",
+      "output_media_id": "M_REF_L04",
+      "status": "pending"
+    },
+    {
+      "job_id": "JOB_REF_STYLE01",
+      "type": "image_generation",
+      "role": "style_reference",
+      "related_segments": [],
+      "prompt": "Style reference plate: cinematic color palette, lighting temperature, grain, and contrast treatment approved for this piece. Abstract, no subject matter.",
+      "negative_prompt": "subjects, people, logo, watermark, text",
+      "output_media_id": "M_REF_STYLE01",
+      "status": "pending"
+    }
+  ],
+  "media_manifest": {
+    "status": "draft",
+    "supports_mixed_keyframes_and_references": true,
+    "media": [
+      {
+        "id": "M_FIRST_SEG001",
+        "type": "image",
+        "role": "first_frame",
+        "status": "pending",
+        "source_type": "generated",
+        "source_job": "JOB_FIRST_SEG001",
+        "related_segments": [
+          "SEG001"
+        ],
+        "use_for": [
+          "entry_anchor"
+        ],
+        "entity_bindings": {
+          "character_ids": [
+            "C01",
+            "C02"
+          ],
+          "location_ids": [
+            "L01"
+          ]
+        },
+        "provenance": {
+          "source_type": "generated",
+          "source_id": "JOB_FIRST_SEG001"
+        }
+      },
+      {
+        "id": "M_TAIL_SEG001",
+        "type": "frame",
+        "role": "actual_tail_frame",
+        "status": "runtime_pending",
+        "source_type": "extracted",
+        "source_job": null,
+        "related_segments": [
+          "SEG001"
+        ],
+        "use_for": [
+          "runtime_continuation_entry"
+        ],
+        "entity_bindings": {
+          "character_ids": [
+            "C01",
+            "C02"
+          ],
+          "location_ids": [
+            "L01"
+          ]
+        },
+        "provenance": {
+          "source_type": "extracted",
+          "source_id": null
+        },
+        "derived_from_segment_id": "SEG001",
+        "extraction_status": "planned"
+      },
+      {
+        "id": "M_FIRST_SEG003",
+        "type": "image",
+        "role": "first_frame",
+        "status": "pending",
+        "source_type": "generated",
+        "source_job": "JOB_FIRST_SEG003",
+        "related_segments": [
+          "SEG003"
+        ],
+        "use_for": [
+          "entry_anchor"
+        ],
+        "entity_bindings": {
+          "character_ids": [
+            "C01",
+            "C02"
+          ],
+          "location_ids": [
+            "L02",
+            "L03"
+          ]
+        },
+        "provenance": {
+          "source_type": "generated",
+          "source_id": "JOB_FIRST_SEG003"
+        }
+      },
+      {
+        "id": "M_FIRST_SEG004",
+        "type": "image",
+        "role": "first_frame",
+        "status": "pending",
+        "source_type": "generated",
+        "source_job": "JOB_FIRST_SEG004",
+        "related_segments": [
+          "SEG004"
+        ],
+        "use_for": [
+          "entry_anchor"
+        ],
+        "entity_bindings": {
+          "character_ids": [
+            "C01",
+            "C02",
+            "C03"
+          ],
+          "location_ids": [
+            "L03"
+          ]
+        },
+        "provenance": {
+          "source_type": "generated",
+          "source_id": "JOB_FIRST_SEG004"
+        }
+      },
+      {
+        "id": "M_FIRST_SEG005",
+        "type": "image",
+        "role": "first_frame",
+        "status": "pending",
+        "source_type": "generated",
+        "source_job": "JOB_FIRST_SEG005",
+        "related_segments": [
+          "SEG005"
+        ],
+        "use_for": [
+          "entry_anchor"
+        ],
+        "entity_bindings": {
+          "character_ids": [
+            "C01",
+            "C02"
+          ],
+          "location_ids": [
+            "L03",
+            "L04"
+          ]
+        },
+        "provenance": {
+          "source_type": "generated",
+          "source_id": "JOB_FIRST_SEG005"
+        }
+      },
+      {
+        "id": "M_FIRST_SEG006",
+        "type": "image",
+        "role": "first_frame",
+        "status": "pending",
+        "source_type": "generated",
+        "source_job": "JOB_FIRST_SEG006",
+        "related_segments": [
+          "SEG006"
+        ],
+        "use_for": [
+          "entry_anchor"
+        ],
+        "entity_bindings": {
+          "character_ids": [
+            "C01"
+          ],
+          "location_ids": [
+            "L04"
+          ]
+        },
+        "provenance": {
+          "source_type": "generated",
+          "source_id": "JOB_FIRST_SEG006"
+        }
+      },
+      {
+        "id": "M_TAIL_SEG006",
+        "type": "frame",
+        "role": "actual_tail_frame",
+        "status": "runtime_pending",
+        "source_type": "extracted",
+        "source_job": null,
+        "related_segments": [
+          "SEG006"
+        ],
+        "use_for": [
+          "runtime_continuation_entry"
+        ],
+        "entity_bindings": {
+          "character_ids": [
+            "C01"
+          ],
+          "location_ids": [
+            "L04"
+          ]
+        },
+        "provenance": {
+          "source_type": "extracted",
+          "source_id": null
+        },
+        "derived_from_segment_id": "SEG006",
+        "extraction_status": "planned"
+      },
+      {
+        "id": "M_REF_C01",
+        "type": "image",
+        "role": "character_reference",
+        "status": "pending",
+        "source_type": "generated",
+        "source_job": "JOB_REF_C01",
+        "related_segments": [
+          "SEG001",
+          "SEG002",
+          "SEG003",
+          "SEG004",
+          "SEG005",
+          "SEG006",
+          "SEG007"
+        ],
+        "use_for": [
+          "identity_reference"
+        ],
+        "entity_bindings": {
+          "character_ids": [
+            "C01"
+          ],
+          "location_ids": []
+        },
+        "provenance": {
+          "source_type": "generated",
+          "source_id": "JOB_REF_C01"
+        }
+      },
+      {
+        "id": "M_REF_C02",
+        "type": "image",
+        "role": "character_reference",
+        "status": "pending",
+        "source_type": "generated",
+        "source_job": "JOB_REF_C02",
+        "related_segments": [
+          "SEG001",
+          "SEG002",
+          "SEG003",
+          "SEG004",
+          "SEG005"
+        ],
+        "use_for": [
+          "identity_reference"
+        ],
+        "entity_bindings": {
+          "character_ids": [
+            "C02"
+          ],
+          "location_ids": []
+        },
+        "provenance": {
+          "source_type": "generated",
+          "source_id": "JOB_REF_C02"
+        }
+      },
+      {
+        "id": "M_REF_C03",
+        "type": "image",
+        "role": "character_reference",
+        "status": "pending",
+        "source_type": "generated",
+        "source_job": "JOB_REF_C03",
+        "related_segments": [
+          "SEG004"
+        ],
+        "use_for": [
+          "identity_reference"
+        ],
+        "entity_bindings": {
+          "character_ids": [
+            "C03"
+          ],
+          "location_ids": []
+        },
+        "provenance": {
+          "source_type": "generated",
+          "source_id": "JOB_REF_C03"
+        }
+      },
+      {
+        "id": "M_REF_L01",
+        "type": "image",
+        "role": "location_reference",
+        "status": "pending",
+        "source_type": "generated",
+        "source_job": "JOB_REF_L01",
+        "related_segments": [
+          "SEG001",
+          "SEG002"
+        ],
+        "use_for": [
+          "location_reference"
+        ],
+        "entity_bindings": {
+          "character_ids": [],
+          "location_ids": [
+            "L01"
+          ]
+        },
+        "provenance": {
+          "source_type": "generated",
+          "source_id": "JOB_REF_L01"
+        }
+      },
+      {
+        "id": "M_REF_L02",
+        "type": "image",
+        "role": "location_reference",
+        "status": "pending",
+        "source_type": "generated",
+        "source_job": "JOB_REF_L02",
+        "related_segments": [
+          "SEG001",
+          "SEG002",
+          "SEG003"
+        ],
+        "use_for": [
+          "location_reference"
+        ],
+        "entity_bindings": {
+          "character_ids": [],
+          "location_ids": [
+            "L02"
+          ]
+        },
+        "provenance": {
+          "source_type": "generated",
+          "source_id": "JOB_REF_L02"
+        }
+      },
+      {
+        "id": "M_REF_L03",
+        "type": "image",
+        "role": "location_reference",
+        "status": "pending",
+        "source_type": "generated",
+        "source_job": "JOB_REF_L03",
+        "related_segments": [
+          "SEG003",
+          "SEG004",
+          "SEG005"
+        ],
+        "use_for": [
+          "location_reference"
+        ],
+        "entity_bindings": {
+          "character_ids": [],
+          "location_ids": [
+            "L03"
+          ]
+        },
+        "provenance": {
+          "source_type": "generated",
+          "source_id": "JOB_REF_L03"
+        }
+      },
+      {
+        "id": "M_REF_L04",
+        "type": "image",
+        "role": "location_reference",
+        "status": "pending",
+        "source_type": "generated",
+        "source_job": "JOB_REF_L04",
+        "related_segments": [
+          "SEG005",
+          "SEG006",
+          "SEG007"
+        ],
+        "use_for": [
+          "location_reference"
+        ],
+        "entity_bindings": {
+          "character_ids": [],
+          "location_ids": [
+            "L04"
+          ]
+        },
+        "provenance": {
+          "source_type": "generated",
+          "source_id": "JOB_REF_L04"
+        }
+      },
+      {
+        "id": "M_REF_STYLE01",
+        "type": "image",
+        "role": "style_reference",
+        "status": "pending",
+        "source_type": "generated",
+        "source_job": "JOB_REF_STYLE01",
+        "related_segments": [
+          "SEG001",
+          "SEG002",
+          "SEG003",
+          "SEG004",
+          "SEG005",
+          "SEG006",
+          "SEG007"
+        ],
+        "use_for": [
+          "style_reference"
+        ],
+        "entity_bindings": {
+          "character_ids": [],
+          "location_ids": []
+        },
+        "provenance": {
+          "source_type": "generated",
+          "source_id": "JOB_REF_STYLE01"
+        }
+      }
+    ]
+  },
+  "warnings": [],
+  "errors": []
+}

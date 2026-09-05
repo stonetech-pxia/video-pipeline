@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openclaw.local/schemas/h3-draft-prompts.schema.json",
+  "title": "MiniMax H3 Draft Video Prompts",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "status", "draft_video_prompts", "pending_media_ids", "errors"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "status": { "enum": ["draft", "compile_error"] },
+    "draft_video_prompts": { "type": "array", "items": { "$ref": "#/$defs/draftPrompt" } },
+    "pending_media_ids": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/id" },
+      "uniqueItems": true
+    },
+    "errors": { "type": "array", "items": { "$ref": "#/$defs/diagnostic" } }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "status": { "const": "draft" } }, "required": ["status"] },
+      "then": {
+        "properties": {
+          "draft_video_prompts": { "minItems": 1 },
+          "errors": { "maxItems": 0 }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "status": { "const": "compile_error" } }, "required": ["status"] },
+      "then": {
+        "properties": {
+          "draft_video_prompts": { "maxItems": 0 },
+          "pending_media_ids": { "maxItems": 0 },
+          "errors": { "minItems": 1 }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]*$" },
+    "nullableId": { "oneOf": [{ "$ref": "#/$defs/id" }, { "type": "null" }] },
+    "diagnostic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "path", "message", "segment_id"],
+      "properties": {
+        "code": { "type": "string", "minLength": 1 },
+        "path": { "type": "string" },
+        "message": { "type": "string", "minLength": 1 },
+        "segment_id": { "$ref": "#/$defs/nullableId" }
+      }
+    },
+    "runtimeEntryBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "previous_segment_id", "actual_tail_frame_media_id"],
+      "properties": {
+        "kind": { "const": "previous_actual_tail_frame" },
+        "previous_segment_id": { "$ref": "#/$defs/id" },
+        "actual_tail_frame_media_id": { "$ref": "#/$defs/id" }
+      }
+    },
+    "referenceBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "media_id", "role", "preserve", "do_not_copy"],
+      "properties": {
+        "label": { "type": "string", "pattern": "^(Picture|Video|Audio) [1-9][0-9]*$" },
+        "media_id": { "$ref": "#/$defs/id" },
+        "role": { "enum": ["character_reference", "location_reference", "style_reference", "video_reference", "audio_reference"] },
+        "preserve": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+        "do_not_copy": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true }
+      }
+    },
+    "plannedControls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["entry_source", "last_frame_target", "reference_media"],
+      "properties": {
+        "entry_source": { "enum": ["none", "planned_first_frame", "previous_segment_actual_tail"] },
+        "last_frame_target": { "$ref": "#/$defs/nullableId" },
+        "reference_media": { "type": "array", "items": { "$ref": "#/$defs/id" }, "uniqueItems": true }
+      }
+    },
+    "symbolicMediaMapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["entry_frame", "entry_frame_source_type", "runtime_entry_binding", "last_frame_target", "expected_actual_tail_frame", "reference_media", "reference_bindings", "unresolved_media_ids"],
+      "properties": {
+        "entry_frame": { "$ref": "#/$defs/nullableId" },
+        "entry_frame_source_type": { "enum": ["none", "planned_media", "previous_segment_actual_tail"] },
+        "runtime_entry_binding": { "oneOf": [{ "$ref": "#/$defs/runtimeEntryBinding" }, { "type": "null" }] },
+        "last_frame_target": { "$ref": "#/$defs/nullableId" },
+        "expected_actual_tail_frame": { "$ref": "#/$defs/nullableId" },
+        "reference_media": { "type": "array", "items": { "$ref": "#/$defs/id" }, "uniqueItems": true },
+        "reference_bindings": { "type": "array", "items": { "$ref": "#/$defs/referenceBinding" } },
+        "unresolved_media_ids": { "type": "array", "items": { "$ref": "#/$defs/id" }, "uniqueItems": true }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "entry_frame_source_type": { "const": "planned_media" } }, "required": ["entry_frame_source_type"] },
+          "then": { "properties": { "entry_frame": { "$ref": "#/$defs/id" }, "runtime_entry_binding": { "type": "null" } } }
+        },
+        {
+          "if": { "properties": { "entry_frame_source_type": { "const": "previous_segment_actual_tail" } }, "required": ["entry_frame_source_type"] },
+          "then": { "properties": { "entry_frame": { "type": "null" }, "runtime_entry_binding": { "$ref": "#/$defs/runtimeEntryBinding" } } }
+        },
+        {
+          "if": { "properties": { "entry_frame_source_type": { "const": "none" } }, "required": ["entry_frame_source_type"] },
+          "then": { "properties": { "entry_frame": { "type": "null" }, "runtime_entry_binding": { "type": "null" } } }
+        }
+      ]
+    },
+    "draftPrompt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["segment_id", "shot_ids", "shot_bindings", "start", "end", "local_duration", "prompt_schema", "execution_node", "planned_controls", "prompt", "symbolic_media_mapping"],
+      "properties": {
+        "segment_id": { "$ref": "#/$defs/id" },
+        "shot_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "shot_bindings": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["prompt_shot_index", "shot_id", "local_start"],
+            "properties": {
+              "prompt_shot_index": { "type": "integer", "minimum": 1 },
+              "shot_id": { "$ref": "#/$defs/id" },
+              "local_start": { "type": "integer", "minimum": 0 }
+            }
+          }
+        },
+        "start": { "type": "integer", "minimum": 0 },
+        "end": { "type": "integer", "minimum": 4 },
+        "local_duration": { "type": "integer", "minimum": 4, "maximum": 15 },
+        "prompt_schema": { "const": "unified_multimodal" },
+        "execution_node": { "const": "MiniMax H3 Unified to Video" },
+        "planned_controls": { "$ref": "#/$defs/plannedControls" },
+        "prompt": { "type": "string", "minLength": 1, "maxLength": 7000 },
+        "symbolic_media_mapping": { "$ref": "#/$defs/symbolicMediaMapping" }
+      }
+    }
+  }
+}

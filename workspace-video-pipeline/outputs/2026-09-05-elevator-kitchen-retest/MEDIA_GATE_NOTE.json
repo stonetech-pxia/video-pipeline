@@ -1,0 +1,7 @@
+{
+  "media_gate_draft_attempt": "MEDIA_GATE_DRAFT.json",
+  "report_id": "52c01e4707efaa1a387689fe7c86123f1b6f3a3e381621b84a7bbfc428c575d8",
+  "status": "FAIL",
+  "code": "manifest_not_compile_ready",
+  "note": "deterministic evidence stored in final-result gate trace file"
+}

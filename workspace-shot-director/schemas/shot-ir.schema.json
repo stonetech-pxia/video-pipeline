@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openclaw.local/schemas/shot-ir.schema.json",
+  "title": "Shot IR",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "status",
+    "duration",
+    "aspect_ratio",
+    "visual_style",
+    "shots",
+    "overall_soundscape",
+    "music",
+    "continuity_exit_state",
+    "warnings",
+    "errors"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.1" },
+    "status": { "enum": ["complete", "partial"] },
+    "duration": { "type": "integer", "minimum": 1 },
+    "aspect_ratio": { "type": ["string", "null"] },
+    "visual_style": { "type": "object" },
+    "shots": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/shot" }
+    },
+    "overall_soundscape": { "type": "object" },
+    "music": { "type": "object" },
+    "continuity_exit_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["by_shot"],
+      "properties": {
+        "by_shot": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["shot_id", "staging", "wardrobe_state", "held_props", "scene_state", "lighting_state"],
+            "properties": {
+              "shot_id": { "type": "string", "minLength": 1 },
+              "staging": { "type": "string", "minLength": 1 },
+              "wardrobe_state": { "type": "string" },
+              "held_props": { "type": "array", "items": { "type": "string" } },
+              "scene_state": { "type": "string" },
+              "lighting_state": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "warnings": { "type": "array" },
+    "errors": { "type": "array" }
+  },
+  "$defs": {
+    "continuityLabels": {
+      "type": "object",
+      "required": [
+        "boundary_type",
+        "camera_continuity",
+        "action_continuity",
+        "framing_continuity",
+        "scene_continuity",
+        "recomposition_needed"
+      ],
+      "properties": {
+        "boundary_type": {
+          "enum": ["shot_change", "same_shot_continuation"]
+        },
+        "camera_continuity": {
+          "enum": ["continuous", "changed"]
+        },
+        "action_continuity": {
+          "enum": ["continuous", "discontinuous"]
+        },
+        "framing_continuity": {
+          "enum": ["same", "changed"]
+        },
+        "scene_continuity": {
+          "enum": ["same_scene", "scene_change", "time_change", "location_change"]
+        },
+        "recomposition_needed": { "type": "boolean" }
+      }
+    },
+    "splitHint": {
+      "allOf": [
+        { "$ref": "#/$defs/continuityLabels" },
+        {
+          "type": "object",
+          "required": ["id", "start", "end"],
+          "properties": {
+            "id": { "type": "string", "minLength": 1 },
+            "start": { "type": "number", "minimum": 0 },
+            "end": { "type": "number", "exclusiveMinimum": 0 },
+            "action_phase": { "type": "string" }
+          }
+        }
+      ]
+    },
+    "shot": {
+      "allOf": [
+        { "$ref": "#/$defs/continuityLabels" },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "start",
+            "end",
+            "source_beat_ids",
+            "dramatic_purpose",
+            "framing",
+            "angle",
+            "camera_position",
+            "camera_motion",
+            "focus",
+            "blocking",
+            "subject_action",
+            "visible_emotion",
+            "environment",
+            "lighting",
+            "dialogue_ids",
+            "dialogue",
+            "diegetic_audio",
+            "transition",
+            "split_hints",
+            "boundary_risk",
+            "composition_control"
+          ],
+          "properties": {
+            "id": { "type": "string", "minLength": 1 },
+            "start": { "type": "number", "minimum": 0 },
+            "end": { "type": "number", "exclusiveMinimum": 0 },
+            "source_beat_ids": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "dramatic_purpose": { "type": "string" },
+            "framing": { "type": "string" },
+            "angle": { "type": "string" },
+            "camera_position": { "type": "string" },
+            "camera_motion": { "type": "string" },
+            "focus": { "type": "string" },
+            "blocking": { "type": "string" },
+            "subject_action": { "type": "string" },
+            "visible_emotion": { "type": "string" },
+            "environment": { "type": "string" },
+            "lighting": { "type": "string" },
+            "dialogue_ids": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "dialogue": { "type": "string" },
+            "diegetic_audio": { "type": "string" },
+            "transition": { "type": "string" },
+            "split_hints": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/splitHint" }
+            },
+            "boundary_risk": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["state_transfer_load", "reason"],
+              "properties": {
+                "state_transfer_load": { "type": "integer", "minimum": 0, "maximum": 10 },
+                "reason": { "type": "string", "minLength": 1 }
+              }
+            },
+            "composition_control": { "enum": ["critical", "normal", "free"] }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "run_id": "elevator-kitchen-retest-20260905",
+  "updated_at": "2026-09-05T10:22:44+0200",
+  "state": "MEDIA_WAIT",
+  "stages": {
+    "story": {
+      "state": "PASS",
+      "gate": "STORY_GATE.json",
+      "report_id": "c03204f86a21eb9d4f20790d14b5e807126d8a9acc6d97d3ba4d13a21867c7b4"
+    },
+    "shot": {
+      "state": "PASS_REPAIRED",
+      "attempts": [
+        {
+          "n": 1,
+          "note": "attempt-0 parse defect ×3 unclosed strings + unknown source_beat_ids; repair attempt 1 output corrupt; reinstated attempt-0 with formatting-only repair"
+        }
+      ],
+      "gate": "SHOT_GATE.json",
+      "report_id": "2fe6721d2c56f6606ee0cbf6108915d15d3ab1e00d790c004e909d47fe8915a2"
+    },
+    "frame": {
+      "state": "PASS_REPAIRED",
+      "attempts": [
+        {
+          "n": 1,
+          "note": "schema shape violations; repair attempt 1 (run 596f51bd) + type enum fix"
+        }
+      ],
+      "gate": "FRAME_GATE.json",
+      "report_id": "8c4a4a0ee25678f17e4ef5511e5ce607f43708873f3f1b8b4d03ab09249e8810"
+    },
+    "media": {
+      "state": "MEDIA_WAIT",
+      "gate_attempt": "MEDIA_GATE_DRAFT.json",
+      "report_id": "52c01e4707efaa1a387689fe7c86123f1b6f3a3e381621b84a7bbfc428c575d8",
+      "reason": "manifest draft; 13 static assets pending; compile blocked until resolved"
+    },
+    "compile": "pending",
+    "validate": "pending",
+    "result": {
+      "state": "PASS",
+      "gate": "RESULT_GATE.json",
+      "report_id": "47b3d47bb0296894503922b05b534c014d8665fcd85e532a863345c470c8f842"
+    }
+  },
+  "failures_logged": [
+    {
+      "stage": "shot",
+      "kind": "content_repair",
+      "fingerprint": "FORMAT/unclosed_string x3 + SHOT_DESIGN/unknown_source_beat x3",
+      "attempts": 2,
+      "resolutions": [
+        "JSON string termination ×3 (attempt-0 artifact)",
+        "source_beat_ids reset to B02/B03/B05"
+      ]
+    },
+    {
+      "stage": "frame",
+      "kind": "content_repair",
+      "attempts": 2,
+      "resolutions": [
+        "schema-shape repair by frame-designer",
+        "image_jobs.type enum corrected to image_generation"
+      ]
+    }
+  ]
+}

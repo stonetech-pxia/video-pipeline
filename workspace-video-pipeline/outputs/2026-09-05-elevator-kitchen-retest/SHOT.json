@@ -1,0 +1,260 @@
+{
+  "schema_version": "1.1",
+  "status": "complete",
+  "duration": 36,
+  "aspect_ratio": "16:9",
+  "visual_style": {
+    "style": "现代中国城市住宅,写实电影感,克制自然,不夸张",
+    "palette": "傍晚柔和的现实色调,电梯冷白光,走廊暖顶灯,家中厨房暖黄光",
+    "reference": "当代中国都市生活质感,自然光线,轻微手持感"
+  },
+  "shots": [
+    {
+      "id": "S01",
+      "start": 0,
+      "end": 10,
+      "source_beat_ids": [
+        "B01"
+      ],
+      "dramatic_purpose": "电梯内偶遇确立回家期盼,并传递丈夫已在家这一关键信息",
+      "framing": "中景两人构图,女主居画面左侧,邻居居右稍近镜头",
+      "angle": "平视",
+      "camera_position": "电梯轿厢内角落,略高于肩高的固定机位",
+      "camera_motion": "静止,轻微轿厢运行振动感",
+      "focus": "两人面部,浅景深弱化轿厢金属背景",
+      "blocking": "女主拎黑色手提包站电梯内侧面向邻居,邻居靠门边,两人保持自然社交距离",
+      "subject_action": "邻居先开口询问,女主应答并同时略看向楼层数字方向",
+      "visible_emotion": "日常平静,女主听到邻居第三句话时眼底浮起轻微期盼",
+      "environment": "现代住宅楼电梯轿厢,金属壁面与楼层数字显示",
+      "lighting": "轿厢顶部冷白荧光,均匀,无戏剧化阴影",
+      "dialogue_ids": [
+        "D01",
+        "D02",
+        "D03",
+        "D04"
+      ],
+      "dialogue": "邻居:“刚下班?” 女主:“嗯,今天有点晚。” 邻居:“你家那位已经回来啦。” 女主:“是吗?那我得快点。”",
+      "diegetic_audio": "电梯运行低鸣与楼层提示音,两声简短电梯门机械声",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "segments": [
+        {
+          "id": "S01-seg-a",
+          "start": 0,
+          "end": 5,
+          "hint": "前两句对话,盒式两人中景",
+          "boundary_type": "same_shot_continuation",
+          "camera_continuity": "continuous",
+          "action_continuity": "continuous",
+          "framing_continuity": "same",
+          "scene_continuity": "same_scene",
+          "recomposition_needed": false
+        },
+        {
+          "id": "S01-seg-b",
+          "start": 5,
+          "end": 10,
+          "hint": "后两句对话与楼层到达提示,同一机位同一构图",
+          "boundary_type": "same_shot_continuation",
+          "camera_continuity": "continuous",
+          "action_continuity": "continuous",
+          "framing_continuity": "same",
+          "scene_continuity": "same_scene",
+          "recomposition_needed": false
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "start": 10,
+      "end": 14,
+      "source_beat_ids": [
+        "B02"
+      ],
+      "dramatic_purpose": "电梯到达楼层,女主急切出梯,完成电梯到走廊的空间过渡",
+      "framing": "中景,电梯门内视角和门框构图",
+      "angle": "平视",
+      "camera_position": "走廊一侧正对电梯门,门框两侧构成画框",
+      "camera_motion": "静止",
+      "focus": "电梯门与走出人物",
+      "blocking": "电梯门滑开,女主率先快步出门面向走廊纵深方向左前,跟出的女邻居出画前带半个身位",
+      "subject_action": "女主加快脚步走出电梯,拎牢手提包,身体前倾",
+      "visible_emotion": "急切,归心",
+      "environment": "电梯门开向住宅楼层走廊,同层住户门前暖顶灯",
+      "lighting": "轿厢冷光渐被走廊暖黄顶灯取代,门开时光线过渡自然",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "电梯到达提示音,门滑轨声,走廊脚步声",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "location_change",
+      "recomposition_needed": true,
+      "segments": []
+    },
+    {
+      "id": "S03",
+      "start": 14,
+      "end": 20,
+      "source_beat_ids": [
+        "B03"
+      ],
+      "dramatic_purpose": "走廊行走至家门口,转向门前完成空间衔接并到达开门位置",
+      "framing": "中景开门过程,画面先跟随女主再到被告家中门前",
+      "angle": "平视",
+      "camera_position": "走廊内手持跟拍,跟随女主行走,随行进方向轻微摆动",
+      "camera_motion": "手持跟随,与女主同速步行移动,贯穿走廊纵深",
+      "focus": "女主背部与手提包",
+      "blocking": "女主自走廊尽头走进画,小步快行至自家门前,插钥匙前稍作停顿, 手提包在右手手腕",
+      "subject_action": "女主沿走廊快步走到门前,取钥匙对准锁孔开始开门",
+      "visible_emotion": "期待,脚步加紧;开门瞬间如释重负",
+      "environment": "傍晚公共走廊,米黄色墙面,门前顶灯与户内漏光",
+      "lighting": "走廊暖黄顶灯为主,门前集中照度与走廊亮区自然衔接",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "走廊脚步回声,邻居入画前无,包面轻晃声,门钥匙金属声",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "segments": []
+    },
+    {
+      "id": "S04",
+      "start": 20,
+      "end": 24,
+      "source_beat_ids": [
+        "B04"
+      ],
+      "dramatic_purpose": "门开后女主走入家内,完成走廊到玄关的光线与空间过渡",
+      "framing": "中景,画面自玄关朝门外看,",
+      "angle": "平视",
+      "camera_position": "玄关内,面向入户门,略低位肩高",
+      "camera_motion": "静止",
+      "focus": "门口光影与女性身形",
+      "blocking": "女主推门入内,手提包放下前的拎持并侧头看向厨房方向",
+      "subject_action": "开门进入,换鞋或放下包前的清洁动作示意,身体转向屋内",
+      "visible_emotion": "轻松如释重负,室内光甫行动作略显迟缓温柔",
+      "environment": "现代公寓玄关,门槛处走廊光与室内暖光交叠",
+      "lighting": "走廊室外光与室内暖黄光在门口自然交叠,门影切出柔和边界",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "门轴声,门锁扣合,厨房远处的轻微锅铲与汤沸声隐约传入",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "location_change",
+      "recomposition_needed": true,
+      "segments": []
+    },
+    {
+      "id": "S05",
+      "start": 24,
+      "end": 36,
+      "source_beat_ids": [
+        "B05"
+      ],
+      "dramatic_purpose": "女主进厨房与丈夫片刻温存,丈夫揭晓备汤惊喜,收束全片暖意",
+      "framing": "中景两人厨房互动,镜头自灶台一侧斜向画面右侧妇人入画",
+      "angle": "平视",
+      "camera_position": "厨房一侧,灶台与餐桌之间,略低视角",
+      "camera_motion": "缓慢手持轻移,轻微呼吸感",
+      "focus": "两人互动与灶台上的汤锅,汤锅略虚",
+      "blocking": "丈夫在灶台前,汤锅在灶上冒着轻汽;女主自玄关走入厨房,先站到他左侧半步,丈夫回头与她对话,汤锅随时可关火",
+      "subject_action": "丈夫先说话,女主提及电梯遇王姐,丈夫回应惊喜意图,女主带轻笑回应;两人目光在汤与彼此之间小范围交接",
+      "visible_emotion": "温馨松弛,家的暖意,轻淡的卷发笑意",
+      "environment": "现代中式公寓厨房,整洁灶台,汤锅冒轻汽,淡黄暖光",
+      "lighting": "室内暖黄主光,灶台操作灯补,出现在汤锅蒸汽处略明亮",
+      "dialogue_ids": [
+        "D05",
+        "D06",
+        "D07",
+        "D08"
+      ],
+      "dialogue": "丈夫:“回来啦?汤马上好。” 女主:“电梯里碰见王姐,她说你早就回来了。” 丈夫:“想给你个惊喜。” 女主:“那我就等着尝了。”",
+      "diegetic_audio": "汤锅轻沸与蒸汽声,厨房拖鞋软步,两人对话气息",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "location_change",
+      "recomposition_needed": true,
+      "segments": [
+        {
+          "id": "S05-seg-a",
+          "start": 24,
+          "end": 30,
+          "hint": "女主入画与前三句对话",
+          "boundary_type": "same_shot_continuation",
+          "camera_continuity": "continuous",
+          "action_continuity": "continuous",
+          "framing_continuity": "same",
+          "scene_continuity": "same_scene",
+          "recomposition_needed": false
+        },
+        {
+          "id": "S05-seg-b",
+          "start": 30,
+          "end": 36,
+          "hint": "丈夫揭晓惊喜与女主笑着回应至温情收束",
+          "boundary_type": "same_shot_continuation",
+          "camera_continuity": "continuous",
+          "action_continuity": "continuous",
+          "framing_continuity": "same",
+          "scene_continuity": "same_scene",
+          "recomposition_needed": false
+        }
+      ]
+    }
+  ],
+  "overall_soundscape": {
+    "base": "现代都市住宅傍晚的日常环境声,克制安静,无夸张配乐",
+    "detail": "电梯机械声,走廊脚步回声,门锁金属声,厨房汤沸与蒸汽声",
+    "principles": "以生活真实音为主,不使用夸张音效或戏剧化提示"
+  },
+  "music": {
+    "presence": "极克制或无配乐",
+    "style": "若有,仅极简钢琴或弦乐铺底,温度克制,不夺对话",
+    "swells": "结尾温情处可极轻微上扬"
+  },
+  "continuity_exit_state": {
+    "characters": [
+      {
+        "id": "C01",
+        "position_facing": "已走入厨房,站丈夫左侧半步,面向灶台与丈夫",
+        "state": "手提包已由拎持转入放下前清洁动作,米色风衣不变,面部发型一致",
+        "props": {
+          "P01": "黑色手提包随身一致",
+          "P02": "钥匙已使用,不再重复出现矛盾"
+        }
+      },
+      {
+        "id": "C03",
+        "position_facing": "丈夫在灶台前,回头面向女主",
+        "state": "着家常衣,汤已将好,随时可关火"
+      }
+    ],
+    "scene": "L04 厨房",
+    "time": "傍晚到家后连续时间",
+    "weather": "不涉及,室内场景",
+    "camera": "厨房侧位手持轻移,呼吸感跟随两人",
+    "framing": "厨房两人中景,汤锅入画偏虚",
+    "screen_direction": "女主自玄关向厨房走方向为从画左入画,贯穿 CC04 一致方向",
+    "lighting_direction": "室内暖黄主光自走廊顶灯与厨房操作灯两侧形成,门口光与走廊自然衔接"
+  },
+  "warnings": [],
+  "errors": []
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "report_id": "2fe6721d2c56f6606ee0cbf6108915d15d3ab1e00d790c004e909d47fe8915a2",
+  "stage": "shot",
+  "status": "PASS",
+  "artifact_hashes": {
+    "artifact": "39e3183a31c4bf9787f32de91d2a1e8887fda41cf7b092fb372ac05b6e1ff19d",
+    "story": "dd835a07fe6a1a82fb5429c514a40848d639f9e49765f425cf157914a653f5df"
+  },
+  "errors": [],
+  "warnings": []
+}
