@@ -1,0 +1,297 @@
+{
+  "schema_version": "1.1",
+  "chunk_id": "K3",
+  "status": "complete",
+  "start": 140,
+  "end": 195,
+  "shots": [
+    {
+      "id": "K3-01",
+      "start": 140,
+      "end": 150,
+      "source_beat_ids": [
+        "B010"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "抵达灯塔，门锁着——第一次落空，建立此处是终点而非可进入之地",
+      "framing": "中景至中近景，周砚在画面右侧占一半，锈门占左侧竖幅，门框边缘切进画框",
+      "angle": "平机位，略仰，与门锁齐眼",
+      "camera_position": "灯塔门正前方一米五，门轴一侧",
+      "camera_motion": "手持轻微游移，周砚走近时镜头缓推半步，随他俯身看锁",
+      "focus": "焦点在门锁的锈蚀挂锁上，随后拉到周砚的头侧剪影",
+      "blocking": "周砚从画面右侧走入，停在门前，伸出一只手抓住挂锁晃了一下，锁纹丝不动；他收回手，退后半步",
+      "subject_action": "周砚抓住锈蚀挂锁用力晃动，锁不开；他抬头看了一眼塔身，后退半步",
+      "visible_emotion": "凝重：下颌收紧，动作由于用力而突然、收回时迟缓",
+      "environment": "独立的圆柱形灯塔，白色涂层大片剥落露出锈斑，生铁门上挂着一只锈死的挂锁与铁链；门前是碎石与干草，背景是灰绿色的海，海风持续",
+      "lighting": "下午，太阳偏西在海面上方向，光从画面左侧来袭；塔身背风面处于暖调阴影中，门与锁被侧光勾出锈蚀质感，云影缓慢掠过",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "持续的强海风，草地被吹动的摩擦声，锁被晃动时干涩的金属哐当声，远处海浪底噪",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "location_change",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 0,
+        "reason": "场景切换，上一场为公路骑行，世界状态重置；仅顺向延续人物及其随身照片"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K3-02",
+      "start": 150,
+      "end": 159,
+      "source_beat_ids": [
+        "B011"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "发现背面墙上的两个名字——它不该在这里，尤其不该刻着他自己的名字",
+      "framing": "远景转中景：先见灯塔背面墙全貌与绕行而来的周砚，人越走越近，墙面在画面中逐渐放大",
+      "angle": "平机位，机位略高于视线，从墙面一侧斜向取景，能看到圆弧墙面终结于此的直墙角",
+      "camera_position": "灯塔背面墙侧前方三米，随人物移动缓移",
+      "camera_motion": "缓慢横向移动跟随周砚走到墙前，人停镜头停",
+      "focus": "焦点始终在周砚，把墙上的刻痕留在画面右缘虚焦处，等他站定时焦点开始向刻痕转移",
+      "blocking": "周砚从画面左侧绕过圆弧塔身背面走入，脚步放缓，停在背风直墙前；墙面下方一人高处有两个歪歪扭扭刻进灰皮的名字，一个是他自己的",
+      "subject_action": "周砚绕到灯塔背面，目光落在墙上两个歪扭的刻名上，脚步越走越慢，最后停住，头微偏，辨认其中一个名字",
+      "visible_emotion": "错愕：脚步突然迟滞，肩膀停住，头略微偏向一侧，嘴微张",
+      "environment": "灯塔背风面直墙：灰白墙皮风化开裂，一人高处有两组孩童刻名，笔画歪扭深浅不一；墙根长着干草，背风处风声减弱",
+      "lighting": "下午偏西的日光从海面一侧掠过圆塔，背面墙处于大面积阴影中，仅墙角处反射的暖光让刻痕的凹陷显出轮廓",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "压低的海风从塔身另一侧吹过形成呜咽声，周砚放轻的脚步声，衣料摩擦声",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 3,
+        "reason": "同一场景内人物从门前转到墙后，需顺向携带其站位、朝向与随身照片"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K3-03",
+      "start": 159,
+      "end": 168,
+      "source_beat_ids": [
+        "B011"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "确认那个名字是他自己的——用插入镜头把「认出」这一刻交给观众",
+      "framing": "插入镜头：浅景深近景，刻痕名字占画幅左半，周砚面部虚焦入画于画面右下三分之一",
+      "angle": "平机位，齐刻痕高度，与墙面几乎平行",
+      "camera_position": "背风直墙前半米，机位略低于刻痕位置",
+      "camera_motion": "极缓推近，从整组刻痕推到其中一个名字上",
+      "focus": "焦点锁定在其中一组歪扭刻名的笔画上，背景的周砚保持虚焦",
+      "blocking": "人高处两个名字并排；周砚的身形从画面右侧虚化入画，凑近观看，目光在两个名字之间来回，停在自己名下的那个名字上",
+      "subject_action": "镜头内只见周砚虚化的侧脸部凑近，呼吸可见，目光在刻痕上来回扫描后固定不动",
+      "visible_emotion": "错愕转为怔住：呼吸变浅，下颌微张在虚焦中仍然可辨",
+      "environment": "同 K3-02 墙面：灰白墙皮剥落的粗糙墙面，孩子刻痕边缘脱落的碎屑散落在墙根",
+      "lighting": "背风阴影中的弱反射暖光，刻痕凹槽底部有高亮反射，边缘有暗影",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "风声减弱后的近景环境音：周砚的呼吸、衣料声，远处海浪底噪",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "同场景同站位下切近景，需顺向衔接周砚凑近站姿、朝向与墙上刻痕的准确位置"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K3-04",
+      "start": 168,
+      "end": 178,
+      "source_beat_ids": [
+        "B012"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "手伸向刻痕——身体先于情绪行动，进入触摸的动作段",
+      "framing": "中近景：周砚在画面右侧，手抬起进入画面中央，墙面刻痕位于左侧远景",
+      "angle": "平机位，从侧后方取景，观众视线与他伸出的手臂同向",
+      "camera_position": "周砚左后方半米，视线越过他的肩到墙上",
+      "camera_motion": "固定机位，只有手持式的呼吸微晃",
+      "focus": "焦点从周砚的肩部拉到手部，随后带到墙上的刻痕",
+      "blocking": "周砚站在背风直墙前，右手从身侧缓缓抬起，手指张开又微微收拢，指尖朝向刻痕移动，尚未触及墙皮",
+      "subject_action": "周砚抬手，手指颤抖着向刻痕移近，在触及之前的最后一刻停了一拍",
+      "visible_emotion": "被记忆触动的怔忡：动作异常缓慢，手臂僵硬，手指在控制不住地轻颤",
+      "environment": "同前：背风墙面、刻痕、墙根碎屑，塔身阴影落在画面下缘",
+      "lighting": "刻痕所在墙体被弱反射暖光照亮，人物手臂从阴影伸向微亮处",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "近景安静：呼吸、衣袖布料摩擦声，风在塔身后侧的低频呜咽",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 6,
+        "reason": "同场景下切中近景以表现伸手动作，需顺向衔接周砚站位、朝向与抬手状态"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K3-05",
+      "start": 178,
+      "end": 189,
+      "source_beat_ids": [
+        "B012"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "指尖顺着歪扭笔画划过去——这一动作必须一气呵成，作为同一未断镜头的延续",
+      "framing": "延续 K3-04 的中近景构图：同一机位，同一画面关系，动作持续",
+      "angle": "平机位，从侧后方取景，越过肩部看向墙面",
+      "camera_position": "周砚左后方半米，与前镜完全一致，延续同一未中断的机位",
+      "camera_motion": "延续同一手持固定视角，机位不重置，构图不变",
+      "focus": "焦点随指尖从近景墙面移到刻痕末端",
+      "blocking": "周砚的指尖落在刻痕起点，沿着歪扭的第一笔缓慢划过，再移到第二个名字，动作轻到指尖几乎只是抚摸",
+      "subject_action": "指尖触碰墙面，顺着笔画的刻痕划过，在歪扭的转折处停顿了一下又继续，划到名字末端停住",
+      "visible_emotion": "被记忆触动的怔忡：指尖动作带着儿童般的模仿感，节奏跟着笔画的顿挫，呼吸变浅",
+      "environment": "同前：背风墙面的粗糙触感、刻痕，墙面凹槽中的碎屑",
+      "lighting": "同前：半反射暗光中的凹槽高光随指尖经过依次亮起",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "指尖划过粗糙墙皮的细微沙沙声，风声，呼吸",
+      "transition": "",
+      "boundary_type": "same_shot_continuation",
+      "camera_continuity": "continuous",
+      "action_continuity": "continuous",
+      "framing_continuity": "same",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": false,
+      "boundary_risk": {
+        "state_transfer_load": 8,
+        "reason": "同一未断镜头切至下一段，指尖接触墙面的动作相位、手位与机位构图都必须精确衔接"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K3-06",
+      "start": 189,
+      "end": 195,
+      "source_beat_ids": [
+        "B012"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "收回手，把这场「被记忆认出」的触碰收在一个可以离场的静止画面上",
+      "framing": "中远景：周砚站在画面中央，背对镜头面向墙，灯塔圆弧塔身与背面墙占据全画幅",
+      "angle": "平机位，从他身后稍高一点的位置，看到他全身与身前整面刻名墙",
+      "camera_position": "灯塔背面墙后方三米",
+      "camera_motion": "完全静止的固定镜头，只有海面云影缓慢移动",
+      "focus": "焦点在中景刻痕区段",
+      "blocking": "周砚站在墙前背对镜头，右手从墙上缓慢收回，垂在身侧，用另一只手隔着外套口袋按了一下里面那张旧照片，静止不动",
+      "subject_action": "周砚收回摸刻痕的手，退半步站定，隔着外套口袋按了一下随身携带的旧照片，保持静止",
+      "visible_emotion": "被记忆触动的怔忡收敛为凝重：背影静止，肩线随呼吸微微起伏",
+      "environment": "同前：背风直墙的两个刻名，塔身圆弧，背风处干草被吹低，远处海面云影",
+      "lighting": "下午低角日光，塔身另一侧来光在墙上留弱反射，云影从海面上飘过",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "强一阵弱一阵的海风，指尖划过墙面留下的遥远沙沙余音，远处海浪",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 8,
+        "reason": "同场景切入背视中远景，需顺向衔接刻痕位置、周砚站位朝向、收回的手势与口袋内旧照片的存在"
+      },
+      "composition_control": "normal"
+    }
+  ],
+  "continuity_exit_state": {
+    "by_shot": [
+      {
+        "shot_id": "K3-01",
+        "staging": "周砚站在灯塔生铁门前，退后半步面向门，背对来路方向的公路",
+        "wardrobe_state": "藏青色工装外套，袖口未卷，衣摆被海风压向前侧",
+        "held_props": [
+          "旧照片（外套内侧口袋中）"
+        ],
+        "scene_state": "灯塔门锁着，锈蚀挂锁仍挂在铁链上，未被打开",
+        "lighting_state": "下午低角偏西日光，塔身背风面处于暖调阴影，云影缓慢掠过"
+      },
+      {
+        "shot_id": "K3-02",
+        "staging": "周砚停在灯塔背面直墙前约一米处，面向墙，背对海面方向",
+        "wardrobe_state": "藏青色工装外套，衣摆被风吹动",
+        "held_props": [
+          "旧照片（外套内侧口袋中）"
+        ],
+        "scene_state": "背面墙上人高处并排两个歪歪扭扭的刻名，刻痕边缘有脱落碎屑",
+        "lighting_state": "背风面阴影中，墙面有弱反射暖光"
+      },
+      {
+        "shot_id": "K3-03",
+        "staging": "周砚贴在背面直墙前半米处，面部凑近刻名，侧身面向墙面，已在辨认其中一个名字",
+        "wardrobe_state": "藏青色工装外套",
+        "held_props": [
+          "旧照片（外套内侧口袋中）"
+        ],
+        "scene_state": "刻痕位置不变，两个名字并排，其中一个为周砚的名字",
+        "lighting_state": "同上：凹槽底部高亮反射，边缘暗影"
+      },
+      {
+        "shot_id": "K3-04",
+        "staging": "周砚站位未变，右手已抬起伸向刻痕，指尖尚未接触墙皮",
+        "wardrobe_state": "藏青色工装外套，右臂衣袖抬起",
+        "held_props": [
+          "旧照片（外套内侧口袋中）"
+        ],
+        "scene_state": "刻痕未受触碰",
+        "lighting_state": "同上"
+      },
+      {
+        "shot_id": "K3-05",
+        "staging": "周砚仍未移动站姿，右手指尖已接触墙面，正沿第一组刻名笔画划向第二组",
+        "wardrobe_state": "藏青色工装外套，衣袖保持抬起",
+        "held_props": [
+          "旧照片（外套内侧口袋中）"
+        ],
+        "scene_state": "第一组名字的刻痕已被指尖划过一遍，墙面粉尘轻微脱落",
+        "lighting_state": "同上"
+      },
+      {
+        "shot_id": "K3-06",
+        "staging": "周砚站在背面直墙前一步处，收回的右手垂在身侧，左手隔着外套内侧口袋按住旧照片，继续面向墙面",
+        "wardrobe_state": "藏青色工装外套，衣袖放回原位，衣摆被风吹动",
+        "held_props": [
+          "旧照片（外套内侧口袋中被左手隔着衣料按住）"
+        ],
+        "scene_state": "两个刻名完整留在墙上，凹槽中有被指尖触过留下的轻微新鲜痕迹",
+        "lighting_state": "下午低角日光，云影在海面上缓慢移动，仍无强烈直射光落在刻痕上"
+      }
+    ]
+  },
+  "warnings": [],
+  "errors": []
+}

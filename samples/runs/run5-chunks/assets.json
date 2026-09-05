@@ -1,0 +1,327 @@
+{
+  "schema_version": "1.0",
+  "characters": {
+    "C01": {
+      "name": "周砚",
+      "image": null,
+      "settled": [],
+      "description": "海边小镇邮局职员，收到寄给自己的无名信，追寻十二年前林家旧案的真相"
+    },
+    "C02": {
+      "name": "面馆老板娘",
+      "image": null,
+      "settled": [],
+      "description": "镇上面馆的老板娘，认出照片上的姑娘是灯塔那边林家的，但想不起她姓什么"
+    },
+    "C03": {
+      "name": "卫生所老医生",
+      "image": null,
+      "settled": [],
+      "description": "镇卫生所值班老医生，知晓林家女儿十二年前出事的事，说「那年你也在」"
+    },
+    "C04": {
+      "name": "母亲",
+      "image": null,
+      "settled": [],
+      "description": "周砚的母亲，坐轮椅，住在省城医院，认他很久才叫出他的名字，向他揭示翻车真相"
+    }
+  },
+  "locations": {
+    "L01": {
+      "name": "海边小镇邮局",
+      "image": null,
+      "settled": [
+        {
+          "shot_id": "K1-01",
+          "text": "Interior, small seaside-town post office sorting room, early morning. One large window on the wall opposite the counter, light low and cool from the east, laying long pale strips across the wooden counter. Walls painted a tired institutional green; pigeonhole rack of dozens of slots; brass scale; canvas mail sacks slumped on the floor at frame right. Through the window a hint of rooftops sloping toward the sea. Cool morning daylight through the window, single-source, soft shadows dragging across the counter; interior unlit except for a strip of light that finds his hands."
+        },
+        {
+          "shot_id": "K1-02",
+          "text": "Same sorting room as established: green institutional walls, pigeonhole rack, window light across the wooden counter, mail sacks at frame right. Unchanged window light, now catching the top of the stack and one side of his face as he leans in to read."
+        },
+        {
+          "shot_id": "K1-03",
+          "text": "Same sorting room, unchanged: window light, rack, sacks, green walls. Unchanged cool morning window light; shadows on the counter now longer as morning edges on."
+        }
+      ],
+      "description": "清晨的邮局，有分拣台"
+    },
+    "L02": {
+      "name": "邮局后巷",
+      "image": null,
+      "settled": [
+        {
+          "shot_id": "K1-04",
+          "text": "Exterior, narrow brick back alley behind the post office, late morning. Walls two stories of soot-soft red brick, a single rusted downpipe on the left, a fire-door at the far end. Dry cobblestones; the sea's horizon is blocked out by the walls; one shred of paper and a bottle cap at his feet. A trickle of wind moves a plastic bag caught on the downpipe. Overhead daylight bouncing off the left wall, brighter on one cheek, soft shadow down the other; high-contrast narrow-sky atmosphere between the brick runs."
+        },
+        {
+          "shot_id": "K1-05",
+          "text": "Same back alley, unchanged: brick walls, downpipe, dry cobbles, plastic bag in the wind. Unchanged late morning bounce off the left wall; the photo's paper catches a hard highlight as it turns."
+        },
+        {
+          "shot_id": "K1-06",
+          "text": "Same back alley, unchanged: brick, downpipe, cobbles, plastic bag still moving in the wind. Late morning light off the left wall; his face evenly shaded, shadow crawling up his cheek as the morning progresses."
+        }
+      ],
+      "description": "邮局背后的小巷"
+    },
+    "L03": {
+      "name": "镇上面馆",
+      "image": null,
+      "settled": [
+        {
+          "shot_id": "K2-01",
+          "text": "镇上面馆内部，中午：白墙被多年蒸汽熏黄，柜台是老木台面摆着醋壶和筷子筒，灶台向画左侧冒着热气，背景两三张木桌有食客低头吃面，门口挂半旧门帘 中午北窗冷白天光从柜台后方透入，与灶边暖黄灯泡形成轻微冷暖交错，人物面部光比柔和"
+        },
+        {
+          "shot_id": "K2-02",
+          "text": "同面馆：背后窗光勾出她的侧影轮廓，灶台热气在画外，画面里只有窗、照片和她 北窗冷白侧光打在她面部，形成清晰的皱纹与眯眼阴影"
+        },
+        {
+          "shot_id": "K2-03",
+          "text": "同面馆，背景虚化中可见灶台蒸汽与一角食客 延续北窗侧光，周砚面部一半在冷光、一半落在柜台阴影里"
+        },
+        {
+          "shot_id": "K2-04",
+          "text": "同面馆，灶台热气渐薄，背景食客声浪隐约升高提醒时间流动 同中午冷暖交错，窗光角度不变"
+        }
+      ],
+      "description": "中午营业的面馆"
+    },
+    "L04": {
+      "name": "通往灯塔的沿海公路",
+      "image": null,
+      "settled": [
+        {
+          "shot_id": "K2-05",
+          "text": "通往灯塔的沿海公路：沥青路面沿崖线弯曲，左侧是护栏与灰蓝近海，右侧陡坡生野草，远处海平线尽头隐约一点塔影；风中野草伏倒再弹起 下午侧顺光，海面反光泛碎银，云影在路面缓慢移动"
+        },
+        {
+          "shot_id": "K2-06",
+          "text": "同沿海公路：逆风段浪声更重，路面沙粒被风卷起细尘，远处灯塔塔影比前一镜更清楚一点 下午阳光从海面一侧来，车身与头盔留一道亮边，周砚面颊一半明一半暗"
+        },
+        {
+          "shot_id": "K2-07",
+          "text": "同沿海公路：前方缓坡上塔影成为地平线上的明确目标，路侧护栏一直伸向弯道，风势更强，草浪齐向一侧伏倒 下午光从骑手左后方来，背肩线亮、路面长影向灯塔方向延伸"
+        }
+      ],
+      "description": "沿海岸线的公路，海风很大"
+    },
+    "L05": {
+      "name": "灯塔下",
+      "image": null,
+      "settled": [
+        {
+          "shot_id": "K3-01",
+          "text": "独立的圆柱形灯塔，白色涂层大片剥落露出锈斑，生铁门上挂着一只锈死的挂锁与铁链；门前是碎石与干草，背景是灰绿色的海，海风持续 下午，太阳偏西在海面上方向，光从画面左侧来袭；塔身背风面处于暖调阴影中，门与锁被侧光勾出锈蚀质感，云影缓慢掠过"
+        },
+        {
+          "shot_id": "K3-02",
+          "text": "灯塔背风面直墙：灰白墙皮风化开裂，一人高处有两组孩童刻名，笔画歪扭深浅不一；墙根长着干草，背风处风声减弱 下午偏西的日光从海面一侧掠过圆塔，背面墙处于大面积阴影中，仅墙角处反射的暖光让刻痕的凹陷显出轮廓"
+        },
+        {
+          "shot_id": "K3-03",
+          "text": "同 K3-02 墙面：灰白墙皮剥落的粗糙墙面，孩子刻痕边缘脱落的碎屑散落在墙根 背风阴影中的弱反射暖光，刻痕凹槽底部有高亮反射，边缘有暗影"
+        },
+        {
+          "shot_id": "K3-04",
+          "text": "同前：背风墙面、刻痕、墙根碎屑，塔身阴影落在画面下缘 刻痕所在墙体被弱反射暖光照亮，人物手臂从阴影伸向微亮处"
+        },
+        {
+          "shot_id": "K3-05",
+          "text": "同前：背风墙面的粗糙触感、刻痕，墙面凹槽中的碎屑 同前：半反射暗光中的凹槽高光随指尖经过依次亮起"
+        },
+        {
+          "shot_id": "K3-06",
+          "text": "同前：背风直墙的两个刻名，塔身圆弧，背风处干草被吹低，远处海面云影 下午低角日光，塔身另一侧来光在墙上留弱反射，云影从海面上飘过"
+        },
+        {
+          "shot_id": "K8-03",
+          "text": "L05 灯塔下：塔体锈蚀，门上锁、锁芯锈死；背面墙上两个小孩歪歪扭扭刻的名字仍在石面上；墙下是一圈粗石基座，石缝里积着干海砂；远处海面在画面下缘摊开，暗得像铁 黎明前最暗的顺光（偏东的天光极弱）：一切清冷低饱和，刻痕在阴影里只能依稀辨认；海面几乎黑"
+        },
+        {
+          "shot_id": "K8-04",
+          "text": "塔背面墙的近景：粗石面、锈迹流下的黑痕、两个歪扭刻名与刀口毛边，刻名下方一道宽约一指的石缝，缝里积着干海砂与一小圈碎贝壳 同一弱东天光顺石面，刻痕阴影依旧；照片压入后，纸面在缝外留一道极窄的白边，被微光接住"
+        },
+        {
+          "shot_id": "K8-05",
+          "text": "海面由暗铁色转出银灰，浪的褶皱逐渐可辨；远处无船；草坡在前景暗着；灯塔留在画面外右侧，不再抢眼 变化镜头：黎明破晓（TM005），自画面深处海平线向东逆光渐升，冷灰中透出第一线暖意；人物受光在肩背轮廓，脸留在阴影里"
+        },
+        {
+          "shot_id": "K8-06",
+          "text": "同 L05，同一黎明海面已经亮开；路是一段高差向镇上铺去的粗石小路，两旁是枯草与石墙；灯塔与压着照片的石缝留在画面纵深左后，不再回望 破晓的东北天光（冷灰带第一缕暖）顺路洒下，把他的肩线描出一条浅色边；海面银灰在画面下方一片亮"
+        }
+      ],
+      "description": "锈蚀的门锁着的灯塔，背面墙上有两个小孩歪歪扭扭刻的名字"
+    },
+    "L06": {
+      "name": "镇卫生所",
+      "image": null,
+      "settled": [
+        {
+          "shot_id": "K4-01",
+          "text": "镇卫生所值班室：灰白墙面，靠墙一排贴标签药柜与铁架，老式病历本与听诊器摊在诊桌上，桌角一盏没有点亮的台灯，地面是磨旧的深色地砖 傍晚：主要光源为西窗斜入的低角度暖黄自然光，全场暖面在左侧，药柜一侧较暗；无正面补光"
+        },
+        {
+          "shot_id": "K4-02",
+          "text": "同 K4-01 世界状态，画面中仅见诊桌虚化前沿 西窗暖光从周砚左后方侧逆打亮发缘与肩线，面部左亮右暗"
+        },
+        {
+          "shot_id": "K4-03",
+          "text": "同 K4-01，虚化药柜的玻璃瓶剪影 傍晚窗光已弱于上一镜角度：老医生面部半受光，靠窗一侧（画面右）亮，靠药柜一侧（画面左）暗，方向与 K4-01 世界光源一致"
+        },
+        {
+          "shot_id": "K4-04",
+          "text": "同 K4-01，诊桌前沿虚化 同 K4-02 方向：左肩后侧逆光勾边，左脸亮右脸暗"
+        },
+        {
+          "shot_id": "K4-05",
+          "text": "同 K4-01，候诊长椅与药柜的昏暗纵深开始合拢画面边缘 傍晚光继续转暗：两人受光面更薄，桌面反光变弱，仅西窗方向留一道窄的暖光带"
+        },
+        {
+          "shot_id": "K4-05b",
+          "text": "同 K4-01，画面只余虚化的诊室暗部 傍晚最后一段余光：左脸薄光，右脸沉入阴影，明暗分界比 K4-04 更重"
+        }
+      ],
+      "description": "傍晚有老医生值班"
+    },
+    "L07": {
+      "name": "周砚的出租屋",
+      "image": null,
+      "settled": [
+        {
+          "shot_id": "K5-01",
+          "text": "狭小出租屋：一盏暖黄裸灯泡吊在房间中央，墙面泛旧，右侧墙一扇小窗垂着半旧窗帘，窗后是深色夜空；床贴左侧墙，旧木箱和纸箱堆在窗下墙角，地板散着翻出的杂物 顶部裸灯泡的暖黄光，周砚脸部和手部有硬边阴影，房间四角渐暗，窗外一片黑"
+        },
+        {
+          "shot_id": "K5-02",
+          "text": "同K5-01：暖黄灯泡光，窗下墙角的纸箱半空，地板杂物散乱 同K5-01，顶光使铁盒锈面有一小片反光"
+        },
+        {
+          "shot_id": "K5-03",
+          "text": "同K5-01，木箱与杂物在他身侧虚化成暗块 顶光直接落入盒口，使盒内照片和车票比环境更亮"
+        },
+        {
+          "shot_id": "K5-04",
+          "text": "同K5-01，背景杂物与纸箱虚化，铁盒开盖放在他膝前地板 顶光暖黄集中在他脸的下半和手中的物证，四周更暗"
+        },
+        {
+          "shot_id": "K5-05",
+          "text": "同L07出租屋，深夜：房间中央的裸灯泡已关闭，床侧台灯亮着一点暖光，房间其余部分沉在暗里，窗外深色夜空尚未落雨 床侧台灯的单点暖光从画右低处打向他半边脸，房间其余区域深暗"
+        },
+        {
+          "shot_id": "K5-06",
+          "text": "深夜雨起：窗玻璃上雨痕渐密，窗外街灯在雨膜里晕成一团模糊光斑；室内床侧台灯暖光不变，铁盒与杂物堆留原位 室内台灯暖光不变，窗外的窗光被雨膜软化，画面出现冷蓝与暖黄的双色分离"
+        },
+        {
+          "shot_id": "K5-07",
+          "text": "同K5-05与K5-06：床侧台灯，窗外持续的雨，杂物堆与开盖铁盒仍在原位 台灯暖光为主的正面光，窗雨冷光作轮廓边缘"
+        },
+        {
+          "shot_id": "K5-08",
+          "text": "同前：雨在窗外持续，室内台灯暖光，杂物堆与开盖的铁盒均留在原位 台灯暖光与窗外冷蓝雨光的分离状态保持"
+        }
+      ],
+      "description": "有旧箱子和床，窗外能看到夜雨"
+    },
+    "L08": {
+      "name": "长途汽车站",
+      "image": null,
+      "settled": [
+        {
+          "shot_id": "K6-01",
+          "text": "镇上长途汽车站售票厅：水泥地面磨得发亮，靠墙一排绿色漆皮售票窗，窗上挂着手写的班次牌，窗下有一条被磨亮的收款槽；头顶是两排长条日光灯管加一扇高侧窗，清晨的天光从左侧斜进来，把地面切出长条亮斑；候车椅上有人打盹，塑料吊扇缓慢转动 左侧高窗进来的冷白晨光为主光方向，日光灯管的平光作补；色温偏冷灰，只有窗口内一点暖黄钨丝光作对比"
+        },
+        {
+          "shot_id": "K6-02",
+          "text": "同K6-01售票窗口特写角度：绿漆窗框上漆皮崩裂的纹理、玻璃上贴的票价表、栅栏铁条、窗台上被无数手肘磨亮的木边；收费槽前的台面上散着两枚旧硬币 窗口内侧的暖黄钨丝光落在周砚的手和票上，与左侧冷晨光形成小面积冷暖对比；铁栅在他的脸侧投下细窄条纹阴影"
+        }
+      ],
+      "description": "镇上长途汽车站售票处"
+    },
+    "L09": {
+      "name": "省城医院走廊",
+      "image": null,
+      "settled": [
+        {
+          "shot_id": "K6-03",
+          "text": "省城医院住院部走廊：浅灰绿色墙裙、白色墙面、电梯口反光门；右侧一长排窗户，上午的日光把地面切成长段光带；墙边立着输液架、候诊椅和一台饮水机，输液管在光里垂着细小的影子；轮椅停在尽头的窗侧 右侧长窗进来的白昼平光为主，地面反光把亮度弹上墙面；色温中性偏冷，无侧硬影，整体安静明亮"
+        },
+        {
+          "shot_id": "K6-04",
+          "text": "同K6-03走廊同一区段：浅灰绿墙裙、右侧长窗白昼光、地面的长条光斑现在跨在两人之间的地面上；轮椅金属扶手反着一小点亮光 右侧长窗的平光继续投进来，母亲侧脸受光，周砚背光偏一半暗面；色温中性偏冷"
+        },
+        {
+          "shot_id": "K6-05",
+          "text": "同K6-04同一走廊同一位置，画面只剩她的近景：墙裙的浅灰绿在她身后虚开，轮椅金属扶手的一角入画右下 她的脸接受来自侧窗的柔和昼光，半面亮、半面上暗，窗外天光在她眼睛上留下一个静止的小亮点"
+        },
+        {
+          "shot_id": "K6-06",
+          "text": "同K6-05同一位置同一时点的极端特写：背景只剩走廊墙裙的一带模糊浅灰绿，轮椅金属一角在画框右下边缘 同K6-05：侧窗柔光，眼睛里那个小亮点静止不动，半面脸上暗面加深一分"
+        }
+      ],
+      "description": "白天走廊，母亲坐轮椅在此"
+    },
+    "L10": {
+      "name": "省城医院病房",
+      "image": null,
+      "settled": [
+        {
+          "shot_id": "K7-01",
+          "text": "省城医院双人病房：白墙、米色隔离帘拉起一半、床头柜、输液架、窗外灰白天光；地面浅色PVC地板，桌上有一只搪瓷杯 白天，窗外柔和天光从画面左后方照入，母亲侧脸受光，室内顶灯关闭，整体偏冷偏灰"
+        },
+        {
+          "shot_id": "K7-02",
+          "text": "同K7-01病房，虚化背景中可辨隔离帘与输液架 同前，窗外冷天光打亮母亲侧脸，眼神光来自窗户"
+        },
+        {
+          "shot_id": "K7-03",
+          "text": "病房，背景虚化为病床白色床单与被单褶皱 窗光在两手之间形成一道冷亮的高光带"
+        },
+        {
+          "shot_id": "K7-04",
+          "text": "同病房，身后母亲轮椅的轮椅骨架一角虚化在画面深处 冷天光把他的半张脸留在阴影里"
+        },
+        {
+          "shot_id": "K7-05",
+          "text": "病房全景：病床拉直的被褥、输液架、桌上搪瓷杯、地面灰色反光 白天，天光开始偏午后偏斜，屋子整体亮度略降"
+        }
+      ],
+      "description": "母亲所住的病房"
+    },
+    "L11": {
+      "name": "医院外长椅",
+      "image": null,
+      "settled": [
+        {
+          "shot_id": "K7-06",
+          "text": "医院正门右侧一条人行道，金属扶手长椅，花坛边缘，来人和一人推轮椅经过虚化背景后就走远；傍晚人影稀落 傍晚，低角度暖橙色侧光从画面左沿照入，长影投在人行道上"
+        },
+        {
+          "shot_id": "K7-07",
+          "text": "背景为虚化的长椅木条与藏青蓝色衣物一角 傍晚暖侧光在照片纸上留一道高光，随翻转瞬变"
+        },
+        {
+          "shot_id": "K7-08",
+          "text": "同K7-06人行道，天光由暖橙逐步转为灰蓝，医院楼道口内灯变亮，长椅旁花坛影子拉长后消失 傍晚逐渐暗到入夜前：主光由窗外暖橙转为环境冷灰，人物轮廓近剪影， whisky楼门一小块暖光成为唯一亮源"
+        }
+      ],
+      "description": "医院外的长椅，傍晚天色渐暗"
+    },
+    "L12": {
+      "name": "回程长途汽车",
+      "image": null,
+      "settled": [
+        {
+          "shot_id": "K8-01",
+          "text": "回程长途汽车车厢内部：深色布面座椅、车顶昏暗的夜灯熄着、窗上有一点水汽和划痕，走廊空无一人；窗外是夜里双向车道的公路，护栏与路灯杆不断掠过 唯一光源是车外掠过的路灯与对向车灯：冷白光斑沿画面左侧玻璃滑入，一盏约两秒，扫过他的额角、颧骨后跌回近黑；车内自身近于全暗"
+        },
+        {
+          "shot_id": "K8-02",
+          "text": "同一节车厢：空座椅成排纵深，车顶行李架空着，窗玻璃上映出他自己模糊的影；窗外公路灯光继续掠过 与上一镜同一路灯光方向，冷白光斑自画面左侧扫过，被他的肩挡出一条暗边；曝光整体更低、更静"
+        }
+      ],
+      "description": "夜里公路上行驶的长途汽车内部，靠窗座位"
+    }
+  }
+}

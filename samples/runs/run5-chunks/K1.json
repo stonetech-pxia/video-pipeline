@@ -1,0 +1,298 @@
+{
+  "schema_version": "1.1",
+  "chunk_id": "K1",
+  "status": "complete",
+  "start": 0,
+  "end": 70,
+  "shots": [
+    {
+      "id": "K1-01",
+      "start": 0,
+      "end": 12,
+      "source_beat_ids": [
+        "B001"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "Establish the routine opening: a postal worker at the morning grind, the calm before the letter enters the story.",
+      "framing": "Medium-wide, waist-up, worker and sorting rack filling the left two-thirds, window light raking across the stack",
+      "angle": "Eye level, slightly off-axis from the counter",
+      "camera_position": "Static tripod, about 2.5 meters from the sorting counter, camera left of the window",
+      "camera_motion": "None",
+      "focus": "Sharp on the sorting rack and hands; wall beyond falls soft",
+      "blocking": "周砚 stands at the sorting counter facing the pigeonhole rack, set against the window wall. He encounters envelopes face-up on the counter, thumbs each one onto the scale, sorts it into a pigeonhole. The window wall behind the rack is pale morning light; the room extends into shadow behind him, a low sorting shelf and stacked sacks depth.",
+      "subject_action": "Methodical sorting: pick up envelope, glance at address, stamp, slot it. No hesitation, ordinary rhythm.",
+      "visible_emotion": "Flat routine calm",
+      "environment": "Interior, small seaside-town post office sorting room, early morning. One large window on the wall opposite the counter, light low and cool from the east, laying long pale strips across the wooden counter. Walls painted a tired institutional green; pigeonhole rack of dozens of slots; brass scale; canvas mail sacks slumped on the floor at frame right. Through the window a hint of rooftops sloping toward the sea.",
+      "lighting": "Cool morning daylight through the window, single-source, soft shadows dragging across the counter; interior unlit except for a strip of light that finds his hands.",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "Room tone; the tick of envelopes landing on wood; distant sea-horn and gulls faint through the window glass; a wall clock's second hand.",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 0,
+        "reason": "opening shot; no prior state to carry"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K1-02",
+      "start": 12,
+      "end": 24,
+      "source_beat_ids": [
+        "B002"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "The anomaly surfaces: the unsigned letter bearing his own name, read and pocketed without ceremony.",
+      "framing": "Medium close-up, chest-up, angled over the counter so the incoming letter stack is legible",
+      "angle": "Slightly high, behind his left shoulder toward the face",
+      "camera_position": "Handheld height, 1.2 meters, camera behind and left of his head",
+      "camera_motion": "None",
+      "focus": "On his face as he reads the addressee; the letter's address field visible but addressed in low-focus—clarity stays on the reaction",
+      "blocking": "He stays at the counter. From a foot-high stack mid-sort he picks out an envelope with no return address; recognizes his own name as addressee. A beat of stillness: hands stop, thumbs hold the envelope's edge. Then, deliberately low-key, he slides it into the inner chest pocket of his work jacket instead of the rack, and resumes sorting.",
+      "subject_action": "Pull one envelope from stack; read addressee; still beat; slip letter into chest pocket; return to sorting without pause.",
+      "visible_emotion": "Restrained wariness—fear flattened by work discipline",
+      "environment": "Same sorting room as established: green institutional walls, pigeonhole rack, window light across the wooden counter, mail sacks at frame right.",
+      "lighting": "Unchanged window light, now catching the top of the stack and one side of his face as he leans in to read.",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "Sorting rhythm halts—interior-feeling hush; the paper's dry slide as the letter enters the pocket; sorting ticks resume.",
+      "transition": "",
+      "boundary_type": "same_shot_continuation",
+      "camera_continuity": "continuous",
+      "action_continuity": "continuous",
+      "framing_continuity": "same",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": false,
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "same character continuing mid-action, animated envelopes already sorted, letter now in his jacket pocket."
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K1-03",
+      "start": 24,
+      "end": 35,
+      "source_beat_ids": [
+        "B002"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "Continue the sorting under the new weight: the physical tell the audience registers even though the character hides it.",
+      "framing": "Tighter medium, elbow-and-hands foreground, face small in the background of frame",
+      "angle": "观感上略低于眼线，wandt across the counter toward his middle age at center-frame center-right",
+      "camera_position": "About 1 meter from the counter's corner, facing across the pile toward him",
+      "camera_motion": "None",
+      "focus": "On his hands and the envelopes; his face soft-focus, expression barely readable",
+      "blocking": "He works the next few envelopes mechanically, but the rhythm has changed: a slower thumb-pause before each slot, one envelope nearly double-stamped. His left hand absent-mindedly presses the jacket pocket flat once—over the stolen letter—then returns to work.",
+      "subject_action": "Continued sorting at altered rhythm; one brief, almost unconscious press of the hand over the chest pocket.",
+      "visible_emotion": "Controlled dread kept under routine motion—visible only in rhythm and that single palm press",
+      "environment": "Same sorting room, unchanged: window light, rack, sacks, green walls.",
+      "lighting": "Unchanged cool morning window light; shadows on the counter now longer as morning edges on.",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "Sorting ticks at noticeably degraded tempo; clock second-hand louder in the pause; sea-horn again through the glass.",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 8,
+        "reason": "same scene, character mid-action with the unsigned letter now in his jacket pocket, camera and framing reset."
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K1-04",
+      "start": 35,
+      "end": 47,
+      "source_beat_ids": [
+        "B003"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "Exhale in isolation: take the alley, open the envelope, reveal one thing only—old photograph.",
+      "framing": "Medium-wide, full figure framed center-left in the lane's narrowing depth, letter in hands at chest height",
+      "angle": "Eye level, frontal, camera at the back of the lane looking up the brick run",
+      "camera_position": "Static, 4 meters back, centered on the lane's axis",
+      "camera_motion": "Very slow push-in of a few centimeters, imperceptible",
+      "focus": "On him and the letter; first foreground wall brick sharp, background end of lane soft",
+      "blocking": "周砚 stands alone in the back alley behind the post office, brick walls on both sides, one lower window shutter behind him. He holds the unsigned envelope, tears it open along the flap, tilts it; a single old photograph slips out into his palm. He catches the edge with two fingers; no words, just the turn of the wrist to see it.",
+      "subject_action": "Tear open envelope, tip contents into palm, find only one old photograph, hold it up.",
+      "visible_emotion": "Dawning confusion—brow set, lips still",
+      "environment": "Exterior, narrow brick back alley behind the post office, late morning. Walls two stories of soot-soft red brick, a single rusted downpipe on the left, a fire-door at the far end. Dry cobblestones; the sea's horizon is blocked out by the walls; one shred of paper and a bottle cap at his feet. A trickle of wind moves a plastic bag caught on the downpipe.",
+      "lighting": "Overhead daylight bouncing off the left wall, brighter on one cheek, soft shadow down the other; high-contrast narrow-sky atmosphere between the brick runs.",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "Alley wash of distant town traffic; dry rustle of the envelope flap; the plastic bag's crinkle in the wind; one gull.",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "location_change",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "location change resets the world; only carried state is his jacket pocket with the envelope, now being opened."
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K1-05",
+      "start": 47,
+      "end": 58,
+      "source_beat_ids": [
+        "B004"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "The photograph and its line of text cut him: a girl under the lighthouse, and 'You promised you would come back.'",
+      "framing": "Alternating within a single insert sequence: close-up of the photograph filling frame, then his face sharp beside it—one continuous push-in",
+      "angle": "Tight insert height, top-down on the photograph; his face slightly higher, off-axis",
+      "camera_position": "Within 40 centimeters of his hands",
+      "camera_motion": "Slow, deliberate push-in onto the photograph as the reverse side is turned",
+      "focus": "Rack focus across the move: front of the photo (girl under lighthouse) sharp, then his thumb turns it, and the handwritten line on the back snaps into focus",
+      "blocking": "He raises the photograph toward the light to see it: a young woman standing at the base of a lighthouse, slightly faded, edges soft. A beat of no motion. He turns it over. The back is written in uneven handwriting: 「你答应过要回来的。」 He reads it, and something in his posture pulls upright.",
+      "subject_action": "Study photograph; turn it over; read the line written on the back.",
+      "visible_emotion": "Confusion stung into something sharper—jaw set, breath shortening",
+      "environment": "Same back alley, unchanged: brick walls, downpipe, dry cobbles, plastic bag in the wind.",
+      "lighting": "Unchanged late morning bounce off the left wall; the photo's paper catches a hard highlight as it turns.",
+      "dialogue_ids": [
+        "D001"
+      ],
+      "dialogue": "你答应过要回来的。（照片背面刻写的字，非人声台词）",
+      "diegetic_audio": "Ambient alley noise; wind through the lane; the crack of the photo flipping; no speech—only the written line exists.",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 8,
+        "reason": "same scene, photo just removed from envelope now in his hand—and the back's written message must be readable."
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K1-06",
+      "start": 58,
+      "end": 70,
+      "source_beat_ids": [
+        "B005"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "Hold on the blank: he does not know her—and the shot ends on that absence before the story opens.",
+      "framing": "Medium close-up, chest-up, the photograph he holds in lower third of frame, girl's image visible to camera",
+      "angle": "Eye level, straight on, camera at arm's length for an intimate witness distance",
+      "camera_position": "Static, 1 meter away, centered on his face with the photo below",
+      "camera_motion": "None",
+      "focus": "His eyes sharp; the photograph in frame soft-focus; identity of the girl is felt, not seen",
+      "blocking": "He stares at the photograph in his hand: the girl under the lighthouse. He waits. Nothing arrives. His brow creases—not grief, blankness—and his gaze lifts off the photo to the middle distance. He folds the photograph once closed back into the envelope along its fold and slides the whole thing back into his work jacket's chest pocket. He remains in the lane.",
+      "subject_action": "Long stare at the photograph; no recognition; slide both photo and envelope back into the jacket pocket; hold gaze ahead.",
+      "visible_emotion": "Blank uncertainty—pure non-recognition, no theatricality",
+      "environment": "Same back alley, unchanged: brick, downpipe, cobbles, plastic bag still moving in the wind.",
+      "lighting": "Late morning light off the left wall; his face evenly shaded, shadow crawling up his cheek as the morning progresses.",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "Alley ambience thins to near-silence for the stare; the paper's last dry scrape at the pocket; gulls and town distant, unchained.",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 8,
+        "reason": "same scene, photo and envelope both now back in jacket pocket, camera repositioned—hand prop state must carry."
+      },
+      "composition_control": "normal"
+    }
+  ],
+  "continuity_exit_state": {
+    "by_shot": [
+      {
+        "shot_id": "K1-01",
+        "staging": "周砚 stands at the sorting counter, facing the pigeonhole rack against the window wall",
+        "wardrobe_state": "藏青色工装外套 buttoned and exactly as established; sleeves down",
+        "held_props": [
+          "envelope in right hand"
+        ],
+        "scene_state": "sorting rack partly filled; stack of unsorted mail on counter; mail sacks at frame right",
+        "lighting_state": "early morning, cool single-source light through the window"
+      },
+      {
+        "shot_id": "K1-02",
+        "staging": "unchanged at the counter, left shoulder toward camera",
+        "wardrobe_state": "藏青色工装外套 buttoned; letter now inside the chest pocket",
+        "held_props": [
+          "next envelope for sorting in right hand"
+        ],
+        "scene_state": "unsigned letter (P01) no longer in the stack, now inside his jacket chest pocket; sorting stack diminished by a few envelopes",
+        "lighting_state": "early morning window light, unchanged"
+      },
+      {
+        "shot_id": "K1-03",
+        "staging": "same position at counter, hands over the sorting pile",
+        "wardrobe_state": "藏青色工装外套 buttoned; chest pocket flattened where the hand just pressed it",
+        "held_props": [
+          "envelope in right hand"
+        ],
+        "scene_state": "sorting still in progress; rack fuller than at shot start; mail sacks unchanged",
+        "lighting_state": "early-to-mid morning shadow lengthening across the counter"
+      },
+      {
+        "shot_id": "K1-04",
+        "staging": "standing alone in the back alley, facing toward the far end of the lane, letter held at chest height",
+        "wardrobe_state": "same 藏青色工装外套, unbuttoned at the throat after leaving the interior",
+        "held_props": [
+          "torn-open envelope P01",
+          "photo P02 held at edge between two fingers"
+        ],
+        "scene_state": "photo removed from envelope and in his hand; envelope clipped open in the other hand",
+        "lighting_state": "late morning alley bounce off the left brick wall"
+      },
+      {
+        "shot_id": "K1-05",
+        "staging": "same lane position, photo held up before him",
+        "wardrobe_state": "same, unchanged",
+        "held_props": [
+          "photo P02 in right hand, flipped to back side"
+        ],
+        "scene_state": "photo's handwritten line 「你答应过要回来的。」 readable; envelope still open, held loosely",
+        "lighting_state": "late morning alley bounce off the left brick wall"
+      },
+      {
+        "shot_id": "K1-06",
+        "staging": "same lane position, photo recovered and returned to his jacket pocket",
+        "wardrobe_state": "same 藏青色工装外套; chest pocket carrying both photograph and closed envelope",
+        "held_props": [],
+        "scene_state": "photo P02 and envelope P01 both tucked back into the jacket chest pocket; folded and stowed",
+        "lighting_state": "late morning alley bounce off the left brick wall"
+      }
+    ]
+  },
+  "warnings": [],
+  "errors": []
+}

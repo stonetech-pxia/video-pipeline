@@ -1,0 +1,390 @@
+{
+  "schema_version": "1.1",
+  "chunk_id": "K7",
+  "status": "complete",
+  "start": 385,
+  "end": 460,
+  "shots": [
+    {
+      "id": "K7-01",
+      "start": 385,
+      "end": 398,
+      "source_beat_ids": [
+        "B025"
+      ],
+      "characters_in_frame": [
+        "C01",
+        "C04"
+      ],
+      "dramatic_purpose": "建立病房内两人关系与距离：母亲开口说出ORMAT核心揭示的第一句，周砚必须在她面前，话音落下时两人的相对位置即成为本场的空间基调",
+      "framing": "双人中景，周砚坐床边矮凳位于画面右前景，母亲轮椅在画面左中景，两人之间留出手可及的距离",
+      "angle": "平视，机位在两人连线侧面稍偏床侧",
+      "camera_position": "病房床尾与床头柜之间，距周砚约两米",
+      "camera_motion": "固定，随对话只有极轻微的手持呼吸感",
+      "focus": "两人同景深偏深，焦点落在母亲面部",
+      "blocking": "母亲轮椅靠窗一侧，身体转向周砚；周砚坐矮凳面向她，双手垂在膝上。母亲一只手放在周砚的手背上，说完第一句台词后没有收回",
+      "subject_action": "母亲平静地开口说出那一年的翻车真相：『那年翻车，救出来两个孩子，只活了一个。』周砚一动不动地听着",
+      "visible_emotion": "母亲压了许多年的平静；周砚僵住的克制",
+      "environment": "省城医院双人病房：白墙、米色隔离帘拉起一半、床头柜、输液架、窗外灰白天光；地面浅色PVC地板，桌上有一只搪瓷杯",
+      "lighting": "白天，窗外柔和天光从画面左后方照入，母亲侧脸受光，室内顶灯关闭，整体偏冷偏灰",
+      "dialogue_ids": [
+        "D0021"
+      ],
+      "dialogue": "那年翻车，救出来两个孩子，只活了一个。",
+      "diegetic_audio": "病房内低频仪器声、远处走廊脚步；台词清晰贴耳",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "scene_change",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 0,
+        "reason": "本chunk首镜，之前为S10走廊场景切换，世界状态本就重置，只需带入周砚衣着与照片随身"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K7-02",
+      "start": 398,
+      "end": 407,
+      "source_beat_ids": [
+        "B025",
+        "B026"
+      ],
+      "characters_in_frame": [
+        "C04"
+      ],
+      "dramatic_purpose": "切到母亲近景，让最伤人的第二句台词以最近的观察距离落下，同时她的手第一次离开周砚的手背、轻拍一下",
+      "framing": "母亲面部近景，画面下缘带到她搭在周砚手上的手",
+      "angle": "平视略低，与轮椅上的母亲视线齐平",
+      "camera_position": "周砚椅子后方一侧，越过周砚肩部空间看向母亲",
+      "camera_motion": "固定",
+      "focus": "焦点锐利落在母亲眼睛，前景周砚肩部虚化",
+      "blocking": "母亲注视周砚，抬手在周砚手背上轻轻拍了两下，语气是陈述而不带安慰的起伏，随后目光没有移开",
+      "subject_action": "母亲对周砚说出：『你一直以为活下来的是你。』",
+      "visible_emotion": "平静中透出从未计量的重量",
+      "environment": "同K7-01病房，虚化背景中可辨隔离帘与输液架",
+      "lighting": "同前，窗外冷天光打亮母亲侧脸，眼神光来自窗户",
+      "dialogue_ids": [
+        "D0022"
+      ],
+      "dialogue": "你一直以为活下来的是你。",
+      "diegetic_audio": "仪器声延续，母亲台词贴耳，拍手的两声轻响可闻",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 6,
+        "reason": "同一场景内切近景：两人站台位置、母亲手搭在周砚手背上的接触要保持"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K7-03",
+      "start": 407,
+      "end": 415,
+      "source_beat_ids": [
+        "B026"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "用插入式的手部特写承接拍手动作，让周砚的失语先落在身体上而不是脸上",
+      "framing": "手部特写，两个交叠的手占据画面主体，背景全虚",
+      "angle": "俯向膝间的低角度",
+      "camera_position": "两人之间、贴近手部",
+      "camera_motion": "轻微下沉随拍手动作",
+      "focus": "焦点在母亲的手背与周砚青筋的手，虚实一次交接",
+      "blocking": "母亲的手拍一下、停住、收回一半；周砚的手始终没有回握",
+      "subject_action": "母亲的手在周砚手背轻拍并停顿，随后缓缓离开",
+      "visible_emotion": "周砚通过僵直、不动回应：失语",
+      "environment": "病房，背景虚化为病床白色床单与被单褶皱",
+      "lighting": "窗光在两手之间形成一道冷亮的高光带",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "环境声延续，只有布料与皮肤的细微摩擦",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": false,
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "手部接触的实体细节必须从上一镜原样延续：两人的手位、藏在身侧的照片"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K7-04",
+      "start": 415,
+      "end": 424,
+      "source_beat_ids": [
+        "B027"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "给周砚一个完整的失语反应镜头：证明揭示落进他身上，而他一个字都给不出来",
+      "framing": "周砚面部近景，构图重心略偏向画面一侧、留出失衡的负空间",
+      "angle": "平视，正面稍偏",
+      "camera_position": "母亲轮椅方向，正对周砚",
+      "camera_motion": "极缓慢推近",
+      "focus": "焦点停在周砚眼睛，眼眶虚到不滴水为止",
+      "blocking": "周砚先看着母亲，随后视线慢慢垂下落到地面，下巴向胸口低了一点，喉结动了一下但没出声",
+      "subject_action": "周砚低着头，不给任何回应，病房安静下来",
+      "visible_emotion": "震荡后的空白：不是哭相，是空白",
+      "environment": "同病房，身后母亲轮椅的轮椅骨架一角虚化在画面深处",
+      "lighting": "冷天光把他的半张脸留在阴影里",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "近乎全静，只有仪器低鸣与某人隔窗的哭腔远远传来",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": false,
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "延续母亲的注视方向与周砚低头姿态，手已放开这一新状态不能回退"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K7-05",
+      "start": 424,
+      "end": 430,
+      "source_beat_ids": [
+        "B027"
+      ],
+      "source_annotation": "病房静持镜头作为S11场景需要的收束沉默",
+      "characters_in_frame": [
+        "C01",
+        "C04"
+      ],
+      "dramatic_purpose": "双人静场把沉默回到空间里：affer揭示之后的余波，为出场景的长椅留出情绪落差",
+      "framing": "全景，从病房门口方向看两人，带整个房间的横向空间",
+      "angle": "平视，设于门框内侧一点",
+      "camera_position": "病房门口，纵深看向床与轮椅",
+      "camera_motion": "固定长持",
+      "focus": "两人固定，焦点落在跳深，两人之间的空床就是画面的负空间",
+      "blocking": "周砚坐在矮凳上低头，母亲轮椅上的手回到膝上，两人都不动，隔离帘后面有护士走过的影子一晃",
+      "subject_action": "没有任何动作变化，只有沉默持续",
+      "visible_emotion": "两人各自的静默：母亲克制，周砚空白",
+      "environment": "病房全景：病床拉直的被褥、输液架、桌上搪瓷杯、地面灰色反光",
+      "lighting": "白天，天光开始偏午后偏斜，屋子整体亮度略降",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "仪器低鸣、走廊有人推车轮经过",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 6,
+        "reason": "两人各自姿态、轮椅与矮凳的相对位置必须原样进入全景"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K7-06",
+      "start": 430,
+      "end": 440,
+      "source_beat_ids": [
+        "B028"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "换场景建立医院外环境与新的孤独：周砚独坐长椅，把揭示带来的思绪转为对旧照片的反复翻看",
+      "framing": "中景侧机位，周砚坐长椅右侧占画面三分之一，左侧留出大片医院外墙",
+      "angle": "平视，略高于坐姿",
+      "camera_position": "长椅前约三米，人行道另一侧",
+      "camera_motion": "固定",
+      "focus": "焦点在周砚，背景医院玻璃门轻微虚化但可读出入口人流",
+      "blocking": "周砚穿藏青色工装外套坐在长椅右端，双肘撑膝、上身前倾，一只手在膝盖上把旧照片翻过来又翻过去",
+      "subject_action": "周砚反复翻看旧照片，正面看一眼，翻到背面看一眼，再翻回正面",
+      "visible_emotion": "反刍的沉思",
+      "environment": "医院正门右侧一条人行道，金属扶手长椅，花坛边缘，来人和一人推轮椅经过虚化背景后就走远；傍晚人影稀落",
+      "lighting": "傍晚，低角度暖橙色侧光从画面左沿照入，长影投在人行道上",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "街道车声、医院玻璃门开合音、远处救护车一声短鸣",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "location_change",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 4,
+        "reason": "场景切换但周砚衣着与旧照片随身必须带入，删除病房内两人大国关系"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K7-07",
+      "start": 440,
+      "end": 450,
+      "source_beat_ids": [
+        "B028"
+      ],
+      "characters_in_frame": [],
+      "dramatic_purpose": "插入镜把信息具体化：观众终于读到照片背面那行字，揭示的重量落在明确的物证上",
+      "framing": "照片特写，占满画面中心，两面各占一半时长",
+      "angle": "微俯，与手持照片角度一致",
+      "camera_position": "贴近周砚膝盖，约半米",
+      "camera_motion": "固定",
+      "focus": "照片两面轮流成为焦点面，背景全虚",
+      "blocking": "周砚的拇指在镜头前把照片翻过来：正面是灯塔下站着眼吻女孩，背面是一行手写文字——『你答应过要回来的。』，再翻回正面，动作有个停顿",
+      "subject_action": "照片被翻过：正面（女孩站在灯塔下）与背面（手写文字）各被看清一次",
+      "visible_emotion": "不带表情的手部动作本身承担全部反刍情绪",
+      "environment": "背景为虚化的长椅木条与藏青蓝色衣物一角",
+      "lighting": "傍晚暖侧光在照片纸上留一道高光，随翻转瞬变",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "薄纸两声极轻的翻转声",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": false,
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "实物细节必须完全一致：同一张照片、同一行字、同一只手、同一件藏青外套"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K7-08",
+      "start": 450,
+      "end": 460,
+      "source_beat_ids": [
+        "B029"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "以光线变化收束整个chunk：天从傍晚压暗到入夜前，周砚外形不动，情绪继续留在画面里，完成TM004的光相转换",
+      "framing": "全景侧机位，发展：周砚在画面右三分之一，左侧大片渐渐暗下的空人行道",
+      "angle": "平视，略低于K7-06的高度，地平线进入画面上部",
+      "camera_position": "同K7-06机位，后退半米成全景",
+      "camera_motion": "固定，只在曝光上自然变化",
+      "focus": "焦点在周砚剪影上，保持到末段背景路灯未亮",
+      "blocking": "周砚保持长椅右端、肘撑膝的位置完全没有动，手停止翻照片，把照片捏在指间垂在两膝之间；身后医院玻璃门内透出一小块暖光",
+      "subject_action": "周砚仍是坐着，手指停止翻动，天色从傍晚一点一点暗下来",
+      "visible_emotion": "外静内滞：思虑悬置不落",
+      "environment": "同K7-06人行道，天光由暖橙逐步转为灰蓝，医院楼道口内灯变亮，长椅旁花坛影子拉长后消失",
+      "lighting": "傍晚逐渐暗到入夜前：主光由窗外暖橙转为环境冷灰，人物轮廓近剪影， whisky楼门一小块暖光成为唯一亮源",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "街道车声变稀，风声轻微，远处逃生门一声关响",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "time_change",
+      "recomposition_needed": false,
+      "boundary_risk": {
+        "state_transfer_load": 7,
+        "reason": "同一场地同一天色变化中切全景：周砚长椅上的位置、照片捏在指间的状态、傍晚光线相位必须原样接住"
+      },
+      "composition_control": "critical"
+    }
+  ],
+  "continuity_exit_state": {
+    "by_shot": [
+      {
+        "shot_id": "K7-01",
+        "staging": "母亲轮椅靠窗一侧，身体朝向周砚；周砚坐床边矮凳面面向她，双膝上双手垂放",
+        "wardrobe_state": "周砚藏青色工装外套完整穿在身上",
+        "held_props": [],
+        "scene_state": "病房受白天光线，周砚膝盖侧衣槽内随身衣物内有旧照片P02",
+        "lighting_state": "白天，窗外冷天光侧照"
+      },
+      {
+        "shot_id": "K7-02",
+        "staging": "同上一镜两人位置不变，母亲脸对周砚，手仍搭在周砚手背上",
+        "wardrobe_state": "周砚藏青色工装外套无变化",
+        "held_props": [],
+        "scene_state": "病房白天状态未变",
+        "lighting_state": "白天，冷天光侧照"
+      },
+      {
+        "shot_id": "K7-03",
+        "staging": "两人手部交叠于周砚膝上，母亲的手正停在周砚手背",
+        "wardrobe_state": "周砚外套完好",
+        "held_props": [],
+        "scene_state": "病房白天，手部接触持续",
+        "lighting_state": "白天，窗光带在双手之间"
+      },
+      {
+        "shot_id": "K7-04",
+        "staging": "周砚坐矮凳低头面朝下方，母亲轮椅上在他斜前方注视",
+        "wardrobe_state": "周砚外套完好",
+        "held_props": [],
+        "scene_state": "两人手已放开，病房安静",
+        "lighting_state": "白天，周砚半个脸在阴影里"
+      },
+      {
+        "shot_id": "K7-05",
+        "staging": "病房全景：周砚坐矮凳低头，母亲在轮椅上双手回膝，两人相对而坐",
+        "wardrobe_state": "周砚外套完好",
+        "held_props": [],
+        "scene_state": "病房内无事发生，静默；周砚随身衣物内有P02",
+        "lighting_state": "白天转午后偏斜光，室内略暗"
+      },
+      {
+        "shot_id": "K7-06",
+        "staging": "周砚独坐医院外长椅右端，双肘撑膝、上身前倾，面向前方街道",
+        "wardrobe_state": "周砚藏青色工装外套完好，袖口扣着",
+        "held_props": [
+          "旧照片P02"
+        ],
+        "scene_state": "傍晚人行道，花坛与长椅如常；病房门后河光留作背景",
+        "lighting_state": "傍晚，暖橙低角度侧光"
+      },
+      {
+        "shot_id": "K7-07",
+        "staging": "周砚坐姿未动，双手位于两膝之间持照片，拇指停在照片边缘",
+        "wardrobe_state": "周砚外套完好，藏青衣袖入画",
+        "held_props": [
+          "旧照片P02"
+        ],
+        "scene_state": "照片两面各被看清一次，背面文字完整可见",
+        "lighting_state": "傍晚暖橙侧光，照片纸面有一道高光"
+      },
+      {
+        "shot_id": "K7-08",
+        "staging": "周砚仍坐长椅右端，手垂在两膝之间把照片捏住、停止翻动，面向前方",
+        "wardrobe_state": "周砚藏青色工装外套完好",
+        "held_props": [
+          "旧照片P02"
+        ],
+        "scene_state": "人行道变空，医院门内透出一块暖光",
+        "lighting_state": "傍晚压到入夜前：暖橙变灰蓝，人物轮廓将成剪影（TM004，非场景切换）"
+      }
+    ]
+  },
+  "warnings": [
+    "母亲服装（C04）按住院病员服处理（AMB-CH02-01），后续K-chunk若病房再度出现须沿用同一病员服设定",
+    "照片上女孩（AMB-CH01-02）在K7-07插入镜中按『照片里站矣生活模糊的年轻女孩』呈现，不细化年龄或长相"
+  ],
+  "errors": []
+}

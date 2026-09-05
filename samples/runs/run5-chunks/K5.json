@@ -1,0 +1,391 @@
+{
+  "schema_version": "1.1",
+  "chunk_id": "K5",
+  "status": "complete",
+  "start": 245,
+  "end": 320,
+  "shots": [
+    {
+      "id": "K5-01",
+      "start": 245,
+      "end": 257,
+      "source_beat_ids": [
+        "B016"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "开场切入S07：建立深夜出租屋的封闭空间，交代周砚急切翻找的物理行为与不安状态",
+      "framing": "中景偏宽，前景被翻乱的杂物半遮挡，周砚在纵深中蹲在一只开盖的旧木箱前",
+      "angle": "站立视线高度，轻微俯视",
+      "camera_position": "房间门口内侧，正对旧木箱，距离约三米",
+      "camera_motion": "固定镜头，带轻微呼吸感的手持质感",
+      "focus": "焦点锁定周砚与木箱，前景杂物轻微虚化",
+      "blocking": "周砚背对床、面朝门侧跪坐在木箱前，一件件把箱内旧衣、旧本子取出放在身侧地板上，动作越来越快，中途甩开一件不看的东西",
+      "subject_action": "周砚不停翻找，把箱中杂物一件件掏出、翻到、丢在旁边",
+      "visible_emotion": "急切而不安：动作快而杂，眉间收紧，翻找间隙眼神扫过每件东西又立刻放下",
+      "environment": "狭小出租屋：一盏暖黄裸灯泡吊在房间中央，墙面泛旧，右侧墙一扇小窗垂着半旧窗帘，窗后是深色夜空；床贴左侧墙，旧木箱和纸箱堆在窗下墙角，地板散着翻出的杂物",
+      "lighting": "顶部裸灯泡的暖黄光，周砚脸部和手部有硬边阴影，房间四角渐暗，窗外一片黑",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "翻动纸页与衣物的窸窣声，木箱合页偶尔的吱声，远处楼道里模糊的电视声",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "scene_change",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 0,
+        "reason": "本chunk首镜，从S06卫生所切入S07出租屋，场景与位置整体重建，无需承接上一场世界状态"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K5-02",
+      "start": 257,
+      "end": 265,
+      "source_beat_ids": [
+        "B017"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "翻找的焦点收束到铁盒：动作目标从『翻』变成『发现』",
+      "framing": "中近景，周砚上半身与双手入画，他从杂物深处把铁盒捧出来",
+      "angle": "视线高度，正面略偏左，被翻乱的箱口留在画面左侧",
+      "camera_position": "木箱正前方约一点五米，略低于站立视线",
+      "camera_motion": "固定，仅有极轻微的重心跟随",
+      "focus": "垂直交替：铁盒与周砚的脸同为清晰主体，浅景深",
+      "blocking": "周砚仍在木箱前，双手从杂物深处捧出一只有锈迹的旧铁盒，捧到胸前停住，视线钉在盒上",
+      "subject_action": "周砚从杂物中取出铁盒，捧在胸前，呼吸顿了一拍",
+      "visible_emotion": "发现线索的紧张：嘴唇抿住，握盒的手指收紧",
+      "environment": "同K5-01：暖黄灯泡光，窗下墙角的纸箱半空，地板杂物散乱",
+      "lighting": "同K5-01，顶光使铁盒锈面有一小片反光",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "铁盒被捧起时内部旧物的轻微滑动声，环境静态底噪",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 4,
+        "reason": "同一场景同一人物，镜头重新构图；翻出的杂物堆与木箱开盖状态必须延续"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K5-03",
+      "start": 265,
+      "end": 273,
+      "source_beat_ids": [
+        "B018"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "打开铁盒的揭示瞬间：观众与周砚同时第一次看清盒内之物",
+      "framing": "特写，俯拍盒口，画面主体是铁盒内部，周砚的头在画面上缘入画",
+      "angle": "高机位俯拍，镜头正对盒口",
+      "camera_position": "铁盒上方约半米，正下方略偏侧",
+      "camera_motion": "固定",
+      "focus": "焦点在盒内，照片与车票清晰，盒沿微虚",
+      "blocking": "周砚跪坐原地，双手掀开铁盒盖，把盒子微微倾向灯光，镜头视角即他俯视盒内的视角",
+      "subject_action": "周砚打开铁盒盖，盒内露出一张灯塔照片和半张焦黑的车票",
+      "visible_emotion": "心口被攥住：俯视的静止里带一次明显的呼吸停顿",
+      "environment": "同K5-01，木箱与杂物在他身侧虚化成暗块",
+      "lighting": "顶光直接落入盒口，使盒内照片和车票比环境更亮",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "铁盒盖掀开时金属摩擦的钝响，随后一片静",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 6,
+        "reason": "铁盒已被捧出，盒盖即将打开、盒内物品状态是硬信息：开封动作与盒内容物必须精确承接"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K5-04",
+      "start": 273,
+      "end": 285,
+      "source_beat_ids": [
+        "B018"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "情绪落点：周砚把两件物证（灯塔照片P08、半张烧焦车票P04）一件件拿出来看，旧案重量压上来",
+      "framing": "近景，周砚面部与手中照片同置，随后视线转向另一只手中的半张车票",
+      "angle": "平视，正面略偏右",
+      "camera_position": "周砚眼前方约一米，与他跪坐的高度齐平",
+      "camera_motion": "极缓慢的推进，随他视线沉下的节奏减速至停",
+      "focus": "焦点从手中照片接力到他的眼睛，浅景深",
+      "blocking": "周砚保持跪坐，一只手把灯塔照片举到灯泡光下端详，另一只手拈起半张烧焦的车票对着光，随后两样东西一并停在胸前，头缓缓低下一点",
+      "subject_action": "周砚逐一端详照片与烧焦车票，手指在焦边停住，全身静止下来",
+      "visible_emotion": "心口被攥住：眼周绷紧，下颌微咬，握物的手指一直不敢用力",
+      "environment": "同K5-01，背景杂物与纸箱虚化，铁盒开盖放在他膝前地板",
+      "lighting": "顶光暖黄集中在他脸的下半和手中的物证，四周更暗",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "近乎静止的环境底噪，仅他的呼吸声可闻",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 8,
+        "reason": "盒内P08照片与P04车票已取出并正被端详，道具出现顺序与双手握持方式必须完全衔接上一镜"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K5-05",
+      "start": 285,
+      "end": 297,
+      "source_beat_ids": [
+        "B019"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "时间跳到深夜床边：周砚与半张车票的沉默对峙，把S07的发现沉成S08的重量",
+      "framing": "中景，侧面机位，周砚坐在床沿，窗在背景右侧，手里捏着半张车票",
+      "angle": "平视，正侧面，床沿与地面在画面下方形成稳定水平线",
+      "camera_position": "床侧约两米，与坐姿视线齐高",
+      "camera_motion": "固定长静置镜头",
+      "focus": "焦点在周砚与手中的车票，窗户在背景虚成一块深色亮区",
+      "blocking": "深夜：周砚坐在床沿，双肘撑膝，半张烧焦的车票捏在右手指间垂在腿前，身体前倾，头微低；铁盒留在窗下杂物堆旁未动",
+      "subject_action": "周砚坐在床边出神，指间的半张车票一动不动，只在一次深呼吸时肩膀落下一点",
+      "visible_emotion": "沉重的出神：目光失焦在前方地板，面部几乎没有表情，只有呼吸的重量",
+      "environment": "同L07出租屋，深夜：房间中央的裸灯泡已关闭，床侧台灯亮着一点暖光，房间其余部分沉在暗里，窗外深色夜空尚未落雨",
+      "lighting": "床侧台灯的单点暖光从画右低处打向他半边脸，房间其余区域深暗",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "室内电器底噪，夜里的极远处车声",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "time_change",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 6,
+        "reason": "场景内时间跳到深夜且光线系统整体改变，但半张车票P04必须已在他手中，铁盒与杂物位置保持一致"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K5-06",
+      "start": 297,
+      "end": 305,
+      "source_beat_ids": [
+        "B020"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "天气变化入场：雨声先到，雨痕在窗上出现，把情绪交给环境与声音",
+      "framing": "从周砚身后拍向窗户的过肩镜，窗占画左三分之一，他的侧背占画右",
+      "angle": "视线高度，背后偏左",
+      "camera_position": "周砚身后约两米，正对窗户",
+      "camera_motion": "固定，让雨的出现完全由窗玻璃和声音承担",
+      "focus": "焦点落在窗玻璃上初现的雨痕，周砚背影微虚作前景",
+      "blocking": "周砚仍坐在床沿未动，面朝窗户方向，窗外夜色里落下第一波雨，雨点开始在玻璃上拖出细痕；他的头随雨声极轻微地抬了一点",
+      "subject_action": "周砚静坐，指间仍捏着半张车票，听雨并微微抬眼望向窗",
+      "visible_emotion": "静默的背影呈现，情绪交给雨声",
+      "environment": "深夜雨起：窗玻璃上雨痕渐密，窗外街灯在雨膜里晕成一团模糊光斑；室内床侧台灯暖光不变，铁盒与杂物堆留原位",
+      "lighting": "室内台灯暖光不变，窗外的窗光被雨膜软化，画面出现冷蓝与暖黄的双色分离",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "雨声由疏渐密落在窗上，室内仍静",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 7,
+        "reason": "同一深夜坐姿与P04在手必须精确延续，且本镜引入持续降雨这一新天气状态，为S08退出状态背书"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K5-07",
+      "start": 305,
+      "end": 313,
+      "source_beat_ids": [
+        "B021"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "拿出手机拨号，把等待铃声的悬置时间交给正面机位与雨声共同承担",
+      "framing": "中近景正面，周砚坐在床沿，手机刚刚举到耳边",
+      "angle": "平视正面，略微仰一点，让背景的雨窗在他头侧出现",
+      "camera_position": "床沿正前方约一点五米",
+      "camera_motion": "固定",
+      "focus": "焦点在周砚面部，窗玻璃雨光在其肩后晕开",
+      "blocking": "周砚坐在床沿，左手把手机贴到耳边，右手垂着半张车票搭在膝上；听筒里长铃声连续响起，他一动不动，眼神望向斜前方",
+      "subject_action": "周砚拨通母亲电话，举机贴耳等待，铃声长响无人接听",
+      "visible_emotion": "悬置的紧绷渐渐松成一滴落空：视线先是专注，随后眼中那点期待慢慢熄下去",
+      "environment": "同K5-05与K5-06：床侧台灯，窗外持续的雨，杂物堆与开盖铁盒仍在原位",
+      "lighting": "台灯暖光为主的正面光，窗雨冷光作轮廓边缘",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "听筒内长而清晰的电话铃声与雨声叠合，无人接听",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "坐姿、P04在手与持续降雨必须延续，手机P07为新增在手道具，需准确交接"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K5-08",
+      "start": 313,
+      "end": 320,
+      "source_beat_ids": [
+        "B021"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "落空后的收束：放下手机，一个人和半张车票坐在雨声里，本chunk的静点与退出状态",
+      "framing": "宽中景，稍偏侧面的较高机位，周砚坐在床沿位于画面下三分之一，窗户与其身后的雨占据上部",
+      "angle": "略高于视线的俯角，带一点疏离的旁观感",
+      "camera_position": "床侧斜前方约两米半，机位抬高半米",
+      "camera_motion": "固定长静置",
+      "focus": "全画面较深的焦点，人物与环境同样清晰，无一处抢眼",
+      "blocking": "铃声停了，无人接听：周砚把手机轻轻放到身侧床面上，右手重新捏起膝上的半张车票，不再看任何东西，头部微微垂下；窗外雨依旧",
+      "subject_action": "周砚放下手机，重新握住半张烧焦车票，静坐在床沿",
+      "visible_emotion": "落空的怅然：面部松开，嘴唇微启又合上，目光落在地板上某个无物的点",
+      "environment": "同前：雨在窗外持续，室内台灯暖光，杂物堆与开盖的铁盒均留在原位",
+      "lighting": "台灯暖光与窗外冷蓝雨光的分离状态保持",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "持续的雨声，室内静，铃声已断",
+      "transition": "",
+      "boundary_type": "same_shot_continuation",
+      "camera_continuity": "continuous",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": false,
+      "boundary_risk": {
+        "state_transfer_load": 8,
+        "reason": "同一观众的观察内，铃声停、放手机、重新握票的连贯小动作与雨声状态必须无缝承接"
+      },
+      "composition_control": "critical"
+    }
+  ],
+  "continuity_exit_state": {
+    "by_shot": [
+      {
+        "shot_id": "K5-01",
+        "staging": "周砚跪坐在窗下旧木箱前，背对床、面朝门侧，身侧地板散着翻出的衣物与旧本子",
+        "wardrobe_state": "藏青色工装外套完整穿着，无变化",
+        "held_props": [],
+        "scene_state": "旧木箱开盖，地板散落翻出的旧物",
+        "lighting_state": "夜里，房间中央裸灯泡暖黄顶光，窗外全黑无雨"
+      },
+      {
+        "shot_id": "K5-02",
+        "staging": "周砚仍在木箱前跪坐，双手捧铁盒至胸前",
+        "wardrobe_state": "藏青色工装外套完整穿着",
+        "held_props": [
+          "铁盒P03"
+        ],
+        "scene_state": "木箱开盖，杂物散落地板，铁盒已从杂物中取出",
+        "lighting_state": "夜里，同一裸灯泡顶光，铁盒锈面有一片反光"
+      },
+      {
+        "shot_id": "K5-03",
+        "staging": "周砚跪坐原地，铁盒开盖捧在双手间，俯身面朝盒口",
+        "wardrobe_state": "藏青色工装外套完整穿着",
+        "held_props": [
+          "铁盒P03（开盖）"
+        ],
+        "scene_state": "铁盒开盖，盒内露出灯塔照片P08与半张烧焦车票P04，木箱仍开着",
+        "lighting_state": "夜里，顶光直落盒口，盒内物证比环境亮"
+      },
+      {
+        "shot_id": "K5-04",
+        "staging": "周砚跪坐原地，一手举照片至灯泡光下，一手拈半张车票对着光，上身略前倾，头微低；铁盒开盖放在膝前地板",
+        "wardrobe_state": "藏青色工装外套完整穿着",
+        "held_props": [
+          "灯塔照片P08（一手）",
+          "半张烧焦车票P04（另一手）"
+        ],
+        "scene_state": "铁盒开盖置于膝前地板，手关注视照片与车票，木箱与杂物不变",
+        "lighting_state": "夜里，顶光使面部下半与手中物证最亮，四周更暗"
+      },
+      {
+        "shot_id": "K5-05",
+        "staging": "深夜：周砚坐在床沿（背对床、面朝窗户方向），双肘撑膝，头微低；铁盒开盖留在窗下杂物堆旁",
+        "wardrobe_state": "藏青色工装外套完整穿着",
+        "held_props": [
+          "半张烧焦车票P04（右手指间垂在腿前）"
+        ],
+        "scene_state": "裸灯泡已关，床侧台灯亮着；木箱、纸箱、杂物堆与开盖铁盒留原位",
+        "lighting_state": "深夜，床侧台灯单点暖光，窗外深色夜空，无雨"
+      },
+      {
+        "shot_id": "K5-06",
+        "staging": "周砚仍坐床沿未动，头微微抬起望向窗，半张车票仍在指间",
+        "wardrobe_state": "藏青色工装外套完整穿着",
+        "held_props": [
+          "半张烧焦车票P04（右手指间）"
+        ],
+        "scene_state": "窗外开始下雨，玻璃上雨痕初现且渐密；室内陈设全部不变",
+        "lighting_state": "深夜雨夜：台灯暖光不变，窗外光被雨晕糊成冷蓝光斑"
+      },
+      {
+        "shot_id": "K5-07",
+        "staging": "周砚坐床沿，左手把手机贴在耳边，目光望向斜前方，右手的半张车票落在膝上",
+        "wardrobe_state": "藏青色工装外套完整穿着",
+        "held_props": [
+          "手机P07（贴在耳边）",
+          "半张烧焦车票P04（右手、落于膝上）"
+        ],
+        "scene_state": "窗外雨持续、玻璃雨痕更密，室内陈设不变",
+        "lighting_state": "深夜，台灯暖光正面，窗雨冷光作轮廓；雨持续"
+      },
+      {
+        "shot_id": "K5-08",
+        "staging": "周砚坐床沿，身体略侧向窗，头部微垂目光落向地板前方，手机已放在身侧床面",
+        "wardrobe_state": "藏青色工装外套完整穿着",
+        "held_props": [
+          "半张烧焦车票P04（右手重新握住）"
+        ],
+        "scene_state": "手机P07放在身侧床面，窗外雨持续较大，木箱与开盖铁盒留在原位",
+        "lighting_state": "深夜，台灯暖光与窗外雨夜冷蓝光双色分离，雨未停"
+      }
+    ]
+  },
+  "warnings": [],
+  "errors": []
+}

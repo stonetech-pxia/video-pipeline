@@ -1,0 +1,288 @@
+{
+  "schema_version": "1.1",
+  "chunk_id": "K8",
+  "status": "complete",
+  "start": 460,
+  "end": 540,
+  "shots": [
+    {
+      "id": "K8-01",
+      "start": 460,
+      "end": 475,
+      "source_beat_ids": [
+        "B030"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "夜里归途：用一盏一盏扫过脸的路灯把旅途的空洞疲惫写在脸上",
+      "framing": "近景，面部略偏画面右侧，左侧留出车窗玻璃与窗外流动的暗色公路",
+      "angle": "平视，摄影机位于车厢走道一侧，隔一座椅背的斜角看向靠窗座位",
+      "camera_position": "车内走道上，距周砚约1.2米，与车身纵向平行",
+      "camera_motion": "固定机位，随车身有极轻微的行驶颠簸感",
+      "focus": "锁定周砚的脸，窗外灯光一律虚成拖出的光带",
+      "blocking": "周砚靠窗坐，头抵着玻璃，闭眼或近于失焦的失神；身体随车辆轻微晃动；镜头左侧玻璃上路灯的光斑一盏一盏滑过他的脸，明一暗一明",
+      "subject_action": "头靠窗玻璃，随车微微摇晃，手指在胸前口袋处松松搭着，没有动作",
+      "visible_emotion": "空洞的疲惫：眼睛半阖，下颌松弛，被扫过的灯光照出又放回黑暗",
+      "environment": "回程长途汽车车厢内部：深色布面座椅、车顶昏暗的夜灯熄着、窗上有一点水汽和划痕，走廊空无一人；窗外是夜里双向车道的公路，护栏与路灯杆不断掠过",
+      "lighting": "唯一光源是车外掠过的路灯与对向车灯：冷白光斑沿画面左侧玻璃滑入，一盏约两秒，扫过他的额角、颧骨后跌回近黑；车内自身近于全暗",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "轮胎与路面持续的滚噪声、低哑的马达、玻璃传来的一点风声；灯光扫过时无音效变化",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "location_change",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 0,
+        "reason": "本块开头且换了场景与地点，世界状态自然重置；周砚随身携带旧照片由接着的中景重立"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K8-02",
+      "start": 475,
+      "end": 490,
+      "source_beat_ids": [
+        "B030"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "换景别隔离他与这点随身之物：全车空着，旧照片在袄袋里贴着他",
+      "framing": "中景，从车厢斜后方跨走廊拍摄，周砚靠窗半身靠右，左侧大片空座椅与走廊",
+      "angle": "平视略带俯-find，与大近景形成景别跳变",
+      "camera_position": "车厢另一侧走道上，距周砚约2.5米，侧后方45°",
+      "camera_motion": "极缓慢地向走廊口后移，让他在画面里一点点变小",
+      "focus": "锁定周砚上身，背景座椅虚成一片暗色块",
+      "blocking": "周砚仍靠窗，头低着些，右手从胸口外袋里按了一下那一点方形的硬边，然后合上眼",
+      "subject_action": "隔着衣料按了按袋里的旧照片，再把手放回腿上",
+      "visible_emotion": "空洞里的一点确认：动作轻，像怕惊动什么",
+      "environment": "同一节车厢：空座椅成排纵深，车顶行李架空着，窗玻璃上映出他自己模糊的影；窗外公路灯光继续掠过",
+      "lighting": "与上一镜同一路灯光方向，冷白光斑自画面左侧扫过，被他的肩挡出一条暗边；曝光整体更低、更静",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "发动机低鸣、轮胎滚动、远处一次缺气的气囊椅噪声；无音乐",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "同一车内同一人物，靠坐姿势、灯光扫掠方向与贴身照片必须跨切延续"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K8-03",
+      "start": 490,
+      "end": 504,
+      "source_beat_ids": [
+        "B031"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "回到灯塔：黎明前最暗的时刻，以远景重立锈蚀的门与背面的两个刻名字，交代他走向此墙",
+      "framing": "大远景转远景，灯塔立画面左三分，背面墙与两个歪扭刻名在画面中部偏左，周砚沿画面右下向墙走近",
+      "angle": "平视，略仰取灯塔的钝重高度",
+      "camera_position": "塔外草坡上，距墙约10米，位于灯塔东侧朝西拍",
+      "camera_motion": "固定机位；看他把人物侧前景走成中景",
+      "focus": "全焦：塔体、刻痕、走近的人都在景深内",
+      "blocking": "周砚（藏青色工装外套）从画面右侧入画，脚步不慢，径直走向灯塔背面那面墙；到墙前站定，抬头找到两个刻痕的名字；背上旧照片在胸口外袋里",
+      "subject_action": "走近、停步、仰头看刻痕",
+      "visible_emotion": "交代般的郑重：步子放宽，站定后肩背挺直",
+      "environment": "L05 灯塔下：塔体锈蚀，门上锁、锁芯锈死；背面墙上两个小孩歪歪扭扭刻的名字仍在石面上；墙下是一圈粗石基座，石缝里积着干海砂；远处海面在画面下缘摊开，暗得像铁",
+      "lighting": "黎明前最暗的顺光（偏东的天光极弱）：一切清冷低饱和，刻痕在阴影里只能依稀辨认；海面几乎黑",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "海浪一层一层拍岸、咸风掠过草坡的摩擦；没有鸟叫",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "location_change",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 3,
+        "reason": "地点与时间切换，仅需带走人物与他贴身装着的照片"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K8-04",
+      "start": 504,
+      "end": 519,
+      "source_beat_ids": [
+        "B031"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "全块核心动作：把照片压进刻痕下方的石缝，作为全片收束的托付",
+      "framing": "特写起，随动作缓缓拉升为近景：照片、刻痕、插入的手与他在同一画面里",
+      "angle": "平视，与石面几乎齐高，轻微侧角让刻痕的刀口显出阴影",
+      "camera_position": "紧贴墙面正前，距石缝约半米，随人物起身略微后撤",
+      "camera_motion": "起始静止于石缝与刻痕的近景；照片落位后随他直身缓慢后撤并微微抬起，终点带进他半身与墙上刻名",
+      "focus": "焦点先锁刻痕与其下那条石缝里的照片，随镜头后移接力到他的侧脸",
+      "blocking": "周砚自胸口外袋取出旧照片，翻转——背面朝上一瞬见得到「你答应过要回来的。」的字迹——俯身把它压进两个刻名字正下方那道积砂的石缝，用指腹按实，砂粒顺缝滑落；他直起身，手在身侧垂下",
+      "subject_action": "取照片、翻面、压入石缝、按实、起身",
+      "visible_emotion": "交代般的郑重：动作不快也不迟疑，每一指都落在该落的地方",
+      "environment": "塔背面墙的近景：粗石面、锈迹流下的黑痕、两个歪扭刻名与刀口毛边，刻名下方一道宽约一指的石缝，缝里积着干海砂与一小圈碎贝壳",
+      "lighting": "同一弱东天光顺石面，刻痕阴影依旧；照片压入后，纸面在缝外留一道极窄的白边，被微光接住",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "海浪更远、更沉；石缝里砂粒被挤落的簌簌声、纸边与石面的摩擦；海风一阵掠过",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 8,
+        "reason": "同一墙前：照片翻面字迹、刻名字正下方的石缝位置、积砂与微弱天光角度都必须原样延续"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K8-05",
+      "start": 519,
+      "end": 533,
+      "source_beat_ids": [
+        "B032"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "海开始亮了：天光自海面漫上来，全片的破晓在无人做任何事的情况下发生",
+      "framing": "远景：地平线在画面下三分之一，亮起的海面与渐亮的天空占大半画面，周砚立在画面左侧下缘，背影入画",
+      "angle": "平视，与海面同高，略带仰取天色",
+      "camera_position": "海滩草坡上方，距周砚约8米，位于他身后东侧朝西的海面拍",
+      "camera_motion": "极缓慢地横向平移，像被天色本身带动",
+      "focus": "焦点在海与天的亮带上，人物轮廓涛稍虚",
+      "blocking": "周砚背对镜头站定，面朝西海；身体不再动作，只有外套下摆随海风持续摆动；光从海平线一层层漫上来，先亮天空，再亮海面",
+      "subject_action": "静立看海，随天光变化不动",
+      "visible_emotion": "沉默的此刻：身体放空，任光爬上来",
+      "environment": "海面由暗铁色转出银灰，浪的褶皱逐渐可辨；远处无船；草坡在前景暗着；灯塔留在画面外右侧，不再抢眼",
+      "lighting": "变化镜头：黎明破晓（TM005），自画面深处海平线向东逆光渐升，冷灰中透出第一线暖意；人物受光在肩背轮廓，脸留在阴影里",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "浪声依旧但更开阔、更清；海上第一阵更亮的风；无音乐",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 6,
+        "reason": "同地同场：人物站位与朝向、灯塔在画外右侧的位置、以及照片已压进石缝后的留置状态必须延续"
+      },
+      "composition_control": "free"
+    },
+    {
+      "id": "K8-06",
+      "start": 533,
+      "end": 540,
+      "source_beat_ids": [
+        "B033"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "离开：转身走向镇上，不回头，全片收束",
+      "framing": "远景：镜头一面拍他走向镜头一侧的镇路，一面让动了主角位置的优势让位给维环境的空寂",
+      "angle": "平视，比上一镜略低半档，海平线抬高",
+      "camera_position": "草坡上，位于他走向镇上的路线左侧前方6米，塔背在画面深处的左后位",
+      "camera_motion": "固定机位再后收，把他走进纵深，画面由他的背影出院",
+      "focus": "全焦，背景里灯塔轮廓与渐亮的水平光同时保持在焦内",
+      "blocking": "周砚自画左转身离开面向海的方向，沿粗石小路向镇上走；背后的灯塔、那面有刻名的墙、石缝中的照片留在他身后；他一步步走远，始终没有回头；衣摆随海风动",
+      "subject_action": "转身与一直走进纵深，不回头",
+      "visible_emotion": "释然而空寂：步子不慢，肩背放松",
+      "environment": "同 L05，同一黎明海面已经亮开；路是一段高差向镇上铺去的粗石小路，两旁是枯草与石墙；灯塔与压着照片的石缝留在画面纵深左后，不再回望",
+      "lighting": "破晓的东北天光（冷灰带第一缕暖）顺路洒下，把他的肩线描出一条浅色边；海面银灰在画面下方一片亮",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "身后更远的浪、石子路上的脚步声一记一记、海风过岩缝的哨音；收束时全部声音退低",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 6,
+        "reason": "同地同场：人物站位与朝向、亮起的海面、留在石缝里的照片位置必须跨切延续"
+      },
+      "composition_control": "normal"
+    }
+  ],
+  "continuity_exit_state": {
+    "by_shot": [
+      {
+        "shot_id": "K8-01",
+        "staging": "周砚坐在回程长途汽车靠窗座位，头抵玻璃，背朝走廊侧坐；客车仍在夜间公路行驶",
+        "wardrobe_state": "藏青色工装外套仍穿在身上，拉链扣好",
+        "held_props": [],
+        "scene_state": "车厢近空，夜灯未开；旧照片（P02）在胸口外袋里",
+        "lighting_state": "夜，无车内光源，一路灯光斑自窗外画面左侧反复扫过"
+      },
+      {
+        "shot_id": "K8-02",
+        "staging": "同车同座位，周砚手已离照片回到腿上，头低垂，闭眼",
+        "wardrobe_state": "藏青色工装外套不改；胸口外袋刚被按过一下",
+        "held_props": [],
+        "scene_state": "旧照片贴胸在外袋内；车厢空置，行驶继续",
+        "lighting_state": "同一夜行车窗外扫光，扫掠方向不变"
+      },
+      {
+        "shot_id": "K8-03",
+        "staging": "周砚立于灯塔背面墙前，面朝塔体，仰头正对两个歪扭刻名；草坡在其身后东侧",
+        "wardrobe_state": "藏青色工装外套依旧，衣摆被海风吹得贴紧侧身",
+        "held_props": [],
+        "scene_state": "锁仍在、锈蚀仍在、刻名仍在；照片仍在胸口外袋；石缝积干海砂未动",
+        "lighting_state": "黎明前最暗的东天光，一切低照清冷，海面近黑"
+      },
+      {
+        "shot_id": "K8-04",
+        "staging": "周砚直立在贴墙前一臂距离，右手已垂在身侧，面朝墙面",
+        "wardrobe_state": "外套依旧，胸外袋已空",
+        "held_props": [],
+        "scene_state": "旧照片（P02）已压进两个刻名正下方那道积砂石缝，背面字「你答应过要回来的。」朝内，缝外留一道细白边，此后留置原地",
+        "lighting_state": "同一弱天光；刻痕阴影未动，砂粒已落定"
+      },
+      {
+        "shot_id": "K8-05",
+        "staging": "周砚背对镜头立于草坡ает面海处，距海墙约但当一臂之外的坡边；灯塔在画外右侧",
+        "wardrobe_state": "外套下摆随海风持续摆动",
+        "held_props": [],
+        "scene_state": "照片仍留在石缝里未被触碰；海面开始由暗铁色转银灰",
+        "lighting_state": "黎明破晓中：天光自画面深处东海平线逆光渐升，冷透出第一线暖意（TM005）"
+      },
+      {
+        "shot_id": "K8-06",
+        "staging": "周砚沿粗石小路向画面纵深走远，面朝镇上方向；灯塔与刻石缝在其身后左后深处",
+        "wardrobe_state": "外套依旧，肩线东侧掠出一条亮边",
+        "held_props": [],
+        "scene_state": "照片（P02）最终留在刻痕下方石缝内，不再被取走；灯塔门仍锁，海面已亮",
+        "lighting_state": "黎明已亮：冷灰天光顺路洒下，海面银灰一片；收束时整体亮度趋向平和"
+      }
+    ]
+  },
+  "warnings": [
+    "照片正面里女孩的年龄与长相未在叙事中具体描述；按 AMB-CH01-02 处理为『照片里模糊的年轻女孩』，不作细写",
+    "S13 与 S14 之间ForMember存在省城公路→灯塔的夜间时间压缩，两场之间用直接切镜跨过，未加便携过渡空镜，符合镜头句的处理"
+  ],
+  "errors": []
+}

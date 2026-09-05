@@ -1,0 +1,309 @@
+{
+  "schema_version": "1.1",
+  "chunk_id": "K4",
+  "status": "complete",
+  "start": 195,
+  "end": 245,
+  "shots": [
+    {
+      "id": "K4-01",
+      "start": 195,
+      "end": 205,
+      "source_beat_ids": [
+        "B013"
+      ],
+      "characters_in_frame": [
+        "C01",
+        "C03"
+      ],
+      "dramatic_purpose": "进入卫生所空间，建立周砚与值班老医生的相对位置与 interrogation 关系",
+      "framing": "中景双人，诊桌居中，周砚从画面右缘走入纵深，老医生坐在桌后",
+      "angle": "平视，略低于两人高度的肩位机位",
+      "camera_position": "诊桌侧面偏南，拍向房间深处；老医生背靠药柜，周砚背对西窗",
+      "camera_motion": "固定机位",
+      "focus": "锁定桌上倒扣的病历与两人的桌面中线，前后景轻微虚化",
+      "blocking": "世界状态：诊室东西向，西窗透傍晚光；老医生（白大褂）坐诊桌后，面朝西向门口；周砚（藏青工装外套）从东门进入，走到桌前站定，双手扶桌沿。老医生抬头。整场两人隔桌相对，站位不变",
+      "subject_action": "周砚穿过诊室走到诊桌前停下，微微俯身；老医生从病历上抬起头看向周砚",
+      "visible_emotion": "周砚谨慎而克制；老医生平静中带职业性审视",
+      "environment": "镇卫生所值班室：灰白墙面，靠墙一排贴标签药柜与铁架，老式病历本与听诊器摊在诊桌上，桌角一盏没有点亮的台灯，地面是磨旧的深色地砖",
+      "lighting": "傍晚：主要光源为西窗斜入的低角度暖黄自然光，全场暖面在左侧，药柜一侧较暗；无正面补光",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "傍晚远处的犬吠与虫鸣，周砚的脚步声止于桌前，老医生合上病历的纸声",
+      "transition": "切至周砚正面近景",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "location_change",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 2,
+        "reason": "场景由灯塔切至卫生所，仅周砚的藏青外套与其随身旧照片状态（随身携带）越过场景边界"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K4-02",
+      "start": 205,
+      "end": 213,
+      "source_beat_ids": [
+        "B013"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "周砚开口打听林家，紧收景别强调其谨慎与隐瞒的质感",
+      "framing": "周砚正面近景，窗光侧打，桌面在画面底部虚化",
+      "angle": "平视，正对面南机位",
+      "camera_position": "诊桌南侧，正对周砚",
+      "camera_motion": "极缓推进约十厘米",
+      "focus": "锁定周砚面部，浅景深",
+      "blocking": "承前站位：周砚站诊桌前面朝南（对老医生），双手扶桌沿；老医生与药柜均出框或只留虚化肩缘，不得入镜抢焦点",
+      "subject_action": "周砚落后半字地开口，目光直视对方方向，手指在桌沿轻微收紧",
+      "visible_emotion": "谨慎的求证，语气尽量平常",
+      "environment": "同 K4-01 世界状态，画面中仅见诊桌虚化前沿",
+      "lighting": "西窗暖光从周砚左后方侧逆打亮发缘与肩线，面部左亮右暗",
+      "dialogue_ids": [
+        "D0016"
+      ],
+      "dialogue": "向您打听个人，林家的人，还在镇上吗？",
+      "diegetic_audio": "窗外傍晚虫鸣持续，台词收句后半拍的静",
+      "transition": "反打切至老医生",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "周砚的站位、扶桌手势与刚说完的问句腔调须跨切延续"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K4-03",
+      "start": 213,
+      "end": 222,
+      "source_beat_ids": [
+        "B014"
+      ],
+      "characters_in_frame": [
+        "C03"
+      ],
+      "dramatic_purpose": "老医生揭开信息：林家女儿十二年前出过事，并把问题反掷回来",
+      "framing": "老医生正面中近景，身后药柜虚化",
+      "angle": "平视，正对面北机位（过周砚肩位高度的净空反打）",
+      "camera_position": "诊桌北侧，正对老医生",
+      "camera_motion": "先静一拍，随后极缓推进",
+      "focus": "锁定老医生面部，药柜虚化",
+      "blocking": "世界站位不变：老医生坐诊桌后，面朝南看向周砚；周砚完全出框",
+      "subject_action": "老医生注视周砚方向，先四下扫一眼空的候诊处，再压低声音作答，末句直视不避",
+      "visible_emotion": "平静之下藏着一点摸索与质疑",
+      "environment": "同 K4-01，虚化药柜的玻璃瓶剪影",
+      "lighting": "傍晚窗光已弱于上一镜角度：老医生面部半受光，靠窗一侧（画面右）亮，靠药柜一侧（画面左）暗，方向与 K4-01 世界光源一致",
+      "dialogue_ids": [
+        "D0017"
+      ],
+      "dialogue": "林家的女儿十二年前出过事，你不记得了？",
+      "diegetic_audio": "墙上挂钟走针，压低的说话声",
+      "transition": "反打切至周砚",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 6,
+        "reason": "老医生压低的语调与'直视不避'的视线方向必须与下一镜周砚的反应切口衔接"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K4-04",
+      "start": 222,
+      "end": 228,
+      "source_beat_ids": [
+        "B014"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "周砚被问住后的防御：以最平的语气否认记忆",
+      "framing": "周砚近景，构图稍偏左，留出右侧暗部空间",
+      "angle": "平视，正对面南机位，比 K4-02 更近半档",
+      "camera_position": "诊桌南侧，贴近周砚肩位",
+      "camera_motion": "固定机位",
+      "focus": "锁定面部",
+      "blocking": "周砚站姿不变，默然停顿近一秒后开口，右手指尖抵住桌沿",
+      "subject_action": "周砚喉结动了一下，语速放慢，说出否认",
+      "visible_emotion": "被问住的防御，平静的表面下透着不稳",
+      "environment": "同 K4-01，诊桌前沿虚化",
+      "lighting": "同 K4-02 方向：左肩后侧逆光勾边，左脸亮右脸暗",
+      "dialogue_ids": [
+        "D0018"
+      ],
+      "dialogue": "我不记得。",
+      "diegetic_audio": "虫鸣减弱一瞬的静，声音在说出口后悬着",
+      "transition": "切双人中景",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 7,
+        "reason": "两人相对站位、周砚抵桌的指尖与'我不记得'落地后的沉默都要跨切延续"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K4-05",
+      "start": 228,
+      "end": 238,
+      "source_beat_ids": [
+        "B015"
+      ],
+      "characters_in_frame": [
+        "C01",
+        "C03"
+      ],
+      "dramatic_purpose": "沉默之后，老医生说出全段重击'那年你也在'；缓推把压迫感交给纵深",
+      "framing": "双人中景，桌子横贯前景，两人左右分置",
+      "angle": "平视，桌侧正面",
+      "camera_position": "诊桌正东侧，沿桌轴线向里看",
+      "camera_motion": "极缓匀速推进，随最后一个字停下",
+      "focus": "焦点锁定两人之间，桌面轻微偏虚",
+      "blocking": "二人隔桌相对（世界状态不变）：老医生坐桌后，周砚站桌前；沉默数秒后老医生开口；周砚听完全句仍面向对方",
+      "subject_action": "两人相对无言；老医生在沉默后低声说出那句话；周砚的肩膀在听清后几不可察地沉了一下",
+      "visible_emotion": "老医生笃定而克制；周砚被击中的怔忡",
+      "environment": "同 K4-01，候诊长椅与药柜的昏暗纵深开始合拢画面边缘",
+      "lighting": "傍晚光继续转暗：两人受光面更薄，桌面反光变弱，仅西窗方向留一道窄的暖光带",
+      "dialogue_ids": [
+        "D0019"
+      ],
+      "dialogue": "那年你也在。",
+      "diegetic_audio": "挂钟走针不匀，老医生低哑的嗓音，说罢之后漫长的静",
+      "transition": "推近切至周砚面部特写",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 8,
+        "reason": "周砚的面部受光方向、面向与'那句落地后的沉默'必须原样进入特写"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K4-05b",
+      "start": 238,
+      "end": 245,
+      "source_beat_ids": [
+        "B015"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "收束本段：特写里不加回应，把怔忡悬在剪断处",
+      "framing": "周砚面部特写，构图居中偏左，右侧留暗部空间",
+      "angle": "平视，极近距离",
+      "camera_position": "诊桌南侧近景位",
+      "camera_motion": "固定机位",
+      "focus": "锁定面部，背景完全虚化",
+      "blocking": "周砚站姿微不作调整，面向南（老医生方向）；老医生与药柜完全出框，其肩缘只允许以极虚的色块存在，不得形成可辨认人形",
+      "subject_action": "周砚目光轻微失焦又聚回，嘴唇微张，最终没有出声",
+      "visible_emotion": "被击中的怔忡，连否认都做不出来",
+      "environment": "同 K4-01，画面只余虚化的诊室暗部",
+      "lighting": "傍晚最后一段余光：左脸薄光，右脸沉入阴影，明暗分界比 K4-04 更重",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "极低的室内静，挂钟走针，一声窗外虫鸣收尾",
+      "transition": "略过",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 8,
+        "reason": "特写须承接双人镜头里周砚的面部受光、面向与怔忡神态，一个眼神错位即穿帮"
+      },
+      "composition_control": "critical"
+    }
+  ],
+  "continuity_exit_state": {
+    "by_shot": [
+      {
+        "shot_id": "K4-01",
+        "staging": "周砚站诊桌前面朝南（老医生方向），老医生坐诊桌后面朝西看向周砚，二人隔桌相对",
+        "wardrobe_state": "周砚：藏青色工装外套完好；老医生：白大褂着装",
+        "held_props": [
+          "旧照片（P02）随身携带于周砚外套内，未取出"
+        ],
+        "scene_state": "卫生所值班室安静， nobody waiting；听诊器与病历摊在桌上",
+        "lighting_state": "傍晚，西窗低角度暖黄侧光，药柜一侧偏暗"
+      },
+      {
+        "shot_id": "K4-02",
+        "staging": "周砚站原地面向南，手指扶桌沿，老医生出框",
+        "wardrobe_state": "藏青色工装外套完好",
+        "held_props": [
+          "旧照片随身携带，未取出"
+        ],
+        "scene_state": "同一诊室，无变化",
+        "lighting_state": "傍晚窗光，周砚左后侧逆光勾边"
+      },
+      {
+        "shot_id": "K4-03",
+        "staging": "老医生坐诊桌后面朝南看向周砚，周砚出框",
+        "wardrobe_state": "老医生白大褂完好",
+        "held_props": [
+          "周砚照片随身携带（出框）"
+        ],
+        "scene_state": "同一诊室，无变化",
+        "lighting_state": "傍晚，老医生靠窗一侧（画面右）受光，药柜一侧（画面左）暗"
+      },
+      {
+        "shot_id": "K4-04",
+        "staging": "周砚站诊桌前面向南，指尖抵住桌沿",
+        "wardrobe_state": "藏青色工装外套完好",
+        "held_props": [
+          "旧照片随身携带，未取出"
+        ],
+        "scene_state": "同一诊室，无变化",
+        "lighting_state": "傍晚，左肩后侧逆光，左脸亮右脸暗"
+      },
+      {
+        "shot_id": "K4-05",
+        "staging": "二人隔桌相对：老医生坐桌后，周砚站桌前；周砚面向老医生，肩膀微微下沉",
+        "wardrobe_state": "周砚藏青外套完好；老医生白大褂完好",
+        "held_props": [
+          "旧照片随身携带，未取出"
+        ],
+        "scene_state": "同一诊室，沉默状态None；听诊器病历仍在桌上",
+        "lighting_state": "傍晚转暗，仅西窗留窄暖光带，两人受光面变薄"
+      },
+      {
+        "shot_id": "K4-05b",
+        "staging": "周砚站原位面向南，嘴唇微张未出声，保持沉默",
+        "wardrobe_state": "藏青色工装外套完好",
+        "held_props": [
+          "旧照片随身携带，未取出"
+        ],
+        "scene_state": "同一诊室，二人相对沉默；二人站位不变",
+        "lighting_state": "傍晚最后余光，左脸薄光右脸沉入阴影，明暗对比加重"
+      }
+    ]
+  },
+  "warnings": [
+    "场景 L06 的内部细节（窗口方位、药柜位置、家具）由本 chunk 设定：诊室东西向、西窗为唯一自然光源，后续镜头在 L06 必须沿用"
+  ],
+  "errors": []
+}

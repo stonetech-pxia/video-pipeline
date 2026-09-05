@@ -1,0 +1,291 @@
+{
+  "schema_version": "1.1",
+  "chunk_id": "K6",
+  "status": "complete",
+  "start": 320,
+  "end": 385,
+  "shots": [
+    {
+      "id": "K6-01",
+      "start": 320,
+      "end": 333,
+      "source_beat_ids": [
+        "B022"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "建立第二天清晨的空间与周砚出发前的状态，把『买票去省城』的动作放进车站的人流与灰冷晨光里",
+      "framing": "中景，周砚在画面中央偏远侧留白，身后是售票窗口与排在远处的几个乘客",
+      "angle": "平视，机位略低于人眼，让站内顶棚压进画面上部",
+      "camera_position": "售票厅内，距周砚约四米，正侧偏前方，与售票窗成温和的斜角关系",
+      "camera_motion": "固定，仅有极缓慢的横移跟随他走向窗口的半步",
+      "focus": "中景深，周砚清晰，背景窗口与人群略微松散",
+      "blocking": "周砚从候车区一侧走向售票窗，在队伍尽头站定；他抬眼望向窗口上方的班次牌，肩膀沉了一下才迈步向前；周围乘客各抱着包和纸杯，有各自的方向",
+      "subject_action": "周砚走向售票窗口并站定，抬起头看班次牌",
+      "visible_emotion": "动作沉稳但不快，环顾的眼神里有一种把本镇留在身后的平静",
+      "environment": "镇上长途汽车站售票厅：水泥地面磨得发亮，靠墙一排绿色漆皮售票窗，窗上挂着手写的班次牌，窗下有一条被磨亮的收款槽；头顶是两排长条日光灯管加一扇高侧窗，清晨的天光从左侧斜进来，把地面切出长条亮斑；候车椅上有人打盹，塑料吊扇缓慢转动",
+      "lighting": "左侧高窗进来的冷白晨光为主光方向，日光灯管的平光作补；色温偏冷灰，只有窗口内一点暖黄钨丝光作对比",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "塑料吊扇的嗡转、远处班车发动机怠速、售票窗内传票的钝响、稀疏脚步",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "scene_change",
+      "recomposition_needed": false,
+      "boundary_risk": {
+        "state_transfer_load": 0,
+        "reason": "本段起始为场景与时间切换，前一场景深夜室内状态不进入本镜"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K6-02",
+      "start": 333,
+      "end": 345,
+      "source_beat_ids": [
+        "B022"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "把『买一张去省城的票』落到一个具体的进出之物上，票从窗口递进周砚手里，是整个决定成为不可回头的物证时刻",
+      "framing": "近景，取售票窗侧位：窗口、栅栏、周砚的侧脸与手部同框，票在画面下三分之一",
+      "angle": "平视，与周砚侧脸平齐，栅栏铁条在前景形成竖向遮挡",
+      "camera_position": "售票窗侧面，贴近栅栏，机位在周砚一侧越过铁栅看向窗口",
+      "camera_motion": "固定",
+      "focus": "浅景深，焦点锁在互相递过的一张票上，窗口内售票员的脸与周砚的侧脸都在焦点边缘",
+      "blocking": "周砚站在窗口前，报出目的地；窗口内的手收钱、打票、把一张机器打出的票推出来；周砚伸手接过票，双手捏住票的两侧低头看了一眼，然后把票折进外套口袋，转身离开画面",
+      "subject_action": "周砚接过票，看一眼，收进口袋，转身走出画面",
+      "visible_emotion": "动作干净、不迟疑，收票时手指略停一拍，那是他唯一的犹豫",
+      "environment": "同K6-01售票窗口特写角度：绿漆窗框上漆皮崩裂的纹理、玻璃上贴的票价表、栅栏铁条、窗台上被无数手肘磨亮的木边；收费槽前的台面上散着两枚旧硬币",
+      "lighting": "窗口内侧的暖黄钨丝光落在周砚的手和票上，与左侧冷晨光形成小面积冷暖对比；铁栅在他的脸侧投下细窄条纹阴影",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "票据机戳打纸票的咔哒声、硬币落槽声、栅栏被手触碰的金属轻响、窗口内的低声应答",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "同一场景同一人物，接票动作在上一镜已启动，票属于本镜新增手持物必须延续"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K6-03",
+      "start": 345,
+      "end": 357,
+      "source_beat_ids": [
+        "B023"
+      ],
+      "characters_in_frame": [
+        "C01",
+        "C04"
+      ],
+      "dramatic_purpose": "场景切换到医院走廊，建立周砚与坐在轮椅上的母亲之间的整条走廊纵深，让这段距离本身承载『压抑的忐忑』",
+      "framing": "大纵深构图：走廊一侧尽头是坐轮椅的母亲（C04），周砚从另一端进入画面，两人之间是一条长长的走廊",
+      "angle": "平视，机位略低偏向走廊一侧，让轮椅清楚地占据走廊尽头的空间",
+      "camera_position": "走廊一端靠墙，位于周砚身后偏后，视线越过他的肩望向走廊尽头",
+      "camera_motion": "缓慢跟随周砚向前推进，速度低于步行，几乎是一个凝视的推进",
+      "focus": "焦点从近处周砚的背影逐渐向走廊深处的轮椅转移，走廊中部空间向后虚化",
+      "blocking": "周砚沿走廊一侧向前走，步速不快不慢，像怕惊动什么；走廊另一侧有推着治疗车的护士从他身侧反向走过；轮椅上的母亲面朝窗侧坐着，没有动",
+      "subject_action": "周砚走向走廊尽头轮椅上的母亲",
+      "visible_emotion": "肩膀收紧、步幅刻意放小，走近的身体里压着忐忑",
+      "environment": "省城医院住院部走廊：浅灰绿色墙裙、白色墙面、电梯口反光门；右侧一长排窗户，上午的日光把地面切成长段光带；墙边立着输液架、候诊椅和一台饮水机，输液管在光里垂着细小的影子；轮椅停在尽头的窗侧",
+      "lighting": "右侧长窗进来的白昼平光为主，地面反光把亮度弹上墙面；色温中性偏冷，无侧硬影，整体安静明亮",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "走廊顶广播的低哑叫号声、远处推车轮子的滚动、饮水机气泡声、周砚自己的脚步",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "scene_change",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 3,
+        "reason": "场景与地点硬切换， Switch重置；周砚的藏青外套与口袋中的票和照片需要延续"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K6-04",
+      "start": 357,
+      "end": 369,
+      "source_beat_ids": [
+        "B023"
+      ],
+      "characters_in_frame": [
+        "C01",
+        "C04"
+      ],
+      "dramatic_purpose": "把周砚带到母亲正前方停住，把距离几乎降为零，形成一场无人说话的对峙式重逢的起点",
+      "framing": "正侧中景，两人同框：周砚站在画面左，母亲坐在轮椅上画面右，两人之间留出一到两步的空气",
+      "angle": "平视略低，机位高度接近母亲坐姿的视线高度，让两人的眼睛处在近似同一水平",
+      "camera_position": "两人侧面正中，距周砚约两米半，走廊光轴垂直穿过画面",
+      "camera_motion": "固定，仅在周砚站定时有一次几乎察觉不到的极缓推进",
+      "focus": "浅到中景深，两人清楚，走廊前景光的窗框虚成一摊亮",
+      "blocking": "周砚走到轮椅正前方一步处停住，双手垂在身侧，外套口袋涨起旧照片所在的那个位置；母亲仍面朝窗侧，停了两拍后，缓慢地把头转过来；轮椅把手处搭着她的一只手，指尖动了一下",
+      "subject_action": "周砚站定在她面前；母亲缓缓转过脸来看他",
+      "visible_emotion": "周砚的手指在身侧蜷了一下；母亲转头时的动作迟缓、带着一层慣性的停顿",
+      "environment": "同K6-03走廊同一区段：浅灰绿墙裙、右侧长窗白昼光、地面的长条光斑现在跨在两人之间的地面上；轮椅金属扶手反着一小点亮光",
+      "lighting": "右侧长窗的平光继续投进来，母亲侧脸受光，周砚背光偏一半暗面；色温中性偏冷",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "走廊广播的余音、轮椅金属被手指碰到的一下轻响",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 6,
+        "reason": "同一走廊同一调度：周砚从行进走位变为站定，母亲的轮椅位置与朝向必须原样延续，对峙构图不可重置"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K6-05",
+      "start": 369,
+      "end": 377,
+      "source_beat_ids": [
+        "B024"
+      ],
+      "characters_in_frame": [
+        "C04"
+      ],
+      "dramatic_purpose": "把『认了很久』压缩成一个不能剪开的凝视：我们只看母亲的脸，让识别的过程在静止里一点点完成",
+      "framing": "母亲面部的中近景，前额到肩头，画面里没有周砚，只有她的眼睛终于落到某个远处",
+      "angle": "平视，与她的眼睛同高，机位取自周砚站位的方向，形成正对她的观看轴",
+      "camera_position": "轮椅正前方一米多，与她的视线正对，机位稍低于窗线以避开过强的窗光",
+      "camera_motion": "固定到后半段一次极缓的推进",
+      "focus": "浅景深，焦点始终在她的眼睛；后景的窗外天光完全虚化成一团亮",
+      "blocking": "她看着面前这个背光的人，眉心轻微收紧；目光先落在他的衣服上，再慢慢向上爬，停在他的下巴，又停了很久，然后忽然落到眼睛的位置并停住；嘴唇抿紧，喉头动了一下",
+      "subject_action": "母亲注视周砚良久，从迟疑的打量走向认出的那一瞬",
+      "visible_emotion": "先是迟疑的、找不到锚点的目光，然后眼底一点潮湿的光浮起，表情从茫然转向几乎要溃堤的认出",
+      "environment": "同K6-04同一走廊同一位置，画面只剩她的近景：墙裙的浅灰绿在她身后虚开，轮椅金属扶手的一角入画右下",
+      "lighting": "她的脸接受来自侧窗的柔和昼光，半面亮、半面上暗，窗外天光在她眼睛上留下一个静止的小亮点",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "走廊环境几乎静默，只有极远处一个推车轮子的滚动与广播的间隙",
+      "transition": "cut",
+      "boundary_type": "same_shot_continuation",
+      "camera_continuity": "continuous",
+      "action_continuity": "continuous",
+      "framing_continuity": "same",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": false,
+      "boundary_risk": {
+        "state_transfer_load": 6,
+        "reason": "同段长镜内部切片：同一走廊同一轴线上同一对峙，周砚站姿、母亲轮椅朝向、光线方向与她的目光进度必须整体延续"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K6-06",
+      "start": 377,
+      "end": 385,
+      "source_beat_ids": [
+        "B024"
+      ],
+      "characters_in_frame": [
+        "C04"
+      ],
+      "dramatic_purpose": "承接同一个凝视，把台词『……砚砚。』放在她的面孔上说出来，让认出这一拍收束在声音里",
+      "framing": "母亲面部特写，从下巴到发际，她的眼睛占画面视觉中心",
+      "angle": "平视，同一轴线，机位较上一镜再近半步",
+      "camera_position": "轮椅正前方不足一米，高度仍与她的眼齐平",
+      "camera_motion": "固定，不推不摇，让呼吸自己在画面里起伏",
+      "focus": "极浅景深，焦点锁在她的眼睛，轮椅扶手一角虚在画面边缘",
+      "blocking": "她的眼睛终于停住，眼眶微微湿润；嘴唇先动了一下没有出声，停顿一拍，然后极轻地、像从很深的地方捞上来一样叫出『……砚砚。』",
+      "subject_action": "母亲嘴唇张动，极轻地、久别重逢般叫出他的名字",
+      "visible_emotion": "认出的一瞬：眼神从迟疑转为涌上来的酸楚，不出声的哽咽之后，只有那一句极轻的呼唤",
+      "environment": "同K6-05同一位置同一时点的极端特写：背景只剩走廊墙裙的一带模糊浅灰绿，轮椅金属一角在画框右下边缘",
+      "lighting": "同K6-05：侧窗柔光，眼睛里那个小亮点静止不动，半面脸上暗面加深一分",
+      "dialogue_ids": [
+        "D0020"
+      ],
+      "dialogue": "……砚砚。",
+      "diegetic_audio": "这句耳语般的呼唤之后，走廊环境归为空白半拍",
+      "transition": "cut",
+      "boundary_type": "same_shot_continuation",
+      "camera_continuity": "continuous",
+      "action_continuity": "continuous",
+      "framing_continuity": "same",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": false,
+      "boundary_risk": {
+        "state_transfer_load": 6,
+        "reason": "同段长镜内部切片：同一面部特写延续同一轴线，母亲的目光位置、眼眶状态与光线方向在切点处必须逐帧一致"
+      },
+      "composition_control": "critical"
+    }
+  ],
+  "continuity_exit_state": {
+    "by_shot": [
+      {
+        "shot_id": "K6-01",
+        "staging": "周砚站在售票厅售票窗前方队伍处，面朝窗口方向",
+        "wardrobe_state": "藏青色工装外套完好整洁，双臂自然下垂",
+        "held_props": [],
+        "scene_state": "清晨售票厅正常运转，吊扇转动，候车区秩序如常",
+        "lighting_state": "第二天清晨，左侧高窗冷白晨光与日光灯平光混合"
+      },
+      {
+        "shot_id": "K6-02",
+        "staging": "周砚转身背对售票窗向画面外走去，离开窗口",
+        "wardrobe_state": "藏青色工装外套同前，外套口袋中新增一张折叠摆放的长途汽车票（P06），旧照片（P02）仍在随身口袋",
+        "held_props": [],
+        "scene_state": "售票窗口恢复正常运营，台面上仍散着两枚旧硬币",
+        "lighting_state": "同前：窗口内暖黄钨丝光与左侧冷晨光并存"
+      },
+      {
+        "shot_id": "K6-03",
+        "staging": "周砚在省城医院走廊中段，正走向走廊尽头；母亲（C04）坐在走廊尽头窗侧的轮椅上，面朝窗侧",
+        "wardrobe_state": "周砚藏青色工装外套完好，外套口袋里有P06与P02；母亲着浅色病员服，外搭一件米色薄外套（就AMB低严重度模糊项的具体化）",
+        "held_props": [],
+        "scene_state": "走廊候诊椅、饮水机、输液架保持原样，无变动",
+        "lighting_state": "白天，右长窗平光，地面出现长条光斑，色温中性偏冷"
+      },
+      {
+        "shot_id": "K6-04",
+        "staging": "周砚停在轮椅正前方一步处，面向母亲；母亲已转头面向周砚，但尚未开口",
+        "wardrobe_state": "同上，无变化",
+        "held_props": [],
+        "scene_state": "走廊两向通道无其他人物阻挡，地面光斑跨在两人之间",
+        "lighting_state": "同上，右侧窗昼光，周砚略背光、母亲侧脸受光"
+      },
+      {
+        "shot_id": "K6-05",
+        "staging": "母亲面朝周砚方向注视并已停在认出的一瞬前，周砚位于她面前一步处未动",
+        "wardrobe_state": "同上，无变化",
+        "held_props": [],
+        "scene_state": "走廊环境静默，无新人物入画",
+        "lighting_state": "同上，母亲面部受侧窗柔光，眼中有静止的小亮点"
+      },
+      {
+        "shot_id": "K6-06",
+        "staging": "母亲面朝周砚，已在特写镜头中叫出『……砚砚。』；周砚仍站在她面前一步处未动",
+        "wardrobe_state": "同上，无变化",
+        "held_props": [],
+        "scene_state": "走廊静默，轮椅与周砚之间一步空气距离保持",
+        "lighting_state": "同上，侧窗柔光稳定，半面面部暗面略加深"
+      }
+    ]
+  },
+  "warnings": [
+    "母亲服装（AMB-WARDROBE-C04 / AMB-CH02-01）与称呼用语（AMB-CH02-02）均为低严重度就近处理，未改写任何锁定台词"
+  ],
+  "errors": []
+}
