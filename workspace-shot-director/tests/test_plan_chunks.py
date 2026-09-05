@@ -175,6 +175,12 @@ class StorySliceTests(unittest.TestCase):
                 {"id": "CC03", "scope": {"from": "S01", "to": "S01"}},
             ],
             locked_constraints=["the coat never changes"],
+            ambiguities=[
+                {"id": "AMB-C01", "severity": "low", "subject_id": "C01", "question": "his age?"},
+                {"id": "AMB-P01", "severity": "low", "subject_id": "P01", "question": "how worn?"},
+                {"id": "AMB-L03", "severity": "low", "subject_id": "L03", "question": "how lit?"},
+                {"id": "AMB-NONE", "severity": "low", "question": "about nothing in particular"},
+            ],
         )
 
     def chunks(self):
@@ -207,6 +213,13 @@ class StorySliceTests(unittest.TestCase):
             entry = following["story_slice"]["previous_scene_exit_state"]
             self.assertEqual(entry["scene_id"], previous["scene_ids"][-1])
             self.assertEqual(entry["exit_state"], f"state after {previous['scene_ids'][-1]}")
+
+    def test_a_chunk_carries_the_ambiguities_about_what_it_shows(self):
+        carried = [{item["id"] for item in chunk["story_slice"]["ambiguities"]}
+                   for chunk in self.chunks()]
+        # C01 is in the first and third chunks, P01 only in the second, L03 is
+        # the third chunk's location, and an ambiguity about nothing is dropped.
+        self.assertEqual(carried, [{"AMB-C01"}, {"AMB-P01"}, {"AMB-C01", "AMB-L03"}])
 
     def test_a_chunk_cut_inside_a_scene_carries_no_scene_exit_state(self):
         chunks = planner.plan(film((120, "L01", 2)))["chunks"]

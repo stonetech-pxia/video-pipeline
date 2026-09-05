@@ -1,0 +1,301 @@
+{
+  "schema_version": "1.1",
+  "chunk_id": "K1",
+  "status": "complete",
+  "start": 0,
+  "end": 70,
+  "shots": [
+    {
+      "id": "K1-01",
+      "start": 0,
+      "end": 10,
+      "source_beat_ids": [
+        "B001"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "建立清晨邮局的日常秩序，让无名信的反常落在平凡的分拣动作之上。",
+      "framing": "中远景，从侧面看周砚站在分拣台前；前景边缘压着一摞待分拣的信件。",
+      "angle": "平视",
+      "camera_position": "分拣台一端的站位，传真内景",
+      "camera_motion": "沿分拣台缓慢向左横移",
+      "focus": "周砚与台面上的信件清晰；背景虚",
+      "blocking": "周砚站在分拣台内侧，低头面向台面，双手以固定节奏把信一封封塞进木格。",
+      "subject_action": "例行的分拣动作：拿起、看一眼地址、入格、下一封。",
+      "visible_emotion": "平静的专注，毫无异样",
+      "environment": "清晨的海边小镇邮局分拣区：旧木分拣台，右侧一面褪色墨迹标注的木质信格墙，右墙上低窗朝海；淡蓝白色的晨光从窗口斜切过台面，空气中有微尘；小而安静的工作场所。",
+      "lighting": "来自临海窗的清晨自然光，冷白低反差；室内其余处昏暗，顶灯未开。",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "信件入格的轻微啪嗒声，窗外远处海鸥，安静的建筑底噪。",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": false,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 0,
+        "reason": "开场镜头，无前置状态需要携带。"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K1-02",
+      "start": 10,
+      "end": 22,
+      "source_beat_ids": [
+        "B002"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "由日常转向反常：周砚发现一封没有寄件人、收件人是自己名字的信。",
+      "framing": "过肩近景，从周砚右肩后方开始，后段压向手部持信的特写。",
+      "angle": "平视，信件升起时略向下随动",
+      "camera_position": "分拣台后上方，紧贴周砚背部",
+      "camera_motion": "先静止，待信被拿起后缓慢推近信面",
+      "focus": "信件起手变实；周砚面部起初稍虚，后段跟上焦点",
+      "blocking": "周砚停下半途的动作，从面前那摞信中抽出一封，把信正反翻看，读收件人一行，然后持信不动。",
+      "subject_action": "从信堆中抽出一封无任何附注的普通信封，正反检查，读出收件人写的是自己的名字，找不到寄件人地址。",
+      "visible_emotion": "克制的不安：习惯的手部节奏停止，指尖在信封边缘微微收紧。",
+      "environment": "同一分拣区：旧木台面，右侧木质信格墙，右墙高处临海之窗；前景台面上半分拣的信叠。",
+      "lighting": "同一冷调晨窗光，低反差；信封反光比台面亮，成为画面焦点物。",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "分拣节奏中断；纸张翻动的窸窣声；窗外远处海鸥。",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "同一场景，同一角色持无名信在手，且处于动作暂停中。"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K1-03",
+      "start": 22,
+      "end": 35,
+      "source_beat_ids": [
+        "B002"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "周砚选择隐瞒而非回应：把信收入工装外套口袋。",
+      "framing": "前侧方中景，取胸口高度，画面下沿压住台面边；随他收入口袋的动作缓慢上移，再落回手里重新开始的工作。",
+      "angle": "平视",
+      "camera_position": "分拣台正前方，低角度足以装入口袋与手中的工作。",
+      "camera_motion": "轻微手持感，小幅跟随动作，无大幅位移",
+      "focus": "封信入袋时聚焦在他胸口与手上；后段重新聚焦到恢复分拣的手部",
+      "blocking": "周砚将信对折一次，塞进藏青色工装外套的胸前口袋，用手掌把口袋压平，呼出一口气，转回面前的信堆。",
+      "subject_action": "把信藏进藏青色工装外套胸前口袋，并不抬头，继续分拣。",
+      "visible_emotion": "克制的专注，刻意回到日常：一次快速的眨眼和平稳的呼吸掩盖住不安。",
+      "environment": "同一分拣区；临海窗的光在台面上缓缓移动；窗外远处有自行车铃声经过。",
+      "lighting": "同一冷调晨光、低反差；窗光从他右肩后方落下，他收信时面部保持在柔和阴影中。",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "信件滑入口袋的布料摩擦；分拣节奏重新开始；远处鸟鸣。",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "同一场景；跨越此切的这封信必须保持在外套口袋内，分拣动作也要延续。"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K1-04",
+      "start": 35,
+      "end": 46,
+      "source_beat_ids": [
+        "B003"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "地点、光线与时间同时往前一步：在邮局后巷，他拆开藏起的信，发现里面只有一张旧照片。",
+      "framing": "主管巷口向内的全景，周砚侧身背对镜头；随后展开为持物件的中景。",
+      "angle": "平视，近乎正对但略偏轴",
+      "camera_position": "巷口居中低位，向邮局办公楼后墙方向看",
+      "camera_motion": "从全景缓慢推进到中景，跟信件展开",
+      "focus": "周砚与信件实；两侧巷壁柔和后退",
+      "blocking": "周砚独自站在巷中，身体一部分朝向建筑，双手拆开信封，倒出内容，一张旧照片滑进掌心。",
+      "subject_action": "拆开信封，倒出内容，发现里面只有那张旧照片。",
+      "visible_emotion": "疑惑：眉毛轻挑，头侧向自己的掌心。",
+      "environment": "上午，海边邮局背巷：窄窄的一条巷子，白灰粉墙斑驳，头顶拉着一根晾衣绳挂有两个空衣夹，右侧一根垂直锈蚀排水管，下方木楼梯底下的阴影角落，干燥地面上散落细沙粒。",
+      "lighting": "上午阳光从画左的巷口照进；左墙受光，右墙处于阴影；纵向大反差不强，光是亮而柔的。",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "纸张撕开声；巷中风声；海鸥；远处一条船的汽笛。",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "location_change",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "地点与光照变化，但周砚必须保持穿外套、信仍在胸口口袋里的状态，并再次把信取出来。"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K1-05",
+      "start": 46,
+      "end": 60,
+      "source_beat_ids": [
+        "B004"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "钩子：灯塔之下的女孩，以及照片背面那行刺眼的字。",
+      "framing": "先是双手持照片的插入近景，再切为周砚面部特写的紧反打。",
+      "angle": "照片上方俯拍，随后人面为平视",
+      "camera_position": "先是正对他双手中的照片上方，随后紧贴他正面",
+      "camera_motion": "插入段静止；面部推近段为缓慢的推进",
+      "focus": "照片逐渐看清；翻面后背面那行手写字完整可读",
+      "blocking": "周砚端详照片中一个站在灯塔下的女孩，随后翻面过去；视线沿着背面单行手写的字迹移动，读到尽头停住。",
+      "subject_action": "看照片，翻到背面，读背面那一行字。",
+      "visible_emotion": "被刺到的困惑：呼吸一顿，下颌绷紧，眼睛停在文字上不动。",
+      "environment": "同一后巷，晾衣绳上一块布随风吹动的摆动，其余处无动静；楼梯底下的角落与排水管保持原样。",
+      "lighting": "上午阳光从画左，与前一镜相同；照片背面斜入光，让字迹读得清楚。",
+      "dialogue_ids": [
+        "D001"
+      ],
+      "dialogue": "照片背面刻写的字（非人声台词，以插入特写呈现）：你答应过要回来的。",
+      "diegetic_audio": "没有人声；纸张绷紧的细微声，微弱风声，海鸥；底部一道低沉持续音托住这一刻。",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "同一场景；照片仍需持在他手里，且背面的原文刻字必须原样延续。"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K1-06",
+      "start": 60,
+      "end": 70,
+      "source_beat_ids": [
+        "B005"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "周砚认不出照片上的女孩；他在空茫中接受了这一片空白，收起信与照片。",
+      "framing": "由周砚左视线进入的中近景，部离而未紧贴；在他收起照片时缓缓拉远为全景。",
+      "angle": "平视",
+      "camera_position": "后巷中正对周砚正面，随后缓慢后退并微微上扬",
+      "camera_motion": "缓慢后拉带轻微升格回转动作",
+      "focus": "先是他的面部，随后对焦到收拢过程中的照片与信封",
+      "blocking": "周砚盯着照片上的女孩，面部松弛、下颌下垂；视线空茫不移；他把照片背面翻回，塞进信封，然后把整体折进外套胸前的口袋。",
+      "subject_action": "盯着照片上的女孩但认不出来，随后把照片与信一并收起。",
+      "visible_emotion": "茫然并夹着一丝无力的沮丧：明知道自己忘了一些什么，却够不着。",
+      "environment": "同一条后巷；一阵风的吹拂扬起尘与晾衣绳上的布块；巷口之外的远处有一条海岸线短暂入画。",
+      "lighting": "上午阳光从画左，与前一镜相同；画面能读出他面部的空茫，但巷壁不至于被过曝冲掉质感。",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "风声一阵扬起，晾衣绳上布块拍动，海鸥；底部低沉音设随着拉远渐渐退去。",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "同一场景；照片、信封、背面刻字与他的外套口袋必须延续到收尾这一拍。"
+      },
+      "composition_control": "normal"
+    }
+  ],
+  "continuity_exit_state": {
+    "by_shot": [
+      {
+        "shot_id": "K1-01",
+        "staging": "周砚独自站在分拣台内侧，低头面向台面，身体朝向面前的信堆，右手刚完成一次往木格的动作，面部不受光照直射。",
+        "wardrobe_state": "藏青色工装外套，前襟扣合，袖长放下，无卷折，无任何掏动痕迹。",
+        "held_props": [],
+        "scene_state": "台面上原样的半分拣信叠，木质信格未变，临海窗平静；分拣区内无其他变化。",
+        "lighting_state": "清晨自然光，淡蓝白，低反差，来自临海窗，室内别处昏暗。"
+      },
+      {
+        "shot_id": "K1-02",
+        "staging": "周砚独自站在分拣台内侧，面部照旧，只以局部的手和前胸靠近镜头，不过多显露面部，手里持一封无名信，正在翻看。",
+        "wardrobe_state": "藏青色工装外套，前襟扣合，袖长放下，无卷折。",
+        "held_props": [
+          "无名信，正反均已在手中审视"
+        ],
+        "scene_state": "台面上半分拣的信叠依旧归属原位，未动、未乱；桌面无新添东西。",
+        "lighting_state": "清晨自然光，低反差，来自临海窗，冷调。"
+      },
+      {
+        "shot_id": "K1-03",
+        "staging": "周砚独自站在分拣台内侧，低头面向面前的信堆，重启例行分拣动作；胸口口袋已存放对折后的那封信，身体未转向镜头。",
+        "wardrobe_state": "藏青色工装外套，前襟扣合，袖长放下；胸前口袋里收着一封对折后的信。",
+        "held_props": [],
+        "scene_state": "台面上半分拣的信叠依旧，未动；木质信格墙与临海窗平静；口袋里的信未再被取出查看。",
+        "lighting_state": "清晨自然光，淡蓝白，低反差；面部保持在窗光后方的柔影中。"
+      },
+      {
+        "shot_id": "K1-04",
+        "staging": "邮局后巷窄巷内，周砚独自站在靠右墙一侧，身体半面对巷口，双手胸前一封无名的信封刚拆开，旧照片滑入掌心尚未完全举起，视线落在他掌心里。",
+        "wardrobe_state": "藏青色工装外套，前襟扣合，袖长放下；胸前口袋空，信已取出。",
+        "held_props": [
+          "无名信，已拆开，封口朝外",
+          "旧照片，正面朝上或刚入掌心"
+        ],
+        "scene_state": "巷中晾衣绳上两枚空衣夹位置未变，右排水管原样，木楼梯底下阴影角落未动；地面沙粒未扫动。",
+        "lighting_state": "上午阳光从画左巷口照入，左墙受光，右墙阴影，光线亮而柔。"
+      },
+      {
+        "shot_id": "K1-05",
+        "staging": "周砚独自在巷中，身体改为方对巷口而非面墙，双手持照片于胸前，背面朝向自己而非镜头（背面刻字完整可读）。书似他掌中另一位置的信封。",
+        "wardrobe_state": "藏青色工装外套，前襟扣合，袖长放下，自发现以来无卷折掏动。",
+        "held_props": [
+          "旧照片，背面斜受光，刻字完整可读",
+          "无名信（已在手旁或掌边）"
+        ],
+        "scene_state": "巷中晾衣绳上布块随风摆动，其余处无动静；排水管与楼梯底下角落原地未动；照片未损伤，无受潮或风化。",
+        "lighting_state": "上午阳光从画左，比本片段上一镜更柔和发散，足以维持背面文字可读。"
+      },
+      {
+        "shot_id": "K1-06",
+        "staging": "邮局后巷，周砚（藏青色工装外套）独自站在巷中，身体面向巷口，把装着旧照片的信折入外套胸前口袋，认不出照片上的女孩。",
+        "wardrobe_state": "藏青色工装外套，前襟扣合，袖长放下；胸前口袋里折存着那封与照片。",
+        "held_props": [],
+        "scene_state": "邮局后巷平静；晾衣绳布块被风吹动，巷口右侧地面上沙粒、排水管、楼梯下角落未变；除外套胸前的口袋外室内外无其他东西入动。",
+        "lighting_state": "上午阳光从画左巷口照入，光线亮而柔，面部能被读出空茫情绪，巷壁粒子保真。"
+      }
+    ]
+  },
+  "warnings": [],
+  "errors": []
+}

@@ -21,6 +21,7 @@ CAN:
 - decide shot boundaries, framing, angle, camera position, camera movement, and focus;
 - decide blocking, visible performance, lighting strategy, sound placement, and pacing;
 - decide which characters are visible in each shot, within the set the story places in that scene;
+- settle the physical detail of a location the story left open -- light direction, surfaces, depth, background life;
 - give a shot longer than 15 seconds its split points, at natural action-phase boundaries;
 - label shot boundaries for downstream continuity decisions;
 - score each shot boundary's state-transfer load and each shot's composition-control need.
@@ -63,6 +64,19 @@ So:
 - Hold past 15 seconds only when the take genuinely must be unbroken -- an unbroken gesture, a move that reads as one continuous camera action.
 - When you do, `split_hints` is required, placed at action-phase boundaries so the seam falls where the movement already changes. Each hint names a piece that can be generated whole, so no hint may itself run past 15 seconds.
 - How a stretch of story divides is your call, and the craft rules for it live in the skill's `shot-design-engine.md`. What is not your call is the ceiling: an action covered by one shot that runs past 15 seconds has been under-covered, not economically directed.
+
+## Environment Detail
+
+Story IR names a location and gives it a line: *the post office, early morning, there is a sorting counter*. It does not say where the window is, what the walls are made of, or which way the light falls. Those are yours to settle, and settling them is part of the job, not an overstep.
+
+Settle them concretely, in `environment` and `lighting`: the direction and quality of the light, the surfaces, the depth of the space, what moves in the background. A detail you leave vague is not left open. It reaches Frame Designer, who is forbidden to invent it and must raise a blocking ambiguity instead, and past that it reaches the image model, which will invent a different answer every time it runs.
+
+- What you settle becomes binding for that location. When a later shot returns there, restate the same features. Do not quietly redecorate.
+- Settle the physical world only. Events, characters, dialogue, and story facts stay closed to you. A passer-by who is simply there is set dressing; a passer-by who does something is a new event.
+- Never contradict a locked constraint, a continuity constraint, or a fact the story already fixed.
+- Anything you settle that a later shot must match belongs in that shot's `continuity_exit_state` as well, so it survives a cut.
+
+Your input carries `ambiguities`: what the story could not settle about the people, props, and places you are filming. Read them. One marked `low` or `medium` is yours to settle, in the direction its question suggests. One marked `blocking` is not -- return `partial` with an error naming it rather than guessing.
 
 ## Continuity Labels
 

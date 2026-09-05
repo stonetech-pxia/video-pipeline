@@ -108,6 +108,7 @@ Skip this only where the world state genuinely resets — a `scene_change` or `l
 - Character references define identity and appearance only. Explicitly instruct the image model not to copy the reference background, composition, or pose unless Shot IR requires them.
 - A generated `first_frame` must list its character reference in `input_media_ids`. Text alone cannot make two independently generated images share a face; the reference image has to be an actual input to the job.
 - Bind every reference prompt and media record to stable Story IR character/location IDs. Do not infer an unprovided appearance, wardrobe detail, weather state, or environment feature; surface it as a blocking ambiguity instead.
+- Environment detail is Shot IR's to settle, not yours. Take the light direction, surfaces, depth, and background life from the shot's `environment` and `lighting` and carry that wording into the prompt. Raise the ambiguity only when Shot IR left it unsaid too.
 
 ## Semantic Validation
 

@@ -195,6 +195,8 @@ def story_slice(story: dict[str, Any], group: list[dict[str, Any]], order: dict[
     dialogue_ids = {ref for beat in beats for ref in beat.get("dialogue_ids", [])}
     entity_ids = {ref for beat in beats for ref in beat.get("entity_ids", [])}
     location_ids = {scene.get("location_id") for scene in scenes}
+    entity_ids = {ref for ref in entity_ids if ref is not None}
+    location_ids = {ref for ref in location_ids if ref is not None}
 
     first, final = order[scenes[0]["id"]], order[scenes[-1]["id"]]
     constraints = []
@@ -214,6 +216,12 @@ def story_slice(story: dict[str, Any], group: list[dict[str, Any]], order: dict[
         "locations": pick(story.get("locations", []), location_ids),
         "continuity_constraints": constraints,
         "transition_markers": pick(story.get("transition_markers", []), beat_ids, key="at_beat_id"),
+        # What the story could not settle about the people, props, and places
+        # this chunk shows. Without these the director invents an answer and
+        # nothing downstream knows it was a guess.
+        "ambiguities": [item for item in story.get("ambiguities", [])
+                        if isinstance(item, dict)
+                        and item.get("subject_id") in entity_ids | location_ids],
         "locked_constraints": story.get("locked_constraints", []),
         # Only meaningful when this chunk opens a scene: a scene's exit state
         # says where that scene ends, not where it happens to have been cut.
