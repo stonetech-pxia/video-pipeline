@@ -65,7 +65,8 @@ class PipelineValidatorTests(unittest.TestCase):
     def valid_package(self):
         return {
             "segment_id": "SEG001",
-            "shot_id": "S01",
+            "shot_ids": ["S01"],
+            "shot_bindings": [{"prompt_shot_index": 1, "shot_id": "S01", "local_start": 0}],
             "start": 0,
             "end": 5,
             "local_duration": 5,
@@ -96,40 +97,22 @@ class PipelineValidatorTests(unittest.TestCase):
         return package
 
     def valid_frame(self, path: str):
-        continuity = {
-            "is_same_shot": False,
-            "continuous_action": False,
-            "continuous_camera": False,
-            "same_scene": True,
-            "same_framing": False,
-            "same_camera_position": False,
-            "same_time": True,
-            "same_visual_focus": True,
-            "requires_recomposition": True,
-            "change_triggers": ["shot"],
-            "decision": "generate_new_first_frame",
-        }
-        refs = {"character_reference_ids": [], "location_reference_ids": [], "style_reference_ids": [], "video_reference_ids": [], "audio_reference_ids": []}
+        refs = {"character_reference_ids": [], "location_reference_ids": [], "style_reference_ids": ["FF01"], "video_reference_ids": [], "audio_reference_ids": []}
         media = {
             "id": "FF01",
-            "type": "frame",
-            "role": "first_frame",
+            "type": "image",
+            "role": "style_reference",
             "status": "resolved",
             "source_type": "uploaded",
-            "source_job": None,
             "related_segments": ["SEG001"],
-            "use_for": ["entry_anchor"],
-            "entity_bindings": {"character_ids": [], "location_ids": []},
-            "provenance": {"source_type": "uploaded", "source_id": None},
+            "provenance": {"source_type": "uploaded"},
             "path": path,
         }
         return {
-            "schema_version": "1.2",
+            "schema_version": "1.3",
             "status": "complete",
-            "segment_plan": [{"segment_id": "SEG001", "shot_id": "S01", "previous_segment_id": None, "start": 0, "end": 5, "duration": 5, "entry_strategy": "new_first_frame", "entry_frame_source": "FF01", "runtime_entry_dependency": None, "exit_frame_required": False, "last_frame_target_media_id": None, "actual_tail_frame_media_id": None, "reference_strategy": refs, "continuity_decision": continuity, "reason": "scene entry"}],
-            "frame_plan": [{"segment_id": "SEG001", "first_frame_media_id": "FF01", "last_frame_target_media_id": None, "actual_tail_frame_media_id": None, "reference_media_ids": [], "generate_first_frame": False, "generate_last_frame_target": False, "capture_actual_tail_frame": False}],
-            "image_jobs": [],
-            "media_manifest": {"status": "ready_for_compile", "supports_mixed_keyframes_and_references": True, "media": [media]},
+            "segment_plan": [{"segment_id": "SEG001", "scene_id": "SC01", "shot_ids": ["S01"], "shot_bindings": [{"prompt_shot_index": 1, "shot_id": "S01", "local_start": 0}], "previous_segment_id": None, "start": 0, "end": 5, "duration": 5, "entry_strategy": "references_only", "runtime_entry_dependency": None, "exit_frame_required": False, "actual_tail_frame_media_id": None, "reference_strategy": refs, "prompt": {"integrated_multimodal_description": "她抬头。", "overall_soundscape": "Room tone.", "non_diegetic_music": ""}, "reason": "scene entry"}],
+            "media_manifest": {"status": "ready_for_compile", "media": [media]},
             "warnings": [],
             "errors": [],
         }
@@ -166,17 +149,25 @@ class PipelineValidatorTests(unittest.TestCase):
         self.assertIn("unknown_scene_beat", {item["code"] for item in validator.validate_story(story)})
 
     def test_unified_package_accepts_first_frame_and_reference(self):
-        segment = {"segment_id": "SEG001", "shot_id": "S01", "start": 0, "end": 5, "entry_strategy": "new_first_frame", "entry_frame_source": "FF01"}
+        segment = {"segment_id": "SEG001", "shot_ids": ["S01"], "shot_bindings": [{"prompt_shot_index": 1, "shot_id": "S01", "local_start": 0}], "start": 0, "end": 5, "entry_strategy": "new_first_frame", "entry_frame_source": "FF01"}
         media = {"REF01": {"id": "REF01", "status": "resolved"}}
         self.assertEqual(validator.validate_unified_package(self.valid_package(), segment, media), [])
 
     def test_unified_package_rejects_legacy_alignment(self):
-        segment = {"segment_id": "SEG001", "shot_id": "S01", "start": 0, "end": 5, "entry_strategy": "new_first_frame", "entry_frame_source": "FF01"}
+        segment = {"segment_id": "SEG001", "shot_ids": ["S01"], "shot_bindings": [{"prompt_shot_index": 1, "shot_id": "S01", "local_start": 0}], "start": 0, "end": 5, "entry_strategy": "new_first_frame", "entry_frame_source": "FF01"}
         package = self.valid_package()
         package["prompt"] = "For the target video, at 0.00 seconds into the target video\n" + self.valid_prompt()
         codes = {item["code"] for item in validator.validate_unified_package(package, segment, {"REF01": {"status": "resolved"}})}
         self.assertIn("legacy_prompt_syntax", codes)
         self.assertIn("unified_prompt_start", codes)
+
+    def test_unified_package_rejects_reassigned_shots(self):
+        segment = {"segment_id": "SEG001", "shot_ids": ["S01", "S02"],
+                   "shot_bindings": [{"prompt_shot_index": 1, "shot_id": "S01", "local_start": 0},
+                                     {"prompt_shot_index": 2, "shot_id": "S02", "local_start": 3}],
+                   "start": 0, "end": 5, "entry_strategy": "references_only"}
+        codes = {item["code"] for item in validator.validate_unified_package(self.valid_package(), segment, {"REF01": {"status": "resolved"}})}
+        self.assertIn("segment_mapping", codes)
 
     def test_draft_compile_accepts_unresolved_symbolic_media(self):
         frame = self.valid_frame("/not-resolved-yet.png")
@@ -243,6 +234,12 @@ class PipelineValidatorTests(unittest.TestCase):
             self.assertIn("deterministic_report_mismatch", codes)
             self.assertIn("stale_deterministic_report", codes)
 
+    def test_story_gate_rejects_budgets_that_miss_the_total(self):
+        story = self.valid_story()
+        story["scenes"][0]["duration_budget"] = story["scenes"][0]["duration_budget"] + 5
+        codes = {item["code"] for item in validator.validate_story(story)}
+        self.assertIn("duration_budget_mismatch", codes)
+
     def test_shot_gate_rejects_a_shot_longer_than_one_generatable_piece(self):
         labels = {"boundary_type": "shot_change", "camera_continuity": "changed",
                   "action_continuity": "discontinuous", "framing_continuity": "changed",
@@ -295,7 +292,7 @@ class PipelineValidatorTests(unittest.TestCase):
                 "total_duration": 10,
                 "aspect_ratio": "16:9",
                 "draft_video_prompts": [self.valid_draft_prompt()],
-                "image_jobs": [{"job_id": "JOB01", "prompt": "frame prompt", "negative_prompt": "bad frame", "output_media_id": "FF01", "status": "pending"}],
+                "pending_media_ids": ["FF01"],
             },
         }
         self.assertEqual(validator.validate_result(result), [])
@@ -314,7 +311,7 @@ class PipelineValidatorTests(unittest.TestCase):
                 "total_duration": 10,
                 "aspect_ratio": "9:16",
                 "draft_video_prompts": [self.valid_draft_prompt()],
-                "image_jobs": [{"job_id": "JOB01", "prompt": "frame prompt", "negative_prompt": "bad frame", "output_media_id": "FF01", "status": "pending"}],
+                "pending_media_ids": ["FF01"],
             },
         }
         shot = {"aspect_ratio": "16:9", "duration": 10}
@@ -332,7 +329,7 @@ class PipelineValidatorTests(unittest.TestCase):
             "warnings": [],
             "last_valid_artifacts": {},
             "result": {"total_duration": 10, "aspect_ratio": "16:9",
-                       "image_jobs": [{"job_id": "JOB01", "prompt": "frame prompt", "negative_prompt": "", "output_media_id": "FF01", "status": "pending"}]},
+                       "pending_media_ids": ["FF01"]},
         }
         self.assertTrue(validator.validate_result(result))
 

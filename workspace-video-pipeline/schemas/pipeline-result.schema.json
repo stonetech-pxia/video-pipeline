@@ -197,7 +197,7 @@
             "type": "object",
             "required": [
               "draft_video_prompts",
-              "image_jobs"
+              "pending_media_ids"
             ],
             "properties": {
               "draft_video_prompts": {
@@ -207,11 +207,14 @@
                   "$ref": "#/$defs/draftPromptResult"
                 }
               },
-              "image_jobs": {
+              "pending_media_ids": {
                 "type": "array",
+                "description": "The reference media the run is waiting on: every static medium in the manifest without a path or runtime handle.",
                 "items": {
-                  "$ref": "#/$defs/imageJobResult"
-                }
+                  "type": "string",
+                  "minLength": 1
+                },
+                "uniqueItems": true
               }
             }
           }
@@ -302,37 +305,6 @@
         },
         "symbolic_media_mapping": {
           "type": "object"
-        }
-      }
-    },
-    "imageJobResult": {
-      "type": "object",
-      "required": [
-        "job_id",
-        "prompt",
-        "negative_prompt",
-        "output_media_id",
-        "status"
-      ],
-      "properties": {
-        "job_id": {
-          "type": "string",
-          "minLength": 1
-        },
-        "prompt": {
-          "type": "string",
-          "minLength": 1
-        },
-        "negative_prompt": {
-          "type": "string"
-        },
-        "output_media_id": {
-          "type": "string",
-          "minLength": 1
-        },
-        "status": {
-          "type": "string",
-          "minLength": 1
         }
       }
     }

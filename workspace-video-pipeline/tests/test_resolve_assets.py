@@ -93,6 +93,15 @@ class ResolveAssetsTests(unittest.TestCase):
         self.assertEqual(registry["locations"]["L01"]["settled"][0]["text"],
                          "a repainted room east window")
 
+    def test_recording_can_be_turned_off_for_a_merged_artifact(self):
+        registry = resolver.blank_registry()
+        _, unresolved, recorded = resolver.resolve(
+            shot_ir(shot("A1", ["B01"])), story(), registry, recording=False)
+        self.assertEqual(recorded, 0)
+        self.assertEqual(registry["locations"]["L01"]["settled"], [])
+        # Provenance still resolves; only the accumulation is skipped.
+        self.assertIn("A1: location L01 has no reference image", unresolved)
+
     def test_a_later_shot_appends_beside_the_earlier_one(self):
         registry = resolver.blank_registry()
         resolver.resolve(

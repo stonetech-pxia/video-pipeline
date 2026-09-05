@@ -10,7 +10,9 @@ subjects resolve to.
 The registry also accumulates. Story IR gives a location a line; the director
 settles the rest -- light direction, surfaces, background life -- and that text
 is appended here per shot, so a later chunk can be shown what an earlier one
-already established rather than inventing the place a second time.
+already established rather than inventing the place a second time. Recording
+happens per chunk, under the chunk's local shot ids; run the merged Shot IR
+through with --no-record, since merging renumbers every shot.
 
 Usage: resolve_assets.py <shot-ir.json> <story-ir.json> <assets.json>
        The enriched Shot IR goes to stdout; the registry is updated in place.
@@ -82,8 +84,8 @@ def record(entry: dict[str, Any], shot_id: str, text: str) -> bool:
     return True
 
 
-def resolve(shot_ir: dict[str, Any], story: dict[str, Any],
-            registry: dict[str, Any]) -> tuple[dict[str, Any], list[str], int]:
+def resolve(shot_ir: dict[str, Any], story: dict[str, Any], registry: dict[str, Any],
+            recording: bool = True) -> tuple[dict[str, Any], list[str], int]:
     scene_of, location_of = index_story(story)
     characters = story.get("characters", [])
     locations = story.get("locations", [])
@@ -123,8 +125,9 @@ def resolve(shot_ir: dict[str, Any], story: dict[str, Any],
             bound["location"] = {location_id: entry.get("image")}
             if entry.get("image") is None:
                 unresolved.append(f"{shot_id}: location {location_id} has no reference image")
-            settled = " ".join(part for part in (shot.get("environment"), shot.get("lighting")) if part)
-            recorded += record(entry, shot_id, settled)
+            if recording:
+                settled = " ".join(part for part in (shot.get("environment"), shot.get("lighting")) if part)
+                recorded += record(entry, shot_id, settled)
 
         shot["reference_assets"] = bound
         resolved_shots.append(shot)
@@ -137,6 +140,11 @@ def main() -> int:
     parser.add_argument("shot_ir")
     parser.add_argument("story_ir")
     parser.add_argument("assets", help="the registry; created if it does not exist")
+    parser.add_argument(
+        "--no-record", action="store_true",
+        help="resolve provenance without recording settled descriptions. Use on a merged Shot IR, "
+             "whose shots were already recorded under their chunk-local ids.",
+    )
     args = parser.parse_args()
 
     assets_path = Path(args.assets)
@@ -144,7 +152,7 @@ def main() -> int:
         shot_ir = load(Path(args.shot_ir))
         story = load(Path(args.story_ir))
         registry = load(assets_path) if assets_path.exists() else blank_registry()
-        resolved, unresolved, recorded = resolve(shot_ir, story, registry)
+        resolved, unresolved, recorded = resolve(shot_ir, story, registry, not args.no_record)
     except (OSError, UnicodeError, json.JSONDecodeError, ResolveError) as error:
         print(json.dumps({"status": "blocked", "error": str(error)}, ensure_ascii=False))
         return 2

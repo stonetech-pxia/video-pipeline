@@ -113,6 +113,14 @@ def validate_story(value: dict[str, Any]) -> list[dict[str, Any]]:
         errors.append(error("STORY", "story_not_complete", "status", "Story IR must be complete", "story-analyst"))
     if "generation_mode" in value:
         errors.append(error("FORMAT", "legacy_generation_mode", "generation_mode", "Story IR must not contain a legacy generation mode", "story-analyst"))
+    # The Shot stage lays its chunk windows out of these budgets, so they have to
+    # reach the total; nothing downstream can place seconds the story never gave.
+    budgets = [item.get("duration_budget") for item in value.get("scenes", []) if isinstance(item, dict)]
+    if budgets and all(isinstance(budget, int) and not isinstance(budget, bool) for budget in budgets):
+        if isinstance(value.get("duration"), int) and sum(budgets) != value["duration"]:
+            errors.append(error("STORY", "duration_budget_mismatch", "scenes",
+                                f"duration_budget sums to {sum(budgets)}, but duration is {value['duration']}",
+                                "story-analyst"))
     entities: dict[str, dict[str, Any]] = {}
     for name in ("characters", "locations", "props"):
         entities.update(unique_map(value.get(name), "id", name, "story-analyst", errors))
@@ -233,7 +241,7 @@ def validate_unified_package(package: dict[str, Any], segment: dict[str, Any], m
         errors.append(error("H3_SCHEMA", "prompt_schema", f"{path}.prompt_schema", "prompt schema must be unified_multimodal", "h3-compiler", segment_id=segment_id))
     if package.get("execution_node") != "MiniMax H3 Unified to Video":
         errors.append(error("H3_SCHEMA", "execution_node", f"{path}.execution_node", "wrong execution node", "h3-compiler", segment_id=segment_id))
-    for field in ("shot_id", "start", "end"):
+    for field in ("shot_ids", "shot_bindings", "start", "end"):
         if package.get(field) != segment.get(field):
             errors.append(error("FORMAT", "segment_mapping", f"{path}.{field}", f"must equal Segment Plan {field}", "h3-compiler", segment_id=segment_id))
     if package.get("local_duration") != segment.get("end", 0) - segment.get("start", 0):
