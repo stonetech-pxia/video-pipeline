@@ -4,13 +4,11 @@
   "title": "Frame Design Output",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "status", "segment_plan", "frame_plan", "image_jobs", "media_manifest", "warnings", "errors"],
+  "required": ["schema_version", "status", "segment_plan", "media_manifest", "warnings", "errors"],
   "properties": {
-    "schema_version": { "const": "1.2" },
+    "schema_version": { "const": "1.3" },
     "status": { "enum": ["complete", "partial", "blocked"] },
     "segment_plan": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/segment" } },
-    "frame_plan": { "type": "array", "items": { "$ref": "#/$defs/framePlanItem" } },
-    "image_jobs": { "type": "array", "items": { "$ref": "#/$defs/imageJob" } },
     "media_manifest": { "$ref": "#/$defs/mediaManifest" },
     "warnings": { "type": "array", "items": { "$ref": "#/$defs/diagnostic" } },
     "errors": { "type": "array", "items": { "$ref": "#/$defs/diagnostic" } }
@@ -40,28 +38,6 @@
         "audio_reference_ids": { "type": "array", "items": { "$ref": "#/$defs/id" }, "uniqueItems": true }
       }
     },
-    "continuityDecision": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["is_same_shot", "continuous_action", "continuous_camera", "same_scene", "same_framing", "same_camera_position", "same_time", "same_visual_focus", "requires_recomposition", "change_triggers", "decision"],
-      "properties": {
-        "is_same_shot": { "type": "boolean" },
-        "continuous_action": { "type": "boolean" },
-        "continuous_camera": { "type": "boolean" },
-        "same_scene": { "type": "boolean" },
-        "same_framing": { "type": "boolean" },
-        "same_camera_position": { "type": "boolean" },
-        "same_time": { "type": "boolean" },
-        "same_visual_focus": { "type": "boolean" },
-        "requires_recomposition": { "type": "boolean" },
-        "change_triggers": {
-          "type": "array",
-          "uniqueItems": true,
-          "items": { "enum": ["shot", "framing", "camera_position", "scene", "location", "time", "visual_focus", "blocking", "composition", "spatial_relationship"] }
-        },
-        "decision": { "enum": ["generate_new_first_frame", "reuse_previous_tail"] }
-      }
-    },
     "runtimeEntryDependency": {
       "type": "object",
       "additionalProperties": false,
@@ -72,12 +48,24 @@
         "expected_media_id": { "$ref": "#/$defs/id" }
       }
     },
+    "segmentPrompt": {
+      "type": "object",
+      "description": "A first draft of the MiniMax H3 prompt, already in the three Unified sections so the compiler refines wording instead of inventing structure.",
+      "additionalProperties": false,
+      "required": ["integrated_multimodal_description", "overall_soundscape", "non_diegetic_music"],
+      "properties": {
+        "integrated_multimodal_description": { "type": "string", "minLength": 1 },
+        "overall_soundscape": { "type": "string" },
+        "non_diegetic_music": { "type": "string" }
+      }
+    },
     "segment": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["segment_id", "shot_ids", "shot_bindings", "previous_segment_id", "start", "end", "duration", "entry_strategy", "entry_frame_source", "runtime_entry_dependency", "exit_frame_required", "last_frame_target_media_id", "actual_tail_frame_media_id", "reference_strategy", "continuity_decision", "reason"],
+      "required": ["segment_id", "scene_id", "shot_ids", "shot_bindings", "previous_segment_id", "start", "end", "duration", "entry_strategy", "runtime_entry_dependency", "exit_frame_required", "actual_tail_frame_media_id", "reference_strategy", "prompt", "reason"],
       "properties": {
         "segment_id": { "$ref": "#/$defs/id" },
+        "scene_id": { "type": "string", "minLength": 1 },
         "shot_ids": {
           "type": "array",
           "minItems": 1,
@@ -102,49 +90,25 @@
         "start": { "type": "integer", "minimum": 0 },
         "end": { "type": "integer", "minimum": 4 },
         "duration": { "type": "integer", "minimum": 4, "maximum": 15 },
-        "entry_strategy": { "enum": ["new_first_frame", "use_previous_tail_frame"] },
-        "entry_frame_source": { "$ref": "#/$defs/nullableId" },
+        "entry_strategy": { "enum": ["references_only", "use_previous_tail_frame"] },
         "runtime_entry_dependency": { "oneOf": [{ "$ref": "#/$defs/runtimeEntryDependency" }, { "type": "null" }] },
         "exit_frame_required": { "type": "boolean" },
-        "last_frame_target_media_id": { "$ref": "#/$defs/nullableId" },
         "actual_tail_frame_media_id": { "$ref": "#/$defs/nullableId" },
         "reference_strategy": { "$ref": "#/$defs/referenceStrategy" },
-        "continuity_decision": { "$ref": "#/$defs/continuityDecision" },
+        "prompt": { "$ref": "#/$defs/segmentPrompt" },
         "reason": { "type": "string", "minLength": 1 }
       },
       "allOf": [
         {
-          "if": { "properties": { "entry_strategy": { "const": "new_first_frame" } }, "required": ["entry_strategy"] },
-          "then": {
-            "properties": {
-              "entry_frame_source": { "$ref": "#/$defs/id" },
-              "runtime_entry_dependency": { "type": "null" },
-              "continuity_decision": { "properties": { "decision": { "const": "generate_new_first_frame" } } }
-            }
-          }
+          "if": { "properties": { "entry_strategy": { "const": "references_only" } }, "required": ["entry_strategy"] },
+          "then": { "properties": { "runtime_entry_dependency": { "type": "null" } } }
         },
         {
           "if": { "properties": { "entry_strategy": { "const": "use_previous_tail_frame" } }, "required": ["entry_strategy"] },
           "then": {
             "properties": {
               "previous_segment_id": { "$ref": "#/$defs/id" },
-              "entry_frame_source": { "type": "null" },
-              "runtime_entry_dependency": { "$ref": "#/$defs/runtimeEntryDependency" },
-              "continuity_decision": {
-                "properties": {
-                  "is_same_shot": { "const": true },
-                  "continuous_action": { "const": true },
-                  "continuous_camera": { "const": true },
-                  "same_scene": { "const": true },
-                  "same_framing": { "const": true },
-                  "same_camera_position": { "const": true },
-                  "same_time": { "const": true },
-                  "same_visual_focus": { "const": true },
-                  "requires_recomposition": { "const": false },
-                  "change_triggers": { "maxItems": 0 },
-                  "decision": { "const": "reuse_previous_tail" }
-                }
-              }
+              "runtime_entry_dependency": { "$ref": "#/$defs/runtimeEntryDependency" }
             }
           }
         },
@@ -154,59 +118,17 @@
         }
       ]
     },
-    "framePlanItem": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["segment_id", "first_frame_media_id", "last_frame_target_media_id", "actual_tail_frame_media_id", "reference_media_ids"],
-      "properties": {
-        "segment_id": { "$ref": "#/$defs/id" },
-        "first_frame_media_id": { "$ref": "#/$defs/nullableId" },
-        "last_frame_target_media_id": { "$ref": "#/$defs/nullableId" },
-        "actual_tail_frame_media_id": { "$ref": "#/$defs/nullableId" },
-        "reference_media_ids": { "type": "array", "items": { "$ref": "#/$defs/id" }, "uniqueItems": true }
-      }
-    },
-    "imageJob": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["job_id", "type", "role", "related_segments", "prompt", "negative_prompt", "output_media_id", "status"],
-      "properties": {
-        "job_id": { "$ref": "#/$defs/id" },
-        "type": { "const": "image_generation" },
-        "role": { "enum": ["character_reference", "location_reference", "style_reference", "first_frame", "last_frame_target"] },
-        "related_segments": { "type": "array", "items": { "$ref": "#/$defs/id" }, "uniqueItems": true },
-        "prompt": { "type": "string", "minLength": 1 },
-        "negative_prompt": { "type": "string" },
-        "output_media_id": { "$ref": "#/$defs/id" },
-        "input_media_ids": {
-          "type": "array",
-          "items": { "$ref": "#/$defs/id" },
-          "uniqueItems": true
-        },
-        "status": { "enum": ["pending", "runtime_pending", "resolved", "failed"] }
-      }
-    },
-    "provenance": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["source_type"],
-      "properties": {
-        "source_type": { "enum": ["generated", "uploaded", "extracted", "external"] }
-      }
-    },
     "media": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "type", "role", "status", "source_type", "source_job", "related_segments", "provenance"],
+      "required": ["id", "type", "role", "status", "source_type", "related_segments"],
       "properties": {
         "id": { "$ref": "#/$defs/id" },
         "type": { "enum": ["image", "frame", "video", "audio"] },
-        "role": { "enum": ["character_reference", "location_reference", "style_reference", "first_frame", "last_frame_target", "actual_tail_frame", "video_reference", "audio_reference"] },
+        "role": { "enum": ["character_reference", "location_reference", "style_reference", "actual_tail_frame", "video_reference", "audio_reference"] },
         "status": { "enum": ["pending", "runtime_pending", "resolved", "failed"] },
         "source_type": { "enum": ["generated", "uploaded", "extracted", "external"] },
-        "source_job": { "$ref": "#/$defs/nullableId" },
         "related_segments": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/id" }, "uniqueItems": true },
-        "provenance": { "$ref": "#/$defs/provenance" },
         "path": { "type": "string", "minLength": 1 },
         "runtime_handle": { "type": "string", "minLength": 1 },
         "derived_from_segment_id": { "$ref": "#/$defs/id" },
@@ -225,14 +147,9 @@
             "properties": {
               "type": { "const": "frame" },
               "source_type": { "const": "extracted" },
-              "source_job": { "type": "null" },
               "status": { "enum": ["runtime_pending", "resolved", "failed"] }
             }
           }
-        },
-        {
-          "if": { "properties": { "role": { "const": "last_frame_target" } }, "required": ["role"] },
-          "then": { "properties": { "type": { "enum": ["image", "frame"] }, "source_type": { "enum": ["generated", "uploaded", "external"] } } }
         },
         {
           "if": { "properties": { "role": { "const": "character_reference" } }, "required": ["role"] },

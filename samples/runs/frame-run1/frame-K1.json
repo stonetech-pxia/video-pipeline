@@ -1,0 +1,390 @@
+{
+  "schema_version": "1.3",
+  "chunk_id": "K1",
+  "status": "complete",
+  "start": 0,
+  "end": 70,
+  "segment_plan": [
+    {
+      "segment_id": "K1-SEG001",
+      "scene_id": "S01",
+      "start": 0,
+      "end": 5,
+      "duration": 5,
+      "shot_ids": [
+        "K1-01"
+      ],
+      "shot_bindings": [
+        {
+          "prompt_shot_index": 1,
+          "shot_id": "K1-01",
+          "local_start": 0
+        }
+      ],
+      "previous_segment_id": null,
+      "entry_strategy": "references_only",
+      "runtime_entry_dependency": null,
+      "exit_frame_required": true,
+      "actual_tail_frame_media_id": "TAIL-K1-SEG001",
+      "reference_strategy": {
+        "character_reference_ids": [
+          "REF-C01"
+        ],
+        "location_reference_ids": [
+          "REF-L01"
+        ],
+        "style_reference_ids": [],
+        "video_reference_ids": [],
+        "audio_reference_ids": []
+      },
+      "prompt": {
+        "integrated_multimodal_description": "清晨，海边小镇邮局的分拣室内，周砚站在分拣台前面对格子架分拣信件。中近景齐腰构图，镜头静止：周砚拿起信封，看一眼地址，盖戳，投入格子。动作平稳而机械，没有迟疑，一种例行的平静。窗口的晨光斜落在台面上，落在他的手上。",
+        "overall_soundscape": "分拣室室内底噪；信封落到木头台面的轻响；墙上千秒表嗒嗒；窗外隐约的海雾号角与海鸥。",
+        "non_diegetic_music": ""
+      },
+      "reason": "开场段，从参考图冷启；结尾被SEG002续接，故必须留出实际尾帧"
+    },
+    {
+      "segment_id": "K1-SEG002",
+      "scene_id": "S01",
+      "start": 5,
+      "end": 20,
+      "duration": 15,
+      "shot_ids": [
+        "K1-01",
+        "K1-02"
+      ],
+      "shot_bindings": [
+        {
+          "prompt_shot_index": 1,
+          "shot_id": "K1-01",
+          "local_start": 0
+        },
+        {
+          "prompt_shot_index": 2,
+          "shot_id": "K1-02",
+          "local_start": 7
+        }
+      ],
+      "previous_segment_id": "K1-SEG001",
+      "entry_strategy": "use_previous_tail_frame",
+      "runtime_entry_dependency": {
+        "kind": "previous_actual_tail_frame",
+        "previous_segment_id": "K1-SEG001",
+        "expected_media_id": "TAIL-K1-SEG001"
+      },
+      "exit_frame_required": true,
+      "actual_tail_frame_media_id": "TAIL-K1-SEG002",
+      "reference_strategy": {
+        "character_reference_ids": [
+          "REF-C01"
+        ],
+        "location_reference_ids": [
+          "REF-L01"
+        ],
+        "style_reference_ids": [],
+        "video_reference_ids": [],
+        "audio_reference_ids": []
+      },
+      "prompt": {
+        "integrated_multimodal_description": "延续周砚在同一分拣室的分拣动作。第7秒切入中近景（镜头换到周砚左肩后方稍高的手持高度，景别收为胸口以上）：他正把一叠信分到一半，抽出一封没有寄信地址的信封，认出收件人是自己的名字——秒表嗒声彼时一停，双手静止，拇指捏住信封边缘。随即他不动声色地把这封信从信封架的格子里抽走，塞进工装外套的胸口内袋，抬头回到分拣，节拍恢复。画面情绪以他读信时的克制防守感为主，恐惧被纪律压平。",
+        "overall_soundscape": "分拣节奏骤停时的室内静默；信件滑入衣袋的纸张摩擦声；分拣嗒声重新恢复。",
+        "non_diegetic_music": ""
+      },
+      "reason": "从SEG001的实际尾帧续接同一动作流，镜头在段内切换但持续性保持"
+    },
+    {
+      "segment_id": "K1-SEG003",
+      "scene_id": "S01",
+      "start": 20,
+      "end": 35,
+      "duration": 15,
+      "shot_ids": [
+        "K1-02",
+        "K1-03"
+      ],
+      "shot_bindings": [
+        {
+          "prompt_shot_index": 1,
+          "shot_id": "K1-02",
+          "local_start": 0
+        },
+        {
+          "prompt_shot_index": 2,
+          "shot_id": "K1-03",
+          "local_start": 4
+        }
+      ],
+      "previous_segment_id": "K1-SEG002",
+      "entry_strategy": "use_previous_tail_frame",
+      "runtime_entry_dependency": {
+        "kind": "previous_actual_tail_frame",
+        "previous_segment_id": "K1-SEG002",
+        "expected_media_id": "TAIL-K1-SEG002"
+      },
+      "exit_frame_required": false,
+      "actual_tail_frame_media_id": null,
+      "reference_strategy": {
+        "character_reference_ids": [
+          "REF-C01"
+        ],
+        "location_reference_ids": [
+          "REF-L01"
+        ],
+        "style_reference_ids": [],
+        "video_reference_ids": [],
+        "audio_reference_ids": []
+      },
+      "prompt": {
+        "integrated_multimodal_description": "延续周砚在同一分拣室的动作。第4秒镜头切到更紧的中景，以台角正面隔着信堆拍他，手肘与双手占前景，面部在画面深处的软焦里：他机械地继续分拣，但节奏变了——每封信投格之前多一次缓慢的拇指停顿，其中一封差点盖两次戳。他的左手有一次近乎无意识的下压，按在工装外套胸口内袋上——就是那封偷藏的信——然后收回继续工作。可见的情绪不是姿态而是节奏，一种被例行动作压住的、收敛的紧迫。",
+        "overall_soundscape": "明显变慢变钝的分拣嗒声；静默里墙上秒针的声音被放大；窗外海雾号角再度传来。",
+        "non_diegetic_music": ""
+      },
+      "reason": "从SEG002的实际尾帧续接同一房间、同一动作，镜头与景别在段内变化"
+    },
+    {
+      "segment_id": "K1-SEG004",
+      "scene_id": "S02",
+      "start": 35,
+      "end": 40,
+      "duration": 5,
+      "shot_ids": [
+        "K1-04"
+      ],
+      "shot_bindings": [
+        {
+          "prompt_shot_index": 1,
+          "shot_id": "K1-04",
+          "local_start": 0
+        }
+      ],
+      "previous_segment_id": "K1-SEG003",
+      "entry_strategy": "references_only",
+      "runtime_entry_dependency": null,
+      "exit_frame_required": true,
+      "actual_tail_frame_media_id": "TAIL-K1-SEG004",
+      "reference_strategy": {
+        "character_reference_ids": [
+          "REF-C01"
+        ],
+        "location_reference_ids": [
+          "REF-L02"
+        ],
+        "style_reference_ids": [],
+        "video_reference_ids": [],
+        "audio_reference_ids": []
+      },
+      "prompt": {
+        "integrated_multimodal_description": "换场。邮局后巷，周砚独自站在砖墙夹成的窄巷中，正面朝镜头，中全景齐整个人，画面中偏左。藏青色工装外套 buttoned; chest pocket flattened where the hand just pressed it——ta右手仍捏着 envelope in right hand。他沿着封口撕开信封，倾斜信封，一张老旧照片滑进掌心；他用两指捏住照片边缘，手腕一转，把照片举起来看。镜头在窄巷中轴线极缓慢推近几厘米，几乎不可察觉。可见情绪：眉头下沉，嘴唇紧闭，一种逐渐展开的困惑。左侧砖墙把日光弹到他的一边脸颊，另一颊落软影。",
+        "overall_soundscape": "巷子里的远处镇上车流声；信封封口撕开的干燥声；左侧锈落水管上被风挂住的塑料袋窸窣；一声海鸥。",
+        "non_diegetic_music": ""
+      },
+      "reason": "换场冷启：地点从分拣室切到后巷，从参考图重建；wardrobe_state与held_props必须原样携带，故从上一镜留下的服装与手上的信封原样落进提示词"
+    },
+    {
+      "segment_id": "K1-SEG005",
+      "scene_id": "S02",
+      "start": 40,
+      "end": 55,
+      "duration": 15,
+      "shot_ids": [
+        "K1-04",
+        "K1-05"
+      ],
+      "shot_bindings": [
+        {
+          "prompt_shot_index": 1,
+          "shot_id": "K1-04",
+          "local_start": 0
+        },
+        {
+          "prompt_shot_index": 2,
+          "shot_id": "K1-05",
+          "local_start": 7
+        }
+      ],
+      "previous_segment_id": "K1-SEG004",
+      "entry_strategy": "use_previous_tail_frame",
+      "runtime_entry_dependency": {
+        "kind": "previous_actual_tail_frame",
+        "previous_segment_id": "K1-SEG004",
+        "expected_media_id": "TAIL-K1-SEG004"
+      },
+      "exit_frame_required": true,
+      "actual_tail_frame_media_id": "TAIL-K1-SEG005",
+      "reference_strategy": {
+        "character_reference_ids": [
+          "REF-C01"
+        ],
+        "location_reference_ids": [
+          "REF-L02"
+        ],
+        "style_reference_ids": [],
+        "video_reference_ids": [],
+        "audio_reference_ids": []
+      },
+      "prompt": {
+        "integrated_multimodal_description": "延续后巷场景与周砚手中的照片。第7秒切入镜头内部：单一推进的插入序列——先是照片撑满画面的近景（灯塔下一年轻女子，画面轻微褪色，普通纸质），一秒静止，然后他的拇指把照片翻到背面，手写的一行字硬焦到位：「你答应过要回来的。」镜头随翻面动作同步缓慢推近。他的脸部在同一直线上比照片略高，侧面对轴；读完那行字，他的姿态往上收紧——下巴绷紧，气变短。可见情绪：困惑被字刺得更尖锐，不是哀伤，是疼痛的注意力。",
+        "overall_soundscape": "巷内环境底噪变薄；风穿过窄巷的照片纸面一记硬翻的脆响；无台词，只有背面那行字存在。",
+        "non_diegetic_music": ""
+      },
+      "reason": "从SEG004的实际尾帧续接——照片已在他手里，重点段需要它继续在手中以完成翻面读字"
+    },
+    {
+      "segment_id": "K1-SEG006",
+      "scene_id": "S02",
+      "start": 55,
+      "end": 70,
+      "duration": 15,
+      "shot_ids": [
+        "K1-05",
+        "K1-06"
+      ],
+      "shot_bindings": [
+        {
+          "prompt_shot_index": 1,
+          "shot_id": "K1-05",
+          "local_start": 0
+        },
+        {
+          "prompt_shot_index": 2,
+          "shot_id": "K1-06",
+          "local_start": 3
+        }
+      ],
+      "previous_segment_id": "K1-SEG005",
+      "entry_strategy": "use_previous_tail_frame",
+      "runtime_entry_dependency": {
+        "kind": "previous_actual_tail_frame",
+        "previous_segment_id": "K1-SEG005",
+        "expected_media_id": "TAIL-K1-SEG005"
+      },
+      "exit_frame_required": false,
+      "actual_tail_frame_media_id": null,
+      "reference_strategy": {
+        "character_reference_ids": [
+          "REF-C01"
+        ],
+        "location_reference_ids": [
+          "REF-L02"
+        ],
+        "style_reference_ids": [],
+        "video_reference_ids": [],
+        "audio_reference_ids": []
+      },
+      "prompt": {
+        "integrated_multimodal_description": "延续后巷场景。第3秒镜头重置为中近景，胸口以上，正面直视周砚，摄像头在一臂距离；照片在画面下方三分之一，他手里仍举着灯塔下那个年轻女子的影像。他长久凝视照片，等待某种东西浮现，什么都没来——眉头收拢，那不是哀伤，是一片空白的无所确认——他的视线离开照片抬向中景某处。然后他把照片沿原有折痕对折合上，放回信封，整个东西滑回工装外套的胸口内袋。他留在巷中，目视前方，站在原地；那种空白的不确定性一直留在画面里，尽在静止里，没有任何戏剧化姿态。",
+        "overall_soundscape": "巷内环境声退成近乎静默只为那一段凝视；纸张最后一次干燥的摩擦滑进衣袋；海鸥与镇上的声音远远地、无关地继续。",
+        "non_diegetic_music": ""
+      },
+      "reason": "从SEG005的实际尾帧续接同一凝视，段内切到中近景，情绪收束到不认识的那份空白"
+    }
+  ],
+  "media_manifest": {
+    "status": "draft",
+    "media": [
+      {
+        "id": "REF-C01",
+        "type": "image",
+        "role": "character_reference",
+        "status": "pending",
+        "source_type": "generated",
+        "related_segments": [
+          "K1-SEG001",
+          "K1-SEG002",
+          "K1-SEG003",
+          "K1-SEG004",
+          "K1-SEG005",
+          "K1-SEG006"
+        ],
+        "subject_id": "C01"
+      },
+      {
+        "id": "REF-L01",
+        "type": "image",
+        "role": "location_reference",
+        "status": "pending",
+        "source_type": "generated",
+        "related_segments": [
+          "K1-SEG001",
+          "K1-SEG002",
+          "K1-SEG003"
+        ]
+      },
+      {
+        "id": "REF-L02",
+        "type": "image",
+        "role": "location_reference",
+        "status": "pending",
+        "source_type": "generated",
+        "related_segments": [
+          "K1-SEG004",
+          "K1-SEG005",
+          "K1-SEG006"
+        ]
+      },
+      {
+        "id": "TAIL-K1-SEG001",
+        "type": "frame",
+        "role": "actual_tail_frame",
+        "status": "runtime_pending",
+        "source_type": "extracted",
+        "related_segments": [
+          "K1-SEG001"
+        ],
+        "derived_from_segment_id": "K1-SEG001"
+      },
+      {
+        "id": "TAIL-K1-SEG002",
+        "type": "frame",
+        "role": "actual_tail_frame",
+        "status": "runtime_pending",
+        "source_type": "extracted",
+        "related_segments": [
+          "K1-SEG002"
+        ],
+        "derived_from_segment_id": "K1-SEG002"
+      },
+      {
+        "id": "TAIL-K1-SEG004",
+        "type": "frame",
+        "role": "actual_tail_frame",
+        "status": "runtime_pending",
+        "source_type": "extracted",
+        "related_segments": [
+          "K1-SEG004"
+        ],
+        "derived_from_segment_id": "K1-SEG004"
+      },
+      {
+        "id": "TAIL-K1-SEG005",
+        "type": "frame",
+        "role": "actual_tail_frame",
+        "status": "runtime_pending",
+        "source_type": "extracted",
+        "related_segments": [
+          "K1-SEG005"
+        ],
+        "derived_from_segment_id": "K1-SEG005"
+      }
+    ]
+  },
+  "warnings": [
+    {
+      "code": "reference_image_pending",
+      "path": "media_manifest.media[REF-C01]",
+      "message": "registry has no image for C01"
+    },
+    {
+      "code": "reference_image_pending",
+      "path": "media_manifest.media[REF-L01]",
+      "message": "registry has no image for L01"
+    },
+    {
+      "code": "reference_image_pending",
+      "path": "media_manifest.media[REF-L02]",
+      "message": "registry has no image for L02"
+    }
+  ],
+  "errors": []
+}

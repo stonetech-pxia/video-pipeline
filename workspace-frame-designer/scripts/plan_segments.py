@@ -17,8 +17,10 @@ and the reference images bound to a segment are the ones for the place it
 shows. The first segment of each scene opens on its references alone.
 
 Input is Shot IR after `resolve_assets.py`, which is where `scene_id` comes from.
+It may be a whole film or one chunk of one; a chunk is packed inside its own
+window and numbers its segments under its own id.
 
-Usage: plan_segments.py <resolved-shot-ir.json>
+Usage: plan_segments.py <resolved-shot-ir.json> [--continues-scene]
 """
 
 from __future__ import annotations
@@ -132,20 +134,51 @@ def pack_scene(run: dict[str, Any]) -> list[tuple[int, int]]:
     return list(zip(boundaries, boundaries[1:]))
 
 
-def plan(shot_ir: dict[str, Any]) -> list[dict[str, Any]]:
-    shots = read_shots(shot_ir)
+def id_prefix(shot_ir: dict[str, Any], shots: list[dict[str, Any]]) -> str:
+    """Check the span the artifact claims, and say what its segment ids carry.
+
+    A film declares a duration and starts at zero. A chunk declares the window
+    the chunk plan fixed for it, and numbers its segments under its own chunk id
+    so a chunk can be redone on its own without renaming the ones after it.
+    """
+    first, last = int(shots[0]["start"]), int(shots[-1]["end"])
+    chunk_id = shot_ir.get("chunk_id")
+    if isinstance(chunk_id, str) and chunk_id:
+        if (shot_ir.get("start"), shot_ir.get("end")) != (first, last):
+            raise PlanError(
+                f"chunk {chunk_id} claims {shot_ir.get('start')}-{shot_ir.get('end')}, "
+                f"but its shots run {first}-{last}"
+            )
+        return f"{chunk_id}-"
     total = shot_ir.get("duration")
     if isinstance(total, bool) or not isinstance(total, int) or total < MIN_DURATION:
         raise PlanError(f"Shot IR duration must be an integer of at least {MIN_DURATION} seconds")
-    if int(shots[-1]["end"]) != total:
-        raise PlanError(f"shots end at {shots[-1]['end']}, but duration is {total}")
+    if first != 0:
+        raise PlanError(f"shots start at {first}, but a film starts at 0")
+    if last != total:
+        raise PlanError(f"shots end at {last}, but duration is {total}")
+    return ""
+
+
+def plan(shot_ir: dict[str, Any], continues_scene: bool = False) -> list[dict[str, Any]]:
+    shots = read_shots(shot_ir)
+    prefix = id_prefix(shot_ir, shots)
+    if continues_scene:
+        # A chunk boundary is a cut: its shots start where the last chunk's shots
+        # stopped. A scene running across that seam would have to be packed from
+        # both chunks at once, and the segment breaking at the seam would break
+        # on the cut this design exists to avoid. Chunk on a scene boundary.
+        raise PlanError(
+            f"chunk {shot_ir.get('chunk_id')} opens inside a scene; segments cannot be packed one "
+            f"chunk at a time across a scene seam. Re-chunk so this chunk starts on a scene boundary."
+        )
 
     segments: list[dict[str, Any]] = []
     for run in scene_runs(shots):
         for position, (start, end) in enumerate(pack_scene(run)):
             covered = shots_in(run["shots"], start, end)
             segments.append({
-                "segment_id": f"SEG{len(segments) + 1:03d}",
+                "segment_id": f"{prefix}SEG{len(segments) + 1:03d}",
                 "previous_segment_id": segments[-1]["segment_id"] if segments else None,
                 "scene_id": run["scene_id"],
                 "start": start,
@@ -169,10 +202,14 @@ def plan(shot_ir: dict[str, Any]) -> list[dict[str, Any]]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Pack a resolved Shot IR into generation segments")
-    parser.add_argument("shot_ir")
+    parser.add_argument("shot_ir", help="a resolved Shot IR, or one resolved chunk of one")
+    parser.add_argument(
+        "--continues-scene", action="store_true",
+        help="the chunk plan says this chunk opens inside a scene; refused, see the error text",
+    )
     args = parser.parse_args()
     try:
-        segments = plan(load_object(args.shot_ir))
+        segments = plan(load_object(args.shot_ir), args.continues_scene)
     except (OSError, UnicodeError, json.JSONDecodeError, PlanError) as error:
         print(json.dumps({"status": "blocked", "segment_plan": [], "error": str(error)}, ensure_ascii=False))
         return 2

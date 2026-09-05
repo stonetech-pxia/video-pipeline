@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openclaw.local/schemas/frame-design-chunk.schema.json",
+  "title": "Frame Design chunk",
+  "description": "One chunk of a chunked frame-design pass: the segments covering one chunk's time window. Segment and media ids are local to the chunk; global numbering is assigned when chunks are merged.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "chunk_id", "status", "start", "end", "segment_plan", "media_manifest", "warnings", "errors"],
+  "properties": {
+    "schema_version": { "const": "1.3" },
+    "chunk_id": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["complete", "partial", "blocked"] },
+    "start": { "type": "integer", "minimum": 0 },
+    "end": { "type": "integer", "exclusiveMinimum": 0 },
+    "segment_plan": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "frame-design-output.schema.json#/$defs/segment" }
+    },
+    "media_manifest": { "$ref": "frame-design-output.schema.json#/$defs/mediaManifest" },
+    "warnings": { "type": "array", "items": { "$ref": "frame-design-output.schema.json#/$defs/diagnostic" } },
+    "errors": { "type": "array", "items": { "$ref": "frame-design-output.schema.json#/$defs/diagnostic" } }
+  }
+}

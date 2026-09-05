@@ -71,6 +71,9 @@ CHUNK_CHECK -> SHOT_RUNNING | SHOT_MERGE | REPAIR | BLOCKED | FAILED
 SHOT_MERGE -> SHOT_CHECK | REPAIR | FAILED
 SHOT_CHECK -> ASSET_RESOLUTION | REPAIR | BLOCKED | FAILED
 ASSET_RESOLUTION -> FRAME_RUNNING | BLOCKED | FAILED
+FRAME_RUNNING -> FRAME_CHUNK_CHECK | BLOCKED | FAILED
+FRAME_CHUNK_CHECK -> FRAME_RUNNING | FRAME_MERGE | REPAIR | BLOCKED | FAILED
+FRAME_MERGE -> FRAME_CHECK | REPAIR | FAILED
 FRAME_CHECK -> MEDIA_RESOLUTION | REPAIR | BLOCKED | FAILED
 MEDIA_RESOLUTION -> MEDIA_CHECK
 MEDIA_CHECK -> COMPILE_RUNNING | DRAFT_COMPILE_RUNNING | REPAIR | FAILED
@@ -108,11 +111,29 @@ python3 ../workspace-shot-director/scripts/merge_shots.py CHUNK_PLAN.json HEAD.j
 ```
 
 - **One child per chunk, each its own session.** The plan hands every chunk a self-contained story slice, so a chunk never depends on the director remembering the last one.
+- **A chunk is whole scenes, and it keeps its own clock.** The plan never cuts inside a scene, because the frame stage packs one chunk at a time and cannot pack a scene split across two. Chunks carry no time window either: each starts at 0, the director decides how long it runs, and `merge_shots.py` lays them end to end and computes the film's duration from what they turned out to be. The plan carries the story's `duration_budget` for a chunk's scenes as `recommended_duration`; the director may depart from it and says why in `warnings`. Read those warnings before the frame stage: seconds are generations.
 - **Validate each chunk as it lands** and repair that chunk alone. A bad chunk costs one chunk, not the film. Chunk-level diagnostics route to `shot-director` like any SHOT failure and consume that chunk's repair budget.
 - **Resolve each validated chunk into the registry immediately.** The registry is complete the moment the last chunk is directed, which is what reference images are generated from. Record per chunk, under the chunk's local shot ids; the merged artifact is resolved with `--no-record`, since merging renumbers every shot.
 - **Shot IDs are local inside a chunk** and assigned globally at merge, so a chunk can be retried without invalidating the ones after it. Nothing downstream may reference a chunk-local ID.
 - **Chunks carry no film-level fields.** `aspect_ratio`, `visual_style`, `overall_soundscape`, and `music` are decided once, before the first chunk, and supplied to the merge as `HEAD.json`. Take the aspect ratio from the normalized user input; ask `shot-director` for the rest in a single head pass.
 - The merged artifact then goes through the ordinary SHOT gate. A short film needs none of this: direct it in one call.
+
+## Designing Frames in Chunks
+
+A film's frame design does not fit one reply either, and it reuses the director's chunks rather than inventing its own:
+
+```text
+python3 scripts/resolve_assets.py K1.json STORY.json ASSETS.json --no-record > K1_RESOLVED.json
+python3 ../workspace-frame-designer/scripts/build_frame_message.py K1_RESOLVED.json ASSETS.json > ASK_K1.txt
+python3 ../workspace-frame-designer/scripts/validate_frame_chunk.py K1_RESOLVED.json FRAME_K1.json
+python3 ../workspace-frame-designer/scripts/merge_frames.py FRAME_K1.json FRAME_K2.json ... > FRAME.json
+```
+
+- **One child per chunk, each its own session**, exactly as for the director. The message carries the packed segment skeleton, the shots it covers, and the registry entries for the subjects it shows.
+- **A chunk after the first is asked with `--previous K<n-1>_RESOLVED.json`** on both the message and the gate. A chunk cannot see the shot before its first one, so without it the check that a scene opening restates the wardrobe and props that survived goes quiet at every seam.
+- **Segment and media IDs are local inside a chunk** and assigned globally by `merge_frames.py`. A subject keeps one media ID across chunks; the merge keeps one record per ID and unions the segments using it.
+- **A frame chunk must open on a scene boundary.** `plan_segments.py` refuses one that opens mid-scene, because that scene would have to be packed from two chunks at once and the segment breaking at the seam would break on a cut. If a chunk plan produces one, re-chunk rather than forcing it through.
+- The merged artifact then goes through the ordinary FRAME gate.
 
 ## Media Resolution
 

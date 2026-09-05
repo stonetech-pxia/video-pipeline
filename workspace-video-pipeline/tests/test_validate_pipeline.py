@@ -105,7 +105,6 @@ class PipelineValidatorTests(unittest.TestCase):
             "status": "resolved",
             "source_type": "uploaded",
             "related_segments": ["SEG001"],
-            "provenance": {"source_type": "uploaded"},
             "path": path,
         }
         return {

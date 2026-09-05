@@ -1,0 +1,4 @@
+interface:
+  display_name: "帧设计师"
+  short_description: "为已切好的生成段绑定参考图与尾帧依赖，并起草 H3 提示词。"
+  default_prompt: "Use $frame-design to turn a resolved Shot IR chunk into segment media bindings and draft prompts."
