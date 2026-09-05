@@ -53,15 +53,6 @@ class MergeShotsTests(unittest.TestCase):
             ["S001", "S002", "S003"],
         )
 
-    def test_split_hint_ids_follow_their_parent_shot(self):
-        hints = [{"id": "A1-a", "start": 20, "end": 25}, {"id": "A1-b", "start": 25, "end": 30}]
-        first, second = two_chunks()
-        second["shots"][0]["split_hints"] = hints
-        merged, _ = merger.merge(plan((0, 20), (20, 30)), HEAD, [first, second])
-        self.assertEqual(
-            [hint["id"] for hint in merged["shots"][-1]["split_hints"]], ["S003-a", "S003-b"]
-        )
-
     def test_film_level_fields_come_from_the_head(self):
         first, second = two_chunks()
         second["visual_style"] = {"look": "a style the chunk invented"}

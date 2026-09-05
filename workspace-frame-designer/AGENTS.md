@@ -41,7 +41,7 @@ CANNOT:
 
 Segment boundaries are not yours to choose. Run `scripts/plan_segments.py SHOT_IR.json` and take its `segment_plan` skeleton verbatim: `start`, `end`, `duration`, `shot_ids`, `shot_bindings`, `previous_segment_id`, and `entry_strategy`. Do not add, remove, move, or resize a segment.
 
-The planner packs several short shots into one segment whenever it can, because a cut that happens *inside* one generation is continuous by construction, while a cut *between* two generations has to survive a tail-frame round trip. A shot is split across segments only when it exceeds 15 seconds.
+The planner packs several short shots into one segment whenever it can, because a cut that happens *inside* one generation is continuous by construction, while a cut *between* two generations has to survive a tail-frame round trip. A shot is never split across segments: a shot is itself one generatable piece. A take that must run longer arrives as consecutive shots, the later ones labelled `same_shot_continuation`.
 
 Your job starts after the boundaries exist: choose media, write image prompts, and fill in the media records.
 
@@ -49,7 +49,7 @@ Your job starts after the boundaries exist: choose media, write image prompts, a
 
 Read the boundary relationship from Shot IR's `continuityLabels`; do not re-derive it from the prose.
 
-1. `entry_strategy` comes from the planner. `use_previous_tail_frame` appears only where a segment opens inside a shot, which the planner already determined.
+1. `entry_strategy` comes from the planner. `use_previous_tail_frame` appears where the take did not break at that boundary: a segment opening inside a shot, or opening on a shot labelled `same_shot_continuation`, which continues the previous one as one unbroken take. The planner has already determined which.
 2. Populate `continuity_decision` from the opening shot's labels — `boundary_type`, `camera_continuity`, `action_continuity`, `framing_continuity`, `scene_continuity`, `recomposition_needed` — rather than judging the cut yourself. Contradicting them is a hard validation error.
 3. Never reuse a previous tail frame merely because two segments are adjacent.
 5. When `use_previous_tail_frame` is chosen, leave `entry_frame_source=null`; do not create a first-frame media item or image job for that segment. Set `previous_segment_id` to the immediately preceding segment, set `runtime_entry_dependency.kind=previous_actual_tail_frame`, point it to the previous segment's reserved `actual_tail_frame` media ID, and ensure the previous segment has `exit_frame_required=true`.

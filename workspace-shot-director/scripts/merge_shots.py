@@ -3,7 +3,7 @@
 
 Chunks number their shots locally, so a chunk can be retried on its own without
 invalidating the ones after it. Global numbering is assigned here, and every
-reference to a shot id -- exit states, split hints -- is rewritten with it.
+reference to a shot id is rewritten with it.
 
 Film-level fields come from the head and overwrite nothing from the chunks:
 a chunk that invented its own visual style cannot drift into the film.
@@ -41,10 +41,6 @@ def renumber(shots: list[dict[str, Any]], first: int) -> tuple[list[dict[str, An
         old, new = shot.get("id"), f"S{first + offset:03d}"
         renamed[old] = new
         shot["id"] = new
-        for hint in shot.get("split_hints") or []:
-            hint_id = hint.get("id")
-            if isinstance(hint_id, str) and isinstance(old, str) and hint_id.startswith(old):
-                hint["id"] = new + hint_id[len(old):]
         output.append(shot)
     return output, renamed
 

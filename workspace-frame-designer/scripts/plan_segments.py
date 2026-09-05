@@ -4,8 +4,11 @@
 Chooses generation-segment boundaries by dynamic programming. Boundaries are
 preferred at real cuts — strongest cuts first — because a seam hidden inside an
 edit costs nothing, while a seam inside a continuous take is visible. Packing
-several short shots into one segment is therefore the normal case; splitting a
-shot across segments only happens when the shot exceeds the model limit.
+several short shots into one segment is therefore the normal case.
+
+A segment opens on a new first frame only where the take really breaks. A
+shot labelled `same_shot_continuation` continues the previous one as one
+unbroken take, so its segment enters on the previous segment's tail frame.
 """
 
 from __future__ import annotations
@@ -143,12 +146,18 @@ def plan(shot_ir: dict[str, Any]) -> list[dict[str, Any]]:
         boundaries.append(origin[boundaries[-1]])
     boundaries.reverse()
 
-    cut_points = {int(shot["start"]) for shot in shots}
+    opening_shot = {int(shot["start"]): shot for shot in shots}
     segments: list[dict[str, Any]] = []
     for index in range(len(boundaries) - 1):
         start, end = boundaries[index], boundaries[index + 1]
         covered = shots_in(shots, start, end)
-        opens_on_cut = start in cut_points
+        # A segment needs a new first frame only where the take really breaks.
+        # Starting at a shot is not the same thing: a shot labelled
+        # same_shot_continuation carries one unbroken take across the limit on
+        # what can be generated at once, and regenerating its first frame would
+        # break the very thing the label says did not break.
+        opening = opening_shot.get(start)
+        opens_on_cut = opening is not None and opening.get("boundary_type") != "same_shot_continuation"
         segments.append({
             "segment_id": f"SEG{index + 1:03d}",
             "previous_segment_id": segments[-1]["segment_id"] if segments else None,

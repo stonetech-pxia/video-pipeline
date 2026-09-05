@@ -30,6 +30,7 @@ FIRST_FRAME_DIRECTIVE = "以输入首帧作为视频的准确起始画面，保�
 CONTINUATION_DIRECTIVE = "从当前首帧自然连续，保持人物身份、服装、场景、光线、机位、构图、空间关系和运动方向不变。"
 NO_RESET_DIRECTIVE = "不要重置动作、不要重复前一动作、不要突然换机位或重新构图、不要切镜。"
 SECTIONS = ("integrated_multimodal_description:", "overall_soundscape:", "non_diegetic_music:")
+MAX_SHOT_DURATION = 15
 LEGACY_MARKERS = (
     "For the target video, at 0.00 seconds into the target video",
     "How the reference pictures align with the target video",
@@ -173,6 +174,8 @@ def validate_shot(value: dict[str, Any], story: dict[str, Any] | None) -> list[d
             errors.append(error("TIMELINE", "shot_timeline_start", f"{path}.start", "first shot must start at 0", "shot-director"))
         elif previous_end is not None and start != previous_end:
             errors.append(error("TIMELINE", "shot_timeline_gap", f"{path}.start", "shots must be contiguous", "shot-director"))
+        if isinstance(start, (int, float)) and isinstance(end, (int, float)) and end - start > MAX_SHOT_DURATION:
+            errors.append(error("SHOT_DESIGN", "shot_too_long", path, f"a shot is one generatable piece and cannot exceed {MAX_SHOT_DURATION}s", "shot-director"))
         previous_end = end if isinstance(end, (int, float)) else previous_end
         for beat_id in shot.get("source_beat_ids", []):
             if story is not None and beat_id not in beat_ids:
@@ -415,8 +418,22 @@ def validate_validation(
     return errors
 
 
-def validate_result(value: dict[str, Any]) -> list[dict[str, Any]]:
-    return schema_errors("result", value)
+def validate_result(value: dict[str, Any], shot: dict[str, Any] | None = None) -> list[dict[str, Any]]:
+    """The result is what the renderer is handed, so it carries the render target.
+
+    Aspect ratio is a production parameter, not a per-segment one: it is decided
+    once and used when the video is finally rendered. Shot IR is where it is
+    recorded, and this is the only place it can be checked to have survived.
+    """
+    errors = schema_errors("result", value)
+    result = value.get("result")
+    if shot is None or not isinstance(result, dict):
+        return errors
+    for field, expected in (("aspect_ratio", shot.get("aspect_ratio")), ("total_duration", shot.get("duration"))):
+        if result.get(field) != expected:
+            errors.append(error("FORMAT", "render_target_mismatch", f"result.{field}",
+                                f"is {result.get(field)!r}, but Shot IR says {expected!r}", "video-pipeline"))
+    return errors
 
 
 def make_report(stage: str, paths: dict[str, Path], errors: list[dict[str, Any]]) -> dict[str, Any]:
@@ -468,7 +485,7 @@ def main() -> int:
     elif args.stage == "validation":
         errors = validate_validation(artifact, packages, deterministic_report, args.packages)
     else:
-        errors = validate_result(artifact)
+        errors = validate_result(artifact, shot)
     report = make_report(args.stage, paths, errors)
     print(json.dumps(report, ensure_ascii=False, indent=2))
     return 0 if not errors else 1

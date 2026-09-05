@@ -86,21 +86,6 @@
         "recomposition_needed": { "type": "boolean" }
       }
     },
-    "splitHint": {
-      "allOf": [
-        { "$ref": "#/$defs/continuityLabels" },
-        {
-          "type": "object",
-          "required": ["id", "start", "end"],
-          "properties": {
-            "id": { "type": "string", "minLength": 1 },
-            "start": { "type": "number", "minimum": 0 },
-            "end": { "type": "number", "exclusiveMinimum": 0 },
-            "action_phase": { "type": "string" }
-          }
-        }
-      ]
-    },
     "shot": {
       "allOf": [
         { "$ref": "#/$defs/continuityLabels" },
@@ -127,7 +112,6 @@
             "dialogue",
             "diegetic_audio",
             "transition",
-            "split_hints",
             "boundary_risk",
             "composition_control"
           ],
@@ -163,10 +147,6 @@
             "dialogue": { "type": "string" },
             "diegetic_audio": { "type": "string" },
             "transition": { "type": "string" },
-            "split_hints": {
-              "type": "array",
-              "items": { "$ref": "#/$defs/splitHint" }
-            },
             "boundary_risk": {
               "type": "object",
               "additionalProperties": false,

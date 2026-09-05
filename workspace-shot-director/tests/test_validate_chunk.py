@@ -36,7 +36,7 @@ LABELS = {
 }
 
 
-def shot(shot_id, start, end, beats, lines=(), spoken="", load=0, hints=(), cast=("C01",)):
+def shot(shot_id, start, end, beats, lines=(), spoken="", load=0, cast=("C01",)):
     return {
         "id": shot_id,
         "start": start,
@@ -45,7 +45,6 @@ def shot(shot_id, start, end, beats, lines=(), spoken="", load=0, hints=(), cast
         "characters_in_frame": list(cast),
         "dialogue_ids": list(lines),
         "dialogue": spoken,
-        "split_hints": list(hints),
         "boundary_risk": {"state_transfer_load": load, "reason": "test"},
         "composition_control": "normal",
         **PROSE,
@@ -185,24 +184,10 @@ class ValidateChunkTests(unittest.TestCase):
             checker.validate(plan(chunk_id="K2", previous="K1", mid_scene=True), "K2", artifact), []
         )
 
-    def test_a_split_hint_past_fifteen_seconds_is_refused(self):
-        hints = [{"id": "A1-a", "start": 0, "end": 20, **LABELS},
-                 {"id": "A1-b", "start": 20, "end": 40, **LABELS}]
-        artifact = chunk([shot("A1", 0, 40, ["B01", "B02"], hints=hints)], end=40)
-        errors = checker.validate(plan(end=40), "K1", artifact)
-        self.assertEqual(sum("cannot itself exceed" in error for error in errors), 2)
-
-    def test_a_shot_past_fifteen_seconds_needs_split_hints(self):
+    def test_a_shot_past_fifteen_seconds_is_refused(self):
         artifact = chunk([shot("A1", 0, 20, ["B01", "B02"])], end=20)
         errors = checker.validate(plan(), "K1", artifact)
-        self.assertTrue(any("it needs split_hints" in error for error in errors))
-
-    def test_split_hints_on_a_short_shot_are_refused(self):
-        hints = [{"id": "A1-a", "start": 0, "end": 5, **LABELS},
-                 {"id": "A1-b", "start": 5, "end": 10, **LABELS}]
-        artifact = chunk([shot("A1", 0, 10, ["B01"], hints=hints), shot("A2", 10, 20, ["B02"])])
-        errors = checker.validate(plan(), "K1", artifact)
-        self.assertTrue(any("longer than 15s may be split" in error for error in errors))
+        self.assertTrue(any("a shot is one generatable piece" in error for error in errors))
 
     def test_a_film_level_field_may_not_appear_in_a_chunk(self):
         errors = checker.validate(plan(), "K1", chunk(

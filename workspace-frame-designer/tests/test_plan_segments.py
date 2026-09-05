@@ -12,12 +12,13 @@ planner = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(planner)
 
 
-def shot(shot_id, start, end, scene="scene_change", action="discontinuous", load=0, control="normal"):
+def shot(shot_id, start, end, scene="scene_change", action="discontinuous", load=0, control="normal",
+         boundary="shot_change"):
     return {
         "id": shot_id,
         "start": start,
         "end": end,
-        "boundary_type": "shot_change",
+        "boundary_type": boundary,
         "camera_continuity": "changed",
         "action_continuity": action,
         "framing_continuity": "changed",
@@ -33,6 +34,19 @@ def shot_ir(shots):
 
 
 class PlanSegmentsTests(unittest.TestCase):
+    def test_a_continuation_shot_enters_on_the_previous_tail_frame(self):
+        # One 24s take, too long to generate at once, written as two shots.
+        plan = planner.plan(shot_ir([
+            shot("S01", 0, 12),
+            shot("S02", 12, 24, scene="same_scene", action="continuous",
+                 boundary="same_shot_continuation"),
+            shot("S03", 24, 36),
+        ]))
+        strategies = {segment["shot_ids"][0]: segment["entry_strategy"] for segment in plan}
+        self.assertEqual(strategies["S01"], "new_first_frame")
+        self.assertEqual(strategies["S02"], "use_previous_tail_frame")
+        self.assertEqual(strategies["S03"], "new_first_frame")
+
     def test_short_shots_are_packed_into_one_segment(self):
         plan = planner.plan(shot_ir([shot("S01", 0, 4), shot("S02", 4, 8), shot("S03", 8, 12)]))
         self.assertEqual(len(plan), 1)

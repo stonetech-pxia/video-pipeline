@@ -243,6 +243,16 @@ class PipelineValidatorTests(unittest.TestCase):
             self.assertIn("deterministic_report_mismatch", codes)
             self.assertIn("stale_deterministic_report", codes)
 
+    def test_shot_gate_rejects_a_shot_longer_than_one_generatable_piece(self):
+        labels = {"boundary_type": "shot_change", "camera_continuity": "changed",
+                  "action_continuity": "discontinuous", "framing_continuity": "changed",
+                  "scene_continuity": "scene_change", "recomposition_needed": True}
+        shot_ir = {"schema_version": "1.1", "status": "complete", "duration": 20,
+                   "shots": [{"id": "S01", "start": 0, "end": 20, "source_beat_ids": [],
+                              "dialogue_ids": [], **labels}]}
+        codes = {item["code"] for item in validator.validate_shot(shot_ir, None)}
+        self.assertIn("shot_too_long", codes)
+
     def test_result_gate_accepts_structured_startup_failure(self):
         result = {
             "schema_version": "1.0",
@@ -282,11 +292,34 @@ class PipelineValidatorTests(unittest.TestCase):
             "warnings": [],
             "last_valid_artifacts": {},
             "result": {
+                "total_duration": 10,
+                "aspect_ratio": "16:9",
                 "draft_video_prompts": [self.valid_draft_prompt()],
                 "image_jobs": [{"job_id": "JOB01", "prompt": "frame prompt", "negative_prompt": "bad frame", "output_media_id": "FF01", "status": "pending"}],
             },
         }
         self.assertEqual(validator.validate_result(result), [])
+
+    def test_result_gate_rejects_a_render_target_that_drifted_from_shot_ir(self):
+        result = {
+            "schema_version": "1.0",
+            "status": "MEDIA_WAIT",
+            "failed_stage": "media",
+            "agent_id": None,
+            "failure_kind": "media_wait",
+            "errors": [],
+            "warnings": [],
+            "last_valid_artifacts": {},
+            "result": {
+                "total_duration": 10,
+                "aspect_ratio": "9:16",
+                "draft_video_prompts": [self.valid_draft_prompt()],
+                "image_jobs": [{"job_id": "JOB01", "prompt": "frame prompt", "negative_prompt": "bad frame", "output_media_id": "FF01", "status": "pending"}],
+            },
+        }
+        shot = {"aspect_ratio": "16:9", "duration": 10}
+        codes = {item["code"] for item in validator.validate_result(result, shot)}
+        self.assertIn("render_target_mismatch", codes)
 
     def test_result_gate_rejects_media_wait_without_draft_prompts(self):
         result = {
@@ -298,7 +331,8 @@ class PipelineValidatorTests(unittest.TestCase):
             "errors": [],
             "warnings": [],
             "last_valid_artifacts": {},
-            "result": {"image_jobs": [{"job_id": "JOB01", "prompt": "frame prompt", "negative_prompt": "", "output_media_id": "FF01", "status": "pending"}]},
+            "result": {"total_duration": 10, "aspect_ratio": "16:9",
+                       "image_jobs": [{"job_id": "JOB01", "prompt": "frame prompt", "negative_prompt": "", "output_media_id": "FF01", "status": "pending"}]},
         }
         self.assertTrue(validator.validate_result(result))
 

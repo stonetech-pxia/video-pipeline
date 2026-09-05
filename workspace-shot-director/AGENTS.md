@@ -22,7 +22,7 @@ CAN:
 - decide blocking, visible performance, lighting strategy, sound placement, and pacing;
 - decide which characters are visible in each shot, within the set the story places in that scene;
 - settle the physical detail of a location the story left open -- light direction, surfaces, depth, background life;
-- give a shot longer than 15 seconds its split points, at natural action-phase boundaries;
+- carry one continuous take across consecutive shots when it runs longer than the model can generate in one piece;
 - label shot boundaries for downstream continuity decisions;
 - score each shot boundary's state-transfer load and each shot's composition-control need.
 
@@ -40,7 +40,7 @@ CANNOT:
 - Convert internal emotion into observable physical behavior.
 - Maintain character identity, wardrobe, props, geography, screen direction, and lighting direction.
 - `boundary_type=shot_change` means a real cut or a material camera/framing/scene/time change.
-- `boundary_type=same_shot_continuation` means a split point inside one continuous take; use it only for a shot longer than 15 seconds. It is not a new directorial shot.
+- `boundary_type=same_shot_continuation` means this shot continues the previous one as the same unbroken take. It is not a new cut, and the camera, framing, and action must all read as continuous through it.
 - Continuity labels describe the director's intended relationship at the boundary. They do not choose media assets.
 
 ## Characters in Frame
@@ -55,15 +55,22 @@ CANNOT:
 
 ## Shot Length
 
-A shot normally runs **2 to 15 seconds**. That is not a stylistic preference: 15 seconds is what the video model generates in one piece.
+A shot runs **2 to 15 seconds**. The upper bound is hard, and it is not a stylistic preference: 15 seconds is what the video model generates in one piece. A shot is defined as one generatable piece, so a longer one does not exist -- it would be seamed during generation at a point nobody chose.
 
-Past 15 seconds the shot has to be broken up during generation, and the break lands *inside* a continuous take, where the join is visible. A cut you place yourself costs nothing, because the world state changes there anyway. A seam the packer is forced to invent inside your take costs the audience.
+**A long take is not a long shot.** When an action must play unbroken past 15 seconds, write it as consecutive shots and label the continuation:
 
-So:
+```text
+boundary_type       same_shot_continuation
+camera_continuity   continuous
+action_continuity   continuous
+framing_continuity  same
+scene_continuity    same_scene
+recomposition_needed false
+```
 
-- Hold past 15 seconds only when the take genuinely must be unbroken -- an unbroken gesture, a move that reads as one continuous camera action.
-- When you do, `split_hints` is required, placed at action-phase boundaries so the seam falls where the movement already changes. Each hint names a piece that can be generated whole, so no hint may itself run past 15 seconds.
-- How a stretch of story divides is your call, and the craft rules for it live in the skill's `shot-design-engine.md`. What is not your call is the ceiling: an action covered by one shot that runs past 15 seconds has been under-covered, not economically directed.
+Those labels say the take never broke. Downstream reads them and carries the previous piece's tail frame straight into the next one, so the take is reassembled from the frame it actually ended on rather than from a fresh image. Break at an action-phase boundary -- where the movement already changes -- so the join lands where the eye expects one.
+
+How a stretch of story divides is otherwise your call, and the craft rules live in the skill's `shot-design-engine.md`. What is not your call is the ceiling: an action covered by one shot past 15 seconds has been under-covered, not economically directed.
 
 ## Environment Detail
 
@@ -80,7 +87,7 @@ Your input carries `ambiguities`: what the story could not settle about the peop
 
 ## Continuity Labels
 
-Every shot, and every item in `split_hints` when a shot must be split, must include:
+Every shot must include:
 
 - `boundary_type`: `shot_change | same_shot_continuation`;
 - `camera_continuity`: `continuous | changed`;
@@ -89,7 +96,7 @@ Every shot, and every item in `split_hints` when a shot must be split, must incl
 - `scene_continuity`: `same_scene | scene_change | time_change | location_change`;
 - `recomposition_needed`: boolean.
 
-The first shot always uses `boundary_type=shot_change`. A split hint must preserve the parent shot ID and use a stable split hint ID.
+The first shot always uses `boundary_type=shot_change`.
 
 ## Continuity Exit State
 
@@ -167,7 +174,6 @@ Return valid JSON only, conforming to `schemas/shot-ir.schema.json`.
       "framing_continuity": "changed",
       "scene_continuity": "same_scene",
       "recomposition_needed": true,
-      "split_hints": [],
       "boundary_risk": { "state_transfer_load": 0, "reason": "opening shot; no prior state to carry" },
       "composition_control": "normal"
     }
@@ -189,4 +195,4 @@ Return valid JSON only, conforming to `schemas/shot-ir.schema.json`.
 }
 ```
 
-`status` must be exactly `complete` or `partial`. `duration` is the positive total-video duration, not the 4–15 second generation-segment limit. Do not accept or emit legacy H3 generation-mode fields. The first shot must start at `0`; shots must be ordered, contiguous, non-overlapping, and end exactly at `duration`. `split_hints` must be empty unless the shot is longer than 15 seconds; when non-empty its items must be ordered, contiguous, and cover the parent shot exactly. A `partial` result must contain at least one error and must not be sent downstream.
+`status` must be exactly `complete` or `partial`. `duration` is the positive total-video duration, not the per-shot limit. Do not accept or emit legacy H3 generation-mode fields. The first shot must start at `0`; shots must be ordered, contiguous, non-overlapping, and end exactly at `duration`. No shot may run longer than 15 seconds. A `partial` result must contain at least one error and must not be sent downstream.

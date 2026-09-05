@@ -157,29 +157,13 @@ def check_boundaries(chunk: dict[str, Any], planned: dict[str, Any]) -> list[str
         )
 
     for index, shot in enumerate(shots):
-        hints = shot.get("split_hints") or []
         span = (shot.get("end") or 0) - (shot.get("start") or 0)
-        if hints and span <= MAX_SHOT_DURATION:
-            errors.append(f"shots[{index}].split_hints: only a shot longer than {MAX_SHOT_DURATION}s may be split")
-        if not hints:
-            if span > MAX_SHOT_DURATION:
-                errors.append(
-                    f"shots[{index}] runs {span}s: past {MAX_SHOT_DURATION}s a shot cannot be generated "
-                    f"in one piece, so it needs split_hints at its action-phase boundaries"
-                )
-            continue
-        if hints[0].get("start") != shot.get("start") or hints[-1].get("end") != shot.get("end"):
-            errors.append(f"shots[{index}].split_hints: the hints must cover the shot exactly")
-        for position, hint in enumerate(hints[1:], start=1):
-            if hints[position - 1].get("end") != hint.get("start"):
-                errors.append(f"shots[{index}].split_hints[{position}]: hints must be contiguous")
-        for position, hint in enumerate(hints):
-            piece = (hint.get("end") or 0) - (hint.get("start") or 0)
-            if piece > MAX_SHOT_DURATION:
-                errors.append(
-                    f"shots[{index}].split_hints[{position}] runs {piece}s: a split hint names a piece "
-                    f"that can be generated whole, so it cannot itself exceed {MAX_SHOT_DURATION}s"
-                )
+        if span > MAX_SHOT_DURATION:
+            errors.append(
+                f"shots[{index}] runs {span}s: a shot is one generatable piece, so it cannot exceed "
+                f"{MAX_SHOT_DURATION}s. An unbroken take that runs longer is consecutive shots "
+                f"labelled same_shot_continuation."
+            )
     return errors
 
 

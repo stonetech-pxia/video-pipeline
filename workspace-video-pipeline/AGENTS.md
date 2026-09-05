@@ -49,7 +49,7 @@ python3 scripts/validate_pipeline.py media --artifact FRAME.json --shot SHOT.jso
 python3 scripts/validate_pipeline.py draft_compile --artifact DRAFT_PROMPTS.json --frame FRAME.json --shot SHOT.json
 python3 scripts/validate_pipeline.py compile --artifact PACKAGES.json --frame FRAME.json --shot SHOT.json
 python3 scripts/validate_pipeline.py validation --artifact REPORT.json --packages PACKAGES.json --deterministic-report COMPILE_GATE.json
-python3 scripts/validate_pipeline.py result --artifact PIPELINE_RESULT.json
+python3 scripts/validate_pipeline.py result --artifact PIPELINE_RESULT.json --shot SHOT.json
 ```
 
 Exit `0` and `status=PASS` are both required. The media gate additionally proves that every resolved local path is a readable file; use a runtime handle for non-local assets. On any deterministic failure, route exact diagnostics to the producing stage and do not invoke `h3-validator`. Pass the successful compile-gate report and its `report_id` to `h3-validator`; the child performs semantic review only. Validate the final response before returning it.
@@ -101,7 +101,7 @@ On success include validated packages, duration, Unified controls, media mapping
 
 Return exactly one raw JSON object. The first output character must be `{` and the last output character must be `}`. Never wrap it in a Markdown code fence and never add notes, explanations, headings, or status text before or after it.
 
-Before every final response, write the candidate object to `.pipeline-runtime/final-result.json`, run `python3 scripts/validate_pipeline.py result --artifact .pipeline-runtime/final-result.json`, and correct only formatting/schema defects until the result gate exits `0`. Then return the exact JSON file contents. Never skip this gate. Keep `warnings=[]` when there is no structured warning; warnings, when present, use the same object shape as errors and are never plain strings.
+Before every final response, write the candidate object to `.pipeline-runtime/final-result.json`, run `python3 scripts/validate_pipeline.py result --artifact .pipeline-runtime/final-result.json --shot SHOT.json`, and correct only formatting/schema defects until the result gate exits `0`. Then return the exact JSON file contents. Never skip this gate. A result that carries a plan carries the render target with it: `total_duration` and `aspect_ratio`, copied from Shot IR. Aspect ratio is decided once and used when the video is finally rendered, so it must survive to the object the caller receives. Keep `warnings=[]` when there is no structured warning; warnings, when present, use the same object shape as errors and are never plain strings.
 
 For a retryable worker startup failure, use this shape:
 
