@@ -39,6 +39,23 @@ def in_order(chunk: dict[str, Any]) -> tuple[int, str]:
     return (int(match.group(1)) if match else 0, chunk_id)
 
 
+def shot_order(chunk: dict[str, Any]) -> list[str]:
+    """The chunk's shots in time order, read back off its segments.
+
+    A chunk's segments cover its window with no gap and name the shots they
+    cover in order, so walking them recovers the shot list the director wrote
+    without the frame stage having to be handed the Shot IR a second time.
+    """
+    order: list[str] = []
+    for item in chunk.get("segment_plan") or []:
+        if not isinstance(item, dict):
+            continue
+        for shot_id in item.get("shot_ids") or []:
+            if shot_id not in order:
+                order.append(shot_id)
+    return order
+
+
 def load(path: Path) -> dict[str, Any]:
     value = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(value, dict):
@@ -57,6 +74,7 @@ def merge(chunks: list[dict[str, Any]]) -> tuple[dict[str, Any], list[str]]:
     chunk_errors: list[Any] = []
     status = "complete"
     clock = 0
+    shots_placed = 0
 
     for chunk in ordered:
         chunk_id = chunk.get("chunk_id")
@@ -64,6 +82,13 @@ def merge(chunks: list[dict[str, Any]]) -> tuple[dict[str, Any], list[str]]:
             status = "partial"
         if chunk.get("start") != 0:
             errors.append(f"chunk {chunk_id} starts at {chunk.get('start')}; a chunk keeps its own clock")
+
+        # merge_shots.py numbers a chunk's shots S001.. across the film, so the
+        # segments naming them have to be renamed with it. Skip this and the
+        # merged plan points at chunk-local ids the merged Shot IR no longer has.
+        shot_names = {old: f"S{shots_placed + offset + 1:03d}"
+                      for offset, old in enumerate(shot_order(chunk))}
+        shots_placed += len(shot_names)
 
         for item in chunk.get("segment_plan", []):
             if not isinstance(item, dict):
@@ -75,6 +100,10 @@ def merge(chunks: list[dict[str, Any]]) -> tuple[dict[str, Any], list[str]]:
                 errors.append(f"segment id {old} appears in more than one chunk")
             renamed[old] = new
             item["segment_id"] = new
+            item["shot_ids"] = [shot_names.get(ref, ref) for ref in item.get("shot_ids") or []]
+            for binding in item.get("shot_bindings") or []:
+                if isinstance(binding, dict):
+                    binding["shot_id"] = shot_names.get(binding.get("shot_id"), binding.get("shot_id"))
             for field in ("start", "end"):
                 value = item.get(field)
                 if isinstance(value, int) and not isinstance(value, bool):

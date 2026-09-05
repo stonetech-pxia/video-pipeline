@@ -217,6 +217,48 @@ class MergeTests(unittest.TestCase):
         for earlier, later in zip(spans, spans[1:]):
             self.assertEqual(earlier[1], later[0])
 
+    def test_the_merged_plan_names_the_shots_the_merged_shot_ir_has(self):
+        """Both merges renumber, so both have to renumber the same way.
+
+        This runs the real merge_shots beside merge_frames rather than trusting
+        two implementations of one rule to stay in step.
+        """
+        spec = importlib.util.spec_from_file_location(
+            "merge_shots", SCRIPTS.parents[1] / "workspace-shot-director/scripts/merge_shots.py")
+        shot_merger = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(shot_merger)
+
+        shot_chunks, frame_chunks = [], []
+        for chunk_id, spans in (("K1", [(0, 12), (12, 24)]), ("K2", [(0, 13)]),
+                                ("K3", [(0, 11), (11, 22)])):
+            shots = [shot(f"{chunk_id}-{i:02d}", a, b, scene=f"S{chunk_id}",
+                          characters_in_frame=[]) for i, (a, b) in enumerate(spans, 1)]
+            piece = shot_chunk(chunk_id, shots)
+            piece["continuity_exit_state"] = {"by_shot": [
+                {"shot_id": s["id"], "staging": "x", "wardrobe_state": "",
+                 "held_props": [], "scene_state": "", "lighting_state": ""} for s in shots]}
+            shot_chunks.append(piece)
+            frame_chunks.append(fill(piece, planner.plan(piece)))
+
+        plan = {"chunks": [{"chunk_id": c["chunk_id"]} for c in shot_chunks]}
+        head = {"aspect_ratio": "16:9", "visual_style": {}, "overall_soundscape": {}, "music": {}}
+        shot_ir, shot_errors = shot_merger.merge(plan, head, shot_chunks)
+        merged, frame_errors = merger.merge(frame_chunks)
+        self.assertEqual((shot_errors, frame_errors), ([], []))
+
+        available = {item["id"] for item in shot_ir["shots"]}
+        named = {ref for item in merged["segment_plan"] for ref in item["shot_ids"]}
+        self.assertTrue(named, "the merged plan named no shots, so this proves nothing")
+        self.assertEqual(named - available, set(), "merged plan names shots the merged Shot IR lacks")
+        bound = {b["shot_id"] for item in merged["segment_plan"] for b in item["shot_bindings"]}
+        self.assertEqual(bound - available, set(), "shot_bindings kept a chunk-local id")
+
+        # And they line up in time, not merely by name.
+        spans = {item["id"]: (item["start"], item["end"]) for item in shot_ir["shots"]}
+        for item in merged["segment_plan"]:
+            self.assertLessEqual(spans[item["shot_ids"][0]][0], item["start"])
+            self.assertGreaterEqual(spans[item["shot_ids"][-1]][1], item["end"])
+
 
 if __name__ == "__main__":
     unittest.main()
