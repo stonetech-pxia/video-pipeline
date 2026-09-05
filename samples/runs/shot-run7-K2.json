@@ -1,0 +1,348 @@
+{
+  "schema_version": "1.1",
+  "chunk_id": "K2",
+  "status": "complete",
+  "start": 70,
+  "end": 140,
+  "shots": [
+    {
+      "id": "K2-01",
+      "start": 70,
+      "end": 81,
+      "source_beat_ids": [
+        "B006"
+      ],
+      "characters_in_frame": [
+        "C01",
+        "C02"
+      ],
+      "dramatic_purpose": "建立面馆空间与两人关系，周砚以照片开启求证",
+      "framing": "双人中景，柜台两侧构图，周砚在左前、老板娘在右后，照片在画面中心",
+      "angle": "平视，略过柜台高度",
+      "camera_position": "柜台侧面靠厨房一侧，镜头由左向右缓缓横移半步",
+      "camera_motion": "缓慢横移，随周砚把照片推过的动作微推进",
+      "focus": "照片与两张脸之间的中景深，照片略前置清晰",
+      "blocking": "周砚站在柜台外把旧照片（P02）放在台面上推近老板娘，老板娘擦着碗的手停下，低头看照片",
+      "subject_action": "周砚摊开照片示意老板娘辨认，身体前倾，姿态试探",
+      "visible_emotion": "周砚试探着求证，肌肉绷紧但语气放低；老板娘从日常劳作转入被打断的疑惑",
+      "environment": "镇上面馆内部，中午：白墙被多年蒸汽熏黄，柜台是老木台面摆着醋壶和筷子筒，灶台向画左侧冒着热气，背景两三张木桌有食客低头吃面，门口挂半旧门帘",
+      "lighting": "中午北窗冷白天光从柜台后方透入，与灶边暖黄灯泡形成轻微冷暖交错，人物面部光比柔和",
+      "dialogue_ids": [
+        "D002"
+      ],
+      "dialogue": "周砚：您看看，认识这姑娘吗？",
+      "diegetic_audio": "灶上下面滚水声、背景食客低声交谈与筷子磕碰、柜台桌面上照片推过木纹的轻擦声",
+      "transition": "切至老板娘反应近景",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "location_change",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "同场两人、柜台位置、桌面上被推近的旧照片与灶台热气方向均需跨切保留"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K2-02",
+      "start": 81,
+      "end": 92,
+      "source_beat_ids": [
+        "B007"
+      ],
+      "characters_in_frame": [
+        "C02"
+      ],
+      "dramatic_purpose": "老板娘长时间回想后认出照片上的姑娘，给出身份线索",
+      "framing": "老板娘近景，照片下沿压在画面前景下缘",
+      "angle": "平视稍偏侧，正面三分之一侧脸",
+      "camera_position": "柜台外周砚一侧，正对老板娘",
+      "camera_motion": "固定，仅在她辨认成功的那一拍极轻推近",
+      "focus": "浅景深，焦点先在她眯起的眼睛，认出瞬间焦点与推近同步落在她面部",
+      "blocking": "老板娘俯身把照片凑到窗光下眯眼细看，久到让时间发涩，然后抬头看向周砚说话",
+      "subject_action": "老板娘先沉默辨认许久，再恍然抬头说出答案",
+      "visible_emotion": "努力回想后的恍然：眯眼、皱纹收紧，随后眉梢舒开带一点旧人重逢式的感慨",
+      "environment": "同面馆：背后窗光勾出她的侧影轮廓，灶台热气在画外，画面里只有窗、照片和她",
+      "lighting": "北窗冷白侧光打在她面部，形成清晰的皱纹与眯眼阴影",
+      "dialogue_ids": [
+        "D003"
+      ],
+      "dialogue": "老板娘：这不是灯塔那边林家的姑娘吗，好多年没见了。",
+      "diegetic_audio": "环境延续：远处滚水与食客声音压低，她开口时室内略显安静，照片被她指尖捏起时的纸响",
+      "transition": "切至周砚追问近景",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 6,
+        "reason": "照片已被老板娘捏在手里，跨切需保留她的持照状态、站位朝向与柜台光线方向"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K2-03",
+      "start": 92,
+      "end": 100,
+      "source_beat_ids": [
+        "B008"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "得到线索后立刻追问姓氏，紧接上一镜的答案",
+      "framing": "周砚近景，略微仰角略偏，身后柜台虚化",
+      "angle": "平视稍低，正反打方向与上一镜相对",
+      "camera_position": "柜台内老板娘一侧，越过柜台朝周砚",
+      "camera_motion": "固定",
+      "focus": "浅景深锁定周砚面部",
+      "blocking": "周砚身体前倾撑上柜台边缘，手指轻叩台面，压低声音追问",
+      "subject_action": "周砚在听到「林家」二字后立刻追问姓氏，眼神紧盯老板娘",
+      "visible_emotion": "追问落空前的迫切与克制，喉结滚动、呼吸变浅",
+      "environment": "同面馆，背景虚化中可见灶台蒸汽与一角食客",
+      "lighting": "延续北窗侧光，周砚面部一半在冷光、一半落在柜台阴影里",
+      "dialogue_ids": [
+        "D004"
+      ],
+      "dialogue": "周砚：她姓什么？",
+      "diegetic_audio": "蒸汽声略微上浮，周砚指节叩木台面的两下轻响",
+      "transition": "切至老板娘回答近景",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 4,
+        "reason": "同场正反打，保留周砚前倾姿态与柜台轴线即可，照片此刻在老板娘一侧"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K2-04",
+      "start": 100,
+      "end": 110,
+      "source_beat_ids": [
+        "B008"
+      ],
+      "characters_in_frame": [
+        "C02",
+        "C01"
+      ],
+      "dramatic_purpose": "线索在姓氏上断掉，把周砚的失落与场景落幕压在同一镜",
+      "framing": "缓慢后拉开作双人中近景：老板娘收起照片还回去，周砚在画面另一侧沉默",
+      "angle": "平视，柜台后机位稍偏左",
+      "camera_position": "柜台侧后方，能同时收进两人",
+      "camera_motion": "缓慢后拉半步，让两人同时入画",
+      "focus": "中景深，老板娘清晰，周砚面部略虚再在后段落实",
+      "blocking": "老板娘想了想摇头说想不起来，把照片轻轻推回周砚那边；周砚伸手收照片，目光垂下，肩膀沉了一点",
+      "subject_action": "老板娘斟酌后摇头作答并归还照片；周砚收起照片，握紧",
+      "visible_emotion": "老板娘歉意的遗憾；周砚追问落空后的失落压在垂眼与收紧的手上",
+      "environment": "同面馆，灶台热气渐薄，背景食客声浪隐约升高提醒时间流动",
+      "lighting": "同中午冷暖交错，窗光角度不变",
+      "dialogue_ids": [
+        "D005"
+      ],
+      "dialogue": "老板娘：想不起来了。",
+      "diegetic_audio": "食客碗筷声变响衬出两人之间的短暂沉寂，柜台木面上照片推回的滑擦声",
+      "transition": "场景切换：沿海公路",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 7,
+        "reason": "S03 收束点：周砚持回照片、站姿失落、柜台灯位与桌面状态需完整存档供后续场次回访"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K2-05",
+      "start": 110,
+      "end": 120,
+      "source_beat_ids": [
+        "B009"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "场景转换开场：以公路与海岸大景建立下午、海风与骑行方向",
+      "framing": "大远景，公路从画面左下延向深处，人居小、海面占到画面上半",
+      "angle": "微俯视，地平线略高",
+      "camera_position": "公路外侧护栏外的高地固定机位",
+      "camera_motion": "固定，任由摩托车从景深远处驶近",
+      "focus": "深景深，远山、海岸线与来车全部清晰",
+      "blocking": "周砚骑摩托车（P05）沿海岸一侧车道由远及近，外套下摆被风掀动，车头稳定指向灯塔方向",
+      "subject_action": "周砚骑行接近，姿态凝重、上身微俯，无台词",
+      "visible_emotion": "被驱使的凝重：不多动作，只有被风压着的外套与绷直的背",
+      "environment": "通往灯塔的沿海公路：沥青路面沿崖线弯曲，左侧是护栏与灰蓝近海，右侧陡坡生野草，远处海平线尽头隐约一点塔影；风中野草伏倒再弹起",
+      "lighting": "下午侧顺光，海面反光泛碎银，云影在路面缓慢移动",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "持续大风声、浪拍崖底的碎浪声，摩托车由远及近的引擎与风噪交织",
+      "transition": "跟随上车，转入侧面跟拍",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "location_change",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 1,
+        "reason": "新场景开场，仅需携带周砚着装与骑行方向（沿海公路向灯塔）"
+      },
+      "composition_control": "free"
+    },
+    {
+      "id": "K2-06",
+      "start": 120,
+      "end": 131,
+      "source_beat_ids": [
+        "B009"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "中段骑行：侧向跟拍把速度与海风具象化，保持去灯塔的行进感",
+      "framing": "中侧面跟拍，人与车居中偏右，海面在身后掠过",
+      "angle": "与行驶平面等高的平视",
+      "camera_position": "平行于摩托车行进的移动机位，位于海侧护栏外",
+      "camera_motion": "匀速横向跟移，与车速保持同速",
+      "focus": "跟焦锁定周砚上半身，海岸背景速度模糊",
+      "blocking": "周砚保持巡行姿态，风把外套衣料向后顶；路侧野草与护栏信号杆连续掠过前面遮挡又让开",
+      "subject_action": "周砚持续骑行，偶尔压过一道缓弯，视线始终向前方灯塔",
+      "visible_emotion": "凝重驱使下的专注，下颌微收，目无旁顾",
+      "environment": "同沿海公路：逆风段浪声更重，路面沙粒被风卷起细尘，远处灯塔塔影比前一镜更清楚一点",
+      "lighting": "下午阳光从海面一侧来，车身与头盔留一道亮边，周砚面颊一半明一半暗",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "持续大风与浪声压底，引擎与气流撕过衣料的鼓噪声，弯道处轮胎碾过沙粒的细碎声",
+      "transition": "切至车后方向尾景",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "同一骑行动作跨切：车速、海岸在画面左侧的方向、外套被风掀动的衣形与远处塔影均需衔接"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K2-07",
+      "start": 131,
+      "end": 140,
+      "source_beat_ids": [
+        "B009"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "尾段收束：身后拍骑行把「向灯塔去」的空间关系定格为本段结论",
+      "framing": "背影中景偏远，公路越过画面向前收束，灯塔成为远方构图的落点",
+      "angle": "平视稍仰，随路面向上微抬",
+      "camera_position": "车后跟随机位，低置贴近路面",
+      "camera_motion": "匀速后跟随，随路面微缓前推",
+      "focus": "周砚背影清晰，远处灯塔虽小但可辨",
+      "blocking": "周砚驱车远离镜头，公路在前方弯向灯塔一侧，海风持续把外套向后撑满",
+      "subject_action": "周砚保持骑行直至镜头尾，方向锁定灯塔",
+      "visible_emotion": "背影沉默中透着不可回头的凝重",
+      "environment": "同沿海公路：前方缓坡上塔影成为地平线上的明确目标，路侧护栏一直伸向弯道，风势更强，草浪齐向一侧伏倒",
+      "lighting": "下午光从骑手左后方来，背肩线亮、路面长影向灯塔方向延伸",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "风声转向更强，引擎声随距离略远，浪与风叠成本段收束的主声",
+      "transition": "本片段结束",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "延续同一骑行：车速与方向、外套被风撑开的衣形、远处塔影位置为跨切必保状态"
+      },
+      "composition_control": "free"
+    }
+  ],
+  "continuity_exit_state": {
+    "by_shot": [
+      {
+        "shot_id": "K2-01",
+        "staging": "周砚站柜台外左前，身体前倾；老板娘站柜台内右后，低头看台面上的照片",
+        "wardrobe_state": "周砚藏青色工装外套完好；老板娘按便服围裙设定不变",
+        "held_props": [
+          "旧照片（P02）在台面上刚被推近老板娘"
+        ],
+        "scene_state": "面馆营业中，灶下着火冒热气，背景食客数人在吃面",
+        "lighting_state": "中午，北窗冷白天光为主，灶边暖黄灯泡辅光"
+      },
+      {
+        "shot_id": "K2-02",
+        "staging": "老板娘俯身窗光下持照细看后抬头面向周砚；周砚在画外稍候",
+        "wardrobe_state": "同上，老板娘围裙不变",
+        "held_props": [
+          "旧照片（P02）被老板娘捏在指尖"
+        ],
+        "scene_state": "面馆营业延续，周砚手撑柜台",
+        "lighting_state": "中午，北窗侧光勾老板娘轮廓"
+      },
+      {
+        "shot_id": "K2-03",
+        "staging": "周砚前倾撑柜台正对老板娘追问；老板娘在画外对侧",
+        "wardrobe_state": "同上无变化",
+        "held_props": [
+          "旧照片仍在老板娘一侧"
+        ],
+        "scene_state": "同面馆，背景食客未散",
+        "lighting_state": "中午延续，周砚面部半冷光半阴影"
+      },
+      {
+        "shot_id": "K2-04",
+        "staging": "老板娘把照片推回柜台；周砚伸手收照片，目光垂下，站柜台外",
+        "wardrobe_state": "周砚藏青色工装外套不变；老板娘围裙不变",
+        "held_props": [
+          "旧照片被周砚收回手中收起"
+        ],
+        "scene_state": "对话结束，面馆仍营业，食客声浪升高",
+        "lighting_state": "中午收尾，冷暖交错光不变"
+      },
+      {
+        "shot_id": "K2-05",
+        "staging": "周砚骑摩托车沿沿海公路自景深处驶近，画面左侧为海，行进方向朝远方灯塔",
+        "wardrobe_state": "藏青色工装外套，下摆被风掀动",
+        "held_props": [],
+        "scene_state": "沿海公路畅通，护栏外野草被风伏倒，远处海平线上塔影隐约",
+        "lighting_state": "下午侧顺光，海面碎银反光，云影移动"
+      },
+      {
+        "shot_id": "K2-06",
+        "staging": "周砚与摩托的侧影沿海侧车道掠行，摄影机平行同速跟移；远处塔影更清楚",
+        "wardrobe_state": "外套衣料向后顶满",
+        "held_props": [],
+        "scene_state": "公路沙尘被风卷动，塔影渐近",
+        "lighting_state": "下午，阳光自海面一侧逆来，车身边缘亮"
+      },
+      {
+        "shot_id": "K2-07",
+        "staging": "车后机位：周砚背影驱车前行，公路前方弯向灯塔，海在左侧",
+        "wardrobe_state": "外套被风撑满，骑行姿态稳定",
+        "held_props": [],
+        "scene_state": "灯塔塔影已成地平线上明确目标，风势更强，草浪同向伏倒",
+        "lighting_state": "下午收尾，背肩线逆光亮边，路面长影指向灯塔"
+      }
+    ]
+  },
+  "warnings": [],
+  "errors": []
+}
