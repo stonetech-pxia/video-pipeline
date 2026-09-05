@@ -232,3 +232,52 @@ class PackedSegmentTests(unittest.TestCase):
         self.assertIn("runtime_input_status", self.codes(document, _packed_shot_ir()))
         document["image_jobs"][0]["status"] = "runtime_pending"
         self.assertNotIn("runtime_input_status", self.codes(document, _packed_shot_ir()))
+
+
+def _cast_document(character_reference_ids):
+    """The packed segment, with a character-reference slot under test."""
+    document = _packed_document()
+    segment = document["segment_plan"][0]
+    segment["reference_strategy"] = {
+        "character_reference_ids": list(character_reference_ids),
+        "location_reference_ids": [], "style_reference_ids": [],
+        "video_reference_ids": [], "audio_reference_ids": [],
+    }
+    document["media_manifest"]["media"].extend([
+        media("REF_C01", "character_reference", "SEG001", subject_id="C01"),
+        media("REF_C02", "character_reference", "SEG001", subject_id="C02"),
+        media("REF_L01", "location_reference", "SEG001"),
+    ])
+    return document
+
+
+def _cast_shot_ir(*casts):
+    shot_ir = _packed_shot_ir()
+    for shot, cast in zip(shot_ir["shots"], casts):
+        shot["characters_in_frame"] = list(cast)
+    return shot_ir
+
+
+class CharacterReferenceTests(unittest.TestCase):
+    def codes(self, document, shot_ir):
+        return {item["code"] for item in validator.validate(document, shot_ir)}
+
+    def test_a_reference_for_everyone_in_frame_is_accepted(self):
+        document = _cast_document(["REF_C01", "REF_C02"])
+        shot_ir = _cast_shot_ir(["C01"], ["C01", "C02"], ["C02"])
+        self.assertEqual(validator.validate(document, shot_ir), [])
+
+    def test_a_face_in_frame_without_a_reference_is_rejected(self):
+        document = _cast_document(["REF_C01"])
+        shot_ir = _cast_shot_ir(["C01"], ["C01", "C02"], ["C01"])
+        self.assertIn("missing_character_reference", self.codes(document, shot_ir))
+
+    def test_a_reference_for_someone_who_never_appears_is_rejected(self):
+        document = _cast_document(["REF_C01", "REF_C02"])
+        shot_ir = _cast_shot_ir(["C01"], ["C01"], ["C01"])
+        self.assertIn("unused_character_reference", self.codes(document, shot_ir))
+
+    def test_a_location_image_in_the_character_slot_is_rejected(self):
+        document = _cast_document(["REF_C01", "REF_L01"])
+        shot_ir = _cast_shot_ir(["C01"], ["C01"], ["C01"])
+        self.assertIn("reference_role", self.codes(document, shot_ir))

@@ -1,0 +1,398 @@
+{
+  "schema_version": "1.1",
+  "chunk_id": "K1",
+  "status": "complete",
+  "start": 0,
+  "end": 70,
+  "shots": [
+    {
+      "id": "K1-01",
+      "start": 0,
+      "end": 10,
+      "source_beat_ids": [
+        "B001"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "建立清晨邮局分拣区的空间规律与周砚例行劳作的日常秩序",
+      "framing": "中远景，人物位于画面中央偏左的工位，身后是成排分拣格",
+      "angle": "平视，正面偏侧",
+      "camera_position": "分拣台对面约4米，胸高",
+      "camera_motion": "固定",
+      "focus": "中景深，人物与分拣台清晰，背景分拣格轻微虚化",
+      "blocking": "周砚站在分拣台后，动作机械：取信、看邮戳、分置两侧摞；光线在台面上移动",
+      "subject_action": "按部就班分拣信件，节奏稳定无停顿",
+      "visible_emotion": "中性、例行公事的专注",
+      "environment": "内景，海边小镇邮局分拣区，清晨从右侧高窗斜射进的冷白晨光，桌面浮尘可见",
+      "lighting": "侧窗自然光为主，冷色偏白，台面反光弱",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "远处海鸥、纸张的沙沙声、分拣台木面的轻响",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": false,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 0,
+        "reason": "chunk首镜，开场空间，无前置状态需要保留"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K1-02",
+      "start": 10,
+      "end": 19,
+      "source_beat_ids": [
+        "B002"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "例行动作被打断的瞬间：他抽出一封没有寄件人地址的信",
+      "framing": "中景，胸口以上到手部，人物居左，手中信件动作在画面核心",
+      "angle": "正面偏侧，轻微越过桌面",
+      "camera_position": "分拣台侧前方约2米，桌面高度略上",
+      "camera_motion": "手持轻微呼吸感，随人物手部动作极缓慢侧移",
+      "focus": "焦点锁定其双手与那封信，面部进入浅景深",
+      "blocking": "他从一摞信中抽出单独一封，另一只手停在半空；视线落到信封上",
+      "subject_action": "手停顿，抽出无名信，目光落在收件人一栏",
+      "visible_emotion": "克制的警觉",
+      "environment": "同分拣区，晨光角度不变，其余摞好的信在画面两侧景深处",
+      "lighting": "侧窗自然光延续，右侧发亮，左侧半阴影",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "分拣区突显的安静，纸张被捏住的细微声响",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 4,
+        "reason": "同一场景同一人物，分拣动作进行中被打断，手中信件与站位需延续"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K1-03",
+      "start": 19,
+      "end": 26,
+      "source_beat_ids": [
+        "B002"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "信息落点：收件人栏写着「周砚」，无人知晓寄件人",
+      "framing": "特写插入，信封占据画面主体，只露人物持信的手指边缘",
+      "angle": "俯视信封平面",
+      "camera_position": "信封上方约40厘米，俯拍",
+      "camera_motion": "固定",
+      "focus": "焦点在信封面，收件人一栏清晰可读，寄件人栏空白",
+      "blocking": "仅见周砚的双手从两侧捏住信封，无其他人物入画",
+      "subject_action": "双手稳定持信，指节略微收紧",
+      "visible_emotion": "透过手部紧张度传达",
+      "environment": "插入镜头，仅见信封与分拣台面一角，背景失焦晨光",
+      "lighting": "台面自然反光，信封正面照度均匀",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "极安静的室内底噪",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 3,
+        "reason": "同一动作链的插入特写，手中同一封无名信需跨镜延续"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K1-04",
+      "start": 26,
+      "end": 35,
+      "source_beat_ids": [
+        "B002"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "他做出选择：把信塞进工装外套口袋，重新低头继续分拣，把不安压回常规节奏",
+      "framing": "中景，人物回到画面中央偏右，口袋动作在画面下缘可见",
+      "angle": "正面平视",
+      "camera_position": "分拣台正前方2.5米，胸高",
+      "camera_motion": "固定",
+      "focus": "中景深，人物整体清晰",
+      "blocking": "周砚迅速把信塞进外套左侧口袋，掌根压实，随即双手重新落回信摞",
+      "subject_action": "收信于口袋，动作隐秘而果断，随后恢复分拣节奏",
+      "visible_emotion": "不安被克制在普通劳作之下",
+      "environment": "同分拣区，其余待分拣信件在台面上",
+      "lighting": "延续侧窗晨光",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "分拣节奏恢复的纸张声、口袋布料的摩擦声",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 6,
+        "reason": "同一场景同一人物，无名信刚入其外套口袋，站位与手头信摞需延续"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K1-05",
+      "start": 35,
+      "end": 45,
+      "source_beat_ids": [
+        "B003"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "场景转换：他把信从口袋取出，在全无遮蔽的后巷独自拆开，倒出内容",
+      "framing": "全景转中景，人物独自站在巷子中央的负空间里",
+      "angle": "侧面略远，巷道纵深在画面左侧延伸",
+      "camera_position": "后巷一端约5米，胸高",
+      "camera_motion": "缓慢推进，从全景渐近至中景，随着人物动作靠拢",
+      "focus": "人物始终清晰，砖墙与远处模糊",
+      "blocking": "周砚独自立于巷中，取出信封，拆开封口，将信内内容倾入掌心，仅见一张照片落出",
+      "subject_action": "拆信，倒出内容，一张旧照片滑入他手中",
+      "visible_emotion": "疑惑",
+      "environment": "外景邮局后巷，上午光线明亮，两侧砖墙夹峙，无他人",
+      "lighting": "上午顶光偏亮，地面硬影，巷内阴影冷调",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "墙外远处小镇声、纸封被撕开的脆响、风声",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "location_change",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "换场景换时间，人物经口袋带入的P01、P02需在新场景中重新呈现"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K1-06",
+      "start": 45,
+      "end": 53,
+      "source_beat_ids": [
+        "B004"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "他看向照片：灯塔下的女孩，信息第一次呈现",
+      "framing": "过肩特写，从周砚肩后越过其侧脸看照片，照片与部分侧脸同框",
+      "angle": "侧后机位，与照片平面成约30度",
+      "camera_position": "贴近其右肩后方约80厘米，眼高",
+      "camera_motion": "极缓推近，肩部微微入画形成框架",
+      "focus": "照片上灯塔与女孩清晰，其侧脸轮廓柔和虚化",
+      "blocking": "周砚双手举照片于眼前视线高度，头略微前倾",
+      "subject_action": "凝视照片上灯塔下的女孩",
+      "visible_emotion": "困惑被刺了一下",
+      "environment": "后巷中景延续，巷外光线从背后照入，照片处于半阴影",
+      "lighting": "上午侧逆光，照片正面稍暗需观众辨认",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "巷内安静，只有他呼吸声与纸张微响",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 7,
+        "reason": "同一场景中周砚手持P02，照片内容与站位、光线方向需在过肩构图后延续"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K1-07",
+      "start": 53,
+      "end": 61,
+      "source_beat_ids": [
+        "B004"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "标志性信息揭示：背面的字「你答应过要回来的。」由非人声刻写呈现",
+      "framing": "特写插入，照片背面占据画面主体，其持照的手指在边缘",
+      "angle": "俯视照片背面平面",
+      "camera_position": "照片正上方约40厘米，俯拍",
+      "camera_motion": "固定，随字迹完整露出时长而静持",
+      "focus": "焦点锁定背面字迹，笔画清晰",
+      "blocking": "周砚把照片翻至背面，字迹正对镜头",
+      "subject_action": "翻面并停顿，注视那行字",
+      "visible_emotion": "困惑被刺了一下，通过持照手悬空不动传达",
+      "environment": "插入镜头，仅见照片背面与上午天空的反光边缘",
+      "lighting": "上午自然侧光均匀照亮照片背面",
+      "dialogue_ids": [
+        "D001"
+      ],
+      "dialogue": "你答应过要回来的。",
+      "diegetic_audio": "非人声台词，以照片背面刻写文字呈现，无口型，配以纸张翻转后的静止底噪",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 6,
+        "reason": "同一场景同一人物持同一张P02，背面文字为锁定事实需跨镜保持"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K1-08",
+      "start": 61,
+      "end": 70,
+      "source_beat_ids": [
+        "B005"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "收束：他认不出照片中的女孩，茫然收起信与照片，独自留在巷中",
+      "framing": "中近景到中景，人物面部为主，背景巷道在其身后纵深延伸",
+      "angle": "正面平视",
+      "camera_position": "巷道内正对其面部约3米，眼高",
+      "camera_motion": "固定微持，后段极缓慢后撤拉开到中景",
+      "focus": "面部清晰，背景砖墙失焦",
+      "blocking": "周砚保持持照姿势片刻，眼神空白，随后把照片连同信封一并收起，垂下手",
+      "subject_action": "端详照片而无识别反应，收起信与照片，站定不动",
+      "visible_emotion": "茫然",
+      "environment": "同后巷，无人经过，上午光线稳定",
+      "lighting": "延续上午侧顶光，面部半明半暗以强化陌生感",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "巷内寂静，远处海鸥一声，衣料摩擦声",
+      "transition": "cut",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 8,
+        "reason": "同一场景中周砚从持照转化为收起信与照片，站位、道具归属与光线方向需完整延续"
+      },
+      "composition_control": "critical"
+    }
+  ],
+  "continuity_exit_state": {
+    "by_shot": [
+      {
+        "shot_id": "K1-01",
+        "staging": "周砚在分拣台后处理信件，面向台面",
+        "wardrobe_state": "藏青色工装外套扣好，无变化",
+        "held_props": [],
+        "scene_state": "台面上剩余待分拣信件若干",
+        "lighting_state": "清晨，右侧高窗斜射冷白侧光"
+      },
+      {
+        "shot_id": "K1-02",
+        "staging": "周砚立于分拣台后，面朝台面，双手停于信堆上方",
+        "wardrobe_state": "藏青色工装外套扣好，无变化",
+        "held_props": [
+          "P01无名信（持于右手）"
+        ],
+        "scene_state": "两侧信摞未动，刚才抽取处出现一处凹陷",
+        "lighting_state": "清晨，右侧冷白侧光"
+      },
+      {
+        "shot_id": "K1-03",
+        "staging": "周砚双手覆于信封上方，胸腹朝向台面",
+        "wardrobe_state": "藏青色工装外套扣好，无变化",
+        "held_props": [
+          "P01无名信"
+        ],
+        "scene_state": "信封置于台面上，收件人一栏清晰可见",
+        "lighting_state": "清晨，右侧冷白侧光"
+      },
+      {
+        "shot_id": "K1-04",
+        "staging": "周砚已将信收入左侧口袋，双手落回台面，继续分拣，站位不变",
+        "wardrobe_state": "藏青色工装外套，左口袋内存有P01无名信，外形微鼓",
+        "held_props": [],
+        "scene_state": "台面剩余信件仍待分拣，口袋中藏信",
+        "lighting_state": "清晨，右侧冷白侧光"
+      },
+      {
+        "shot_id": "K1-05",
+        "staging": "周砚独自立于后巷中央，面向右侧砖墙，头部微低注视掌心",
+        "wardrobe_state": "藏青色工装外套扣好，口袋呈取出后放松状态",
+        "held_props": [
+          "P01无名信（已拆封）",
+          "P02旧照片（落于掌心）"
+        ],
+        "scene_state": "巷道空无他人，信封口已拆开",
+        "lighting_state": "上午，巷外顶光偏亮，巷内阴影冷调"
+      },
+      {
+        "shot_id": "K1-06",
+        "staging": "周砚双手举照片至眼前，头部略前倾，肩部构成画框",
+        "wardrobe_state": "藏青色工装外套扣好",
+        "held_props": [
+          "P01无名信（收起）",
+          "P02旧照片（举于眼前）"
+        ],
+        "scene_state": "巷道无他人，信封与信纸收起",
+        "lighting_state": "上午，右侧侧逆光照入，照片正面处于半阴影"
+      },
+      {
+        "shot_id": "K1-07",
+        "staging": "周砚持照片于胸前，翻至背面朝向镜头，头部低垂注视字迹",
+        "wardrobe_state": "藏青色工装外套扣好",
+        "held_props": [
+          "P01无名信（收起）",
+          "P02旧照片（背面朝上）"
+        ],
+        "scene_state": "巷道无他人，照片背面「你答应过要回来的。」字迹已被读出",
+        "lighting_state": "上午，自然侧光照射照片背面"
+      },
+      {
+        "shot_id": "K1-08",
+        "staging": "周砚独自立于后巷中央，面朝前方，双手垂下，信与照片均收入外套口袋",
+        "wardrobe_state": "藏青色工装外套，口袋内存有P01、P02两件，口袋外形微鼓",
+        "held_props": [],
+        "scene_state": "巷道空旷无他人，信与照片均收起",
+        "lighting_state": "上午，顶光入巷，面部半明半暗"
+      }
+    ]
+  },
+  "warnings": [],
+  "errors": []
+}

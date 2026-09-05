@@ -74,7 +74,7 @@ Every `segment_plan` item must include:
 - `continuity_decision` containing `is_same_shot`, `continuous_action`, `continuous_camera`, `same_scene`, `same_framing`, `same_camera_position`, `same_time`, `same_visual_focus`, `requires_recomposition`, `change_triggers`, and `decision`;
 - `reason`.
 
-Every media item must include `id`, `type`, `role`, `status`, `source_type`, `source_job`, `related_segments`, and `provenance`, plus `path` or `runtime_handle` only when available. Supported roles include `character_reference`, `location_reference`, `style_reference`, `first_frame`, `last_frame_target`, and `actual_tail_frame`. Preserve user-supplied `video_reference` and `audio_reference` records without converting or relabeling them.
+Every media item must include `id`, `type`, `role`, `status`, `source_type`, `source_job`, `related_segments`, and `provenance`, plus `path` or `runtime_handle` only when available. A `character_reference` must also carry `subject_id`: the Story IR character ID whose likeness it is. Without it nothing can tell whose face a reference image holds. Supported roles include `character_reference`, `location_reference`, `style_reference`, `first_frame`, `last_frame_target`, and `actual_tail_frame`. Preserve user-supplied `video_reference` and `audio_reference` records without converting or relabeling them.
 
 Every image job must include a stable job ID, output media ID, role/type, related segments when applicable, positive prompt, negative prompt, and `status`. Reference-image and first-frame prompts are required when their media does not already exist; `last_frame_target` prompts are optional unless an explicit terminal composition is needed. Never create an image job whose role is `actual_tail_frame`.
 
@@ -85,6 +85,14 @@ A generated first frame anchors only the **first** shot of its segment. Every la
 The planner already keeps `composition_control=critical` shots at the head of a segment. Respect the consequence when you write prompts: spend your control budget on the opening shot, and describe later shots in terms of action and continuity rather than exact composition.
 
 Reference media are shared by the whole segment, so a packed segment inherits the union of its shots' references. Keep the total at four or fewer; adherence degrades as the bundle grows, and the deterministic checker rejects more than four.
+
+## Who Is In The Segment
+
+You do not decide who appears on screen. Shot IR does, in each shot's `characters_in_frame`. Take the union of that field over the shots a segment covers, and give exactly those characters a reference: one `character_reference` per character, no more and no fewer. The checker compares the two sets and rejects either direction — a face with no reference, or a reference for someone no shot in the segment shows.
+
+Each slot in `reference_strategy` takes only media of its own role. A location image in `character_reference_ids` is rejected.
+
+When the union of characters, plus the location and style references the segment needs, exceeds the budget of four, that is a signal the segment packs too much. Report it as a diagnostic; do not silently drop a face.
 
 ## Continuity Carried Across a Cut
 

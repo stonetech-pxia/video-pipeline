@@ -111,6 +111,7 @@
             "start",
             "end",
             "source_beat_ids",
+            "characters_in_frame",
             "dramatic_purpose",
             "framing",
             "angle",
@@ -137,6 +138,12 @@
             "source_beat_ids": {
               "type": "array",
               "items": { "type": "string" }
+            },
+            "characters_in_frame": {
+              "type": "array",
+              "items": { "type": "string" },
+              "uniqueItems": true,
+              "description": "Story IR character IDs visible in this shot. Empty for an empty frame or an insert."
             },
             "dramatic_purpose": { "type": "string" },
             "framing": { "type": "string" },

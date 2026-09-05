@@ -210,7 +210,8 @@
         "path": { "type": "string", "minLength": 1 },
         "runtime_handle": { "type": "string", "minLength": 1 },
         "derived_from_segment_id": { "$ref": "#/$defs/id" },
-        "sha256": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" }
+        "sha256": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
+        "subject_id": { "type": "string", "minLength": 1, "description": "For a character_reference, the Story IR character ID this likeness belongs to." }
       },
       "allOf": [
         {
@@ -232,6 +233,10 @@
         {
           "if": { "properties": { "role": { "const": "last_frame_target" } }, "required": ["role"] },
           "then": { "properties": { "type": { "enum": ["image", "frame"] }, "source_type": { "enum": ["generated", "uploaded", "external"] } } }
+        },
+        {
+          "if": { "properties": { "role": { "const": "character_reference" } }, "required": ["role"] },
+          "then": { "required": ["subject_id"] }
         }
       ]
     },

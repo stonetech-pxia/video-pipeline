@@ -1,0 +1,165 @@
+Produce Shot IR chunk K1 for the story slice below, following the ai-storyboard-director skill in Shot IR mode.
+
+Return only JSON conforming to schemas/shot-ir-chunk.schema.json. Nothing else: no prose, no commentary.
+
+Emit exactly these top-level fields and no others: schema_version, chunk_id, status, start, end, shots, continuity_exit_state, warnings, errors.
+
+Hard constraints for this chunk:
+
+- The time window is fixed. shots[0].start must be 0, the shots must be contiguous with no gaps, and the last shot must end exactly at 80.
+- Cover every beat in this chunk: B001, B002, B003. Every beat must appear in some shot's source_beat_ids, and no other beat may.
+- A shot draws its beats from one scene only. This chunk starts on a scene boundary.
+- Number your shots locally inside this chunk, for example K1-01, K1-02. Global numbering is assigned when chunks are merged.
+- Do not emit film-level fields: aspect_ratio, visual_style, overall_soundscape, music, duration. Those belong to the film head, not to a chunk.
+- Every shot needs characters_in_frame, and every shot needs one entry in continuity_exit_state.by_shot.
+- Set chunk_id to K1, start to 0, end to 80, schema_version to 1.1.
+
+The story slice for this chunk:
+
+{
+  "chunk_id": "K1",
+  "previous_chunk_id": null,
+  "start": 0,
+  "end": 80,
+  "duration": 80,
+  "scene_ids": [
+    "S01"
+  ],
+  "beat_ids": [
+    "B001",
+    "B002",
+    "B003"
+  ],
+  "dialogue_ids": [],
+  "entry_mid_scene": false,
+  "entry_same_location": false,
+  "entry_constraints_crossed": [],
+  "story_slice": {
+    "scenes": [
+      {
+        "id": "S01",
+        "slugline": "内景 - 海边小镇邮局 - 清晨",
+        "location_id": "LOC-01",
+        "time_of_day": "清晨",
+        "duration_budget": 80,
+        "beat_ids": [
+          "B001",
+          "B002",
+          "B003"
+        ],
+        "exit_state": "周砚穿着藏青色工装外套站在邮局分拣台前，信已塞进外套口袋。"
+      }
+    ],
+    "beats": [
+      {
+        "id": "B001",
+        "scene_id": "S01",
+        "action": "清晨，周砚在邮局分拣台前分拣信件。",
+        "emotion": "平静",
+        "entity_ids": [
+          "C01",
+          "P01"
+        ],
+        "dialogue_ids": []
+      },
+      {
+        "id": "B002",
+        "scene_id": "S01",
+        "action": "周砚抽出一封没有寄件人地址的信，收件人写着他自己的名字。",
+        "emotion": "疑惑",
+        "entity_ids": [
+          "C01",
+          "P01"
+        ],
+        "dialogue_ids": []
+      },
+      {
+        "id": "B003",
+        "scene_id": "S01",
+        "action": "周砚把信塞进口袋。",
+        "emotion": "克制",
+        "entity_ids": [
+          "C01",
+          "P01"
+        ],
+        "dialogue_ids": []
+      }
+    ],
+    "dialogue": [],
+    "characters": [
+      {
+        "id": "C01",
+        "name": "周砚",
+        "wardrobe": "藏青色工装外套，全程穿着",
+        "description": "海边小镇的邮局职员，三十岁上下；对十二年前的事毫无记忆。"
+      }
+    ],
+    "props": [
+      {
+        "id": "P01",
+        "name": "无寄件人地址的信",
+        "description": "清晨分拣时发现的信，无寄件人地址，收件人是周砚自己的名字，里面装着照片。"
+      }
+    ],
+    "locations": [
+      {
+        "id": "LOC-01",
+        "name": "海边小镇邮局",
+        "description": "有分拣台的邮局内部。"
+      }
+    ],
+    "continuity_constraints": [
+      {
+        "id": "CC01",
+        "category": "identity",
+        "subject_id": "C01",
+        "rule": "周砚(C01)全程保持同一人在场。",
+        "scope": {
+          "from": "S01",
+          "to": "S14"
+        },
+        "locked": true
+      },
+      {
+        "id": "CC02",
+        "category": "wardrobe",
+        "subject_id": "C01",
+        "rule": "周砚全程穿同一件藏青色工装外套，不换衣服。",
+        "scope": {
+          "from": "S01",
+          "to": "S14"
+        },
+        "locked": true
+      },
+      {
+        "id": "CC04",
+        "category": "prop",
+        "subject_id": "P01",
+        "rule": "从S01起照片装在信封里，S02取出；此后单独追踪照片。",
+        "scope": {
+          "from": "S01",
+          "to": "S02"
+        },
+        "locked": false
+      },
+      {
+        "id": "CC-S01-01",
+        "category": "prop",
+        "subject_id": "P01",
+        "rule": "信在S01被发现并塞进外套口袋；S02拆信时仍在同一口袋里，照片从信封中取出。",
+        "scope": {
+          "from": "S01",
+          "to": "S02"
+        },
+        "locked": true
+      }
+    ],
+    "transition_markers": [],
+    "locked_constraints": [
+      "周砚全程穿藏青色工装外套",
+      "照片背面的字是「你答应过要回来的。」，不得改写",
+      "第11场母亲的台词不得改写"
+    ],
+    "previous_scene_exit_state": null
+  }
+}

@@ -1,0 +1,376 @@
+{
+  "schema_version": "1.1",
+  "chunk_id": "K1",
+  "status": "complete",
+  "start": 0,
+  "end": 80,
+  "shots": [
+    {
+      "id": "K1-01",
+      "start": 0,
+      "end": 10,
+      "source_beat_ids": [
+        "B001"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "Establish the calm morning routine before it is broken.",
+      "framing": "Medium-wide, Zhou Yan at the sorting counter framed left, letter trays right.",
+      "angle": "Eye level, slight side angle across the counter.",
+      "camera_position": "Front of the sorting counter, roughly two meters away.",
+      "camera_motion": "Static hold.",
+      "focus": "Sharp on Zhou Yan's hands; background window soft.",
+      "blocking": "Zhou Yan stands behind the sorting counter, head down, moving letters into piles.",
+      "subject_action": "Sorting mail into neat piles at the counter.",
+      "visible_emotion": "Calm, mechanical routine.",
+      "environment": "Interior of a small seaside-town post office, early morning, mail bags and trays on the counter.",
+      "lighting": "Cool pale morning window light, soft fill.",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "Paper rustle, letter stacks thudding, distant gulls.",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 0,
+        "reason": "Opening shot of the chunk; no prior state to carry."
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K1-02",
+      "start": 10,
+      "end": 16,
+      "source_beat_ids": [
+        "B002"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "The discovery: one letter with no sender, addressed to himself.",
+      "framing": "Over-the-shoulder medium, letter visible in his hands.",
+      "angle": "Eye level, OTS from left rear.",
+      "camera_position": "Just off Zhou Yan's left shoulder.",
+      "camera_motion": "Static.",
+      "focus": "Sharp on the envelope: blank sender corner, his own name on the front.",
+      "blocking": "His sorting hand stops; he draws one envelope from the stack and turns it over twice.",
+      "subject_action": "Picking out a letter with no sender address, reading his own name as recipient.",
+      "visible_emotion": "Confusion; brow tightens, hands slow.",
+      "environment": "Same post office sorting counter, morning.",
+      "lighting": "Cool morning side light on the envelope face.",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "Paper crackle, room tone drops back.",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "Same scene; his position, the sorted piles, and the letter now in hand must carry over."
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K1-03",
+      "start": 16,
+      "end": 24,
+      "source_beat_ids": [
+        "B002"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "Full weight of the discovery: his face registering his own name as recipient.",
+      "framing": "Close-up, face in right third, envelope edge low-left.",
+      "angle": "Eye level, frontal close.",
+      "camera_position": "Directly in front of Zhou Yan at close range.",
+      "camera_motion": "Static.",
+      "focus": "Sharp on his eyes; envelope secondary.",
+      "blocking": "He holds the envelope at chest height, thumb tracing the blank sender corner; mouth opens slightly, then closes.",
+      "subject_action": "Studying the letter addressed to himself, checking again for a sender.",
+      "visible_emotion": "Restrained suspicion; slow blink, controlled breathing.",
+      "environment": "Same post office interior, morning.",
+      "lighting": "Soft frontal morning light, faint warm rim.",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "Near-silence, faint wind at the window.",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "The letter must remain visibly in his hand; his position at the counter persists."
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K1-04",
+      "start": 24,
+      "end": 31,
+      "source_beat_ids": [
+        "B003"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "Pocket the letter: composed gesture over an unsettled mind.",
+      "framing": "Medium, waist-up, counter edge in lower frame.",
+      "angle": "Slightly high, across the counter.",
+      "camera_position": "In front of the counter at chest height.",
+      "camera_motion": "Static.",
+      "focus": "Sharp on the hand moving the letter into the coat pocket; face readable.",
+      "blocking": "He folds the envelope once, glances briefly toward the empty shop front, then slides the letter into the left front pocket of his jacket and presses it flat with his palm.",
+      "subject_action": "Folding the letter and tucking it into his coat pocket, smoothing the pocket shut.",
+      "visible_emotion": "Suppressed tension behind a routine mask.",
+      "environment": "Same post office sorting counter, morning; other piles untouched.",
+      "lighting": "Cool morning light, slight warm fill.",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "Fabric rustle, paper against cloth, sorting resumes.",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 8,
+        "reason": "The letter's new location (left coat pocket), his position, the piles, and wardrobe state must survive the cut."
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K1-05",
+      "start": 31,
+      "end": 42,
+      "source_beat_ids": [
+        "B001"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "Routine resumes, but the world has changed: the sorting rhythm re-establishes after the pocketing.",
+      "framing": "Medium-wide, at the counter, letter trays on the right.",
+      "angle": "Eye level, side angle across the counter.",
+      "camera_position": "Front of the counter, two meters away.",
+      "camera_motion": "Static.",
+      "focus": "Sharp on the sorting hands.",
+      "blocking": "Zhou Yan resumes moving letters into piles; his left hand briefly presses the jacket pocket once mid-shot before returning to the stacks.",
+      "subject_action": "Resuming mail sorting, with one hand-press to the pocketed letter.",
+      "visible_emotion": "Studied calm, a flicker of unease at the pocket.",
+      "environment": "Same post office counter, morning.",
+      "lighting": "Cool morning window light.",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "Steady paper rustle, distant gulls.",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "Letter is now pocketed, same counter position, piles intact; sorting rhythm carries forward."
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K1-06",
+      "start": 42,
+      "end": 53,
+      "source_beat_ids": [
+        "B002"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "A first reflection moment: the letter's presence is felt through a second self-check rather than a new beat.",
+      "framing": "Tight medium, chest-up, hands visible in frame.",
+      "angle": "Eye level.",
+      "camera_position": "Close lateral angle, front three-quarter.",
+      "camera_motion": "Static.",
+      "focus": "Sharp on his hands and pocket line; face readable.",
+      "blocking": "His left hand drifts to the jacket pocket again, pressing the envelope through the cloth; gaze stays on the letters in his hands.",
+      "subject_action": "Checking the pocketed letter through the jacket while continuing to hold a bundle of mail.",
+      "visible_emotion": "Disquiet surfacing through a repeated tell-tale gesture.",
+      "environment": "Same post office counter, morning continuing.",
+      "lighting": "Cool morning light; slight warm practical overhead.",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "Paper rustle continues, faint creak of floorboards.",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "Same scene, letter still in pocket, position and sorting action carry over."
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K1-07",
+      "start": 53,
+      "end": 80,
+      "source_beat_ids": [
+        "B001",
+        "B002",
+        "B003"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "Closing continuity: settle the exit state for the whole chunk in one last compositional look before the next chunk.",
+      "framing": "Wide, full room; Zhou Yan at counter left of frame, post office window behind.",
+      "angle": "Eye level, wide horizontal.",
+      "camera_position": "Far side of the room, facing the counter.",
+      "camera_motion": "Slow lateral dolly left-to-right.",
+      "focus": "Deep focus, Zhou Yan sharp.",
+      "blocking": "Zhou Yan continues sorting; his left hand rests flat on the jacket pocket, then withdraws and returns to the stacks.",
+      "subject_action": "Steady mail sorting with a final pocket press, settling back into routine.",
+      "visible_emotion": "Composed facade restored, letter secured.",
+      "environment": "Full view of the small seaside post office interior, morning; window and door behind him.",
+      "lighting": "Cool morning window light, warm overhead practical.",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "Steady paper rustle, distant gulls, faint wind.",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [
+        {
+          "id": "K1-07-split-1",
+          "start": 53,
+          "end": 66,
+          "action_phase": "Sorting continues across the wide room; the dolly drift carries the counter into frame-right.",
+          "boundary_type": "same_shot_continuation",
+          "camera_continuity": "continuous",
+          "action_continuity": "continuous",
+          "framing_continuity": "same",
+          "scene_continuity": "same_scene",
+          "recomposition_needed": false
+        },
+        {
+          "id": "K1-07-split-2",
+          "start": 66,
+          "end": 80,
+          "action_phase": "Final pocket press and return to steady sorting; camera settles on the chunk's exit composition.",
+          "boundary_type": "same_shot_continuation",
+          "camera_continuity": "continuous",
+          "action_continuity": "continuous",
+          "framing_continuity": "same",
+          "scene_continuity": "same_scene",
+          "recomposition_needed": false
+        }
+      ],
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "Letter pocketed, same position, same piles, same routine; the internal splits preserve the continuous dolly and the pocket gesture."
+      },
+      "composition_control": "normal"
+    }
+  ],
+  "continuity_exit_state": {
+    "by_shot": [
+      {
+        "shot_id": "K1-01",
+        "staging": "Zhou Yan stands behind the sorting counter facing the letter stacks, back to the front window.",
+        "wardrobe_state": "Navy blue work jacket worn, buttoned, sleeves down.",
+        "held_props": [
+          "stack of letters (sorting)"
+        ],
+        "scene_state": "Post office counter with mail trays and letter piles; no other patrons.",
+        "lighting_state": "Early morning; cool pale window light with soft fill."
+      },
+      {
+        "shot_id": "K1-02",
+        "staging": "Zhou Yan still behind the counter, one envelope lifted in his right hand, facing the stack.",
+        "wardrobe_state": "Navy blue work jacket unchanged.",
+        "held_props": [
+          "letter P01 (envelope, no sender, addressee = Zhou Yan)"
+        ],
+        "scene_state": "Sorted piles intact; one envelope separated from the stack.",
+        "lighting_state": "Early morning; cool side light on the envelope."
+      },
+      {
+        "shot_id": "K1-03",
+        "staging": "Zhou Yan facing camera front, envelope held chest-height in his right hand, gaze on the envelope.",
+        "wardrobe_state": "Navy blue work jacket unchanged.",
+        "held_props": [
+          "letter P01 (envelope)"
+        ],
+        "scene_state": "Sorting counter and piles unchanged behind him.",
+        "lighting_state": "Morning; soft frontal light inside the post office."
+      },
+      {
+        "shot_id": "K1-04",
+        "staging": "Zhou Yan behind the counter, right hand at his left coat pocket, having just slid the letter in.",
+        "wardrobe_state": "Navy blue work jacket with letter P01 inside the left front pocket, pocket closed.",
+        "held_props": [],
+        "scene_state": "Sorted mail piles intact; small gap in the stack where the letter was pulled.",
+        "lighting_state": "Morning; cool window light, warm fill."
+      },
+      {
+        "shot_id": "K1-05",
+        "staging": "Zhou Yan behind the sorting counter, facing the stacks, left hand briefly at the jacket pocket then back to the letters.",
+        "wardrobe_state": "Navy blue work jacket with letter P01 still inside the left front pocket, pocket pressed shut.",
+        "held_props": [
+          "sorting letters (continuous action)"
+        ],
+        "scene_state": "Mail piles continuing to grow on the counter.",
+        "lighting_state": "Early morning; steady cool window light with warm overhead fill."
+      },
+      {
+        "shot_id": "K1-06",
+        "staging": "Zhou Yan stays at the counter, left hand at the jacket pocket line, gaze on the bundle in his hands.",
+        "wardrobe_state": "Navy blue work jacket with letter P01 still inside the left front pocket, pocket pressed shut.",
+        "held_props": [
+          "bundle of letters in right hand"
+        ],
+        "scene_state": "Counter piles unchanged; sorting continues.",
+        "lighting_state": "Morning continuing; cool window light, warm overhead practical."
+      },
+      {
+        "shot_id": "K1-07",
+        "staging": "Zhou Yan dressed in the navy work jacket, standing behind the sorting counter facing the letter stacks, back partially to the front window, left hand resting once on the jacket pocket before returning to sorting.",
+        "wardrobe_state": "Navy blue work jacket buttoned, sleeves down, letter P01 inside the left front pocket, pocket pressed and shut.",
+        "held_props": [
+          "stack of letters (sorting, right hand)"
+        ],
+        "scene_state": "Post office counter with sorted letter piles, mail trays in place; no other patrons present.",
+        "lighting_state": "Early morning continuing; cool pale window light with warm practical overhead fill."
+      }
+    ]
+  },
+  "warnings": [],
+  "errors": []
+}

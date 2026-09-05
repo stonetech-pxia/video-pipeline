@@ -1,0 +1,320 @@
+{
+  "schema_version": "1.1",
+  "chunk_id": "K1",
+  "status": "complete",
+  "start": 0,
+  "end": 150,
+  "shots": [
+    {
+      "id": "K1-01",
+      "start": 0,
+      "end": 30,
+      "source_beat_ids": [
+        "B001"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "Establishing Zhou Yan's quiet morning routine before the intrusion of the letter",
+      "framing": "Medium-wide, Zhou Yan at the sorting table, mail trays framing him",
+      "angle": "Eye level, slight lateral offset",
+      "camera_position": "Across the sorting table, interior of the post office",
+      "camera_motion": "Slow push-in over the length of the shot",
+      "focus": "Zhou Yan sharp, foreground mail stacks soft",
+      "blocking": "Zhou Yan stands behind the sorting table, methodically moving letters from tray to pigeonhole",
+      "subject_action": "Sorting letters one by one in even rhythm",
+      "visible_emotion": "Calm concentration",
+      "environment": "Interior, sea-town post office, early morning light through front windows, dust motes in sorting area",
+      "lighting": "Cool morning daylight from front windows, soft fill inside",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "Paper rustling, letters dropping into pigeonholes, distant seagulls outside",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [
+        {
+          "id": "K1-01-H1",
+          "start": 0,
+          "end": 15,
+          "action_phase": "sorting rhythm established",
+          "boundary_type": "same_shot_continuation",
+          "camera_continuity": "continuous",
+          "action_continuity": "continuous",
+          "framing_continuity": "same",
+          "scene_continuity": "same_scene",
+          "recomposition_needed": false
+        },
+        {
+          "id": "K1-01-H2",
+          "start": 15,
+          "end": 30,
+          "action_phase": "push-in tightens on routine",
+          "boundary_type": "same_shot_continuation",
+          "camera_continuity": "continuous",
+          "action_continuity": "continuous",
+          "framing_continuity": "same",
+          "scene_continuity": "same_scene",
+          "recomposition_needed": false
+        }
+      ],
+      "boundary_risk": {
+        "state_transfer_load": 0,
+        "reason": "opening shot; no prior state to carry"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K1-02",
+      "start": 30,
+      "end": 60,
+      "source_beat_ids": [
+        "B002",
+        "B003"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "Discovery of the senderless letter addressed to himself, then concealment — the inciting object enters his possession",
+      "framing": "Tight medium on hands and face, letter readable in frame",
+      "angle": "Slightly over-the-shoulder into the sorting table",
+      "camera_position": "Behind and beside Zhou Yan, close to table height",
+      "camera_motion": "Static, held through the letter pull; small reframe down as the letter enters the pocket",
+      "focus": "Rack from Zhou Yan's hands to the letter's face, then follow to the coat pocket",
+      "blocking": "Zhou Yan first holds the letter up to the light, then his hand slips it into his navy work-jacket pocket",
+      "subject_action": "He draws one envelope from the stack, sees no sender address and his own name as recipient, hesitates, then pockets it",
+      "visible_emotion": "Puzzlement tightening into restrained, unreadable composure",
+      "environment": "Same post office interior, morning",
+      "lighting": "Cool window light side-lighting the envelope",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "The envelope's paper whisper in the sudden silence; room tone",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [
+        {
+          "id": "K1-02-H1",
+          "start": 30,
+          "end": 45,
+          "action_phase": "letter pulled and examined",
+          "boundary_type": "same_shot_continuation",
+          "camera_continuity": "continuous",
+          "action_continuity": "continuous",
+          "framing_continuity": "same",
+          "scene_continuity": "same_scene",
+          "recomposition_needed": false
+        },
+        {
+          "id": "K1-02-H2",
+          "start": 45,
+          "end": 60,
+          "action_phase": "letter into pocket, composure restored",
+          "boundary_type": "same_shot_continuation",
+          "camera_continuity": "continuous",
+          "action_continuity": "continuous",
+          "framing_continuity": "same",
+          "scene_continuity": "same_scene",
+          "recomposition_needed": false
+        }
+      ],
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "same scene and character, but the letter must now be in his jacket pocket and the sorting interrupted at the cut"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K1-03",
+      "start": 60,
+      "end": 105,
+      "source_beat_ids": [
+        "B004"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "The letter is opened in private; the photograph — the story's first image of the past — is revealed",
+      "framing": "Medium shot in the alley, closing to a big two-shot of hands extracting the photo",
+      "angle": "Eye level, alley perspective lines converging behind him",
+      "camera_position": "Down the back alley of the post office, several paces from Zhou Yan",
+      "camera_motion": "Slow dolly-in toward him as the envelope opens",
+      "focus": "Photo sharp as it clears the envelope; alley background falls off",
+      "blocking": "Zhou Yan stands against the alley wall, takes the envelope from his jacket pocket, tears it open, draws out the photograph: a girl standing beneath a lighthouse",
+      "subject_action": "He opens the letter, finds nothing but the old photograph, and stares at the girl under the lighthouse",
+      "visible_emotion": "Curiosity shading into unease",
+      "environment": "Exterior, narrow alley behind the post office, brick walls, morning light, unattended and quiet",
+      "lighting": "Open morning skylight down the alley, harder shading than the interior morning",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "Paper tearing, footsteps echo suppressed by walls, wind in the alley, far-off surf",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "scene_change",
+      "recomposition_needed": true,
+      "split_hints": [
+        {
+          "id": "K1-03-H1",
+          "start": 60,
+          "end": 82,
+          "action_phase": "letter out of the same coat pocket and opened",
+          "boundary_type": "same_shot_continuation",
+          "camera_continuity": "continuous",
+          "action_continuity": "continuous",
+          "framing_continuity": "same",
+          "scene_continuity": "same_scene",
+          "recomposition_needed": false
+        },
+        {
+          "id": "K1-03-H2",
+          "start": 82,
+          "end": 105,
+          "action_phase": "photograph withdrawn, girl under the lighthouse revealed",
+          "boundary_type": "same_shot_continuation",
+          "camera_continuity": "continuous",
+          "action_continuity": "continuous",
+          "framing_continuity": "same",
+          "scene_continuity": "same_scene",
+          "recomposition_needed": false
+        }
+      ],
+      "boundary_risk": {
+        "state_transfer_load": 6,
+        "reason": "location and time change, but Zhou Yan must cross wearing the same navy jacket with the same letter in the same pocket"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K1-04",
+      "start": 105,
+      "end": 150,
+      "source_beat_ids": [
+        "B005"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "The revelation: he does not know the girl, and the handwritten line on the back names a promise he cannot remember",
+      "framing": "Close-up on Zhou Yan, then insertion frame of the photo's back with the handwritten line filling the lower half",
+      "angle": "Eye level, then flat overhead angle on the photo back for the insert",
+      "camera_position": "Tight in the alley, changing to directly above the photo for the insert",
+      "camera_motion": "Micro handheld drift on the close-up; reposition to overhead insert, static",
+      "focus": "His eyes first, then pinned focus on the handwriting",
+      "blocking": "He studies the girl's face, finds nothing familiar, then turns the photo over in his hand; insert: five handwritten characters on the blank back",
+      "subject_action": "He fails to recognize the girl, flips the photo, and reads the line on the back",
+      "visible_emotion": "Recognition failing; unease settling into stillness",
+      "environment": "Same back alley, morning",
+      "lighting": "Overhead morning light catching the ink strokes on the photo back",
+      "dialogue_ids": [
+        "D001"
+      ],
+      "dialogue": "你答应过要回来的。",
+      "diegetic_audio": "Wind dies; only paper and breath; the handwriting read silently on screen",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [
+        {
+          "id": "K1-04-H1",
+          "start": 105,
+          "end": 120,
+          "action_phase": "face of the photo searched and unrecognized",
+          "boundary_type": "same_shot_continuation",
+          "camera_continuity": "continuous",
+          "action_continuity": "continuous",
+          "framing_continuity": "same",
+          "scene_continuity": "same_scene",
+          "recomposition_needed": false
+        },
+        {
+          "id": "K1-04-H2",
+          "start": 120,
+          "end": 135,
+          "action_phase": "the photo flips in hand",
+          "boundary_type": "same_shot_continuation",
+          "camera_continuity": "continuous",
+          "action_continuity": "continuous",
+          "framing_continuity": "same",
+          "scene_continuity": "same_scene",
+          "recomposition_needed": false
+        },
+        {
+          "id": "K1-04-H3",
+          "start": 135,
+          "end": 150,
+          "action_phase": "insert on the back-facing photo with the handwritten line",
+          "boundary_type": "same_shot_continuation",
+          "camera_continuity": "continuous",
+          "action_continuity": "continuous",
+          "framing_continuity": "same",
+          "scene_continuity": "same_scene",
+          "recomposition_needed": false
+        }
+      ],
+      "boundary_risk": {
+        "state_transfer_load": 8,
+        "reason": "an action already in progress with the photo in hand, the photograph's face already seen so its back reveal stays consistent, and his eyeline must track hand to photo"
+      },
+      "composition_control": "critical"
+    }
+  ],
+  "continuity_exit_state": {
+    "by_shot": [
+      {
+        "shot_id": "K1-01",
+        "staging": "Zhou Yan stands behind the sorting table, facing the letter stacks, one hand mid-sorting",
+        "wardrobe_state": "Navy work jacket on, fully buttoned, no disarray",
+        "held_props": [
+          "a letter in his sorting hand"
+        ],
+        "scene_state": "Sorting table covered in mail; pigeonholes partially filled; front door shut",
+        "lighting_state": "Early morning, cool window light from the storefront side"
+      },
+      {
+        "shot_id": "K1-02",
+        "staging": "Zhou Yan stands at the sorting table, body angled slightly away, looking down toward his jacket pocket",
+        "wardrobe_state": "Navy work jacket on; left pocket now holds the letter",
+        "held_props": [],
+        "scene_state": "Sorting interrupted mid-stack; the senderless letter no longer on the table",
+        "lighting_state": "Early morning, cool window light unchanged"
+      },
+      {
+        "shot_id": "K1-03",
+        "staging": "Zhou Yan stands against the alley wall facing outward, photograph raised in both hands, eyes on the girl under the lighthouse",
+        "wardrobe_state": "Navy work jacket on; same pocket now holding only the empty envelope",
+        "held_props": [
+          "old photograph of a girl under a lighthouse"
+        ],
+        "scene_state": "Opened, empty envelope on him or discarded in the alley; alley empty of others",
+        "lighting_state": "Mid-morning, hard overhead skylight down the alley"
+      },
+      {
+        "shot_id": "K1-04",
+        "staging": "Zhou Yan in the alley, photo turned back-side toward him in one hand, eyes down on the handwriting",
+        "wardrobe_state": "Navy work jacket on, unchanged",
+        "held_props": [
+          "old photograph, back side up, showing 「你答应过要回来的。」"
+        ],
+        "scene_state": "Empty envelope spent; alley unchanged and still empty",
+        "lighting_state": "Mid-morning, overhead light on the photo and his hands"
+      }
+    ]
+  },
+  "warnings": [],
+  "errors": []
+}

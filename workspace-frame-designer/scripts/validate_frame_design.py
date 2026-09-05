@@ -14,6 +14,13 @@ MAX_SHOTS_PER_SEGMENT = 3
 MAX_REFERENCE_MEDIA = 4
 EXIT_STATE_TEXT_FIELDS = ("staging", "wardrobe_state", "scene_state", "lighting_state")
 RESET_CONTINUITY = ("scene_change", "location_change")
+REFERENCE_ROLE = {
+    "character_reference_ids": "character_reference",
+    "location_reference_ids": "location_reference",
+    "style_reference_ids": "style_reference",
+    "video_reference_ids": "video_reference",
+    "audio_reference_ids": "audio_reference",
+}
 
 
 def diagnostic(code: str, path: str, message: str) -> dict[str, str]:
@@ -144,11 +151,17 @@ def validate(data: dict[str, Any], shot_ir: dict[str, Any] | None = None) -> lis
                 if frame.get(field) != segment.get(field):
                     errors.append(diagnostic("frame_plan_mismatch", f"frame_plan[{segment_id}].{field}", f"must match segment_plan.{field}"))
 
-        for group in segment.get("reference_strategy", {}).values() if isinstance(segment.get("reference_strategy"), dict) else ():
-            if isinstance(group, list):
-                for media_id in group:
-                    if media_id not in media_by_id:
-                        errors.append(diagnostic("unknown_reference", f"{path}.reference_strategy", f"unknown media ID: {media_id}"))
+        strategy = segment.get("reference_strategy") if isinstance(segment.get("reference_strategy"), dict) else {}
+        for slot, group in strategy.items():
+            if not isinstance(group, list):
+                continue
+            expected_role = REFERENCE_ROLE.get(slot)
+            for media_id in group:
+                item = media_by_id.get(media_id)
+                if item is None:
+                    errors.append(diagnostic("unknown_reference", f"{path}.reference_strategy.{slot}", f"unknown media ID: {media_id}"))
+                elif expected_role is not None and item.get("role") != expected_role:
+                    errors.append(diagnostic("reference_role", f"{path}.reference_strategy.{slot}", f"{media_id} carries role {item.get('role')}, but this slot only takes {expected_role}"))
 
         shot_ids = segment.get("shot_ids") if isinstance(segment.get("shot_ids"), list) else []
         bindings = segment.get("shot_bindings") if isinstance(segment.get("shot_bindings"), list) else []
@@ -166,6 +179,15 @@ def validate(data: dict[str, Any], shot_ir: dict[str, Any] | None = None) -> lis
 
         if shot_by_id:
             covered = [shot_by_id[shot_id] for shot_id in shot_ids if shot_id in shot_by_id]
+            in_frame = {name for item in covered for name in item.get("characters_in_frame", []) if isinstance(name, str)}
+            faces = {media_by_id[media_id].get("subject_id")
+                     for media_id in strategy.get("character_reference_ids") or []
+                     if media_id in media_by_id}
+            for missing in sorted(in_frame - faces):
+                errors.append(diagnostic("missing_character_reference", f"{path}.reference_strategy.character_reference_ids", f"{missing} is in frame in this segment but has no character reference"))
+            for stray in sorted(face for face in faces - in_frame if face is not None):
+                errors.append(diagnostic("unused_character_reference", f"{path}.reference_strategy.character_reference_ids", f"{stray} is in no shot of this segment"))
+
             if len(covered) != len(shot_ids):
                 errors.append(diagnostic("unknown_shot", f"{path}.shot_ids", "every shot ID must exist in Shot IR"))
             elif isinstance(start, int) and isinstance(end, int):

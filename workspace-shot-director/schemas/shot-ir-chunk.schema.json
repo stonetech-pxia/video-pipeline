@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openclaw.local/schemas/shot-ir-chunk.schema.json",
+  "title": "Shot IR chunk",
+  "description": "One chunk of a chunked Shot IR pass: the shots covering one group of scenes. Film-level fields (aspect_ratio, visual_style, overall_soundscape, music, duration) belong to the film head and must not appear here.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "chunk_id", "status", "start", "end", "shots", "continuity_exit_state", "warnings", "errors"],
+  "properties": {
+    "schema_version": { "const": "1.1" },
+    "chunk_id": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["complete", "partial"] },
+    "start": { "type": "integer", "minimum": 0 },
+    "end": { "type": "integer", "exclusiveMinimum": 0 },
+    "shots": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "shot-ir.schema.json#/$defs/shot" }
+    },
+    "continuity_exit_state": { "$ref": "shot-ir.schema.json#/properties/continuity_exit_state" },
+    "warnings": { "type": "array", "items": { "type": "string" } },
+    "errors": { "type": "array", "items": { "type": "string" } }
+  }
+}

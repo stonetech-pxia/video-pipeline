@@ -1,0 +1,389 @@
+{
+  "schema_version": "1.1",
+  "chunk_id": "K1",
+  "status": "complete",
+  "start": 0,
+  "end": 80,
+  "shots": [
+    {
+      "id": "K1-01",
+      "start": 0,
+      "end": 10,
+      "source_beat_ids": [
+        "B001"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "在信出现之前建立世界的秩序：邮局、清晨、周砚平凡的例行工作",
+      "framing": "广角，展现分拣台和工作空间",
+      "angle": "视线高度",
+      "camera_position": "分拣台斜对面",
+      "camera_motion": "慢速推入",
+      "focus": "深景深，分拣台和周砚都保持清晰",
+      "blocking": "周砚站在分拣台后，把信件一个个移入堆叠中；背光窗户保持清晨柔和的光线",
+      "subject_action": "有节奏地分拣 morning mail 到格位中",
+      "visible_emotion": "平静，例行公事，放松的肩膀，稳定的工作节奏",
+      "environment": "海边小镇邮局的内部；分拣台整齐摆放着卡片格和成堆的信件，清晨的光线透过窗户",
+      "lighting": "冷调柔和的清晨日头，从一侧的窗户照入，在木质台面上留下柔和的阴影",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "纸张沙沙作响，信件轻轻拍打木头；远处隐约传来海鸥的声音",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 0,
+        "reason": "opening shot; no prior state to carry"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K1-02",
+      "start": 10,
+      "end": 20,
+      "source_beat_ids": [
+        "B001"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "让手承担例行工作，使随后的干扰通过对比显得清晰",
+      "framing": "中景特写，展示周砚自胸部以上",
+      "angle": "视线高度",
+      "camera_position": "分拣台前方，中距离",
+      "camera_motion": "身体微倾斜时手持固定",
+      "focus": "浅景深，焦点锁定在周砚的双手和分拣台",
+      "blocking": "周砚直接面对镜头/分拣台，扫描每一封信",
+      "subject_action": "拿起信件，一眼扫过，把它们放进格子里，保持稳定的节奏",
+      "visible_emotion": "平静的专注，起初带着一种放松的自动状态",
+      "environment": "分拣台台面，一格一格的格位和按照地点分类的成堆信件",
+      "lighting": "与 K1-01 相同的窗户主光，在他的手上和脸部投下柔和的侧光",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "纸张沙沙作响，指甲偶尔在信封边缘划过",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 3,
+        "reason": "same scene and action; Zhou Yan's sorting rhythm and tabletop arrangement of letter piles must carry over"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K1-03",
+      "start": 20,
+      "end": 30,
+      "source_beat_ids": [
+        "B001"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "在这种节奏中延长“普通的一天”的感觉，但这种重复本身就是一种悬念",
+      "framing": "全身侧景，周砚在画面中央工作",
+      "angle": "微低的视线高度",
+      "camera_position": "分拣台侧面，中距离",
+      "camera_motion": "随着他的手在格位间移动而缓慢平移",
+      "focus": "周砚清晰锐利，背景中窗户保持虚化",
+      "blocking": "侧面角度，周砚位于台后，信件从画面右侧流向左侧的格位",
+      "subject_action": "分拣的过程继续；信件开始逐格填满",
+      "visible_emotion": "冷静的专注，一种适度的轻松",
+      "environment": "画面深处可看到邮局的内部光线",
+      "lighting": "清晨的窗户光线保持主导；随着他的移动，阴影在台面上缓慢平移",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "持续的纸张声音；一只海鸥在远处尖叫",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 5,
+        "reason": "same continuous sorting action; the partially filled pigeonholes and Zhou Yan's hand rhythm must carry over"
+      },
+      "composition_control": "normal"
+    },
+    {
+      "id": "K1-04",
+      "start": 30,
+      "end": 40,
+      "source_beat_ids": [
+        "B002"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "发现异常信件的精确时刻，让观众在他理解之前先看到它",
+      "framing": "手部插入特写，位于画面中间的分拣台",
+      "angle": "俯视台面",
+      "camera_position": "在分拣台上方，跟随他的视线",
+      "camera_motion": "固定，仅微小的呼吸感",
+      "focus": "焦点锁定在她手指间夹着的那封信；周围台面虚化",
+      "blocking": "周砚的手停止在半空中；信被举在分拣台上方",
+      "subject_action": "从信堆中抽出一封无张无址的信；拇指滑过封面",
+      "visible_emotion": "困惑，表现为手部动作停了下来",
+      "environment": "格子堆的顶部；他周围的其他信件均已放好",
+      "lighting": "窗户侧光在天花板上投下一道明亮的补丁，揭示出缺乏韵味的封面",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "周围的纸张声音沉寂；一个微弱的、混合的静电声",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 6,
+        "reason": "the letter itself appears here for the first time; its position in the stack and Zhou Yan's frozen posture must carry into the next shot"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K1-05",
+      "start": 40,
+      "end": 52,
+      "source_beat_ids": [
+        "B002"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "展示信封正面的文字，指出收件人是他自己",
+      "framing": "紧距离的正反向特写，信封占据画面主导",
+      "angle": "正面，近视线高度",
+      "camera_position": "在分拣台对面，镜头水平略低于周砚的脸部",
+      "camera_motion": "缓慢推入收件人姓名",
+      "focus": "焦点锁定在周砚双手拿着的信封正面",
+      "blocking": "周砚也将信封翻转过来，查看周围和背面",
+      "subject_action": "周砚用双手拿着信封，从头到尾读着收件人姓名；他的表情变得警惕",
+      "visible_emotion": "困惑加深为审慎的警觉，眉头紧皱",
+      "environment": "虚化的格子背景；地板上唯一鲜明的对象就是信封",
+      "lighting": "与之前相同的清晨光线；信封的白色纸张在阴影的台面上显得格外明亮",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "台面上 DROP of the letters；她呼吸的均衡声",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 7,
+        "reason": "the letter with its address face remains in Zhou Yan's hands, in the same posture; only the camera moves closer"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K1-06",
+      "start": 52,
+      "end": 62,
+      "source_beat_ids": [
+        "B002"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "将困惑转化为一种无声的问题——他正在自问是谁寄出了它",
+      "framing": "紧距离特写，周砚的脸",
+      "angle": "近视线高度",
+      "camera_position": "在分拣台对面，镜头水平略低于他的脸部",
+      "camera_motion": "固定",
+      "focus": "锐利聚焦于他的双眼；背景虚化",
+      "blocking": "周砚斯无言；他的目光从信封移向空旷的大厅，然后又移回信封本身",
+      "subject_action": "目光缓慢地移回信件正面，重新读出名字",
+      "visible_emotion": "疑问，一种隐约的不安他拒绝直接表达",
+      "environment": "隐约可见邮局内部作为背景；无Movement",
+      "lighting": "清晨的窗户光线落在他脸上半侧；周日：另一半陷于阴影",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "一个空白的静默持续；他呼吸的微弱声",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 7,
+        "reason": "letter still held in the same grip; only Zhou Yan's head and eye lines carry over"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K1-07",
+      "start": 62,
+      "end": 72,
+      "source_beat_ids": [
+        "B003"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "可疑的信件进入衣兜的动作——决定不将其公之于众",
+      "framing": "全身中景，周砚斜站在分拣台旁",
+      "angle": "视线高度",
+      "camera_position": "中距离，角度略偏，捕捉他转身藏信的过程",
+      "camera_motion": "跟随他的转身轻微移动",
+      "focus": "周砚和动作清晰；远处的背景虚化",
+      "blocking": "周砚稍稍背对镜头，将信隐藏于身前的分拣台后面，随后塞进他外套的内兜",
+      "subject_action": "将信塞入衣兜，手掌在衣兜表面持续按压",
+      "visible_emotion": "克制的内心冲突；动作果断，但面部保持静止",
+      "environment": "邮局内部；分拣台仍处于半分拣状态",
+      "lighting": "清晨的窗户光线对着他的背部；衣兜的 POWERED 被遮挡",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "布料摩擦声，衣兜布料的轻触；海鸥的远鸣",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "discontinuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 7,
+        "reason": "letter must transfer from hands to coat pocket within this shot; pocket bulge afterwards must persist"
+      },
+      "composition_control": "critical"
+    },
+    {
+      "id": "K1-08",
+      "start": 72,
+      "end": 80,
+      "source_beat_ids": [
+        "B003"
+      ],
+      "characters_in_frame": [
+        "C01"
+      ],
+      "dramatic_purpose": "在返回工作前的定格——秘密已被收好，但未被遗忘",
+      "framing": "中景特写，周砚宽阔的构图",
+      "angle": "视线高度",
+      "camera_position": "在分拣台前方，中距离",
+      "camera_motion": "缓慢、稳定的推入",
+      "focus": "周砚清晰锐利；背后的窗户虚化成一片明亮区域",
+      "blocking": "周砚采定，头部微微扭曲；他的右手回到衣兜外侧上停留片刻，然后放下",
+      "subject_action": "转身背对镜头，重新走入画面；手在衣兜外短暂停留",
+      "visible_emotion": "下定决心的平静，一种新的重量感",
+      "environment": "邮局内部；部分完成的一堆信件依然堆积",
+      "lighting": "清晨的窗户光线形成清晰的侧光胸部-gap；与开场相同的清晨时间",
+      "dialogue_ids": [],
+      "dialogue": "",
+      "diegetic_audio": "安静；轻微的纸张沙沙声；周砚随后的呼吸互动",
+      "transition": "",
+      "boundary_type": "shot_change",
+      "camera_continuity": "changed",
+      "action_continuity": "continuous",
+      "framing_continuity": "changed",
+      "scene_continuity": "same_scene",
+      "recomposition_needed": true,
+      "split_hints": [],
+      "boundary_risk": {
+        "state_transfer_load": 8,
+        "reason": "exit state of the whole chunk: letter in coat pocket, half-sorted pile on the table, same morning light — all must be held going forward"
+      },
+      "composition_control": "normal"
+    }
+  ],
+  "continuity_exit_state": {
+    "by_shot": [
+      {
+        "shot_id": "K1-01",
+        "staging": "周砚站在邮局柜台后的分拣台前，面向分拣格子",
+        "wardrobe_state": "藏青色工装外套，袖子卷起",
+        "held_props": [],
+        "scene_state": "早晨成堆的信件整齐排列，尚未分拣；他前面的分拣手托原状",
+        "lighting_state": "清晨，窗户冷光透过台面投下阴影"
+      },
+      {
+        "shot_id": "K1-02",
+        "staging": "与 K1-01 相同；周砚主动分拣信件",
+        "wardrobe_state": "藏青色工装外套，袖子卷起",
+        "held_props": [],
+        "scene_state": "近处格位堆渐渐填满",
+        "lighting_state": "清晨，窗户侧光无变化"
+      },
+      {
+        "shot_id": "K1-03",
+        "staging": "与 K1-01 相同；周砚持续分拣",
+        "wardrobe_state": "藏青色工装外套，袖子交叉于胸前",
+        "held_props": [],
+        "scene_state": "大部分格位已填满；一个中间条状区域已调位",
+        "lighting_state": "清晨光线，阴影随着他的移动稍作平移"
+      },
+      {
+        "shot_id": "K1-04",
+        "staging": "周砚静止地站在分拣台前，目光向下凝视着手中的信",
+        "wardrobe_state": "藏青色工装外套，袖子卷起",
+        "held_props": [
+          "无寄件人地址的信"
+        ],
+        "scene_state": "他手中托着的信堆处于焦点顶点；其余已经放好",
+        "lighting_state": "清晨光线；他手指间的信正面明亮"
+      },
+      {
+        "shot_id": "K1-05",
+        "staging": "周砚站在分拣台前，将信封持于胸前，视线固定",
+        "wardrobe_state": "藏青色工装外套，袖子卷起",
+        "held_props": [
+          "无寄件人地址的信"
+        ],
+        "scene_state": "无变化；信封正面在虚化的分拣格背景中清晰可见",
+        "lighting_state": "清晨光线落在台面及信封正面，未变"
+      },
+      {
+        "shot_id": "K1-06",
+        "staging": " pageable 周 صفحه；站在分拣台前，手握信",
+        "wardrobe_state": "藏青色工装外套，袖子卷起",
+        "held_props": [
+          "无寄件人地址的信"
+        ],
+        "scene_state": "无变化；分拣台承载着信件",
+        "lighting_state": "清晨光线，在周砚脸上产生明暗对比"
+      },
+      {
+        "shot_id": "K1-07",
+        "staging": "周砚斜侧站立，身体微微背对镜头，把信塞进他的外套口袋",
+        "wardrobe_state": "藏青色工装外套，右侧口袋内有轻微凸起",
+        "held_props": [],
+        "scene_state": "信已收入口袋；未被拆开；分拣台堆中有一些间隙",
+        "lighting_state": "清晨光线；周砚背部右侧在阴影中"
+      },
+      {
+        "shot_id": "K1-08",
+        "staging": "周砚站在邮局柜台后的分拣台前，头部微微扭曲，面向虚化的窗户",
+        "wardrobe_state": "藏青色工装外套，右侧口袋维持鼓包",
+        "held_props": [],
+        "scene_state": "信安全地在外套口袋中；大部分未分拣的剩余信件留在台面上",
+        "lighting_state": "清晨，窗户冷光从侧后方亮照"
+      }
+    ]
+  },
+  "warnings": [],
+  "errors": []
+}
