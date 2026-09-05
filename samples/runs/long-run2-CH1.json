@@ -1,0 +1,458 @@
+{
+  "schema_version": "2.0",
+  "chunk_id": "CH1",
+  "scenes": [
+    {
+      "id": "S01",
+      "beat_ids": [
+        "B001",
+        "B002"
+      ],
+      "exit_state": "清晨的邮局分拣台前，周砚（藏青色工装外套）把那封收件人是自己名字的无名信塞进外套口袋，继续留在邮局。"
+    },
+    {
+      "id": "S02",
+      "beat_ids": [
+        "B003",
+        "B004",
+        "B005"
+      ],
+      "exit_state": "上午的邮局后巷，周砚（藏青色工装外套）拆开信，取出老照片（女孩站在灯塔下，背面写着「你答应过要回来的。」），信封已空；他手持照片站在后巷。"
+    },
+    {
+      "id": "S03",
+      "beat_ids": [
+        "B006",
+        "B007",
+        "B008",
+        "B009"
+      ],
+      "exit_state": "中午的面馆里，老板娘认出女孩是灯塔那边林家的姑娘但想不起姓氏；周砚（藏青色工装外套，照片在手）起身离开面馆。"
+    },
+    {
+      "id": "S04",
+      "beat_ids": [
+        "B010"
+      ],
+      "exit_state": "下午，周砚（藏青色工装外套，照片随身）驾驶摩托车沿通往灯塔的沿海公路行驶，海风很大，途中。"
+    },
+    {
+      "id": "S05",
+      "beat_ids": [
+        "B011",
+        "B012",
+        "B013"
+      ],
+      "exit_state": "下午的灯塔下，灯塔锈蚀、门锁着；周砚（藏青色工装外套）站在灯塔背面，手触墙上两个歪歪扭扭的名字刻痕，其中一个是自己的名字。"
+    },
+    {
+      "id": "S06",
+      "beat_ids": [
+        "B014",
+        "B015",
+        "B016",
+        "B017"
+      ],
+      "exit_state": "傍晚的镇卫生所内，周砚（藏青色工装外套，照片随身）听完老医生的话——林家女儿十二年前出过事，「那年你也在」——站在原地沉默。"
+    }
+  ],
+  "beats": [
+    {
+      "id": "B001",
+      "scene_id": "S01",
+      "action": "清晨，周砚在邮局分拣台前处理信件。",
+      "emotion": "平静、例行公事",
+      "entity_ids": [
+        "C01",
+        "L01",
+        "P01"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B002",
+      "scene_id": "S01",
+      "action": "周砚抽出一封没有寄件人地址、收件人写着他自己名字的信，塞进口袋。",
+      "emotion": "疑惑",
+      "entity_ids": [
+        "C01",
+        "P01"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B003",
+      "scene_id": "S02",
+      "action": "周砚在邮局后巷拆开那封信。",
+      "emotion": "紧张、好奇",
+      "entity_ids": [
+        "C01",
+        "L02",
+        "P01"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B004",
+      "scene_id": "S02",
+      "action": "信里只有一张老照片：一个女孩站在灯塔下；照片背面写着一行字：「你答应过要回来的。」",
+      "emotion": "困惑",
+      "entity_ids": [
+        "C01",
+        "P02",
+        "P01"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B005",
+      "scene_id": "S02",
+      "action": "周砚盯着照片，认不出这个女孩。",
+      "emotion": "茫然、不安",
+      "entity_ids": [
+        "C01",
+        "P02"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B006",
+      "scene_id": "S03",
+      "action": "中午，周砚走进镇上的面馆，拿着照片问老板娘认不认识。",
+      "emotion": "急切",
+      "entity_ids": [
+        "C01",
+        "C04",
+        "L03",
+        "P02"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B007",
+      "scene_id": "S03",
+      "action": "老板娘眯眼看了很久。",
+      "emotion": "努力回忆",
+      "entity_ids": [
+        "C04",
+        "P02"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B008",
+      "scene_id": "S03",
+      "action": "老板娘认出这是灯塔那边林家的姑娘，好多年没见了。",
+      "emotion": "感慨",
+      "entity_ids": [
+        "C04",
+        "C01",
+        "P02"
+      ],
+      "dialogue_ids": [
+        "D001"
+      ]
+    },
+    {
+      "id": "B009",
+      "scene_id": "S03",
+      "action": "周砚问她姓什么；老板娘说想不起来了。",
+      "emotion": "失望",
+      "entity_ids": [
+        "C01",
+        "C04"
+      ],
+      "dialogue_ids": [
+        "D002",
+        "D003"
+      ]
+    },
+    {
+      "id": "B010",
+      "scene_id": "S04",
+      "action": "下午，周砚骑摩托车沿通往灯塔的沿海公路走，海风很大。",
+      "emotion": "决心",
+      "entity_ids": [
+        "C01",
+        "L04",
+        "P05",
+        "P02"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B011",
+      "scene_id": "S05",
+      "action": "周砚抵达灯塔下：灯塔锈了，门锁着。",
+      "emotion": "凝重",
+      "entity_ids": [
+        "C01",
+        "L05",
+        "P06"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B012",
+      "scene_id": "S05",
+      "action": "周砚绕到灯塔背面，发现墙上刻着两个歪歪扭扭的名字，其中一个是他自己的。",
+      "emotion": "震惊",
+      "entity_ids": [
+        "C01",
+        "P06"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B013",
+      "scene_id": "S05",
+      "action": "周砚伸手摸那些刻痕。",
+      "emotion": "恍惚",
+      "entity_ids": [
+        "C01",
+        "P06"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B014",
+      "scene_id": "S06",
+      "action": "傍晚，周砚到镇卫生所找到值班的老医生，询问林家。",
+      "emotion": "执拗",
+      "entity_ids": [
+        "C01",
+        "C03",
+        "L06"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B015",
+      "scene_id": "S06",
+      "action": "老医生反问：林家的女儿十二年前出过事，你不记得了？",
+      "emotion": "迟疑",
+      "entity_ids": [
+        "C03",
+        "C01"
+      ],
+      "dialogue_ids": [
+        "D004"
+      ]
+    },
+    {
+      "id": "B016",
+      "scene_id": "S06",
+      "action": "周砚说他不记得。",
+      "emotion": "空洞",
+      "entity_ids": [
+        "C01",
+        "C03"
+      ],
+      "dialogue_ids": [
+        "D005"
+      ]
+    },
+    {
+      "id": "B017",
+      "scene_id": "S06",
+      "action": "老医生沉默了一会儿，说：「那年你也在。」",
+      "emotion": "沉重",
+      "entity_ids": [
+        "C03",
+        "C01"
+      ],
+      "dialogue_ids": [
+        "D006"
+      ]
+    }
+  ],
+  "dialogue": [
+    {
+      "id": "D001",
+      "speaker_id": "C04",
+      "beat_id": "B008",
+      "text": "这不是灯塔那边林家的姑娘吗，好多年没见了。",
+      "parenthetical": null
+    },
+    {
+      "id": "D002",
+      "speaker_id": "C01",
+      "beat_id": "B009",
+      "text": "她姓什么？",
+      "parenthetical": null
+    },
+    {
+      "id": "D003",
+      "speaker_id": "C04",
+      "beat_id": "B009",
+      "text": "想不起来了。",
+      "parenthetical": null
+    },
+    {
+      "id": "D004",
+      "speaker_id": "C03",
+      "beat_id": "B015",
+      "text": "林家的女儿十二年前出过事，你不记得了？",
+      "parenthetical": null
+    },
+    {
+      "id": "D005",
+      "speaker_id": "C01",
+      "beat_id": "B016",
+      "text": "我不记得。",
+      "parenthetical": null
+    },
+    {
+      "id": "D006",
+      "speaker_id": "C03",
+      "beat_id": "B017",
+      "text": "那年你也在。",
+      "parenthetical": "沉默了一会儿之后"
+    }
+  ],
+  "continuity_constraints": [
+    {
+      "id": "CC11",
+      "category": "wardrobe",
+      "subject_id": "C01",
+      "rule": "周砚在本块所有场次中穿藏青色工装外套",
+      "scope": {
+        "from": "S01",
+        "to": "S06"
+      },
+      "locked": true
+    },
+    {
+      "id": "CC12",
+      "category": "prop",
+      "subject_id": "P02",
+      "rule": "老照片：画面为女孩站在灯塔下，背面文字「你答应过要回来的。」不得改写；自S02拆信后被周砚随身携带",
+      "scope": {
+        "from": "S02",
+        "to": "S06"
+      },
+      "locked": true
+    },
+    {
+      "id": "CC13",
+      "category": "prop",
+      "subject_id": "P01",
+      "rule": "无寄件人地址、收件人为周砚的信封在S01出现，S02被拆开后成为空信壳",
+      "scope": {
+        "from": "S01",
+        "to": "S02"
+      },
+      "locked": false
+    },
+    {
+      "id": "CC14",
+      "category": "scene",
+      "subject_id": "L05",
+      "rule": "灯塔锈蚀、门锁着的状态与后续重返灯塔的场次保持一致",
+      "scope": {
+        "from": "S05",
+        "to": "S05"
+      },
+      "locked": false
+    },
+    {
+      "id": "CC15",
+      "category": "space",
+      "subject_id": "P06",
+      "rule": "刻痕位于灯塔背面墙上，共两个歪歪扭扭的名字，其中一个为周砚的名字",
+      "scope": {
+        "from": "S05",
+        "to": "S05"
+      },
+      "locked": true
+    },
+    {
+      "id": "CC16",
+      "category": "identity",
+      "subject_id": "C01",
+      "rule": "周砚在本块内处于失忆状态，明确表示对十二年前的事「不记得」",
+      "scope": {
+        "from": "S02",
+        "to": "S06"
+      },
+      "locked": true
+    },
+    {
+      "id": "CC17",
+      "category": "time",
+      "subject_id": "CH1",
+      "rule": "本块为单日：清晨→上午→中午→下午→下午→傍晚，依序推进",
+      "scope": {
+        "from": "S01",
+        "to": "S06"
+      },
+      "locked": true
+    }
+  ],
+  "transition_markers": [
+    {
+      "marker_id": "TM01",
+      "at_beat_id": "B003",
+      "type": "location_change",
+      "from": "邮局内（L01）",
+      "to": "邮局后巷（L02）",
+      "reason": "周砚到后巷拆信"
+    },
+    {
+      "marker_id": "TM02",
+      "at_beat_id": "B006",
+      "type": "scene_change",
+      "from": "上午/邮局后巷（L02）",
+      "to": "中午/镇上面馆（L03）",
+      "reason": "时间与地点同时改变"
+    },
+    {
+      "marker_id": "TM03",
+      "at_beat_id": "B010",
+      "type": "scene_change",
+      "from": "中午/面馆（L03）",
+      "to": "下午/通往灯塔的沿海公路（L04）",
+      "reason": "周砚骑车离开镇子前往灯塔"
+    },
+    {
+      "marker_id": "TM04",
+      "at_beat_id": "B011",
+      "type": "scene_change",
+      "from": "下午/沿海公路（L04）",
+      "to": "下午/灯塔下（L05）",
+      "reason": "抵达灯塔"
+    },
+    {
+      "marker_id": "TM05",
+      "at_beat_id": "B014",
+      "type": "scene_change",
+      "from": "下午/灯塔下（L05）",
+      "to": "傍晚/镇卫生所（L06）",
+      "reason": "时间推移至傍晚，地点回到镇上"
+    },
+    {
+      "marker_id": "TM06",
+      "at_beat_id": "B004",
+      "type": "continuity_break",
+      "from": "信封（P01）未拆",
+      "to": "信封拆开、老照片（P02）现世",
+      "reason": "拆信揭示照片"
+    }
+  ],
+  "ambiguities": [
+    {
+      "id": "AMB-S03-SPACE",
+      "severity": "low",
+      "subject_id": "L03",
+      "field": "scene",
+      "question": "面馆室内外细节未指明，可按常规室内面馆处理。"
+    },
+    {
+      "id": "AMB-S06-TIME",
+      "severity": "low",
+      "subject_id": "S06",
+      "field": "time",
+      "question": "S05下午与S06傍晚之间的间隔时长未指明；按同日自然推移处理。"
+    }
+  ]
+}

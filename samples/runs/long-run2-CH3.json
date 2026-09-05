@@ -1,0 +1,215 @@
+{
+  "schema_version": "2.0",
+  "chunk_id": "CH3",
+  "scenes": [
+    {
+      "id": "S12",
+      "beat_ids": [
+        "B030",
+        "B031",
+        "B032"
+      ],
+      "exit_state": "傍晚渐暗，周砚（藏青色工装外套）独自坐在医院外长椅上，老照片在手中翻面按压，天色慢慢暗下来。"
+    },
+    {
+      "id": "S13",
+      "beat_ids": [
+        "B033"
+      ],
+      "exit_state": "夜里回程的长途汽车上，周砚（藏青色工装外套，照片随身）靠着窗坐，路灯一盏一盏扫过他的脸。"
+    },
+    {
+      "id": "S14",
+      "beat_ids": [
+        "B034",
+        "B035",
+        "B036"
+      ],
+      "exit_state": "黎明的灯塔下，周砚（藏青色工装外套）把照片压进刻痕下面的石缝里，转身朝镇上走去，没有回头；灯塔保持锈蚀、门锁着。"
+    }
+  ],
+  "beats": [
+    {
+      "id": "B030",
+      "scene_id": "S12",
+      "action": "傍晚，周砚坐在医院外的长椅上。",
+      "emotion": "空茫",
+      "entity_ids": [
+        "C01",
+        "L11"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B031",
+      "scene_id": "S12",
+      "action": "周砚把照片翻过来又翻过去。",
+      "emotion": "反复挣扎",
+      "entity_ids": [
+        "C01",
+        "P02"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B032",
+      "scene_id": "S12",
+      "action": "天色慢慢暗了，周砚仍坐着。",
+      "emotion": "沉入",
+      "entity_ids": [
+        "C01",
+        "L11",
+        "P02"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B033",
+      "scene_id": "S13",
+      "action": "夜里，回程的长途汽车上，周砚靠着窗，路灯一盏一盏扫过他的脸。",
+      "emotion": "疲惫、沉静",
+      "entity_ids": [
+        "C01",
+        "L12",
+        "P02"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B034",
+      "scene_id": "S14",
+      "action": "黎明，周砚回到灯塔下，蹲在背面刻痕前。",
+      "emotion": "决意",
+      "entity_ids": [
+        "C01",
+        "L05",
+        "P06"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B035",
+      "scene_id": "S14",
+      "action": "周砚把照片压进刻痕下面的石缝里。",
+      "emotion": "托付、告别",
+      "entity_ids": [
+        "C01",
+        "P02",
+        "P06"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B036",
+      "scene_id": "S14",
+      "action": "海开始亮了；周砚转身往镇上走，没有回头。",
+      "emotion": "释然、离开",
+      "entity_ids": [
+        "C01",
+        "L05"
+      ],
+      "dialogue_ids": []
+    }
+  ],
+  "dialogue": [],
+  "continuity_constraints": [
+    {
+      "id": "CC31",
+      "category": "wardrobe",
+      "subject_id": "C01",
+      "rule": "周砚在本块所有场次中穿藏青色工装外套",
+      "scope": {
+        "from": "S12",
+        "to": "S14"
+      },
+      "locked": true
+    },
+    {
+      "id": "CC32",
+      "category": "prop",
+      "subject_id": "P02",
+      "rule": "老照片背面文字「你答应过要回来的。」不得改写；照片始终在周砚手中，直到B035压入石缝后不再随身",
+      "scope": {
+        "from": "S12",
+        "to": "S14"
+      },
+      "locked": true
+    },
+    {
+      "id": "CC33",
+      "category": "space",
+      "subject_id": "P06",
+      "rule": "刻痕仍在灯塔背面墙上；石缝在刻痕下方，照片压入的位置不与刻痕重叠",
+      "scope": {
+        "from": "S12",
+        "to": "S14"
+      },
+      "locked": true
+    },
+    {
+      "id": "CC34",
+      "category": "scene",
+      "subject_id": "L05",
+      "rule": "灯塔状态与CH1一致：锈蚀、门锁着",
+      "scope": {
+        "from": "S14",
+        "to": "S14"
+      },
+      "locked": true
+    },
+    {
+      "id": "CC35",
+      "category": "time",
+      "subject_id": "CH3",
+      "rule": "傍晚→夜→黎明依序推进",
+      "scope": {
+        "from": "S12",
+        "to": "S14"
+      },
+      "locked": true
+    }
+  ],
+  "transition_markers": [
+    {
+      "marker_id": "TM12",
+      "at_beat_id": "B030",
+      "type": "scene_change",
+      "from": "白天/医院病房（L10）",
+      "to": "傍晚/医院外长椅（L11）",
+      "reason": "离开医院到室外长椅，时间到傍晚"
+    },
+    {
+      "marker_id": "TM13",
+      "at_beat_id": "B032",
+      "type": "time_change",
+      "from": "傍晚",
+      "to": "天色渐暗",
+      "reason": "天色由傍晚渐入夜色"
+    },
+    {
+      "marker_id": "TM14",
+      "at_beat_id": "B033",
+      "type": "scene_change",
+      "from": "傍晚/医院外（L11）",
+      "to": "夜/回程长途车内（L12）",
+      "reason": "上车回程，地点与时间改变"
+    },
+    {
+      "marker_id": "TM15",
+      "at_beat_id": "B034",
+      "type": "scene_change",
+      "from": "夜/长途车内（L12）",
+      "to": "黎明/灯塔下（L05）",
+      "reason": "回程结束、时间到黎明，重返灯塔"
+    }
+  ],
+  "ambiguities": [
+    {
+      "id": "AMB-S13-RAINYCARRYOVER",
+      "severity": "low",
+      "subject_id": "S13",
+      "field": "weather",
+      "question": "S08深夜的雨是否延续到回程路况，叙事未指明；按S13无明确天气描述处理。"
+    }
+  ]
+}

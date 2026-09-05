@@ -1,0 +1,521 @@
+{
+  "schema_version": "2.0",
+  "status": "complete",
+  "duration": 240,
+  "scenes": [
+    {
+      "id": "S01",
+      "slugline": "内景 - 城郊便利店 - 深夜",
+      "location_id": "L01",
+      "time_of_day": "深夜",
+      "duration_budget": 70,
+      "beat_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B04"
+      ],
+      "exit_state": "林薇坐在便利店窗边，手机屏幕朝下扣在桌上，手边是凉咖啡；陈默站在店内，拿着刚买的香烟，面对她；门外仍在下雨。"
+    },
+    {
+      "id": "S02",
+      "slugline": "外景 - 便利店门外屋檐下 - 同一夜",
+      "location_id": "L02",
+      "time_of_day": "深夜",
+      "duration_budget": 55,
+      "beat_ids": [
+        "B05",
+        "B06",
+        "B07"
+      ],
+      "exit_state": "两人并肩站在便利店门外屋檐下躲雨；陈默将摁灭的烟留在墙上；林薇穿着深灰色针织外套，握着凉咖啡杯；雨未停。"
+    },
+    {
+      "id": "S03",
+      "slugline": "外景 - 同一条街道（三年前） - 白天",
+      "location_id": "L03",
+      "time_of_day": "白天",
+      "duration_budget": 40,
+      "beat_ids": [
+        "B08",
+        "B09"
+      ],
+      "exit_state": "三年前的白天，阳光很好；年轻的陈默背着帆布包走过街角，没有回头；街对面的林薇站在原地，手里是被撕成两半的电影票。"
+    },
+    {
+      "id": "S04",
+      "slugline": "外景 - 便利店门外屋檐下 - 深夜（雨渐小）",
+      "location_id": "L02",
+      "time_of_day": "深夜",
+      "duration_budget": 40,
+      "beat_ids": [
+        "B10",
+        "B11",
+        "B12"
+      ],
+      "exit_state": "屋檐下，雨小了；陈默低着头；林薇把凉咖啡倒进了排水沟，手里不再有咖啡杯；两人仍并肩站在原地。"
+    },
+    {
+      "id": "S05",
+      "slugline": "外景 - 林薇家楼下单元门口 - 凌晨",
+      "location_id": "L04",
+      "time_of_day": "凌晨",
+      "duration_budget": 35,
+      "beat_ids": [
+        "B13",
+        "B14",
+        "B15"
+      ],
+      "exit_state": "林薇独自站在单元门口，手机在手，消息已删除并重打后发出；天开始亮了。"
+    }
+  ],
+  "characters": [
+    {
+      "id": "C01",
+      "name": "林薇",
+      "wardrobe": "深灰色针织外套",
+      "description": "三年前曾在电影院门口等待；深夜独自在便利店窗边坐着，手机上有发给母亲却未发送的消息。"
+    },
+    {
+      "id": "C02",
+      "name": "陈默",
+      "wardrobe": null,
+      "description": "三年前不告而别、离开这条街；浑身湿透地走进便利店。在第三场（三年前）他说更年轻。"
+    }
+  ],
+  "locations": [
+    {
+      "id": "L01",
+      "name": "城郊便利店",
+      "description": "深夜营业的便利店，店内窗边有座位，玻璃外可见街上的雨。"
+    },
+    {
+      "id": "L02",
+      "name": "便利店门外屋檐",
+      "description": "便利店门外的屋檐下，可躲雨，墙上可摁灭香烟，旁有排水沟。"
+    },
+    {
+      "id": "L03",
+      "name": "同一条街道（三年前，白天）",
+      "description": "与便利店同一条街，三年前白天的样貌，阳光很好。"
+    },
+    {
+      "id": "L04",
+      "name": "林薇家楼下",
+      "description": "林薇住所楼下，有单元门。"
+    }
+  ],
+  "props": [
+    {
+      "id": "P01",
+      "name": "林薇的手机",
+      "description": "屏幕上有一条未发送的消息，收件人是母亲；林薇在第三场前把它扣在桌上，凌晨在单元门口重打内容后发送。"
+    },
+    {
+      "id": "P02",
+      "name": "凉透的咖啡（杯）",
+      "description": "林薇在便利店窗边握着的凉咖啡，贯穿屋檐场景，最后被倒进排水沟。"
+    },
+    {
+      "id": "P03",
+      "name": "香烟",
+      "description": "陈默在便利店柜台买的一包烟；在屋檐下点燃，递给林薇一支被摇头拒绝，陈默自己抽后把烟摁灭在墙上。"
+    },
+    {
+      "id": "P04",
+      "name": "电影票（两张）",
+      "description": "三年前林薇手里拿的两张电影票，被她撕成两半。"
+    },
+    {
+      "id": "P05",
+      "name": "帆布包",
+      "description": "三年前离开时年轻的陈默背着的帆布包。"
+    }
+  ],
+  "beats": [
+    {
+      "id": "B01",
+      "scene_id": "S01",
+      "action": "深夜，林薇独自坐在便利店窗边，握着一杯已经凉透的咖啡；玻璃外下着雨；她盯着手机上一条给母亲的未发送消息。",
+      "emotion": "低落、心事重重",
+      "entity_ids": [
+        "C01",
+        "L01",
+        "P01",
+        "P02"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B02",
+      "scene_id": "S01",
+      "action": "店门被推开，风铃响了一声，一个浑身湿透的男人走进来；林薇抬头，认出那是三年前不告而别的陈默。",
+      "emotion": "惊愕",
+      "entity_ids": [
+        "C01",
+        "C02",
+        "L01"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B03",
+      "scene_id": "S01",
+      "action": "林薇把手机扣在桌上；陈默走到柜台买了一包烟，转身看见她。",
+      "emotion": "回避与迟疑",
+      "entity_ids": [
+        "C01",
+        "C02",
+        "L01",
+        "P01",
+        "P03"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B04",
+      "scene_id": "S01",
+      "action": "陈默对林薇说话，林薇没有回答。",
+      "emotion": "沉默、僵硬",
+      "entity_ids": [
+        "C01",
+        "C02",
+        "L01"
+      ],
+      "dialogue_ids": [
+        "D01"
+      ]
+    },
+    {
+      "id": "B05",
+      "scene_id": "S02",
+      "action": "两人在便利店门外屋檐下并肩躲雨；陈默点了烟，递给林薇一支，林薇摇头拒绝。",
+      "emotion": "疏离",
+      "entity_ids": [
+        "C01",
+        "C02",
+        "L02",
+        "P03"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B06",
+      "scene_id": "S02",
+      "action": "陈默告诉林薇「我妈上个月走了」；林薇握紧了咖啡杯。",
+      "emotion": "震动、压抑",
+      "entity_ids": [
+        "C01",
+        "C02",
+        "L02",
+        "P02",
+        "P03"
+      ],
+      "dialogue_ids": [
+        "D02"
+      ]
+    },
+    {
+      "id": "B07",
+      "scene_id": "S02",
+      "action": "林薇回应陈默；陈默把烟摁灭在墙上。",
+      "emotion": "紧绷、克制",
+      "entity_ids": [
+        "C01",
+        "C02",
+        "L02",
+        "P03"
+      ],
+      "dialogue_ids": [
+        "D03"
+      ]
+    },
+    {
+      "id": "B08",
+      "scene_id": "S03",
+      "action": "三年前的白天，阳光很好；年轻的陈默背着帆布包快步走过街角，没有回头；街对面，三年前的林薇站在原地看着他的背影，手里拿着两张电影票。",
+      "emotion": "隐忍",
+      "entity_ids": [
+        "C01",
+        "C02",
+        "L03",
+        "P04",
+        "P05"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B09",
+      "scene_id": "S03",
+      "action": "林薇把两张电影票撕成两半。",
+      "emotion": "决绝",
+      "entity_ids": [
+        "C01",
+        "L03",
+        "P04"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B10",
+      "scene_id": "S04",
+      "action": "回到深夜的屋檐下，雨小了；林薇终于开口，说出那天她在电影院门口等了四个小时。",
+      "emotion": "委屈、终于开口",
+      "entity_ids": [
+        "C01",
+        "C02",
+        "L02",
+        "P02"
+      ],
+      "dialogue_ids": [
+        "D04"
+      ]
+    },
+    {
+      "id": "B11",
+      "scene_id": "S04",
+      "action": "陈默低下头，向林薇道歉。",
+      "emotion": "愧疚",
+      "entity_ids": [
+        "C01",
+        "C02",
+        "L02"
+      ],
+      "dialogue_ids": [
+        "D05"
+      ]
+    },
+    {
+      "id": "B12",
+      "scene_id": "S04",
+      "action": "林薇把凉咖啡倒进了排水沟。",
+      "emotion": "放下",
+      "entity_ids": [
+        "C01",
+        "L02",
+        "P02"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B13",
+      "scene_id": "S05",
+      "action": "凌晨，林薇一个人走到单元门口，停下，掏出手机；屏幕上那条给母亲的消息还在。",
+      "emotion": "释然前的迟疑",
+      "entity_ids": [
+        "C01",
+        "L04",
+        "P01"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B14",
+      "scene_id": "S05",
+      "action": "林薇删掉了原来的内容，重新打了三个字，按下发送。",
+      "emotion": "决断",
+      "entity_ids": [
+        "C01",
+        "L04",
+        "P01"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B15",
+      "scene_id": "S05",
+      "action": "天开始亮了。",
+      "emotion": "释然",
+      "entity_ids": [
+        "C01",
+        "L04"
+      ],
+      "dialogue_ids": []
+    }
+  ],
+  "dialogue": [
+    {
+      "id": "D01",
+      "speaker_id": "C02",
+      "beat_id": "B04",
+      "text": "我以为你早搬走了。"
+    },
+    {
+      "id": "D02",
+      "speaker_id": "C02",
+      "beat_id": "B06",
+      "text": "我妈上个月走了。"
+    },
+    {
+      "id": "D03",
+      "speaker_id": "C01",
+      "beat_id": "B07",
+      "text": "所以你回来了。"
+    },
+    {
+      "id": "D04",
+      "speaker_id": "C01",
+      "beat_id": "B10",
+      "text": "那天我在电影院门口等了四个小时。"
+    },
+    {
+      "id": "D05",
+      "speaker_id": "C02",
+      "beat_id": "B11",
+      "text": "对不起。"
+    }
+  ],
+  "continuity_constraints": [
+    {
+      "id": "CC01",
+      "category": "wardrobe",
+      "subject_id": "C01",
+      "rule": "林薇全程穿深灰色针织外套，第三场（三年前）亦须保持深灰色针织外套外观特征一致。",
+      "scope": {
+        "from": "S01",
+        "to": "S05"
+      },
+      "locked": true
+    },
+    {
+      "id": "CC02",
+      "category": "identity",
+      "subject_id": "C02",
+      "rule": "第三场是三年前，出现在该场中的陈默更年轻；其余各场的陈默为同一人物。",
+      "scope": [
+        "S03"
+      ],
+      "locked": true
+    },
+    {
+      "id": "CC03",
+      "category": "prop",
+      "subject_id": "P01",
+      "rule": "林薇的手机屏幕上那条未发送消息的收件人是母亲；S01 中她将手机扣在桌上，S05 中屏幕上仍是同一条消息，删除原内容重新打出三个字后按下发送。",
+      "scope": [
+        "S01",
+        "S05"
+      ],
+      "locked": true
+    },
+    {
+      "id": "CC04",
+      "category": "prop",
+      "subject_id": "P02",
+      "rule": "咖啡从 S01 起即已凉透，林薇在 S02 仍握着杯，S04 倒进排水沟，其后不再持有。",
+      "scope": [
+        "S01",
+        "S02",
+        "S04"
+      ],
+      "locked": true
+    },
+    {
+      "id": "CC05",
+      "category": "weather",
+      "subject_id": null,
+      "rule": "S01 至 S02 夜间下雨（雨中陈默浑身湿透）；S04 雨转小；S05 雨已停且天渐亮。",
+      "scope": [
+        "S01",
+        "S02",
+        "S04",
+        "S05"
+      ],
+      "locked": false
+    },
+    {
+      "id": "CC06",
+      "category": "time",
+      "subject_id": null,
+      "rule": "S01 与 S02 为同一夜，S04 林薇开口时仍是该夜屋檐下，S05 为凌晨；S03 发生在三年前的白天。",
+      "scope": {
+        "from": "S01",
+        "to": "S05"
+      },
+      "locked": true
+    },
+    {
+      "id": "CC07",
+      "category": "space",
+      "subject_id": "L03",
+      "rule": "第三场的街道与便利店所在的是同一条街；屋檐在便利店门外，排水沟在屋檐附近可及处。",
+      "scope": {
+        "from": "S01",
+        "to": "S05"
+      },
+      "locked": true
+    },
+    {
+      "id": "CC08",
+      "category": "prop",
+      "subject_id": "P03",
+      "rule": "香烟为陈默在 S01 于柜台购买的一包；S02 中点燃、递烟被拒、抽后摁灭在墙上。",
+      "scope": [
+        "S01",
+        "S02"
+      ],
+      "locked": false
+    }
+  ],
+  "transition_markers": [
+    {
+      "marker_id": "TM01",
+      "at_beat_id": "B01",
+      "type": "weather_change",
+      "from": "未明确（影片开始）",
+      "to": "玻璃外下着雨",
+      "reason": "场景未记录天气，开场时确立夜雨状态。"
+    },
+    {
+      "marker_id": "TM02",
+      "at_beat_id": "B08",
+      "type": "continuity_break",
+      "from": "深夜屋檐下，雨中，两人并肩",
+      "to": "三年前的白天，同一街角，阳光很好，陈默更年轻",
+      "reason": "时间跳回三年前的回忆，属回忆插叙。"
+    },
+    {
+      "marker_id": "TM03",
+      "at_beat_id": "B10",
+      "type": "weather_change",
+      "from": "大雨延续（S02 雨中躲雨）",
+      "to": "雨小了",
+      "reason": "同一屋檐场景内雨势由大转小。"
+    },
+    {
+      "marker_id": "TM04",
+      "at_beat_id": "B15",
+      "type": "time_change",
+      "from": "凌晨（送出消息前）",
+      "to": "天开始亮了",
+      "reason": "发送消息后天色开始发亮，时间向黎明推进。"
+    }
+  ],
+  "locked_constraints": [
+    "林薇全程穿深灰色针织外套",
+    "第三场是三年前的回忆，陈默在该场中更年轻"
+  ],
+  "ambiguities": [
+    {
+      "id": "AMB-WARDROBE-C02",
+      "severity": "low",
+      "subject_id": "C02",
+      "field": "wardrobe",
+      "question": "陈默在深夜各场的服装未在叙事中说明（仅知 S01 时浑身湿透），需下游自行确定。"
+    },
+    {
+      "id": "AMB-C01-AGE",
+      "severity": "low",
+      "subject_id": "C01",
+      "field": "identity",
+      "question": "S03 中的林薇同为三年前的版本，是否需要相对显年轻，叙事未明确。"
+    },
+    {
+      "id": "AMB-MSG-TEXT",
+      "severity": "medium",
+      "subject_id": "P01",
+      "field": "scene",
+      "question": "林薇删除后重新打的\"三个字\"内容从未写出；若画面须展示屏幕内容，需要一个故事层假设。"
+    }
+  ]
+}

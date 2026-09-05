@@ -1,0 +1,1224 @@
+{
+  "schema_version": "1.0",
+  "status": "MEDIA_WAIT",
+  "failed_stage": "media",
+  "agent_id": null,
+  "failure_kind": "media_wait",
+  "errors": [],
+  "warnings": [
+    {
+      "code": "W_RUN_FIXES",
+      "path": "",
+      "message": "Pre-run provenance note: first spawn of shot-director returned an artifact with four unclosed JSON string values and unknown source_beat_ids (TM01/TM02/TM03); repaired with shot-director repair attempt 1 (run 0d7bac08) which produced a fresh complete Shot IR with unrelated content; to preserve story fidelity the orchestrator reinstated the attempt-0 artifact, applied a minim-safe three-string JSON repair (three missing closing quotes) and removed transition-marker beat IDs from source_beat_ids per deterministic diagnostics; both operators logged here by explicit user request",
+      "retryable": false
+    },
+    {
+      "code": "W_RUN_FIXES",
+      "path": "",
+      "message": "Frame-designer attempt 1 had schema violations and was routed through repair attempt 1 (run 596f51bd); repair-1 output required image_jobs.type=\"image_generation\" enum correction applied during gate iteration",
+      "retryable": false
+    },
+    {
+      "code": "W_RUN_FIXES",
+      "path": "",
+      "message": "Diagnostics surfaced that the deterministic validator is schema-first but its schemas check enum values; worker agent outputs needed two shape-fix cycles; suggested upstream hardening item",
+      "retryable": false
+    }
+  ],
+  "last_valid_artifacts": {
+    "STORY.json": "sha256:dd835a07fe6a1a82fb5429c514a40848d639f9e49765f425cf157914a653f5df",
+    "SHOT.json": "sha256:39e3183a31c4bf9787f32de91d2a1e8887fda41cf7b092fb372ac05b6e1ff19d",
+    "FRAME.json": "sha256:570d866028fc792b385aac60fb6ed30375e1a25d96af5772122cc1a59ccc868a",
+    "STORY_GATE.json": "PASS c03204f86a21eb9d4f20790d14b5e807126d8a9acc6d97d3ba4d13a21867c7b4",
+    "SHOT_GATE.json": "PASS 2fe6721d2c56f6606ee0cbf6108915d15d3ab1e00d790c004e909d47fe8915a2",
+    "FRAME_GATE.json": "PASS 8c4a4a0ee25678f17e4ef5511e5ce607f43708873f3f1b8b4d03ab09249e8810"
+  },
+  "result": {
+    "total_duration": 36,
+    "aspect_ratio": "16:9",
+    "segments": [
+      "SEG001",
+      "SEG002",
+      "SEG003",
+      "SEG004",
+      "SEG005",
+      "SEG006",
+      "SEG007"
+    ],
+    "resolved_media": 0,
+    "pending_static_jobs": [
+      {
+        "job_id": "JOB_FIRST_SEG001",
+        "output_media_id": "M_FIRST_SEG001",
+        "role": "first_frame",
+        "related_segments": [
+          "SEG001"
+        ],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_FIRST_SEG003",
+        "output_media_id": "M_FIRST_SEG003",
+        "role": "first_frame",
+        "related_segments": [
+          "SEG003"
+        ],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_FIRST_SEG004",
+        "output_media_id": "M_FIRST_SEG004",
+        "role": "first_frame",
+        "related_segments": [
+          "SEG004"
+        ],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_FIRST_SEG005",
+        "output_media_id": "M_FIRST_SEG005",
+        "role": "first_frame",
+        "related_segments": [
+          "SEG005"
+        ],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_FIRST_SEG006",
+        "output_media_id": "M_FIRST_SEG006",
+        "role": "first_frame",
+        "related_segments": [
+          "SEG006"
+        ],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_C01",
+        "output_media_id": "M_REF_C01",
+        "role": "character_reference",
+        "related_segments": [],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_C02",
+        "output_media_id": "M_REF_C02",
+        "role": "character_reference",
+        "related_segments": [],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_C03",
+        "output_media_id": "M_REF_C03",
+        "role": "character_reference",
+        "related_segments": [],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_L01",
+        "output_media_id": "M_REF_L01",
+        "role": "location_reference",
+        "related_segments": [],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_L02",
+        "output_media_id": "M_REF_L02",
+        "role": "location_reference",
+        "related_segments": [],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_L03",
+        "output_media_id": "M_REF_L03",
+        "role": "location_reference",
+        "related_segments": [],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_L04",
+        "output_media_id": "M_REF_L04",
+        "role": "location_reference",
+        "related_segments": [],
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_STYLE01",
+        "output_media_id": "M_REF_STYLE01",
+        "role": "style_reference",
+        "related_segments": [],
+        "status": "pending"
+      }
+    ],
+    "pending_media": [
+      {
+        "media_id": "M_FIRST_SEG001",
+        "role": "first_frame",
+        "source_job": "JOB_FIRST_SEG001"
+      },
+      {
+        "media_id": "M_FIRST_SEG003",
+        "role": "first_frame",
+        "source_job": "JOB_FIRST_SEG003"
+      },
+      {
+        "media_id": "M_FIRST_SEG004",
+        "role": "first_frame",
+        "source_job": "JOB_FIRST_SEG004"
+      },
+      {
+        "media_id": "M_FIRST_SEG005",
+        "role": "first_frame",
+        "source_job": "JOB_FIRST_SEG005"
+      },
+      {
+        "media_id": "M_FIRST_SEG006",
+        "role": "first_frame",
+        "source_job": "JOB_FIRST_SEG006"
+      },
+      {
+        "media_id": "M_REF_C01",
+        "role": "character_reference",
+        "source_job": "JOB_REF_C01"
+      },
+      {
+        "media_id": "M_REF_C02",
+        "role": "character_reference",
+        "source_job": "JOB_REF_C02"
+      },
+      {
+        "media_id": "M_REF_C03",
+        "role": "character_reference",
+        "source_job": "JOB_REF_C03"
+      },
+      {
+        "media_id": "M_REF_L01",
+        "role": "location_reference",
+        "source_job": "JOB_REF_L01"
+      },
+      {
+        "media_id": "M_REF_L02",
+        "role": "location_reference",
+        "source_job": "JOB_REF_L02"
+      },
+      {
+        "media_id": "M_REF_L03",
+        "role": "location_reference",
+        "source_job": "JOB_REF_L03"
+      },
+      {
+        "media_id": "M_REF_L04",
+        "role": "location_reference",
+        "source_job": "JOB_REF_L04"
+      },
+      {
+        "media_id": "M_REF_STYLE01",
+        "role": "style_reference",
+        "source_job": "JOB_REF_STYLE01"
+      }
+    ],
+    "runtime_pending_media": [
+      {
+        "media_id": "M_TAIL_SEG001",
+        "role": "actual_tail_frame",
+        "derived_from_segment_id": "SEG001",
+        "status": "runtime_pending"
+      },
+      {
+        "media_id": "M_TAIL_SEG006",
+        "role": "actual_tail_frame",
+        "derived_from_segment_id": "SEG006",
+        "status": "runtime_pending"
+      }
+    ],
+    "media_manifest_status": "draft",
+    "next_actions": [
+      "Resolve pending static media, then run executable compile and semantic validation; Draft Video Prompts are inspectable but not executable."
+    ],
+    "segment_plan_boundaries": [
+      {
+        "segment_id": "SEG001",
+        "shot_id": "S01",
+        "start": 0,
+        "end": 5,
+        "duration": 5,
+        "entry_strategy": "new_first_frame"
+      },
+      {
+        "segment_id": "SEG002",
+        "shot_id": "S01",
+        "start": 5,
+        "end": 10,
+        "duration": 5,
+        "entry_strategy": "use_previous_tail_frame"
+      },
+      {
+        "segment_id": "SEG003",
+        "shot_id": "S02",
+        "start": 10,
+        "end": 14,
+        "duration": 4,
+        "entry_strategy": "new_first_frame"
+      },
+      {
+        "segment_id": "SEG004",
+        "shot_id": "S03",
+        "start": 14,
+        "end": 19,
+        "duration": 5,
+        "entry_strategy": "new_first_frame"
+      },
+      {
+        "segment_id": "SEG005",
+        "shot_id": "S04",
+        "start": 19,
+        "end": 24,
+        "duration": 5,
+        "entry_strategy": "new_first_frame"
+      },
+      {
+        "segment_id": "SEG006",
+        "shot_id": "S05",
+        "start": 24,
+        "end": 30,
+        "duration": 6,
+        "entry_strategy": "new_first_frame"
+      },
+      {
+        "segment_id": "SEG007",
+        "shot_id": "S05",
+        "start": 30,
+        "end": 36,
+        "duration": 6,
+        "entry_strategy": "use_previous_tail_frame"
+      }
+    ],
+    "draft_video_prompts": [
+      {
+        "segment_id": "SEG001",
+        "shot_id": "S01",
+        "start": 0,
+        "end": 5,
+        "local_duration": 5,
+        "prompt_schema": "unified_multimodal",
+        "execution_node": "MiniMax H3 Unified to Video",
+        "planned_controls": {
+          "entry_source": "planned_first_frame",
+          "last_frame_target": null,
+          "reference_media": [
+            "M_REF_C01",
+            "M_REF_C02",
+            "M_REF_L01",
+            "M_REF_L02",
+            "M_REF_STYLE01"
+          ]
+        },
+        "prompt": "integrated_multimodal_description: 以输入首帧作为视频的准确起始画面，保持首帧中的镜头角度、构图、人物位置、环境布局和光照关系。现代住宅楼电梯轿厢内，写实电影感，傍晚基调，克制自然。固定机位:电梯轿厢内角落、略高于肩高的中景两人构图，女主角C01居画面左侧拎黑色手提包，_C02邻居居画面右侧稍近镜头，两人保持自然社交距离；浅景深弱化金属壁面背景，楼层数字显示可见。轿厢顶部冷白荧光均匀照明，无戏剧化阴影。0.0秒起，女主角身份与外观参考 <Picture 1>，保持 <Picture 1> 中人物的面部特征、发型、服装款式（米色风衣）和身体特征一致，但不要复制 <Picture 1> 的背景、构图和姿势；邻居身份与外观参考 <Picture 2>，保持 <Picture 2> 中人物的面部特征、发型、服装款式和身体特征一致，但不要复制 <Picture 2> 的背景、构图和姿势。电梯内环境参考 <Picture 3>，电梯门口与走廊门框曝光过渡参考 <Picture 4>；整体电影色调、光线温度、颗粒与反差风格参考 <Picture 5>。对话与表演:邻居先开口: “刚下班?” 女主应答并同时略看向楼层数字方向: “嗯,今天有点晚。” 两人日常平静，保持站立不动，仅微表情与视线变化。镜头全程静止，仅带轻微轿厢运行振动感。到第5秒时，两人仍在同一机位构图内，女主处于待应答下一句的姿态。overall_soundscape: 电梯运行低鸣持续作底;电梯门机械声简短两声;人声自然贴-mouth同步,紧凑克制;楼层空间感轻微混响。non_diegetic_music: 无配乐。",
+        "symbolic_media_mapping": {
+          "entry_frame": "M_FIRST_SEG001",
+          "entry_frame_source_type": "planned_media",
+          "runtime_entry_binding": null,
+          "last_frame_target": null,
+          "expected_actual_tail_frame": "M_TAIL_SEG001",
+          "reference_media": [
+            "M_REF_C01",
+            "M_REF_C02",
+            "M_REF_L01",
+            "M_REF_L02",
+            "M_REF_STYLE01"
+          ],
+          "reference_bindings": [
+            {
+              "label": "Picture 1",
+              "media_id": "M_REF_C01",
+              "role": "character_reference",
+              "preserve": [
+                "identity",
+                "face",
+                "hair",
+                "wardrobe",
+                "body"
+              ],
+              "do_not_copy": [
+                "background",
+                "composition",
+                "pose"
+              ]
+            },
+            {
+              "label": "Picture 2",
+              "media_id": "M_REF_C02",
+              "role": "character_reference",
+              "preserve": [
+                "identity",
+                "face",
+                "hair",
+                "wardrobe",
+                "body"
+              ],
+              "do_not_copy": [
+                "background",
+                "composition",
+                "pose"
+              ]
+            },
+            {
+              "label": "Picture 3",
+              "media_id": "M_REF_L01",
+              "role": "location_reference",
+              "preserve": [
+                "elevator_interior",
+                "panel_layout",
+                "overhead_light"
+              ],
+              "do_not_copy": [
+                "people",
+                "composition"
+              ]
+            },
+            {
+              "label": "Picture 4",
+              "media_id": "M_REF_L02",
+              "role": "location_reference",
+              "preserve": [
+                "door_light_state",
+                "hallway_spill"
+              ],
+              "do_not_copy": [
+                "people",
+                "composition"
+              ]
+            },
+            {
+              "label": "Picture 5",
+              "media_id": "M_REF_STYLE01",
+              "role": "style_reference",
+              "preserve": [
+                "color_palette",
+                "lighting_temperature",
+                "grain",
+                "contrast"
+              ],
+              "do_not_copy": [
+                "subject_matter"
+              ]
+            }
+          ],
+          "unresolved_media_ids": [
+            "M_FIRST_SEG001",
+            "M_REF_C01",
+            "M_REF_C02",
+            "M_REF_L01",
+            "M_REF_L02",
+            "M_REF_STYLE01"
+          ]
+        }
+      },
+      {
+        "segment_id": "SEG002",
+        "shot_id": "S01",
+        "start": 5,
+        "end": 10,
+        "local_duration": 5,
+        "prompt_schema": "unified_multimodal",
+        "execution_node": "MiniMax H3 Unified to Video",
+        "planned_controls": {
+          "entry_source": "previous_segment_actual_tail",
+          "last_frame_target": null,
+          "reference_media": [
+            "M_REF_C01",
+            "M_REF_C02",
+            "M_REF_L01",
+            "M_REF_L02",
+            "M_REF_STYLE01"
+          ]
+        },
+        "prompt": "integrated_multimodal_description: 从当前首帧自然连续，保持人物身份、服装、场景、光线、机位、构图、空间关系和运动方向不变。继续同一固定机位与构图:电梯轿厢内角落、略高于肩高的中景两人；女主角C01居画面左侧拎黑色手提包，邻居C02居画面右侧稍近镜头，轿厢顶部冷白荧光均匀照明，楼层数字显示可见。你在画面中继续发展，不要重置动作、不要重复前一动作、不要突然换机位或重新构图、不要切镜。女主角身份与外观参考 <Picture 1>，保持 <Picture 1> 中人物的面部特征、发型、服装款式和身体特征一致，但不要复制 <Picture 1> 的背景、构图和姿势；邻居身份与外观参考 <Picture 2>，保持 <Picture 2> 中人物的面部特征、发型、服装款式和身体特征一致，但不要复制 <Picture 2> 的背景、构图和姿势。电梯内环境参考 <Picture 3>，电梯门口光参考 <Picture 4>；电影色调与颗粒风格参考 <Picture 5>。对话与表演:邻居继续: “你家那位已经回来啦。” 女主眼底浮起轻微期盼，应答: “是吗?那我得快点。” 同时自然地再次稍看向楼层数字方向，期待感微增。镜头保持静止，仅轻微轿厢振动感；临近楼层到达。overall_soundscape: 电梯运行低鸣持续;接近楼层时到达提示音渐明;门机械声准备;对话人声连续自然。non_diegetic_music: 无配乐。",
+        "symbolic_media_mapping": {
+          "entry_frame": null,
+          "entry_frame_source_type": "previous_segment_actual_tail",
+          "runtime_entry_binding": {
+            "kind": "previous_actual_tail_frame",
+            "previous_segment_id": "SEG001",
+            "actual_tail_frame_media_id": "M_TAIL_SEG001",
+            "resolution_stage": "unified_video_runtime"
+          },
+          "last_frame_target": null,
+          "expected_actual_tail_frame": null,
+          "reference_media": [
+            "M_REF_C01",
+            "M_REF_C02",
+            "M_REF_L01",
+            "M_REF_L02",
+            "M_REF_STYLE01"
+          ],
+          "reference_bindings": [
+            {
+              "label": "Picture 1",
+              "media_id": "M_REF_C01",
+              "role": "character_reference",
+              "preserve": [
+                "identity",
+                "face",
+                "hair",
+                "wardrobe",
+                "body"
+              ],
+              "do_not_copy": [
+                "background",
+                "composition",
+                "pose"
+              ]
+            },
+            {
+              "label": "Picture 2",
+              "media_id": "M_REF_C02",
+              "role": "character_reference",
+              "preserve": [
+                "identity",
+                "face",
+                "hair",
+                "wardrobe",
+                "body"
+              ],
+              "do_not_copy": [
+                "background",
+                "composition",
+                "pose"
+              ]
+            },
+            {
+              "label": "Picture 3",
+              "media_id": "M_REF_L01",
+              "role": "location_reference",
+              "preserve": [
+                "elevator_interior",
+                "panel_layout",
+                "overhead_light"
+              ],
+              "do_not_copy": [
+                "people",
+                "composition"
+              ]
+            },
+            {
+              "label": "Picture 4",
+              "media_id": "M_REF_L02",
+              "role": "location_reference",
+              "preserve": [
+                "door_light_state",
+                "hallway_spill"
+              ],
+              "do_not_copy": [
+                "people",
+                "composition"
+              ]
+            },
+            {
+              "label": "Picture 5",
+              "media_id": "M_REF_STYLE01",
+              "role": "style_reference",
+              "preserve": [
+                "color_palette",
+                "lighting_temperature",
+                "grain",
+                "contrast"
+              ],
+              "do_not_copy": [
+                "subject_matter"
+              ]
+            }
+          ],
+          "unresolved_media_ids": [
+            "M_REF_C01",
+            "M_REF_C02",
+            "M_REF_L01",
+            "M_REF_L02",
+            "M_REF_STYLE01"
+          ]
+        }
+      },
+      {
+        "segment_id": "SEG003",
+        "shot_id": "S02",
+        "start": 10,
+        "end": 14,
+        "local_duration": 4,
+        "prompt_schema": "unified_multimodal",
+        "execution_node": "MiniMax H3 Unified to Video",
+        "planned_controls": {
+          "entry_source": "planned_first_frame",
+          "last_frame_target": null,
+          "reference_media": [
+            "M_REF_C01",
+            "M_REF_C02",
+            "M_REF_L02",
+            "M_REF_L03",
+            "M_REF_STYLE01"
+          ]
+        },
+        "prompt": "integrated_multimodal_description: 以输入首帧作为视频的准确起始画面，保持首帧中的镜头角度、构图、人物位置、环境布局和光照关系。电梯门开向住宅楼层走廊，从走廊一侧正对电梯门拍摄，电梯门框两侧构成画框，中景构图，静止机位。女主角C01（米色风衣、黑色手提包）站在电梯门槛处，电梯门刚开始滑开，明亮的走廊暖光开始流入楼梯轿厢；邻居C02留在电梯内靠近镜面墙，部分在画内。女主角身份与外观参考 <Picture 1>，保持 <Picture 1> 中人物的面部特征、发型、服装款式和身体特征一致，但不要复制 <Picture 1> 的背景、构图和姿势；邻居身份与外观参考 <Picture 2>，保持 <Picture 2> 中人物的面部特征、发型、服装款式和身体特征一致，但不要复制 <Picture 2> 的背景、构图和姿势。电梯门口及走廊光线过渡参考 <Picture 3>，走廊纵深环境参考 <Picture 4>；电影色调与颗粒风格参考 <Picture 5>。表演:电梯到位停稳,门增亮开始滑开,女主角身体略前倾拎牢手提包加快脚步，急切、归心，率先快步走出电梯面向走廊纵深方向左前，邻居跟出半个身位即出画或逼近画缘。ige门滑开时光线过渡自然，轿厢冷光渐被走廊暖黄顶灯取代。镜头全程静止，构图锁定门框。overall_soundscape: 电梯到达提示音先响;电梯门滑轨声随门滑开自然出现;走廊脚步声随女主角踏出电梯出现;无多余音效。non_diegetic_music: 无配乐。",
+        "symbolic_media_mapping": {
+          "entry_frame": "M_FIRST_SEG003",
+          "entry_frame_source_type": "planned_media",
+          "runtime_entry_binding": null,
+          "last_frame_target": null,
+          "expected_actual_tail_frame": null,
+          "reference_media": [
+            "M_REF_C01",
+            "M_REF_C02",
+            "M_REF_L02",
+            "M_REF_L03",
+            "M_REF_STYLE01"
+          ],
+          "reference_bindings": [
+            {
+              "label": "Picture 1",
+              "media_id": "M_REF_C01",
+              "role": "character_reference",
+              "preserve": [
+                "identity",
+                "face",
+                "hair",
+                "wardrobe",
+                "body"
+              ],
+              "do_not_copy": [
+                "background",
+                "composition",
+                "pose"
+              ]
+            },
+            {
+              "label": "Picture 2",
+              "media_id": "M_REF_C02",
+              "role": "character_reference",
+              "preserve": [
+                "identity",
+                "face",
+                "hair",
+                "wardrobe",
+                "body"
+              ],
+              "do_not_copy": [
+                "background",
+                "composition",
+                "pose"
+              ]
+            },
+            {
+              "label": "Picture 3",
+              "media_id": "M_REF_L02",
+              "role": "location_reference",
+              "preserve": [
+                "door_light_state",
+                "hallway_spill",
+                "threshold"
+              ],
+              "do_not_copy": [
+                "people",
+                "composition"
+              ]
+            },
+            {
+              "label": "Picture 4",
+              "media_id": "M_REF_L03",
+              "role": "location_reference",
+              "preserve": [
+                "corridor_layout",
+                "wall_color",
+                "lighting"
+              ],
+              "do_not_copy": [
+                "people",
+                "composition"
+              ]
+            },
+            {
+              "label": "Picture 5",
+              "media_id": "M_REF_STYLE01",
+              "role": "style_reference",
+              "preserve": [
+                "color_palette",
+                "lighting_temperature",
+                "grain",
+                "contrast"
+              ],
+              "do_not_copy": [
+                "subject_matter"
+              ]
+            }
+          ],
+          "unresolved_media_ids": [
+            "M_FIRST_SEG003",
+            "M_REF_C01",
+            "M_REF_C02",
+            "M_REF_L02",
+            "M_REF_L03",
+            "M_REF_STYLE01"
+          ]
+        }
+      },
+      {
+        "segment_id": "SEG004",
+        "shot_id": "S03",
+        "start": 14,
+        "end": 19,
+        "local_duration": 5,
+        "prompt_schema": "unified_multimodal",
+        "execution_node": "MiniMax H3 Unified to Video",
+        "planned_controls": {
+          "entry_source": "planned_first_frame",
+          "last_frame_target": null,
+          "reference_media": [
+            "M_REF_C01",
+            "M_REF_C02",
+            "M_REF_C03",
+            "M_REF_L03",
+            "M_REF_STYLE01"
+          ]
+        },
+        "prompt": "integrated_multimodal_description: 以输入首帧作为视频的准确起始画面，保持首帧中的镜头角度、构图、人物位置、环境布局和光照关系。傍晚公共走廊，米黄色墙面，门前顶灯与户内轻微漏光；走廊暖黄顶灯为主。镜头为手持跟拍：跟随女主角C01（米色风衣，黑色手提包挂在右手手腕）的背部与手提包，与女主同速步行移动贯穿走廊纵深，手持跟随随行进方向轻微摆动，轻微手持颗粒感。女主角身份外观参考 <Picture 1>，保持 <Picture 1> 中人物的面部特征、发型、服装款式和身体特征一致，但不要复制 <Picture 1> 的背景、构图和姿势；邻居C02与人物C03身份外观参考 <Picture 2> 与 <Picture 3>，各自保持面部特征、发型、服装款式和身体特征一致，但不要复制参考的背景、构图和姿势，C03仅按锁定构图位置存在。走廊环境参考 <Picture 4>；电影色调与颗粒风格参考 <Picture 5>。表演路径:女主角自走廊尽头小步快行至自家门前，期待感与脚步加紧；插钥匙前稍作停顿，取钥匙对准锁孔开始开门，开门瞬间呈现如释重负；邻居与C03不进入主前景，不占据焦点。无显著对话。overall_soundscape: 走廊脚步声带环境回声;包面轻晃声轻微;邻居入画前与整体保持克制;门钥匙金属声在段尾出现;无夸张音效。non_diegetic_music: 无配乐。",
+        "symbolic_media_mapping": {
+          "entry_frame": "M_FIRST_SEG004",
+          "entry_frame_source_type": "planned_media",
+          "runtime_entry_binding": null,
+          "last_frame_target": null,
+          "expected_actual_tail_frame": null,
+          "reference_media": [
+            "M_REF_C01",
+            "M_REF_C02",
+            "M_REF_C03",
+            "M_REF_L03",
+            "M_REF_STYLE01"
+          ],
+          "reference_bindings": [
+            {
+              "label": "Picture 1",
+              "media_id": "M_REF_C01",
+              "role": "character_reference",
+              "preserve": [
+                "identity",
+                "face",
+                "hair",
+                "wardrobe",
+                "body"
+              ],
+              "do_not_copy": [
+                "background",
+                "composition",
+                "pose"
+              ]
+            },
+            {
+              "label": "Picture 2",
+              "media_id": "M_REF_C02",
+              "role": "character_reference",
+              "preserve": [
+                "identity",
+                "face",
+                "hair",
+                "wardrobe",
+                "body"
+              ],
+              "do_not_copy": [
+                "background",
+                "composition",
+                "pose"
+              ]
+            },
+            {
+              "label": "Picture 3",
+              "media_id": "M_REF_C03",
+              "role": "character_reference",
+              "preserve": [
+                "identity",
+                "face",
+                "hair",
+                "wardrobe",
+                "body"
+              ],
+              "do_not_copy": [
+                "background",
+                "composition",
+                "pose"
+              ]
+            },
+            {
+              "label": "Picture 4",
+              "media_id": "M_REF_L03",
+              "role": "location_reference",
+              "preserve": [
+                "corridor_layout",
+                "wall_color",
+                "overhead_light"
+              ],
+              "do_not_copy": [
+                "people",
+                "composition"
+              ]
+            },
+            {
+              "label": "Picture 5",
+              "media_id": "M_REF_STYLE01",
+              "role": "style_reference",
+              "preserve": [
+                "color_palette",
+                "lighting_temperature",
+                "grain",
+                "contrast"
+              ],
+              "do_not_copy": [
+                "subject_matter"
+              ]
+            }
+          ],
+          "unresolved_media_ids": [
+            "M_FIRST_SEG004",
+            "M_REF_C01",
+            "M_REF_C02",
+            "M_REF_C03",
+            "M_REF_L03",
+            "M_REF_STYLE01"
+          ]
+        }
+      },
+      {
+        "segment_id": "SEG005",
+        "shot_id": "S04",
+        "start": 19,
+        "end": 24,
+        "local_duration": 5,
+        "prompt_schema": "unified_multimodal",
+        "execution_node": "MiniMax H3 Unified to Video",
+        "planned_controls": {
+          "entry_source": "planned_first_frame",
+          "last_frame_target": null,
+          "reference_media": [
+            "M_REF_C01",
+            "M_REF_C02",
+            "M_REF_L03",
+            "M_REF_L04",
+            "M_REF_STYLE01"
+          ]
+        },
+        "prompt": "integrated_multimodal_description: 以输入首帧作为视频的准确起始画面，保持首帧中的镜头角度、构图、人物位置、环境布局和光照关系。现代公寓玄关，镜头自玄关朝门外看，画面中心为打开的入户门与门外走廊光影；机位静止，略低于肩高位。门轴转动，门影切出柔和边界；走廊室外光与室内暖黄光在门口自然交叠。女主角C01推门入内，米色风衣、黑色手提包拎持；身体转向屋内，换鞋或放下包前的清洁动作示意，侧头看向厨房方向，表情轻松如释重负，室内光甫行动作略显迟缓温柔。邻居C02不进入画面。人物身份外观参考 <Picture 1>，保持 <Picture 1> 中人物的面部特征、发型、服装款式和身体特征一致，但不要复制 <Picture 1> 的背景、构图和姿势；C02身份外观参考 <Picture 2>，保持面部特征、发型、服装款式和身体特征一致，但不要复制参考的背景、构图和姿势，C02在本段不进入动作焦点。走廊与玄关光影关系参考 <Picture 3>，厨房与玄关空间衔接与室内暖黄光参考 <Picture 4>；电影色调与颗粒风格参考 <Picture 5>。焦点位于门口光影与女性身形，厨房远处轻微失焦，暗示空间深度。无对话。overall_soundscape: 门轴声、门锁扣合;厨房远处的轻微锅铲与汤沸声隐约传入;拖鞋或脚步轻响;整体安静克制。non_diegetic_music: 无配乐。",
+        "symbolic_media_mapping": {
+          "entry_frame": "M_FIRST_SEG005",
+          "entry_frame_source_type": "planned_media",
+          "runtime_entry_binding": null,
+          "last_frame_target": null,
+          "expected_actual_tail_frame": null,
+          "reference_media": [
+            "M_REF_C01",
+            "M_REF_C02",
+            "M_REF_L03",
+            "M_REF_L04",
+            "M_REF_STYLE01"
+          ],
+          "reference_bindings": [
+            {
+              "label": "Picture 1",
+              "media_id": "M_REF_C01",
+              "role": "character_reference",
+              "preserve": [
+                "identity",
+                "face",
+                "hair",
+                "wardrobe",
+                "body"
+              ],
+              "do_not_copy": [
+                "background",
+                "composition",
+                "pose"
+              ]
+            },
+            {
+              "label": "Picture 2",
+              "media_id": "M_REF_C02",
+              "role": "character_reference",
+              "preserve": [
+                "identity",
+                "face",
+                "hair",
+                "wardrobe",
+                "body"
+              ],
+              "do_not_copy": [
+                "background",
+                "composition",
+                "pose"
+              ]
+            },
+            {
+              "label": "Picture 3",
+              "media_id": "M_REF_L03",
+              "role": "location_reference",
+              "preserve": [
+                "corridor_light_relationship"
+              ],
+              "do_not_copy": [
+                "people",
+                "composition"
+              ]
+            },
+            {
+              "label": "Picture 4",
+              "media_id": "M_REF_L04",
+              "role": "location_reference",
+              "preserve": [
+                "kitchen_environment",
+                "war_yellow_light"
+              ],
+              "do_not_copy": [
+                "people",
+                "composition"
+              ]
+            },
+            {
+              "label": "Picture 5",
+              "media_id": "M_REF_STYLE01",
+              "role": "style_reference",
+              "preserve": [
+                "color_palette",
+                "lighting_temperature",
+                "grain",
+                "contrast"
+              ],
+              "do_not_copy": [
+                "subject_matter"
+              ]
+            }
+          ],
+          "unresolved_media_ids": [
+            "M_FIRST_SEG005",
+            "M_REF_C01",
+            "M_REF_C02",
+            "M_REF_L03",
+            "M_REF_L04",
+            "M_REF_STYLE01"
+          ]
+        }
+      },
+      {
+        "segment_id": "SEG006",
+        "shot_id": "S05",
+        "start": 24,
+        "end": 30,
+        "local_duration": 6,
+        "prompt_schema": "unified_multimodal",
+        "execution_node": "MiniMax H3 Unified to Video",
+        "planned_controls": {
+          "entry_source": "planned_first_frame",
+          "last_frame_target": null,
+          "reference_media": [
+            "M_REF_C01",
+            "M_REF_L04",
+            "M_REF_STYLE01"
+          ]
+        },
+        "prompt": "integrated_multimodal_description: 以输入首帧作为视频的准确起始画面，保持首帧中的镜头角度、构图、人物位置、环境布局和光照关系。现代中式公寓厨房，整洁灶台，汤锅在灶上冒轻汽，随时可关火，汤锅在画面内略虚；淡黄暖光主光，灶台操作灯补，室内暖意。镜头为厨房一侧手持缓慢轻移，轻微呼吸感，位于灶台与餐桌之间略低视角。演员:丈夫在灶台前，回头面向入画方向；女主角C01（米色风衣未换、面部发型一致、黑色手提包在手）自玄关方向从画左走入厨房，先站到丈夫左侧半步。人物身份外观参考 <Picture 1>，保持 <Picture 1> 中人物的面部特征、发型、服装款式和身体特征一致，但不要复制 <Picture 1> 的背景、构图和姿势。厨房环境布局参考 <Picture 2>；电影色调与颗粒风格参考 <Picture 3>。对话与表演:丈夫先说话: “回来啦?汤马上好。” 女主带轻松气息应答: “电梯里碰见王姐,她说你早就回来了。” 丈夫回头微笑: “想给你个惊喜。” 两人目光在汤与彼此间小范围交接，温馨松弛。无关门重置或转场。镜头呼吸感轻微持续。overall_soundscape: 汤锅轻沸与蒸汽声作底;厨房拖鞋软步;两人对话人声自然;厨房室内安静;无夸张音效。non_diegetic_music: 无配乐或仅极轻微垫底。",
+        "symbolic_media_mapping": {
+          "entry_frame": "M_FIRST_SEG006",
+          "entry_frame_source_type": "planned_media",
+          "runtime_entry_binding": null,
+          "last_frame_target": null,
+          "expected_actual_tail_frame": "M_TAIL_SEG006",
+          "reference_media": [
+            "M_REF_C01",
+            "M_REF_L04",
+            "M_REF_STYLE01"
+          ],
+          "reference_bindings": [
+            {
+              "label": "Picture 1",
+              "media_id": "M_REF_C01",
+              "role": "character_reference",
+              "preserve": [
+                "identity",
+                "face",
+                "hair",
+                "wardrobe",
+                "body"
+              ],
+              "do_not_copy": [
+                "background",
+                "composition",
+                "pose"
+              ]
+            },
+            {
+              "label": "Picture 2",
+              "media_id": "M_REF_L04",
+              "role": "location_reference",
+              "preserve": [
+                "kitchen_layout",
+                "fixture_list",
+                "war_yellow_light"
+              ],
+              "do_not_copy": [
+                "people",
+                "composition"
+              ]
+            },
+            {
+              "label": "Picture 3",
+              "media_id": "M_REF_STYLE01",
+              "role": "style_reference",
+              "preserve": [
+                "color_palette",
+                "lighting_temperature",
+                "grain",
+                "contrast"
+              ],
+              "do_not_copy": [
+                "subject_matter"
+              ]
+            }
+          ],
+          "unresolved_media_ids": [
+            "M_FIRST_SEG006",
+            "M_REF_C01",
+            "M_REF_L04",
+            "M_REF_STYLE01"
+          ]
+        }
+      },
+      {
+        "segment_id": "SEG007",
+        "shot_id": "S05",
+        "start": 30,
+        "end": 36,
+        "local_duration": 6,
+        "prompt_schema": "unified_multimodal",
+        "execution_node": "MiniMax H3 Unified to Video",
+        "planned_controls": {
+          "entry_source": "previous_segment_actual_tail",
+          "last_frame_target": null,
+          "reference_media": [
+            "M_REF_C01",
+            "M_REF_L04",
+            "M_REF_STYLE01"
+          ]
+        },
+        "prompt": "integrated_multimodal_description: 从当前首帧自然连续，保持人物身份、服装、场景、光线、机位、构图、空间关系和运动方向不变。继续同一构图:厨房侧位视角，丈夫C03在灶台前回头面向女主角，汤锅在灶上冒轻汽略虚，淡黄暖光，镜头保持缓慢手持轻移与轻微呼吸感，位于灶台与餐桌之间略低视角。你在画面中继续发展，不要重置动作、不要重复前一动作、不要突然换机位或重新构图、不要切镜。女主角C01（米色风衣未换、面部发型一致）仍站在丈夫左侧半步，两人目光在汤与彼此间小范围交接。人物身份外观参考 <Picture 1>，保持 <Picture 1> 中人物的面部特征、发型、服装款式和身体特征一致，但不要复制 <Picture 1> 的背景、构图和姿势。厨房环境布局参考 <Picture 2>；电影色调与颗粒风格参考 <Picture 3>。对话与表演:丈夫微笑揭晓: “想给你个惊喜。” 女主带轻笑温柔回应: “那我就等着尝了。” 两人表情温馨松弛，家的暖意收束，丈夫可轻微调整灶前手势，而不改变机位或构图。温馨收束，动作小幅度。overall_soundscape: 汤锅轻沸与蒸汽声同步;两人对话气息自然;厨房环境安静;临近结尾氛围温暖;无夸张音效。non_diegetic_music: 仅极轻微钢琴或弦乐极克制垫底，可极轻微上扬，不夺对话。",
+        "symbolic_media_mapping": {
+          "entry_frame": null,
+          "entry_frame_source_type": "previous_segment_actual_tail",
+          "runtime_entry_binding": {
+            "kind": "previous_actual_tail_frame",
+            "previous_segment_id": "SEG006",
+            "actual_tail_frame_media_id": "M_TAIL_SEG006",
+            "resolution_stage": "unified_video_runtime"
+          },
+          "last_frame_target": null,
+          "expected_actual_tail_frame": null,
+          "reference_media": [
+            "M_REF_C01",
+            "M_REF_L04",
+            "M_REF_STYLE01"
+          ],
+          "reference_bindings": [
+            {
+              "label": "Picture 1",
+              "media_id": "M_REF_C01",
+              "role": "character_reference",
+              "preserve": [
+                "identity",
+                "face",
+                "hair",
+                "wardrobe",
+                "body"
+              ],
+              "do_not_copy": [
+                "background",
+                "composition",
+                "pose"
+              ]
+            },
+            {
+              "label": "Picture 2",
+              "media_id": "M_REF_L04",
+              "role": "location_reference",
+              "preserve": [
+                "kitchen_layout",
+                "fixture_list",
+                "war_yellow_light"
+              ],
+              "do_not_copy": [
+                "people",
+                "composition"
+              ]
+            },
+            {
+              "label": "Picture 3",
+              "media_id": "M_REF_STYLE01",
+              "role": "style_reference",
+              "preserve": [
+                "color_palette",
+                "lighting_temperature",
+                "grain",
+                "contrast"
+              ],
+              "do_not_copy": [
+                "subject_matter"
+              ]
+            }
+          ],
+          "unresolved_media_ids": [
+            "M_REF_C01",
+            "M_REF_L04",
+            "M_REF_STYLE01"
+          ]
+        }
+      }
+    ],
+    "image_jobs": [
+      {
+        "job_id": "JOB_FIRST_SEG001",
+        "type": "image_generation",
+        "role": "first_frame",
+        "related_segments": [
+          "SEG001"
+        ],
+        "prompt": "Cinematic 16:9 first frame for video generation. Interior of a modern mirrored elevator, medium shot locked to the approved static camera: C01 (young woman, facial features and hairstyle exactly as character reference, wearing her beige trench coat, carrying a black handbag) stands centered in the elevator facing the look-at-me mirror composition, calm baseline expression; C02 positioned behind her shoulder as secondary reflected figure. Warm overhead elevator lighting with the elevator door light gradient visible along the frame edge; clean spatial relationships between the two figures and the mirrored wall. Style consistent with the style reference. Do not copy background, composition, or pose from character references; identity and wardrobe only.",
+        "negative_prompt": "different faces, altered hairstyle, wrong coat color, missing handbag, extra people, distorted anatomy, watermark, text, low resolution, duplicate clothing drift",
+        "output_media_id": "M_FIRST_SEG001",
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_FIRST_SEG003",
+        "type": "image_generation",
+        "role": "first_frame",
+        "related_segments": [
+          "SEG003"
+        ],
+        "prompt": "Cinematic 16:9 first frame for video generation. Shot S02 opening frame: C01 (identity, hairstyle and facial features from character reference; beige trench coat, black handbag) stands at the elevator threshold as the door opens, facing the correct movement direction out of the elevator; C02 remains inside near the mirrored wall, partially in frame. Door light continuity: bright hallway light streaming through the opening door matches the elevator interior brightness relationship of the previous shot end state. Locked camera angle and composition per approved Shot IR for S02. Do not copy background or pose from character references.",
+        "negative_prompt": "wrong movement direction, reversed light direction, closed door state, changed coat color, missing handbag, different faces, watermark, text, added characters",
+        "output_media_id": "M_FIRST_SEG003",
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_FIRST_SEG004",
+        "type": "image_generation",
+        "role": "first_frame",
+        "related_segments": [
+          "SEG004"
+        ],
+        "prompt": "Cinematic 16:9 first frame for video generation. Shot S03 opening frame: C01 (identity from character reference; beige trench coat, black handbag) and C02 configured in approved blocking with C03 at the new composition; locked static camera per approved Shot IR. Consistent hairstyle and facial identity across all three figures. Do not infer wardrobe details not specified. Do not copy background or pose from character references; identity only.",
+        "negative_prompt": "extra characters, missing C03, changed blocking, distorted hands, inconsistent hairstyle, watermark, text, camera tilt",
+        "output_media_id": "M_FIRST_SEG004",
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_FIRST_SEG005",
+        "type": "image_generation",
+        "role": "first_frame",
+        "related_segments": [
+          "SEG005"
+        ],
+        "prompt": "Cinematic 16:9 first frame for video generation. Shot S04 opening frame with changed visual focus: C01 (identity from character reference; beige trench coat, black handbag) and C02 repositioned per approved Shot IR blocking, locked camera angle and composition, consistent light relationship with the preceding shot end state. Do not copy background or pose from character references.",
+        "negative_prompt": "focus on wrong subject, changed camera height, additional people, missing handbag, inconsistent wardrobe, watermark, text",
+        "output_media_id": "M_FIRST_SEG005",
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_FIRST_SEG006",
+        "type": "image_generation",
+        "role": "first_frame",
+        "related_segments": [
+          "SEG006"
+        ],
+        "prompt": "Cinematic 16:9 first frame for video generation. Shot S05 opening frame in the kitchen location: C01 (identity from character reference; beige trench coat, black handbag) positioned per approved Shot IR blocking against the kitchen environment layout from the location reference, locked camera angle and composition. Correct movement direction for her entry consistent with prior shot end state. Do not copy background or pose from character references; identity and wardrobe only.",
+        "negative_prompt": "hallway or elevator environment, wrong room layout, wrong movement direction, missing trench coat, missing handbag, changed hairstyle, watermark, text",
+        "output_media_id": "M_FIRST_SEG006",
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_C01",
+        "type": "image_generation",
+        "role": "character_reference",
+        "related_segments": [],
+        "prompt": "Character reference for C01: neutral studio portrait, full-body 3/4 view plus face detail, consistent facial features and hairstyle, wearing beige trench coat and carrying a black handbag. Plain neutral background so the model does not inherit clothing-only-adjacent scenery. Identity reference only.",
+        "negative_prompt": "scene background, pose guidance, artistic lighting, multiple people, watermark, text, altered face",
+        "output_media_id": "M_REF_C01",
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_C02",
+        "type": "image_generation",
+        "role": "character_reference",
+        "related_segments": [],
+        "prompt": "Character reference for C02: neutral studio portrait consistent with the approved C02 identity sheet, full-body 3/4 view plus face detail, neutral background. Identity reference only; do not impose any shot pose or scene lighting.",
+        "negative_prompt": "scene background, pose direction, different person, watermark, text, multiple people",
+        "output_media_id": "M_REF_C02",
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_C03",
+        "type": "image_generation",
+        "role": "character_reference",
+        "related_segments": [],
+        "prompt": "Character reference for C03: neutral studio portrait consistent with approved C03 identity sheet, full-body 3/4 view plus face detail, neutral background. Identity reference only.",
+        "negative_prompt": "scene background, pose direction, different person, watermark, text, multiple people",
+        "output_media_id": "M_REF_C03",
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_L01",
+        "type": "image_generation",
+        "role": "location_reference",
+        "related_segments": [],
+        "prompt": "Location reference for the elevator interior: empty modern mirrored elevator, warm overhead light, clean wall panel layout, no people. Environment reference only.",
+        "negative_prompt": "people, monsters, clutter, exterior view, watermark, text",
+        "output_media_id": "M_REF_L01",
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_L02",
+        "type": "image_generation",
+        "role": "location_reference",
+        "related_segments": [],
+        "prompt": "Location reference for the elevator threshold / door opening view: empty doorway and hallway light spill consistent with the approved door-light continuity state, no people. Environment reference only.",
+        "negative_prompt": "people, closed door only, window, clutter, watermark, text",
+        "output_media_id": "M_REF_L02",
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_L03",
+        "type": "image_generation",
+        "role": "location_reference",
+        "related_segments": [],
+        "prompt": "Location reference for the approved S03/S04 intermediate scene environment: empty background consistent with approved Story IR environment features only, no people, no inferred furniture beyond documented features.",
+        "negative_prompt": "people, invented furniture, clutter, watermark, text",
+        "output_media_id": "M_REF_L03",
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_L04",
+        "type": "image_generation",
+        "role": "location_reference",
+        "related_segments": [],
+        "prompt": "Location reference for the kitchen environment: empty kitchen matching the approved Story IR layout and fixture list, no people, no guessed decor.",
+        "negative_prompt": "people, different room type, invented appliances, watermark, text",
+        "output_media_id": "M_REF_L04",
+        "status": "pending"
+      },
+      {
+        "job_id": "JOB_REF_STYLE01",
+        "type": "image_generation",
+        "role": "style_reference",
+        "related_segments": [],
+        "prompt": "Style reference plate: cinematic color palette, lighting temperature, grain, and contrast treatment approved for this piece. Abstract, no subject matter.",
+        "negative_prompt": "subjects, people, logo, watermark, text",
+        "output_media_id": "M_REF_STYLE01",
+        "status": "pending"
+      }
+    ],
+    "draft_compile_gate": {
+      "status": "PASS",
+      "report_id": "be50454e957c2883a20d623671e634acc841c9897c6baa353ecfb162720a1b8b"
+    }
+  }
+}
+

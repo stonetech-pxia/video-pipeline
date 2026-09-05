@@ -3,8 +3,7 @@
   "status": "complete",
   "segment_plan": [{
     "segment_id": "SEG001",
-    "shot_ids": ["S01"],
-    "shot_bindings": [{ "prompt_shot_index": 1, "shot_id": "S01", "local_start": 0 }],
+    "shot_id": "S01",
     "previous_segment_id": null,
     "start": 0,
     "end": 5,
@@ -42,11 +41,15 @@
     "first_frame_media_id": "FF001",
     "last_frame_target_media_id": null,
     "actual_tail_frame_media_id": null,
-    "reference_media_ids": ["REF001"]
+    "reference_media_ids": ["REF001"],
+    "generate_first_frame": false,
+    "generate_last_frame_target": false,
+    "capture_actual_tail_frame": false
   }],
   "image_jobs": [],
   "media_manifest": {
     "status": "ready_for_compile",
+    "supports_mixed_keyframes_and_references": true,
     "media": [
       {
         "id": "FF001",
@@ -56,6 +59,8 @@
         "source_type": "uploaded",
         "source_job": null,
         "related_segments": ["SEG001"],
+        "use_for": ["entry_anchor"],
+        "entity_bindings": {"character_ids": ["C01"], "location_ids": []},
         "provenance": {"source_type": "uploaded", "source_id": "fixture-first"},
         "runtime_handle": "fixture://first-frame"
       },
@@ -67,6 +72,8 @@
         "source_type": "uploaded",
         "source_job": null,
         "related_segments": ["SEG001"],
+        "use_for": ["identity_reference"],
+        "entity_bindings": {"character_ids": ["C01"], "location_ids": []},
         "provenance": {"source_type": "uploaded", "source_id": "fixture-character"},
         "runtime_handle": "fixture://character-reference"
       }

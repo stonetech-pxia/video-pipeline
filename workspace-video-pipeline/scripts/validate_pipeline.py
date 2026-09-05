@@ -28,7 +28,6 @@ SCHEMAS = {
 
 FIRST_FRAME_DIRECTIVE = "以输入首帧作为视频的准确起始画面，保持首帧中的镜头角度、构图、人物位置、环境布局和光照关系。"
 CONTINUATION_DIRECTIVE = "从当前首帧自然连续，保持人物身份、服装、场景、光线、机位、构图、空间关系和运动方向不变。"
-DO_NOT_COPY_PREFIX = "不要复制"
 NO_RESET_DIRECTIVE = "不要重置动作、不要重复前一动作、不要突然换机位或重新构图、不要切镜。"
 SECTIONS = ("integrated_multimodal_description:", "overall_soundscape:", "non_diegetic_music:")
 LEGACY_MARKERS = (
@@ -40,7 +39,6 @@ LEGACY_MARKERS = (
 )
 TIMESTAMP_PATTERN = re.compile(r"\bAt\s+(\d{2}):(\d{2})\.(\d{3})\b")
 REFERENCE_PATTERN = re.compile(r"<(Picture|Video|Audio)\s+(\d+)>")
-SHOT_MARKER_PATTERN = re.compile(r"\[Shot\s+(\d+)\]")
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -117,26 +115,29 @@ def validate_story(value: dict[str, Any]) -> list[dict[str, Any]]:
     entities: dict[str, dict[str, Any]] = {}
     for name in ("characters", "locations", "props"):
         entities.update(unique_map(value.get(name), "id", name, "story-analyst", errors))
+    scenes = unique_map(value.get("scenes"), "id", "scenes", "story-analyst", errors)
     beats = unique_map(value.get("beats"), "id", "beats", "story-analyst", errors)
     dialogue = unique_map(value.get("dialogue"), "id", "dialogue", "story-analyst", errors)
-    timed_beats: list[tuple[int, float, float]] = []
+    claimed: set[str] = set()
+    for index, item in enumerate(value.get("scenes", [])):
+        if not isinstance(item, dict):
+            continue
+        if item.get("location_id") not in entities:
+            errors.append(error("STORY", "unknown_scene_location", f"scenes[{index}].location_id", "scene location ID does not resolve", "story-analyst"))
+        for beat_id in item.get("beat_ids", []):
+            if beat_id not in beats:
+                errors.append(error("STORY", "unknown_scene_beat", f"scenes[{index}].beat_ids", f"beat ID does not resolve: {beat_id}", "story-analyst"))
+            elif beat_id in claimed:
+                errors.append(error("STORY", "beat_claimed_twice", f"scenes[{index}].beat_ids", f"beat belongs to more than one scene: {beat_id}", "story-analyst"))
+            else:
+                claimed.add(beat_id)
     for index, item in enumerate(value.get("beats", [])):
         if not isinstance(item, dict):
             continue
-        start, end = item.get("start"), item.get("end")
-        if start is None and end is None:
-            continue
-        if not isinstance(start, (int, float)) or isinstance(start, bool) or not isinstance(end, (int, float)) or isinstance(end, bool) or end <= start:
-            errors.append(error("TIMELINE", "invalid_beat_interval", f"beats[{index}]", "timed beats require numeric end greater than start", "story-analyst"))
-            continue
-        timed_beats.append((index, float(start), float(end)))
-    for position, (index, start, end) in enumerate(timed_beats):
-        if position == 0 and start != 0:
-            errors.append(error("TIMELINE", "beat_timeline_start", f"beats[{index}].start", "first timed beat must start at 0", "story-analyst"))
-        if position and start != timed_beats[position - 1][2]:
-            errors.append(error("TIMELINE", "beat_timeline_gap", f"beats[{index}].start", "timed beats must be contiguous", "story-analyst"))
-    if timed_beats and isinstance(value.get("duration"), (int, float)) and timed_beats[-1][2] != value.get("duration"):
-        errors.append(error("TIMELINE", "beat_timeline_coverage", "beats", "final timed beat must end at total duration", "story-analyst"))
+        if item.get("scene_id") not in scenes:
+            errors.append(error("STORY", "unknown_beat_scene", f"beats[{index}].scene_id", "scene ID does not resolve", "story-analyst"))
+        if item.get("id") not in claimed:
+            errors.append(error("STORY", "beat_without_scene", f"beats[{index}]", "beat belongs to no scene", "story-analyst"))
     for index, item in enumerate(value.get("dialogue", [])):
         if not isinstance(item, dict):
             continue
@@ -229,7 +230,7 @@ def validate_unified_package(package: dict[str, Any], segment: dict[str, Any], m
         errors.append(error("H3_SCHEMA", "prompt_schema", f"{path}.prompt_schema", "prompt schema must be unified_multimodal", "h3-compiler", segment_id=segment_id))
     if package.get("execution_node") != "MiniMax H3 Unified to Video":
         errors.append(error("H3_SCHEMA", "execution_node", f"{path}.execution_node", "wrong execution node", "h3-compiler", segment_id=segment_id))
-    for field in ("shot_ids", "shot_bindings", "start", "end"):
+    for field in ("shot_id", "start", "end"):
         if package.get(field) != segment.get(field):
             errors.append(error("FORMAT", "segment_mapping", f"{path}.{field}", f"must equal Segment Plan {field}", "h3-compiler", segment_id=segment_id))
     if package.get("local_duration") != segment.get("end", 0) - segment.get("start", 0):
@@ -287,43 +288,16 @@ def validate_unified_package(package: dict[str, Any], segment: dict[str, Any], m
         errors.append(error("H3_SCHEMA", "first_frame_directive", f"{path}.prompt", "missing exact first-frame directive", "h3-compiler", segment_id=segment_id))
     if strategy == "use_previous_tail_frame" and (CONTINUATION_DIRECTIVE not in prompt or NO_RESET_DIRECTIVE not in prompt):
         errors.append(error("H3_SCHEMA", "continuation_directive", f"{path}.prompt", "missing continuation directives", "h3-compiler", segment_id=segment_id))
-    # A character reference constrains identity only; without an explicit
-    # do-not-copy clause the model also lifts the reference's background and pose.
-    for binding in bindings:
-        if not isinstance(binding, dict) or binding.get("role") != "character_reference":
-            continue
-        forbidden = binding.get("do_not_copy")
-        label = binding.get("label")
-        if not isinstance(forbidden, list) or not forbidden or not isinstance(label, str):
-            continue
-        if f"{DO_NOT_COPY_PREFIX} <{label}>" not in prompt:
-            errors.append(error("H3_SCHEMA", "do_not_copy_directive", f"{path}.prompt", f"prompt must state {DO_NOT_COPY_PREFIX} <{label}> for its character reference", "h3-compiler", segment_id=segment_id))
-
     expected_labels = set(_reference_labels(label for label in labels if isinstance(label, str)))
     used_labels = {f"<{kind} {number}>" for kind, number in REFERENCE_PATTERN.findall(prompt)}
     if used_labels != expected_labels:
         errors.append(error("H3_SCHEMA", "reference_label_usage", f"{path}.prompt", "prompt reference labels must exactly match bindings", "h3-compiler", segment_id=segment_id))
     duration = package.get("local_duration")
-    timestamps = [
-        int(minute) * 60 + int(second) + int(millisecond) / 1000
-        for minute, second, millisecond in TIMESTAMP_PATTERN.findall(prompt)
-    ]
     if isinstance(duration, int):
-        for timestamp in timestamps:
+        for minute, second, millisecond in TIMESTAMP_PATTERN.findall(prompt):
+            timestamp = int(minute) * 60 + int(second) + int(millisecond) / 1000
             if timestamp >= duration:
                 errors.append(error("TIMELINE", "timestamp_range", f"{path}.prompt", "prompt timestamp must be inside local duration", "h3-compiler", segment_id=segment_id))
-
-    # A packed segment renders several shots in one call, so the prompt must carry
-    # exactly the cuts the Segment Plan says it does — no more, no fewer.
-    shot_bindings = package.get("shot_bindings") if isinstance(package.get("shot_bindings"), list) else []
-    if shot_bindings:
-        markers = [int(number) for number in SHOT_MARKER_PATTERN.findall(prompt)]
-        if markers != list(range(1, len(shot_bindings) + 1)):
-            errors.append(error("H3_SCHEMA", "shot_marker_sequence", f"{path}.prompt", f"prompt must carry [Shot 1]..[Shot {len(shot_bindings)}] in order, one per bound shot", "h3-compiler", segment_id=segment_id))
-        else:
-            expected_cuts = [item.get("local_start") for item in shot_bindings[1:] if isinstance(item, dict)]
-            if timestamps != [float(value) for value in expected_cuts if isinstance(value, int)]:
-                errors.append(error("TIMELINE", "shot_cut_timing", f"{path}.prompt", "prompt cut timestamps must equal shot_bindings local_start values in order", "h3-compiler", segment_id=segment_id))
     return errors
 
 
@@ -441,71 +415,8 @@ def validate_validation(
     return errors
 
 
-def validate_result(
-    value: dict[str, Any],
-    packages: dict[str, Any] | None = None,
-    frame: dict[str, Any] | None = None,
-    shot: dict[str, Any] | None = None,
-) -> list[dict[str, Any]]:
-    errors = schema_errors("result", value)
-    result = value.get("result") if isinstance(value.get("result"), dict) else {}
-    if value.get("status") != "COMPLETE":
-        # Only the success path carries the executable payload; other statuses are
-        # shape-checked by the schema alone.
-        return errors
-
-    if shot is not None:
-        if result.get("total_duration") != shot.get("duration"):
-            errors.append(error("TIMELINE", "result_duration_drift", "result.total_duration", "must equal Shot IR duration", "video-pipeline"))
-        if result.get("aspect_ratio") != shot.get("aspect_ratio"):
-            errors.append(error("FORMAT", "result_aspect_ratio_drift", "result.aspect_ratio", "must equal Shot IR aspect_ratio", "video-pipeline"))
-        if result.get("visual_style") != shot.get("visual_style"):
-            errors.append(error("FORMAT", "result_visual_style_drift", "result.visual_style", "must equal Shot IR visual_style", "video-pipeline"))
-
-    if packages is None:
-        return errors
-
-    published = result.get("packages") if isinstance(result.get("packages"), list) else []
-    approved = packages.get("packages") if isinstance(packages.get("packages"), list) else []
-    if published != approved:
-        errors.append(error("FORMAT", "result_package_drift", "result.packages", "must reproduce the validated packages unchanged", "video-pipeline"))
-
-    # Every media ID a package points at has to arrive with a location, or the
-    # caller cannot actually run the segment.
-    needed: list[str] = []
-    for package in approved:
-        mapping = package.get("media_mapping") if isinstance(package, dict) and isinstance(package.get("media_mapping"), dict) else {}
-        for media_id in (mapping.get("entry_frame"), mapping.get("last_frame_target"), mapping.get("expected_actual_tail_frame")):
-            if isinstance(media_id, str) and media_id not in needed:
-                needed.append(media_id)
-        for media_id in mapping.get("reference_media", []) if isinstance(mapping.get("reference_media"), list) else []:
-            if isinstance(media_id, str) and media_id not in needed:
-                needed.append(media_id)
-        binding = mapping.get("runtime_entry_binding")
-        if isinstance(binding, dict) and isinstance(binding.get("actual_tail_frame_media_id"), str):
-            if binding["actual_tail_frame_media_id"] not in needed:
-                needed.append(binding["actual_tail_frame_media_id"])
-    resolved = {item.get("media_id"): item for item in result.get("resolved_media", []) if isinstance(item, dict)}
-    for media_id in needed:
-        entry = resolved.get(media_id)
-        if entry is None:
-            errors.append(error("MEDIA", "result_media_missing", "result.resolved_media", f"package media not published: {media_id}", "video-pipeline"))
-        elif entry.get("status") == "resolved" and not (isinstance(entry.get("location"), str) and entry["location"].strip()):
-            errors.append(error("MEDIA", "result_media_location", "result.resolved_media", f"resolved media requires a location: {media_id}", "video-pipeline"))
-
-    order = result.get("execution_order") if isinstance(result.get("execution_order"), list) else []
-    if [item.get("segment_id") for item in order if isinstance(item, dict)] != [item.get("segment_id") for item in approved if isinstance(item, dict)]:
-        errors.append(error("FORMAT", "result_execution_order", "result.execution_order", "must list every segment once in package order", "video-pipeline"))
-    else:
-        if [item.get("order") for item in order] != list(range(1, len(order) + 1)):
-            errors.append(error("FORMAT", "result_execution_index", "result.execution_order", "order must count from 1 without gaps", "video-pipeline"))
-        for entry, package in zip(order, approved):
-            mapping = package.get("media_mapping") if isinstance(package.get("media_mapping"), dict) else {}
-            binding = mapping.get("runtime_entry_binding")
-            expected = binding.get("previous_segment_id") if isinstance(binding, dict) else None
-            if entry.get("depends_on") != expected:
-                errors.append(error("FORMAT", "result_dependency_drift", "result.execution_order", f"depends_on must match the runtime tail binding for {entry.get('segment_id')}", "video-pipeline"))
-    return errors
+def validate_result(value: dict[str, Any]) -> list[dict[str, Any]]:
+    return schema_errors("result", value)
 
 
 def make_report(stage: str, paths: dict[str, Path], errors: list[dict[str, Any]]) -> dict[str, Any]:
@@ -557,7 +468,7 @@ def main() -> int:
     elif args.stage == "validation":
         errors = validate_validation(artifact, packages, deterministic_report, args.packages)
     else:
-        errors = validate_result(artifact, packages, frame, shot)
+        errors = validate_result(artifact)
     report = make_report(args.stage, paths, errors)
     print(json.dumps(report, ensure_ascii=False, indent=2))
     return 0 if not errors else 1

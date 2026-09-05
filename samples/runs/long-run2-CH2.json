@@ -1,0 +1,366 @@
+{
+  "schema_version": "2.0",
+  "chunk_id": "CH2",
+  "scenes": [
+    {
+      "id": "S07",
+      "beat_ids": [
+        "B018",
+        "B019",
+        "B020"
+      ],
+      "exit_state": "夜的出租屋内，周砚（藏青色工装外套）翻出一个铁盒，站在原地打开它；铁盒敞开，里面有同一灯塔的照片和半张烧焦的车票。"
+    },
+    {
+      "id": "S08",
+      "beat_ids": [
+        "B021",
+        "B022",
+        "B023",
+        "B024"
+      ],
+      "exit_state": "深夜的出租屋，窗外有雨；周砚（藏青色工装外套）坐在床边，手里握着半张烧焦的车票，电话无人接听，他仍坐在床边。"
+    },
+    {
+      "id": "S09",
+      "beat_ids": [
+        "B025"
+      ],
+      "exit_state": "第二天清晨的长途汽车站，周砚（藏青色工装外套）买到一张去省城的车票，手持车票站在站内。"
+    },
+    {
+      "id": "S10",
+      "beat_ids": [
+        "B026",
+        "B027"
+      ],
+      "exit_state": "白天的省城医院走廊，母亲坐在轮椅上，端详很久后认出周砚并叫出他的名字；周砚站在她面前。"
+    },
+    {
+      "id": "S11",
+      "beat_ids": [
+        "B028",
+        "B029"
+      ],
+      "exit_state": "白天的医院病房，母亲说完翻车真相并拍了拍周砚的手；周砚沉默没有说话，老照片仍随身。"
+    }
+  ],
+  "beats": [
+    {
+      "id": "B018",
+      "scene_id": "S07",
+      "action": "夜，周砚在出租屋翻箱倒柜找旧物。",
+      "emotion": "焦躁、执念",
+      "entity_ids": [
+        "C01",
+        "L07",
+        "P03"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B019",
+      "scene_id": "S07",
+      "action": "周砚找出一个铁盒。",
+      "emotion": "紧张",
+      "entity_ids": [
+        "C01",
+        "P03"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B020",
+      "scene_id": "S07",
+      "action": "周砚打开铁盒：里面是同一座灯塔的照片，还有半张烧焦的车票。",
+      "emotion": "震动",
+      "entity_ids": [
+        "C01",
+        "P03",
+        "P04"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B021",
+      "scene_id": "S08",
+      "action": "深夜，周砚坐在床边握着车票，窗外有雨。",
+      "emotion": "沉重、恍惚",
+      "entity_ids": [
+        "C01",
+        "L07",
+        "P04"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B022",
+      "scene_id": "S08",
+      "action": "周砚拨通母亲的电话。",
+      "emotion": "需要确认",
+      "entity_ids": [
+        "C01",
+        "C02",
+        "P04"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B023",
+      "scene_id": "S08",
+      "action": "电话响了很久，没有人接。",
+      "emotion": "失落",
+      "entity_ids": [
+        "C01",
+        "C02"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B024",
+      "scene_id": "S08",
+      "action": "周砚放下电话，仍坐在床边，雨声不停。",
+      "emotion": "沉默",
+      "entity_ids": [
+        "C01",
+        "P04"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B025",
+      "scene_id": "S09",
+      "action": "第二天清晨，周砚在长途汽车站买了一张去省城的票。",
+      "emotion": "决然",
+      "entity_ids": [
+        "C01",
+        "L08",
+        "P07"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B026",
+      "scene_id": "S10",
+      "action": "白天，省城医院走廊，周砚走到坐轮椅的母亲面前。",
+      "emotion": "忐忑",
+      "entity_ids": [
+        "C01",
+        "C02",
+        "L09"
+      ],
+      "dialogue_ids": []
+    },
+    {
+      "id": "B027",
+      "scene_id": "S10",
+      "action": "母亲端详他很久，才认出他并叫出他的名字。",
+      "emotion": "迟缓、动容",
+      "entity_ids": [
+        "C02",
+        "C01"
+      ],
+      "dialogue_ids": [
+        "D007"
+      ]
+    },
+    {
+      "id": "B028",
+      "scene_id": "S11",
+      "action": "病房里，母亲说起十二年前翻车的事：救出来两个孩子，只活了一个。",
+      "emotion": "压抑的叙述",
+      "entity_ids": [
+        "C02",
+        "C01",
+        "L10"
+      ],
+      "dialogue_ids": [
+        "D009"
+      ]
+    },
+    {
+      "id": "B029",
+      "scene_id": "S11",
+      "action": "母亲拍拍周砚的手，说「你一直以为活下来的是你」；周砚没有说话。",
+      "emotion": "崩塌、沉默",
+      "entity_ids": [
+        "C02",
+        "C01"
+      ],
+      "dialogue_ids": [
+        "D008"
+      ]
+    }
+  ],
+  "dialogue": [
+    {
+      "id": "D007",
+      "speaker_id": "C02",
+      "beat_id": "B027",
+      "text": "砚……",
+      "parenthetical": "端详了很久才认出并叫出名字"
+    },
+    {
+      "id": "D009",
+      "speaker_id": "C02",
+      "beat_id": "B028",
+      "text": "那年翻车，救出来两个孩子，只活了一个。",
+      "parenthetical": null
+    },
+    {
+      "id": "D008",
+      "speaker_id": "C02",
+      "beat_id": "B029",
+      "text": "你一直以为活下来的是你。",
+      "parenthetical": "拍拍周砚的手"
+    }
+  ],
+  "continuity_constraints": [
+    {
+      "id": "CC21",
+      "category": "wardrobe",
+      "subject_id": "C01",
+      "rule": "周砚在本块所有场次中穿藏青色工装外套",
+      "scope": {
+        "from": "S07",
+        "to": "S11"
+      },
+      "locked": true
+    },
+    {
+      "id": "CC22",
+      "category": "prop",
+      "subject_id": "P04",
+      "rule": "半张烧焦的车票在S07铁盒内被发现，S08起被周砚握在手中",
+      "scope": {
+        "from": "S07",
+        "to": "S08"
+      },
+      "locked": true
+    },
+    {
+      "id": "CC23",
+      "category": "prop",
+      "subject_id": "P02",
+      "rule": "老照片继续由周砚随身携带，背面文字不得改写；本块内未交给任何人",
+      "scope": {
+        "from": "S07",
+        "to": "S11"
+      },
+      "locked": true
+    },
+    {
+      "id": "CC24",
+      "category": "scene",
+      "subject_id": "L07",
+      "rule": "S07与S08为同一出租屋，床、旧物箱等陈设保持一致",
+      "scope": {
+        "from": "S07",
+        "to": "S08"
+      },
+      "locked": true
+    },
+    {
+      "id": "CC25",
+      "category": "weather",
+      "subject_id": "S08",
+      "rule": "S08深夜窗外有雨；其余场次不携带该雨",
+      "scope": {
+        "from": "S08",
+        "to": "S09"
+      },
+      "locked": true
+    },
+    {
+      "id": "CC26",
+      "category": "identity",
+      "subject_id": "C02",
+      "rule": "母亲坐轮椅，神志迟缓；第11场台词「那年翻车，救出来两个孩子，只活了一个。……你一直以为活下来的是你」不得改写",
+      "scope": {
+        "from": "S10",
+        "to": "S11"
+      },
+      "locked": true
+    },
+    {
+      "id": "CC27",
+      "category": "time",
+      "subject_id": "CH2",
+      "rule": "第一夜（夜→深夜）→第二天清晨→白天，依序推进",
+      "scope": {
+        "from": "S07",
+        "to": "S11"
+      },
+      "locked": true
+    },
+    {
+      "id": "CC28",
+      "category": "identity",
+      "subject_id": "C01",
+      "rule": "S11真相揭示后周砚全程无台词，保持沉默",
+      "scope": {
+        "from": "S07",
+        "to": "S11"
+      },
+      "locked": true
+    }
+  ],
+  "transition_markers": [
+    {
+      "marker_id": "TM07",
+      "at_beat_id": "B018",
+      "type": "scene_change",
+      "from": "傍晚/镇卫生所（L06）",
+      "to": "夜/周砚出租屋（L07）",
+      "reason": "地点与时间改变"
+    },
+    {
+      "marker_id": "TM08",
+      "at_beat_id": "B021",
+      "type": "time_change",
+      "from": "夜",
+      "to": "深夜，窗外有雨",
+      "reason": "时间推进且引入雨"
+    },
+    {
+      "marker_id": "TM09",
+      "at_beat_id": "B025",
+      "type": "scene_change",
+      "from": "深夜/出租屋（L07）",
+      "to": "第二天清晨/长途汽车站（L08）",
+      "reason": "过夜，地点改变；雨不再延续"
+    },
+    {
+      "marker_id": "TM10",
+      "at_beat_id": "B026",
+      "type": "scene_change",
+      "from": "清晨/长途汽车站（L08）",
+      "to": "白天/省城医院走廊（L09）",
+      "reason": "省城行程完成，地点改变"
+    },
+    {
+      "marker_id": "TM11",
+      "at_beat_id": "B028",
+      "type": "scene_change",
+      "from": "白天/医院走廊（L09）",
+      "to": "白天/医院病房（L10）",
+      "reason": "进入病房"
+    }
+  ],
+  "ambiguities": [
+    {
+      "id": "AMB-S10-SPEECH",
+      "severity": "low",
+      "subject_id": "S10",
+      "field": "dialogue",
+      "question": "母亲叫出名字时是否另有台词未给出全文；按只叫名字处理。"
+    },
+    {
+      "id": "AMB-S11-SECONDCHILD",
+      "severity": "low",
+      "subject_id": "S11",
+      "field": "identity",
+      "question": "母亲说只活了一个孩子，但死者的身份全片未明说；不做超出文本的推断。"
+    }
+  ]
+}

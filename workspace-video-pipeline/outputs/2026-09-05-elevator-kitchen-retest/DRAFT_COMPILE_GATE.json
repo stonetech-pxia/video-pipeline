@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "report_id": "be50454e957c2883a20d623671e634acc841c9897c6baa353ecfb162720a1b8b",
+  "stage": "draft_compile",
+  "status": "PASS",
+  "artifact_hashes": {
+    "artifact": "25961b74e449c0e5c2c273c9136ea1709bc8f26aee0e46cf14e1c8b4fd3bcb1c",
+    "frame": "570d866028fc792b385aac60fb6ed30375e1a25d96af5772122cc1a59ccc868a",
+    "shot": "39e3183a31c4bf9787f32de91d2a1e8887fda41cf7b092fb372ac05b6e1ff19d"
+  },
+  "errors": [],
+  "warnings": []
+}
+

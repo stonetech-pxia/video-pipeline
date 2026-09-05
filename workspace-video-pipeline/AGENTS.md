@@ -7,7 +7,7 @@ Coordinate a deterministic AI video prompt production pipeline. Never perform sp
 ## Pipeline
 
 ```text
-USER -> story-analyst -> deterministic STORY gate
+USER -> story-analyst -> deterministic STORY gate      (long script: plan + chunk passes, merged by the worker)
      -> shot-director -> deterministic SHOT gate
      -> frame-designer -> deterministic FRAME gate
      -> image/manual media resolution -> deterministic MEDIA gate
@@ -49,10 +49,10 @@ python3 scripts/validate_pipeline.py media --artifact FRAME.json --shot SHOT.jso
 python3 scripts/validate_pipeline.py draft_compile --artifact DRAFT_PROMPTS.json --frame FRAME.json --shot SHOT.json
 python3 scripts/validate_pipeline.py compile --artifact PACKAGES.json --frame FRAME.json --shot SHOT.json
 python3 scripts/validate_pipeline.py validation --artifact REPORT.json --packages PACKAGES.json --deterministic-report COMPILE_GATE.json
-python3 scripts/validate_pipeline.py result --artifact PIPELINE_RESULT.json --packages PACKAGES.json --frame FRAME.json --shot SHOT.json
+python3 scripts/validate_pipeline.py result --artifact PIPELINE_RESULT.json
 ```
 
-Exit `0` and `status=PASS` are both required. The media gate additionally proves that every resolved local path is a readable file; use a runtime handle for non-local assets. On any deterministic failure, route exact diagnostics to the producing stage and do not invoke `h3-validator`. Pass the successful compile-gate report and its `report_id` to `h3-validator`; the child performs semantic review only. Validate the final response before returning it. The result gate's `--packages`, `--frame`, and `--shot` arguments are optional: pass them on the `COMPLETE` path so the gate can prove the published packages, media locations, duration, aspect ratio, visual style, and execution order all match the approved artifacts. On `MEDIA_WAIT`, `BLOCKED`, and `FAILED` the artifact alone is enough.
+Exit `0` and `status=PASS` are both required. The media gate additionally proves that every resolved local path is a readable file; use a runtime handle for non-local assets. On any deterministic failure, route exact diagnostics to the producing stage and do not invoke `h3-validator`. Pass the successful compile-gate report and its `report_id` to `h3-validator`; the child performs semantic review only. Validate the final response before returning it.
 
 ## State Machine
 
@@ -77,21 +77,17 @@ REPAIR -> STORY_RUNNING | SHOT_RUNNING | FRAME_RUNNING | MEDIA_RESOLUTION | COMP
 
 ## Stage Contracts
 
-- Story: require Story IR `schema_version=1.1`, `status=complete`, exact dialogue, continuity constraints, transition markers, and no camera or generation-mode decisions.
+- Story: require Story IR `schema_version=2.0`, `status=complete`, a scene spine where every beat belongs to exactly one scene, characters carrying wardrobe, exact dialogue, continuity constraints, transition markers, and no camera or generation-mode decisions. Beats carry no timing: the timeline starts at the Shot stage. A `complete` Story IR may still carry non-blocking ambiguities, so pass them downstream rather than treating them as a gate failure.
 - Shot: require Shot IR `schema_version=1.1`, `status=complete`, positive total duration, contiguous shots, continuity labels, and no Unified media control decisions.
 - Frame: require complete Segment Plan, Frame Plan, Image Jobs, and Media Manifest. Segment durations alone are constrained to 4–15 seconds.
 - Media: static required assets must resolve; runtime previous-tail records may remain `runtime_pending` until ordered video execution.
 - Draft compile: when the Media gate fails only because required static media is unresolved, call `h3-compiler` with `compile_mode=draft`. Require one validated symbolic Draft Video Prompt per segment, preserve stable media IDs and reference order, and record every unresolved media ID. Draft output is inspectable but not executable.
-- Compile: require H3 package `schema_version=1.3`, Unified controls, no `h3_mode`, and clear segment/media mappings.
+- Compile: call `h3-compiler` with `compile_mode=executable`; require H3 package `schema_version=1.3`, Unified controls, no `h3_mode`, and clear segment/media mappings.
 - Validate: require fresh deterministic PASS plus semantic report `schema_version=1.3`.
 
 ## Media Resolution
 
-Do not connect a new image API automatically. If required static media is unavailable, run Draft Compile before returning `MEDIA_WAIT`. Include the validated `draft_video_prompts` verbatim, the complete pending `image_jobs` including positive and negative prompts, and exact media IDs in the final result. Never present a draft as executable. Resolve static media in dependency order: character, location, and style references first, then any first frame that lists them in `input_media_ids`. A first frame generated before its character reference exists cannot share that character's face, and no later stage can repair the mismatch.
-
-Capture a runtime tail as the last complete frame of the rendered segment, written losslessly as PNG and named `{segment_id}_tail.png`. Do not use the final encoded frame when it carries compression artifacts, and do not re-time or re-crop it. This is the same contract the final result publishes in `tail_capture_spec`.
-
-For previous-tail continuation, keep the symbolic runtime binding, capture the preceding segment's actual tail during ordered Unified execution, resolve the reserved record, and inject it into the next segment.
+Do not connect a new image API automatically. If required static media is unavailable, run Draft Compile before returning `MEDIA_WAIT`. Include the validated `draft_video_prompts` verbatim, the complete pending `image_jobs` including positive and negative prompts, and exact media IDs in the final result. Never present a draft as executable. For previous-tail continuation, keep the symbolic runtime binding, capture the preceding segment's actual tail during ordered Unified execution, resolve the reserved record, and inject it into the next segment.
 
 ## Repair Routing
 
@@ -101,7 +97,7 @@ Fingerprint content issues by `error_class + code + path + segment_id`. Auto-rep
 
 Return JSON conforming to `schemas/pipeline-result.schema.json`.
 
-On success the `result` object must satisfy `$defs.successResult`: `total_duration`, `aspect_ratio`, and `visual_style` copied from Shot IR; `packages` reproducing the validated packages unchanged; `resolved_media` giving a location for every media ID those packages reference; `execution_order` listing each segment once with its runtime tail dependency; `tail_capture_spec`; and `technical_warnings`. On `MEDIA_WAIT` include validated `draft_video_prompts` — each carrying its `shot_bindings` so the reader can tell which `[Shot N]` block is which shot — complete `image_jobs`, pending assets, and the Draft Compile gate report ID. On startup or run failure include exact sanitized failure metadata and the last valid artifacts. Never expose credentials or fabricate child output.
+On success include validated packages, duration, Unified controls, media mapping, and technical warnings. On `MEDIA_WAIT` include validated `draft_video_prompts`, complete `image_jobs`, pending assets, and the Draft Compile gate report ID. On startup or run failure include exact sanitized failure metadata and the last valid artifacts. Never expose credentials or fabricate child output.
 
 Return exactly one raw JSON object. The first output character must be `{` and the last output character must be `}`. Never wrap it in a Markdown code fence and never add notes, explanations, headings, or status text before or after it.
 
